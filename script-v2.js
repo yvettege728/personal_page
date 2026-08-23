@@ -246,29 +246,32 @@ function initMethodBackdrop() {
   window.addEventListener("resize", update);
 }
 
-function initScrollReveal(selector, opacityName, yName, blurName, scaleName) {
-  const reveal = document.querySelector(selector);
-  if (!reveal || reducedMotion) {
-    reveal?.style.setProperty(opacityName, "0.88");
-    reveal?.style.setProperty(yName, "0px");
-    if (blurName) reveal?.style.setProperty(blurName, "0px");
-    if (scaleName) reveal?.style.setProperty(scaleName, "1");
+// The positioning statement no longer fades or blurs into view: it reads at
+// full clarity throughout and only its colour deepens, from a dark gray to
+// black, as the reader scrolls past it.
+function initPositionReveal() {
+  const el = document.querySelector("[data-position-reveal]");
+  if (!el) return;
+
+  const from = [150, 150, 150];
+  const to = [10, 10, 10];
+  const setColor = (eased) => {
+    const r = Math.round(from[0] + (to[0] - from[0]) * eased);
+    const g = Math.round(from[1] + (to[1] - from[1]) * eased);
+    const b = Math.round(from[2] + (to[2] - from[2]) * eased);
+    el.style.setProperty("--position-color", `rgb(${r}, ${g}, ${b})`);
+  };
+
+  if (reducedMotion) {
+    setColor(1);
     return;
   }
 
   function update() {
-    const rect = reveal.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
     const viewport = window.innerHeight || 1;
-    const progress = Math.min(1, Math.max(0, (viewport * 0.92 - rect.top) / (viewport * 0.95)));
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const opacity = 0.16 + eased * 0.72;
-    const y = 42 - eased * 42;
-    const blur = 9 - eased * 9;
-    const scale = 0.985 + eased * 0.015;
-    reveal.style.setProperty(opacityName, opacity.toFixed(2));
-    reveal.style.setProperty(yName, `${y.toFixed(1)}px`);
-    if (blurName) reveal.style.setProperty(blurName, `${blur.toFixed(1)}px`);
-    if (scaleName) reveal.style.setProperty(scaleName, scale.toFixed(3));
+    const progress = clamp((viewport * 0.82 - rect.top) / (viewport * 0.62), 0, 1);
+    setColor(1 - Math.pow(1 - progress, 3));
   }
 
   update();
@@ -276,12 +279,68 @@ function initScrollReveal(selector, opacityName, yName, blurName, scaleName) {
   window.addEventListener("resize", update);
 }
 
-function initAboutReveal() {
-  initScrollReveal("[data-about-reveal]", "--about-opacity", "--about-y", "--about-blur", "--about-scale");
-}
+// Encrypted-text reveal for the About intro line: the line sits scrambled
+// until it is scrolled into view, then resolves into real words left to
+// right, once, the way aceternity's encrypted-text component does.
+function initAboutDecrypt() {
+  const el = document.querySelector("[data-about-reveal]");
+  if (!el) return;
 
-function initPositionReveal() {
-  initScrollReveal("[data-position-reveal]", "--position-opacity", "--position-y", "--position-blur", "--position-scale");
+  const original = (el.textContent || "").trim();
+  el.setAttribute("role", "text");
+  el.setAttribute("aria-label", original);
+
+  if (reducedMotion) return;
+
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const scrambleFrom = (progress) =>
+    original
+      .split("")
+      .map((letter, index) => {
+        if (letter === " ") return " ";
+        return index < progress ? original[index] : chars[Math.floor(Math.random() * chars.length)];
+      })
+      .join("");
+
+  el.setAttribute("aria-hidden", "true");
+  el.textContent = scrambleFrom(0);
+
+  let played = false;
+  let timer = 0;
+
+  const play = () => {
+    if (played) return;
+    played = true;
+    el.setAttribute("data-decrypting", "true");
+    let frame = 0;
+    timer = window.setInterval(() => {
+      frame += 1;
+      el.textContent = scrambleFrom(frame / 1.7);
+      if (frame > original.length * 2) {
+        window.clearInterval(timer);
+        el.textContent = original;
+        el.removeAttribute("data-decrypting");
+        el.removeAttribute("aria-hidden");
+      }
+    }, 24);
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    play();
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        play();
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.4, rootMargin: "0px 0px -10% 0px" }
+  );
+  observer.observe(el);
 }
 
 function initSkillStrips() {
@@ -548,7 +607,7 @@ initMoves();
 initMethodCards();
 initMethodBackdrop();
 initPositionReveal();
-initAboutReveal();
+initAboutDecrypt();
 initSkillStrips();
 initTreeCard();
 initWritingPreview();
