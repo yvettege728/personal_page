@@ -275,6 +275,31 @@ function initPortfolioInteractions() {
   // A lead film marked for reveal stays held back until it is actually reached,
   // so scrolling into it is what brings it in rather than finding it already
   // sitting there.
+  // Hosted video is loaded only when it is asked for. Until the reader clicks,
+  // the block is a poster and a button, so a case page costs no third-party
+  // script and sets no cookie for someone who never presses play.
+  document.querySelectorAll("[data-youtube]").forEach((embed) => {
+    if (embed.dataset.embedReady) return;
+    embed.dataset.embedReady = "true";
+    const button = embed.querySelector(".case-embed__play");
+    if (!button) return;
+
+    button.addEventListener("click", () => {
+      const id = embed.dataset.youtube;
+      const frame = document.createElement("iframe");
+      frame.src =
+        `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+      frame.title = button.getAttribute("aria-label") || "Video";
+      frame.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      frame.allowFullscreen = true;
+      frame.loading = "lazy";
+      frame.referrerPolicy = "strict-origin-when-cross-origin";
+      embed.replaceChildren(frame);
+      embed.classList.add("is-playing");
+    });
+  });
+
   const leadReveals = [...document.querySelectorAll("[data-lead-reveal]")];
   if (leadReveals.length) {
     const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

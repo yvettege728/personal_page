@@ -7451,3 +7451,98 @@ body[data-project] .contact-tv__links a:focus-visible {
     gap: 10px 16px;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Hosted video facade
+   The long film lives on YouTube rather than in the repository. Until someone
+   presses play this is one poster image and a button: no third-party script,
+   no cookie, no request off-site for a reader who never watches it.
+--------------------------------------------------------------------------- */
+.case-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  background: #101010;
+  border: 1px solid currentColor;
+}
+
+.case-embed__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  transition: transform 620ms var(--ease), filter 420ms ease;
+}
+
+.case-embed:hover .case-embed__poster {
+  transform: scale(1.02);
+  filter: brightness(1.06);
+}
+
+.case-embed__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.12) 46%, transparent 70%);
+  cursor: pointer;
+}
+
+.case-embed__play::before {
+  content: "";
+  position: absolute;
+  width: clamp(64px, 7vw, 92px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+  background: rgba(15, 16, 17, 0.42);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: transform 320ms var(--ease), background 320ms ease, border-color 320ms ease;
+}
+
+.case-embed__triangle {
+  position: relative;
+  width: 0;
+  height: 0;
+  margin-left: 0.34em;
+  border-top: clamp(10px, 1.1vw, 14px) solid transparent;
+  border-bottom: clamp(10px, 1.1vw, 14px) solid transparent;
+  border-left: clamp(17px, 1.9vw, 23px) solid var(--fg);
+  transition: transform 320ms var(--ease);
+}
+
+.case-embed__play:hover::before,
+.case-embed__play:focus-visible::before {
+  transform: scale(1.08);
+  background: rgba(254, 113, 65, 0.28);
+  border-color: var(--fg);
+}
+
+.case-embed__play:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: -4px;
+}
+
+.case-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-embed__poster,
+  .case-embed__play::before,
+  .case-embed__triangle {
+    transition: none;
+  }
+
+  .case-embed:hover .case-embed__poster {
+    transform: none;
+  }
+}

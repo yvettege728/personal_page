@@ -56,8 +56,21 @@
         ? "autoplay muted loop"
         : "controls";
 
+  // A long film is hosted rather than shipped: a 7 minute encode is heavier
+  // than the whole rest of the site. Nothing from YouTube is fetched until the
+  // reader asks for it, so the page still costs one poster image.
+  const leadPlayer = project.lead && project.lead.youtube
+    ? `<div class="case-embed" data-youtube="${project.lead.youtube}">` +
+      `<img class="case-embed__poster" src="${project.lead.poster || ""}" alt="${project.lead.caption}" loading="lazy">` +
+      `<button class="case-embed__play" type="button" aria-label="Play ${project.lead.caption}">` +
+      `<span class="case-embed__triangle" aria-hidden="true"></span></button>` +
+      `</div>`
+    : project.lead
+      ? `<video src="${project.lead.src}" poster="${project.lead.poster || ""}" ${leadAttrs} playsinline preload="metadata" aria-label="${project.lead.caption}"></video>`
+      : "";
+
   const lead = project.lead
-    ? `<section class="case-section lead-media${project.lead.reveal ? " lead-reveal" : ""}"${project.lead.reveal ? " data-lead-reveal" : ""}><div class="section-inner">${project.lead.title ? `<div class="section-kicker"><span class="section-number">${project.lead.kicker || ""}</span><h2 class="section-title">${project.lead.title}</h2></div>` : ""}<figure class="case-video"><video src="${project.lead.src}" poster="${project.lead.poster || ""}" ${leadAttrs} playsinline preload="metadata" aria-label="${project.lead.caption}"></video><figcaption>${project.lead.caption}</figcaption></figure></div></section>`
+    ? `<section class="case-section lead-media${project.lead.reveal ? " lead-reveal" : ""}"${project.lead.reveal ? " data-lead-reveal" : ""}><div class="section-inner">${project.lead.title ? `<div class="section-kicker"><span class="section-number">${project.lead.kicker || ""}</span><h2 class="section-title">${project.lead.title}</h2></div>` : ""}<figure class="case-video">${leadPlayer}<figcaption>${project.lead.caption}</figcaption></figure></div></section>`
     : "";
 
   // Images for a block. Rows opt in with mediaLayout: "row", which lays the

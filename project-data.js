@@ -58,11 +58,10 @@ window.PROJECTS = {
     heroAlt: "Short clip from the Make a Wish installation in the Gund Hall backyard",
     heroFit: "cover",
     lead: {
-      src: "web-assets/makeawish-web.mp4",
-      poster: "web-assets/makeawish-web-poster.jpg",
+      youtube: "MzpZy1svwEY",
+      poster: "web-assets/makeawish-lead-poster.jpg",
       caption: "The full activation, from an empty frame to a rope field carrying sixty wishes.",
-      reveal: true,
-      scrollPlay: true
+      reveal: true
     },
     body: "A one-day participatory installation paired with a web archive, treating a wish as both a private note and a public social record. Participants entered the wooden frame, wrote a wish card, attached it to the rope field, and could also submit the wish online. I developed the concept, organized the event, presented the proposal, fabricated the physical structure, and built the web archive as the sole developer. The project makes private language visible as patterns shaped by housing, work, migration, health, family, identity, and belonging.",
     did: [
