@@ -1,0 +1,1789 @@
+Mapping the Journey:
+Understanding the Role of Habitus and
+Capitals in Chinese International
+Students' Cultural Fit
+
+By GWLS2
+
+A Dissertation
+submitted to University College London
+
+Institute of Education
+
+Department of Education, Practice and Society
+
+For BA Education Studies
+
+May 2024
+
+1
+
+Contents
+Acknowledgements ··········································································································· 3
+Abstract ···························································································································· 4
+1 Introduction ··················································································································· 5
+2 Literature Review ··········································································································· 8
+2.1 Empirical Context ··············································································································· 8
+2.2 Theoretical Framework ···································································································· 10
+
+3 Research Questions ·······································································································16
+4 Methodology ·················································································································17
+4.1 Research Design ················································································································ 17
+4.2 Sampling and Participants ································································································ 17
+4.3 Data Collection·················································································································· 18
+4.4 Data Analysis ···················································································································· 19
+4.5 Ethics ································································································································ 20
+
+5 Findings and Discussions ·····························································································21
+5.1 Adaptive Habitus and Adaptability as a Habitus······························································ 21
+5.2 Consistent Access to Useful Information ·········································································· 28
+
+6 Conclusion ····················································································································40
+7 Reference List ···············································································································42
+8 Appendix·······················································································································52
+
+2
+
+Acknowledgements
+
+Thankfully,
+The Shelter of Education Studies Gifts Me Chance to Believe.
+Thankfully,
+the Realm of Social Science Affords Aspiration Space to Breathe.
+
+3
+
+Abstract
+
+This article explores the cultural fit challenges Chinese international undergraduate students
+from middle-class families in Shanghai face as they transition into Western academic
+environments. These students are often from resource-rich families and have a parallel
+experience with international education from an early age. Employing Pierre Bourdieu's
+theoretical frameworks of capital and habitus, this study presents how habitus and
+informational capital contribute to achieving cultural fit. Through in-depth interviews with
+eight Chinese students, the research reveals that students who achieve better fit-in usually
+have greater adaptability and the ability to maximize existing resources and strengths in
+forming sustainable information-gathering methods in a new environment.
+
+4
+
+1 Introduction
+
+According to UNESCO's 2019 report, 145,779 Chinese students were pursuing secondary and
+higher education in the UK, accounting for 24% of the total international student population.
+Between 2010 and 2017, the number of Chinese students in the UK grew at an average annual
+rate of 9% (UK Council for International Student Affairs, 2017). Students who study abroad
+often come from families with substantial resources and privileges (Zhang and Tang, 2021),
+enabling them to be geographically mobile. However, such high levels of mobility often come
+with feelings of unease and the "hidden injuries" of being caught between two worlds, as
+described by Sennett and Cobb (1972). Numerous studies have confirmed that international
+students, lacking the benefits of years of gradual socialization available to most indigenous
+members of the host culture, see the advantages of citizenship in their home countries replaced
+by a new minority status (Brown, 2007; Newsome & Cooper, 2016). Scholars have also
+identified and explained obstacles in the transition experience, such as language barriers,
+interpersonal problems, homesickness, and cultural shock (Newsome and Cooper, 2016; Sovic,
+2009; Yu & Moskal, 2018).
+
+Recognizing international students' complex and intersectional diversity (Ovie & Barrantes,
+2019), this article mainly focuses on the cohort of undergraduates from Shanghai, China. As
+articulated by Zhang and Tang (2021), these undergraduates who can afford years of
+international tuition fees typically hail from upper-and middle-class families that avail them
+of rich cultural and educational resources along with the privilege of early exposure to
+international education. By focusing on this relatively advantaged group among Chinese
+international students, this essay accentuates the role of exclusive educational resources and
+5
+
+avoids generalizing international students as one homogenized group. These resources
+include linguistic competence, proactive opportunity-seeking skills, rapid cultural adaptation,
+and networking skills, all of which assume critical significance in transnational educational
+settings (Munk, 2009).
+
+Shanghai, as the financial hub in the global sphere and a culturally rich city (Long Finance,
+2020; Shanghai Municipal Statistics Bureau, 2020), magnified the privilege of these students.
+Besides, with plenty of international schools and quite a hefty and diverse expatriate
+community culture, this city enables youth to have a global lens and, accordingly, have many
+considerable advantages abroad. Such resources and opportunities allow them to be valued as
+international-minded individuals in a globalizing world (Cebolla-Boado et al., 2018).
+
+This study focuses on students of a privileged cohort within the general international student
+community—both because of their socio-economic status and cultural background. The latter
+aspect becomes especially pertinent in diversified educational settings like the one at
+University College London (UCL), known for its outstanding diversity and high proportion
+of international students. These privileged backgrounds provide a rich data source for
+research exploring the more profound issues Chinese international students face with cultural
+fit in the UK.
+
+To investigate the impact of exclusive information that is usually accessible to a selected
+segment of the population, this study delves into the experiences of "first-in-family" (FiF)
+university students, defined as those who are the first person coming to the UK to pursue
+undergraduate education (Spiegler & Bednarek, 2013). The absence of prior family experience
+in higher education and limited access to informational capital led to significant obstacles
+during their study abroad, entailing a complex process marked by substantial emotional and
+6
+
+social adjustments (Lessky, Nairz‐Wirth, & Feldmann, 2021; O'Shea, 2019). This investigation
+seeks to illuminate the challenges encountered by students handling physical and cultural
+frontiers, devoid of direct guidance or institutional "insider" knowledge from close family
+members (Crozier et al., 2008).
+
+This research involved interviews with eight Chinese international students about their
+undergraduate experiences at a university in the UK. Following a wealth of literature in the
+discourse of international education, this essay employs a Bourdieu-inspired analytical
+framework. By utilizing the derived concepts of informational capital and cleft habitus, this
+study qualitatively investigates the transition experiences of international students,
+emphasising cultural integration and the influence of privilege. These concepts are typically
+employed to discuss working-class students' internal struggles and practical transformations
+within elite educational environments (Ivemark & Ambrose, 2023). Elite education is tailored
+for a small, influential segment of the population (Doughty, 2020), with privileged families
+often opting for selective, exclusive educational paths that mirror social origins (Sullivan et al.,
+2016; Grodsky, 2007). This education fosters skill development, attaining prestigious degrees,
+and building essential networks like the "old school tie" (Sullivan et al., 2016, p.29). These
+factors help students maintain higher status positions in elite universities and professions,
+ultimately reproducing social status (Shen, 2023). In the context of international students,
+internal struggles also exist since they encounter significant cultural disparities.
+
+7
+
+2 Literature Review
+
+This section starts by reviewing relevant literature on the study abroad experiences of
+Chinese international students. Acknowledging the impact of elite education, this study
+involves the concepts from Pierre Bourdieu's seminal works as the theoretical framework.
+Bourdieu's insights contribute significantly to analyzing and comprehending how education
+persistently contributes to the reproduction of social status (Lamont & Lareau, 1988).
+
+2.1 Empirical Context
+
+"Cultural fit" is an inseparable topic in the discourse of overseas study (e.g., Newsome and
+Cooper, 2016). As habitus adapts to social spaces or applies to the new cultural environment,
+a "cultural fit" may occur, explaining the mechanisms of social reproduction within the fields
+where habitus operates (Bourdieu, 1990b; Bourdieu & Passeron, 1977). The sense of
+dislocation that arises when individuals face unfamiliar cultures and struggle to adapt to new
+social contexts can be termed cultural shock (Newsome & Cooper, 2016). People sometimes
+withdraw from these environments, a response described by Friebertshäuser (1992) as "fleeing
+from the field". For international students, particularly Chinese students in the UK, the
+significant cultural disparities between China and the UK may lead to substantial cultural shock
+(Zhang, 2023).
+
+Many scholars have noted that for international students, studying abroad is pursuing
+experiences in the host country rather than abandoning the old culture (Newsome & Cooper,
+2016). However, maintaining cultural heritage and exposure to new cultures in new settings
+8
+
+could happen simultaneously. In this context, seeking broader interactions with the host society
+may promote the establishment of intercultural contact (Yu & Moskal, 2018). Building social
+networks in university significantly enhances students' educational experiences and learning
+outcomes. According to Cassidy (2004), these networks often evolve into a vital source of
+social support, supplanting family and previous friendships and fostering a strong sense of
+community and belonging among students.
+
+Similarly, research by Ramsay, Jones, and Barker (2006) highlights that, particularly for firstyear studying abroad students, friends become the primary source of emotional, practical, and
+social support and an essential source of information. When interaction occurs between
+individuals from different cultures, it not only enhances the overall educational experience
+(Dunne, 2013) but also increases developmental possibilities for students (Gurin et al., 2002).
+This interaction establishes a cyclical relationship where motivated and capable students gain
+more opportunities, which fosters confidence for further explorations.
+
+Peer relationships generally "provide stability and a secure source of information about
+studying and the university" (Lessky, Nairz‐Wirth & Feldmann, 2021, p.35). For international
+students, belonging to the vast community of international students can be significantly
+supportive when they first arrive (Zhang, 2023). Students from the same country tend to bond
+more tightly when abroad. However, the inability to move out of the comfort zones may deprive
+the preconditions for developing cross-cultural social networks that facilitate cultural fit (Yu
+& Moskal, 2018). According to Spencer-Oatey et al. (2017), while 92% of students reported
+satisfactory interactions with fellow compatriots, these figures dropped to 60% and 78% for
+interactions with host country nationals and people from other countries, respectively.
+
+9
+
+Establishing cross-cultural friendships faces additional challenges due to differences in
+language, culture, values, interests, and plans (Zhang, 2023), which are thought to be
+interrelated with well-being as they interact within an ecosystem (Elliot, Reid & Baumfield,
+2015). A significant number of students are dissatisfied with being unable to integrate and
+having to meet their social and adaptation needs through compatriot communities (Chen &
+Ross, 2015). Their attitudes towards the "Chinese circle," a result of racial clustering, are
+ambivalent; they appreciate the comfort it provides yet lament its restriction on forming crosscultural friendships (Holliman et al., 2023). On the contrary, some scholars find that students
+view their social relations holistically, assessing whether social networks' overall quantity and
+quality provide adequate support (Zhang, 2023). Hence, they don't mind if they make local
+friends or not.
+
+Extensive literature emphasizes the importance of English language proficiency for
+international students' academic success and social adjustment (Andrade, 2006; Sherry,
+Thomas & Chui, 2010). Although many students pass language exams, they often struggle with
+effective communication, leading to loneliness, anxiety, and reduced confidence, particularly
+in conversations with native speakers (Kim, 2020; Sovic, 2009). Additionally, the speech style
+of middle-class students tends to receive more social approval, posing a further challenge for
+international students whose test preparation does not typically include these skills (Aries &
+Seider, 2005).
+
+2.2 Theoretical Framework
+
+Discussions deploying concepts in Bourdieu's work (1977) typically proceed with the
+understanding that entering any social field requires adherence to its specific regulative
+10
+
+principles, often referred to as the "rules of the game" (Edgerton & Roberts, 2014)—this
+study mainly draws on the notions of informational capital and cleft habitus.
+
+2.2.1 Capitals and Informational Capitals
+
+In Bourdieu's conceptual framework (1984, 1986), three forms of capital are crucial in
+determining one's position within the social structure. Firstly, economic capital is directly and
+immediately convertible into money and is seen as a primary goal within societal structures
+(Bourdieu, 1986; O'Shea & Richardson, 1987). Secondly, social capital, deeply rooted in
+relationships and encompasses valuable assets acquired through institutionalized relationships
+characterized by stability and predictability, facilitates reciprocity among network members
+(Field, 2016; Oyefuga and Shakeshaft, 2021). As these relationships are instrumental for
+individuals in gathering information, this social capital is crucial for providing an insightful
+perspective (Munk, 2009; Santos and Costa, 2015). Finally, cultural capital is associated with
+privileged habitus and dispositions (Ostrower, 1998; Reay, 2017). Within the discourse of
+education, elite education is generally regarded as a stepping-stone to acquiring cultural capital,
+which aims at achieving social advancement or perpetuating social reproduction (Ponzini,
+2020). It encapsulates competencies and immaterial knowledge, such as linguistic abilities,
+appropriate attire, behaviour in specific circumstances, and strategies to procure job
+opportunities (Aries & Seider, 2005). Besides, Bourdieu extensively discussed symbolic
+capital, a significant source of power and social prestige (Ponzini, 2020), where "becoming
+international" exemplified a highly coveted form of symbolic capital (Basaran & Olsson, 2017).
+Yosso (2005) extended Bourdieu's limited categorization of capital in the discourse of broader
+social equity, advocating for a more comprehensive framework particularly relevant to the
+intercultural situation of underrepresented populations in a particular context (Nuñez, 2009).
+11
+
+When discussing social capital's impact on academic achievement, Oyefuga and Shakeshaft
+(2021, p.165) further broadened the definition of capital, suggesting it encompasses "anything
+and everything."
+
+Amidst these theoretical developments, informational capital was introduced, recognized by
+scholars like Edgerton and Roberts (2014) and Munk (2009) for its ability to morph into
+economic and social capital while signalling social positioning by encompassing aspects of
+cultural and symbolic capital (Edgerton & Roberts, 2014; Munk, 2009). In the educational
+sector, this form of capital provides information about the "rules of the game" in educational
+institutions, such as available learning opportunities (Santos and Costa, 2015). Munk (2009)
+perceived informational capital as academic capital that is essential for building knowledge
+about educational and career options and aiding exploration in educational systems and
+professional organizations (St, Hu and Fisher, 2010). In elite institutions, vital information not
+readily available through official channels, alongside many practical details, is divided into
+"practical knowledge of study-related processes"' and "understanding and anticipation of studyrelated logistics" (Lessky, Nairz‐Wirth and Feldmann, 2021, p.29). The former includes
+exclusive information from peer networks, while the latter comprises a broader range of
+knowledge essential for understanding the system and finding one's path upon entering
+university. According to Lareau and Horvat (1999), the value of capital is dependent upon the
+social setting in which an individual is situated. However, as Winkler and Sriram (2015) argued,
+this elite's mechanism globally rewards privileged communities. Even though the setting may
+vary, the value is universally built upon the norms belonging to the dominant group in the
+global society, who are always valued and rewarded (Stanton-Salazar, 1997).
+
+In the international student discourse, Spencer-Oatey et al. (2017) have demonstrated that
+increased social networking accompanies more interaction with local students and staff.
+12
+
+Eventually, this will result in a favourable outcome for the overall cultural fit. Facing cultural
+shock, the decision of international students to withdraw or actively achieve better fit-in
+largely depends on their ability to establish relationships with key figures in the new
+environment and to obtain critical institutional resources and opportunities (Stanton-Salazar,
+1997). Building on Stanton-Salazar's (1997) observation that norms associated with the
+dominant social group are globally recognized and rewarded, Winkler and Sriram (2015)
+highlight the presence of a universal mechanism within global higher education systems. This
+mechanism systematically perpetuates elites' advantages by institutionally favouring the
+activation of social and cultural capital, which is held mainly by privileged groups. In
+essence, students with informational capital not only acquire exclusive information about the
+shared mechanism but also recognize that information's value lies in how its owner utilizes it
+(Gigler, 2011) and the means to gather it. In other words, they possess a habitus that allows
+their capital and mobility to flow together (Sassen, 2019). This study employs informational
+capital as a theoretical framework to illustrate the "rules of the game" when studying abroad.
+
+2.2.2 Habitus and Cleft Habitus
+
+The concepts of habitus and cleft habitus are employed to explore the internal conflict that
+international student encounter due to the differences between their pre-transition and posttransition environments. Habitus is a set of durable and transposable dispositions that
+individuals acquire through family upbringing and their position in the social structure
+(Bourdieu, 2002; Edgerton and Roberts, 2014). It acts as an internalized interpretive framework,
+often referred to by Bourdieu as “socialized subjectivity,” which shapes how individuals
+perceive the social world and their prospects within it. As a schema or a structure of perception,
+conception and action, habitus is deeply rooted in one's socialization within the family
+13
+
+(Bourdieu, 2002). Thereby, habitus internalizes owners' social position into tastes and
+worldviews and affects their position in society (Lee & Kramer, 2012). It is important to note
+that while habitus is enduring, it is also susceptible to change as a fluid disposition (Edgerton
+& Roberts, 2014). Although associated with the societal class position, habitus is fluid and
+adaptable, continuously reinforcing or transforming in response to new experiences (Bourdieu,
+1977, 1990a; Lamont & Lareau, 1988). In the context of higher education, Lee and Kramer
+(2012) reaffirmed habitus' capacity to evolve in response to novel contexts and individual
+experiences during university.
+
+When individuals experience an internal conflict because their ingrained behaviours and
+thoughts no longer align with their society, their habitus may alter. The notion of cleft habitus
+is frequently employed to elucidate the topic of social mobility (Ivemark & Ambrose, 2023;
+Ingram & Abrahams, 2015; Martin & Harrison, 2022). It is commonly exemplified by workingclass students' elite university experience when facing inherent clashes (Lubrano, 2005).
+Holding two habitus simultaneously typifies cleft habitus (Bourdieu, 2006, 2008). Ivemark and
+Ambrose's (2023) empirical research highlights subjects acquiring new dispositions while
+being continuously structured by inherited dispositions, leading to intense internal conflicts
+and self-reflection. International students' entry into new environments frequently results in
+dissatisfaction and maladjustment with its "rules of the game," which continues to manifest
+complex internal struggles, showing the occurrence of cleft habitus.
+
+However, the experience of cleft habitus might also foster new capital and habitus for
+international students. "Becoming international" is regarded by Basaran and Olsson (2017) as
+a symbolic capital. Students accustomed to navigating unfamiliar "rules of the game" possess
+adaptability as a form of cultural capital (Lareau & Weininger, 2003), benefiting students from
+a more flexible capital structure (Edgerton & Roberts, 2014). In this case, "becoming
+14
+
+international" is not only a mode of thinking that integrates transnational in-between positions
+(Wang, 2022) but also a habitus. This habitus enables international students to recontextualize
+their capitals and foster a dynamic interplay in their unique fluid situations (Hannerz, 1990;
+Peng, 2015). Considering Wang’s (2022) call for education policymakers to wisely recognize
+the powerful force behind international students' transnational intermediary identities, it is
+essential to acknowledge both dimensions— "becoming international" as both an identity
+naturally acquired after studying abroad and as a habitus cultivated during the experience.
+
+Chinese international students are becoming an increasingly significant group in Western
+universities, and their situation is garnering growing attention. Ongoing discussions iterate
+various factors such as racism, feelings of hostility and alienation, environments with a high
+density of international students, inherent cultural differences, and preconceptions about
+student life abroad (Holliman et al., 2023; Newsome and Cooper, 2016; Peacock & Harrison,
+2008). Extensive studies highlight the specificity, complexity, and diversity of international
+students' cultural fit situations (Yu and Moskal, 2018). However, as Newsome and Cooper
+(2016) suggested, we need to understand the role of structural impacts in educational discourse
+and avoid an overly narrow focus on specific characteristics or concerns like language or social
+life. With the notion of "the rules of the game," this study explores how the interplay of pretransition habitus and informational capital guides individuals in understanding, interpreting,
+and applying the rules to their post-transition setting.
+
+15
+
+3 Research Questions
+
+RQ1: How do Chinese international students achieve a cultural fit when they come to study in
+the UK?
+
+RQ2: What roles do habitus and informational capital play in achieving cultural fit for Chinese
+international students?
+
+16
+
+4 Methodology
+
+4.1 Research Design
+
+This qualitative investigation follows the constructivist paradigm. Since the goal was to gain
+an in-depth understanding of Chinese students’ cross-cultural experiences (Bhattacharya,
+2017), I decided to use a qualitative method to learn the subjective realm of meaning-making,
+aiming to demonstrate the deeper reasons behind the phenomena (Cheek & Schutt, 2012). I
+embraced the perspective that human behaviour and action are rooted in the meanings
+individuals ascribe to people and things and how these meanings are interpreted and conveyed
+through language (Charmaz, 2019). This epistemological view, advocating that knowledge and
+meaning emerge from the interplay of experiences and ideas, especially in the discourse of
+educational research, theory, and policy (Duffy, 2006), suits the exploratory nature of the
+research (Bogdan & Biklen, 1998). My study builds on the Bourdieusian tradition, in which
+theory-building and empirical research are seen not as separate endeavours but interconnected
+processes (Lessky, Nairz‐Wirth and Feldmann, 2021). Overall, the personal experiences
+narrated by different participants and the various perceptions that arise during the transition
+process can be assembled like a puzzle, allowing me as a researcher to interpret or discover the
+notion of a shared reality (Charmaz, 2019) of individuals within this context.
+
+4.2 Sampling and Participants
+
+17
+
+The eight participants were recruited through a non-probability and snowball sampling within
+UCL (for more details, see Table 1). Based on my understanding of the people around me, such
+an approach could quickly help me filter out individuals who simultaneously meet three criteria:
+having been educated in Shanghai before coming to London, studying for an undergraduate
+degree at UCL, and having core family members who have not received higher education in
+the UK.
+
+Table 1 Participant Profile
+
+4.3 Data Collection
+
+The interview was chosen to capture the evolving social experiences of students, leveraging
+the qualitative analysis's potential for generating new theories and unexpected findings (Yin,
+2016). Existing studies exploring international students' cultural and social experiences usually
+adopt interviews (e.g. Newsome and Cooper, 2016; Wang, 2022; Zhang, 2023). Semistructured interview, as a common data collection technique in qualitative studies, offer
+flexibility through follow-up questions (DiCicco-Bloom & Crabtree, 2006; Kallio et al., 2016).
+This method allows questions to be adapted based on participant responses and provides space
+18
+
+for participants to express themselves (Cohen & Crabtree, 2006). As Sovic (2009) notes,
+meaningful understanding of a specific group's perspectives requires recognizing the different
+characteristics exhibited by individuals.
+
+I posted a brief description of my research on social platforms. After casually chatting with
+interested individuals, I selected eight participants. Given the differences in their educational
+background details, it is very likely to offer rich and varied insights into the study, thus
+enhancing the informational richness of the discussion (Creswell, 2013). Before the interviews,
+I sent an information sheet and an ethics form to the participant via email, where I also inquired
+about their preferred language for expressing thoughts. All but one respondent, who identified
+English as her first language, chose Mandarin for the interviews. Conducting interviews in their
+first language enhanced the accuracy of oral expression and fostered greater trust. An interview
+guide (see Appendix 4) covering key research topics, developed based on preliminary research
+in the field (Taylor, 2005; Wengraf, 2001), directed the discussions.
+
+I conducted eight semi-structured interviews between March 11 and March 23, 2024, each
+lasting 30 to 45 minutes. I utilized Zoom as the interview platform to increase efficiency. The
+interviews were recorded, transcriptions were made using Zoom's transcription feature for
+English and Xunfei software for Mandarin, facilitating analysis (Cohen & Crabtree, 2006).
+Transcriptions were completed within six hours post-interview, with Mandarin transcripts
+roughly translated into English via DeepL, followed by manual verification and my
+adjustments for accuracy.
+
+4.4 Data Analysis
+
+19
+
+In line with a constructivist paradigm, this study used Braun and Clarke's (2006) thematic
+analysis to examine interview data, involving six steps: familiarization with the data,
+generating initial codes, searching for themes, reviewing themes, defining and renaming
+themes, and producing the report. This comprehensive process, which incorporates both a
+priori and posterior coding, systematically categorizes themes into broader themes while
+offering flexibility, making it suitable for small-scale qualitative research (Braun & Clarke,
+2006, 2012). Thematic analysis was selected for its effectiveness in exploring participants'
+perceptions and identifying commonalities in their responses (Ryan & Bernard, 2003). This
+iterative process of synthesizing codes into themes could have continued indefinitely. This
+method ensures a balanced analysis, capturing both anticipated insights from established
+theoretical contexts and novel, unforeseen themes. It leverages the strengths of semistructured interviews to provide a comprehensive understanding of the data.
+
+4.5 Ethics
+
+While conducting this empirical research with human participants, I will adhere to the
+guidelines provided by The British Educational Research Association (2018) to mitigate harm
+and safeguard the well-being of the participants. Before participation, participants are fully
+apprised of the study's aims, benefits, potential risks, their right to withdraw and data protection
+measures through the information sheet provided. The consent form ensures voluntariness, full
+disclosure, and willingness to include their experiences and insights in this study. During and
+after participation, stringent measures will be taken to protect the personal information of
+participants. The data collected will be treated as pseudonyms in the essay to protect
+participants' privacy and prevent any potential breaches of confidentiality. Data will be
+securely stored in a laptop with a password, accessible only to myself, and handled following
+data protection regulations, ensuring its use is confined strictly to the research. Maintaining
+20
+
+transparency during the research process ensures that participants and the public are informed
+about the study's outcomes.
+
+5 Findings and Discussions
+
+This study aims to identify the reasons for Chinese international students' better or less cultural
+fit-in. Specifically, it examines how pre-transition habitus and capital are associated with their
+post-transition fit-in choices. Empirical evidence indicates that students engage in local culture
+to varying extents. In general, the results of their cultural fit—whether to integrate or to
+withdraw—are associated with their pre-transition inherent capital and habitus. The research
+indicates students who further adapt and better fit-in tend to have better adaptability and are
+more capable of gathering valuable information.
+
+5.1 Adaptive Habitus and Adaptability as a Habitus
+
+Many Chinese international students had prepared extensively in pre-transition. They meet
+people who will also live in the UK beforehand or learn about their new environment. More
+indicative of the globally shared elite's mechanism is the adaptive habitus they developed
+since childhood and keep applicable after the transition. Almost all international
+undergraduates in this research had envisioned their educational paths to some extent since
+they were young and did international courses at least during their high school period. In
+21
+
+other words, they are prepared to "become international." Thus, they arrive in the UK with
+capitals and habitus applicable there.
+
+On the other hand, those students without assistance at their fingertips had to be active in
+gathering and filtering information, reinforcing their habitus parallel to changing situations
+since the undergraduate application. Upon arrival, because studying in the UK was not
+mainstream in their original environments, they lacked the ready-made contacts or
+institutional knowledge that other students might possess. However, as the saying goes,
+teaching a man to fish is more beneficial than giving him a fish. Interviews with participants
+uncovered that, for some of them, their habitus is adaptable, while for others, adaptivity had
+become a part of their habitus through previous experience. The following sections
+distinguish the differences.
+
+5.1.1 Behind the Choice of Adaption or Withdrawal
+
+Overall, the study found that the achievement of cultural fit among international students
+largely depends on their choices when confronted with a sense of cultural dislocation. Many
+external factors, such as timely help, can influence this process. One interviewee, Stephanie,
+described it as "organically happening." The substantial empirical evidence shows that
+different reactions to cleft habitus, when international students' ingrained behaviours and
+thoughts no longer align with their settings, lead to different integration outcomes. Their
+reactions and actions closely relate to the habitus formed before studying abroad. As
+Newsome and Cooper (2016) highlighted, students' responses to cultural shock vary. Some
+develop a deeper self-awareness and appreciation for different cultures, while others may
+withdraw from exposure to conflicting beliefs and avoid interaction with the broader society.
+22
+
+International students often struggle to form meaningful interactions with local culture due to
+cultural and linguistic barriers, as shown by Scanlon, Rowling, and Weber (2007). Significant
+cultural differences intensify psychological tension and affective turmoil during social
+interactions, leading many students to retreat (Friedman, 2016; Ivemark and Ambrose, 2023),
+using shyness as an excuse (Sovic, 2009). At first, students who intend to integrate into the
+community may tentatively attribute their challenges to personal ignorance. Over time, they
+recognize the external barriers, such as existing social circles among domestic students, deter
+deeper integration. Two of the participants, Wenyi and Mengke, originally had the ambitions
+to meet local friends and integrate into a broader community:
+
+Group work with local students taught me that overcoming cultural differences
+requires substantial effort. Considering my eventual return to China, full integration
+seems unnecessary. (Wenyi)
+
+Similarly, Mengke claimed how her established "social bubble" dragged her into a comfort
+zone and ultimately gave up further attempts.
+
+Describing the Chinese student community as closed and segregated is overly simplistic (Chen
+and Ross, 2015). Among my participants, there are individuals who actively assimilate into the
+UK environment, achieving better cultural fit. O'Shea (2019) describes these obstacles with the
+metaphor of "traversable boundaries," suggesting that while barriers imply rigid,
+insurmountable blocks, boundaries are traversable and potentially meant to be crossed (Tsui &
+Law, 2007). Some participants have used their "self-in-between mobility" (Wang, 2022) to
+seize opportunities to "learn about other people's thoughts" (Spencer-Oatey et al., 2017).
+
+23
+
+According to responses from participants, as "straddlers" of "epistemic privilege", they are
+recalibrating actions flexibly across different educational and social contexts (O'Shea, 2019).
+This habitus allows transnational communication and connections, underscoring the intrinsic
+value of maintaining multiple cultural affiliations (Lubrano, 2004; Kim, 2010). As Xiao said,
+although he "lives here in a Chinese way," he enjoys learning about different cultures from
+foreign friends. He is open to trying new things that are impressive and rewarding, such as
+consumption habits, including second-hand stores and Black Friday. Narratives from the
+interviews with better fit-in students affirm O'Shea (2019) of students' self-imposed need to be
+willing to re-negotiate their awareness and position during the transition. In the context of
+globalization, the habitus of being "organic, intrinsic, implicit, and reflexive" (Lehmann, 2013)
+valued by society is particularly rewarding for international students. Surprisingly, some
+participants demonstrated through their responses that as one dimension of "becoming
+international", this habitus have been developed before their transition through their pretransition education.
+
+5.1.2
+
+Transfer with Adaptive Habitus
+
+As articulated by Edgerton and Roberts (2014, p.199), habitus is "adaptive" and
+"incrementally modifiable in the face of variant circumstances". Swidler (1986) employs the
+metaphor of a "tool kit" to describe habitus and show how an individual's social position
+profoundly influences the cultural practices, habits, and skills used to address the challenges.
+Based on the findings of this study, this toolkit seems to have the potential to move with its
+owner and continue to be effective in new environments. In other words, its applicability in
+new settings depends on how relevant it remains when its owner is in the new settings.
+Following this, the relevance not only determines the toolkit's applicability but also mirrors
+24
+
+the relevance between two habitus occurring simultaneously, a phenomenon Bourdieu (2006,
+2008) identifies as leading to the emergence of cleft habitus.
+
+Students view the degree of adaptation to academic life as a fundamental aspect of their
+overall adaptation to the university experience. Obviously, their prior academic preparations
+have significantly aided their transition. The significance of studying independently and the
+awareness to adapt based on personal circumstances in university are well-recognized by
+participants, with many of them developing independent study habits and adaptability during
+high school. Yiwen reflected, "I'd say what I learnt in high school was probably self-study."
+Similarly, Haocheng noted, "…more resources are available through UCL's online platform,"
+exactly fit the self-study habits he cultivated in high school.
+
+Information collection and collation is a habitus that continues benefiting students. More than
+one participant mentioned using customizable comparative tables. They usually developed
+this skill during high school for university application. It is still helpful in module selections
+or internship applications now. Tracing back, Yutong attributes this habitus of systematically
+organizing information to an internship she undertook during her high school years. "That's
+when I learned how to utilize this Excel, even though I used to be overwhelmed by such data
+processing software before," she recounts. Broadly speaking, this underscores the educational
+value of integrating practical, real-world experiences into learning. It is a hallmark of elite
+education that constantly prepares students for academic and workplace challenges to
+maintain their socio-economic status.
+
+Xiao and Mengke did not initially attend A-level schools; they managed through traditional
+public schools' intense, exam-focused environment. Experience in these top-tier public
+schools significantly endowed them with certain capabilities that have proven advantageous
+25
+
+in their UK studies. To illustrate, Xiao discussed how he learned the importance of mastering
+topics through extensive practice. Likewise, Mengke emphasized how handling both A-level
+and Gaokao exams simultaneously equipped her to manage multiple tasks calmly and
+efficiently in university. These pre-transition preparations are not merely an embodiment of
+the elite class's ability to afford costly international education but rather an expected outcome
+of elite education in a broad sense.
+5.1.3 Adaptability as a Rewarding Habitus
+
+Adaptative habitus indicates the existence of the elites' mechanism that rewards privileged
+communities in the global wide. However, relying solely on established habitus to adapt to
+new environments often proves insufficient. Challenges such as unforeseen cultural
+differences, unexpected cultural shocks, or a lack of sufficient capital and experience in the
+UK can lead to a cleft habitus, which limits opportunities (Lee and Kramer, 2012). In
+response, there are some students who engage in continual self-reflection, reevaluating their
+dispositions and transforming challenges into opportunities for better cultural and academic
+integration (Ivemark and Ambrose, 2023). This "internal 'tug' between contradictory
+schemes" is reminiscent of Ingram's (2018, p.954) observations of working-class students in
+elite education negotiating dual cultural expectations where "conflicting dispositions
+awkwardly intermingle."
+
+The inherent adaptivity of habitus bestows a strong inertia, which sometimes makes it
+challenging for individuals to adapt to fields that deviate from their initial conditioning
+(Bourdieu & Wacquant, 2001). Overcoming this inertia demands open-mindedness to change
+and the emotional capacity to stomach the upheavals of the new settings.
+
+26
+
+In high school, people came to you. However, in university, you need to reach out
+continually. I don't want to limit my experiences, so I shift towards more engaged and
+autonomous approaches. (Yifan)
+
+This rapid assimilation of new habitus or, in other words, modification of their habitus aligns
+with the new "rules of the game" in new settings, highlighting adaptability as an essential
+competence after the transition.
+
+Haocheng points out the cognitive adaptation needed when confronting deeply ingrained
+cultural practices, such as deferring exams with illness—a practice often seen as a lack of
+perseverance in Chinese culture. Some students become aware of their cognitive limitations
+and incorporate beneficial habits or mindsets observed in the new environment, and
+importantly, they make changes based on this awareness. Yifan initially perceived the
+strategic utilization of rules as deceptive but soon recognized the importance of actively
+understanding and capitalizing on these available opportunities. Her internal struggles
+exemplify cleft habitus; her shift from passive compliance to proactive engagement
+exemplifies the evolution of her habitus to align more closely with the new demands.
+
+Adaptability as habitus often comes from sensitive observation of circumstances, conjoined
+with constant reflection, and changes are made based on awareness. This habitus can also be
+backtracked to the experiences before coming to the UK. Yifan's school was an elite one
+renowned in China as a "cradle for cultivating foreign language diplomatic talents." With a
+strong emphasis on English proficiency and open-minded ethos, she described the school's
+educational approach as "enlightenment-oriented". Probably influenced by that, she reflected
+constantly on diverse topics, such as her social privileges and how to utilize them positively.
+Unlike most undergraduates, Haocheng, who had never participated in A-level examinations,
+27
+
+had a tumultuous educational journey. After attending one of Shanghai's top public high
+schools, he was enrolled on a premier university in China, but he took a gap year to set up his
+own business. Later, he dropped out and joined a foundation course at UCL. "I prepared
+nothing when I first came to the UK, but I believed I was prepared since I am very
+adaptable", confessed Haocheng. Immersed in a multicultural environment and more diverse
+formative experiences engage more in constant self-reflection as a more classified
+mechanism, assisting them to transcend traditional geographical boundaries and dynamically
+shape their identities (Marginson, 2014; Rizvi, 2011; Gill, 2010; Wang, 2020). Through
+persistent reflection and modification, they interact broadly with the host society and
+spontaneously establish intercultural contact, as described by Yu & Moskal(2018).
+
+5.2 Consistent Access to Useful Information
+
+Lareau and Horvat (1999) observed that the value of capital varies across different social
+settings, indicating that informational capital may dilute during transnational transitions. This
+section discusses the factors that influence international students' information gathering and
+application, focusing on four key dimensions: language, existing social networks, social skills,
+and the quality of information.
+
+5.2.1 Language as the Foundation
+
+One interesting observation is that although most undergraduates are not hindered seriously
+by their English proficiency, there remains a considerable gap between basic language skills
+and the ability to build and keep relationships and access exclusive information without
+28
+
+language barriers. Particularly for these undergraduates who study abroad, most of them have
+been intensely exposed to the English environment and international education. Mengke, for
+example, developed her English skills robustly in both public schools and A-level courses,
+boosting her confidence in communicating with peers and instructors. Although these
+students rarely suffer from severe language impairment, there are still challenges due to
+incomplete mastery, occasionally leading to troubles. For instance, Yiwen recalled, "I
+misunderstood the title of a business analysis module. I expected it to be data analysis in
+statistics, but it actually often involves writing analytical reports, which I hate."
+
+Wenyi pointed out that language exam preparation is insufficient for addressing real-world
+problems. As she shared, "this helplessness was maximized when infected with flu. I was too
+sick to figure out how to see a doctor or what medicine to take." Likewise, even though
+informal conversations might be manageable for Yutong, she feels depressed by the shark
+disparity in language depth compared to native speakers. Differently, schooling in a
+predominantly native English-speaking environment seems to facilitate deeper integration for
+Stephanie. Her native-level English has significantly facilitated her deeper integration into the
+local environment and make native British friends. In that case, Stephanie not only "felt very
+comfortable going to them and asking personal stuff," but the insights provided by her British
+friends were generally unavailable to the Chinese student community. For example, unlike
+Wenyi, when Stephanie experiences a flare-up of her skin condition, she can apply the
+healthcare tips she had learned through casual conversations in daily interactions with the
+locals.
+
+The multi-layered experience of Yifan further shows how differences in language skills
+influence adaptation. Initially lacking confidence in English, she hesitated to try new things.
+
+29
+
+Every year, returning to the UK after leaving the English environment for the summer
+feels like I'm estranged from English… I'd listen to podcasts to get back into it. After
+reacclimating to English, I'd start going out to watch plays, visit exhibitions, and
+participate in volunteering. (Yifan)
+
+Hence, it could conceivably be suggested that, as a condition to get into the community, once
+language is not a limitation to explore, international students would utilize it as a tool to get
+more information.
+
+5.2.2 Existing Social Network as the First-aid Station
+
+For some Chinese undergraduates in this study, their social networks shift with their
+transition, while others rely on proactively developing new connections and gaining access to
+rich and reliable information. If informational capital is considered the "rules of the game,"
+then pre-college experiences involve forming specific preliminary alliances and cooperation
+with fellow players before the game starts. Terenzini et al. (1994, p.65) view pre-college
+friends as a transitional bridge during the initial weeks or months of college, connecting one
+academic and interpersonal environment to another. As students' social networks expand and
+they forge closer relationships with new acquaintances, the significance of high school
+friendships gradually wanes (Terenzini et al., 1994). However, the findings of this study
+suggest that for Chinese international students, these pre-college friends continue to provide
+solid support and crucial information amidst life's uncertainties (Ramsay, Jones & Barker,
+2006). Within the first three months of arriving in London, Yiwen felt anxious and insecure,
+during which time she found hanging out with her high school friends sufficiently met her
+social needs. Echoed with Yutong's experience that even though she now spends more time
+with coursemates, high school friends remain her most supportive network.
+30
+
+Due to these students' preparations for becoming international before going abroad, which
+included getting to know peers with similar future pathways, the endurance of pre-college
+social networks is ensured. The A-level requirements of universities force students and their
+families to prepare and make decisions in advance. Xiao, for example, transferred from a
+public school to an A-level school, where he was one of 600 graduates that year. Enrolling in
+this school means giving up higher education in China and aiming for a UK university. These
+shared educational paths facilitate connections with peers who have similar academic plans.
+Alongside him, 79 of his peers, including seven pursuing the same major, came to UCL the
+same year. Before university, Xiao and his classmates, who also enrolled at UCL, reviewed
+numerous websites to familiarize themselves with university policies. This preparation helps
+bridge potential information gaps among them. Since these networks were formed with the
+expectation of following similar developmental paths, their networks naturally retain as they
+continue to live in the same environment and support each other through daily challenges.
+These continuously applicable networks in an overseas environment "improve coping
+capacities and minimize the risk of misinformation and miscommunication" (Tasic & Amir,
+2016, p. 4).
+
+Social networks serve as primary sources of information about academic requirements and
+university life and play a vital role in moderating the transition. For example, London's high
+living costs normally unsettle international students (Brown & Holloway, 2008). However,
+forewarnings from a high school upperclassman who had arrived in the UK earlier helped
+Wenyi prepare mentally:
+
+31
+
+Of course, it is still expensive, but the tip prepared me mentally. I lowered
+expectations about London in advance and was even ready for possible accidents.
+(Wenyi)
+
+Insights from seniors in the high school community equipped not only international students
+in daily life but also provided real-life experience of study in UK universities, preventing
+academic frustration.
+Before my application, he (an upperclassman) described the academic stress of my
+program as almost 1.5 times that of others. Being aware of the high-intensity nature of
+it meant a calmer acceptance of limited opportunities for activities. (Xiao)
+
+Beyond individual social networks, the family continues to exert an evident influence, just as
+Xiao still relies on his parents' resources when seeking internship and research opportunities.
+Comparably, Yutong's parents use their social networks to assist her in gathering information
+and making informed decisions. It illustrates that although social networks built after
+transition might somewhat replace family (Cassidy, 2004), informational capital provided by
+family of origin remains irreplaceable (Oyefuga and Shakeshaft, 2021).
+
+Moreover, as the participants said, the pattern of seeking information, such as consulting with
+upperclassmen, largely persists upon arrival in the UK. Younger students valued the seasoned
+perspectives of their seniors. In particular, some participants noted that transition mentors
+assigned by the school provided considerable help in comprehending their new environment.
+As mentioned in the literature review, belonging to the international student community and
+sharing special bonds with people from the same background provide them considerable
+support. In various national and institutional contexts, the Chinese Students and Scholars
+Association (CSSA) plays a similar role as "peer-mentoring and the sharing of academic
+32
+
+information" (Chen and Ross, 2015, p.165). As a CSSA member, Yifan has formed many
+friends there. On the other hand, for Wenyi, CSSA's social media account provides a lot of
+reliable information. These responses confirm Chen and Ross's (2015) finding that the social
+frameworks established by pioneers with similar backgrounds, such as existing societies and
+clubs, have either enhanced or sustained the social status of Chinese students abroad.
+
+5.2.3 Social Skills as the Supply Depot
+
+In the absence of pre-existing social networks, some students manage to forge new
+connections through their social skills. With these skills, some of them achieve even better
+cultural integration. Graduates from Yifan's high school typically pursue their university
+studies in China or the US. To everyone's surprise, she settled for an off-the-wall option—
+that of the UK— whose situation knew almost nobody before arrival. Despite that, her active
+involvement in various societies and constant interaction with new people since high school
+made her adaptation to this new environment more manageable. "I've met and built
+relationships one by one here," she said, expressing high satisfaction with her success in
+building a supportive network since arrival.
+
+Furthermore, Yifan said that running a choir she founded herself boosts her confidence. With
+the choir's success, Yifan felt determined to do whatever she wanted—working part-time in a
+restaurant, volunteering in school, and private tutoring. All these tryouts significantly
+enriched her experiences and formed a positive cycle.
+
+While participants realized that geographical relocations might weaken social networks, and
+existing relationships might hinder deeper cultural integration—making individuals "reluctant
+33
+
+to step out and make new friends," as Mengke pointed out—social skills cultivated in one's
+original setting do not become obsolete when changing environments. Instead, they act as
+reliable and immediately applicable assets in new contexts. Empirical evidence illustrates that
+social networks result from and constitute readily available capital, whereas social skills are a
+form of yielding habitus, fostering adaptability. "There were ten people in the group, but only
+I met him in the end. He ranked the hardest courses each year for me. He told me how
+projects should be done as well," mentioned Xiao, indicating the formation of social
+relationships is significantly influenced by chance and initiative. Activeness as a social habit
+provides individuals with deeper connections and more extensive information.
+
+In addition, for international students, not being confined by their customary social habits is
+beneficial. Lessky, Nairz‐Wirth, and Feldmann (2021) noted that educational settings like
+seminars or group assignments offer substantial opportunities for forming friendships.
+According to participants, many international students find these academic settings ideals for
+forming connections as they continue the social practices they used to engage in during high
+school. Yifan, for example, met her closest friends while discussing gender issues during a
+group assignment in a feminism module. "We share gender-related discussions in our group
+chat now. I feel very comfortable to chat about these sensitive issues with them," she shared.
+Mengke echoed a similar sentiment:
+
+I met people mainly through interactions in the classroom and within my major. It is a
+social science; we have many opportunities to share our thoughts in class. This
+communication helps us get to know our classmates better. And it provides the chance
+to hang out with people who match with you. (Mengke)
+
+34
+
+Interestingly, the situation varies significantly across disciplines. In contrast to Mengke's
+major in social science, Yiwen, studying Mathematics and Statistics, characterizes her major
+as highly competitive, where everyone operates independently. The exam ranking system and
+job-oriented nature contribute to this individualistic environment.
+
+It's mainly about relying on oneself, which feels more trustworthy. What classmates
+say also needs time to check, sometimes not meeting expectations, so it's better to
+depend on oneself. (Yiwen)
+This difference is consistent with Lessky, Nairz‐Wirth, and Feldmann's (2021) observation
+that depending on the circumstances, some students may find it more challenging to foster
+mutual support and sustain relationships, relying instead on working on their own.
+
+Few students from the schools attended by Stephanie and Haocheng pursued higher education
+in the UK. There background was such that both of them rarely encountered peers applying to
+UK universities. Stephanie, raised in Shanghai at an international school exclusively for
+foreign nationals and operated by the US Embassy, found herself in a more globally oriented
+and informationally-rich environment than typical A-level course schools. However, "most
+people preferred going to or returning to the U.S. where they felt more comfortable," the
+school's consultants provided limited insights into UK universities and lacked robust alumni
+networks. With this situation, Stephanie took the initiative; after reading an interview with a
+girl from another international school on a social media platform who had applied to a UK
+law program, she reached out to arrange a coffee meeting. This interaction significantly
+influenced her choices in applying for undergraduate programs.
+
+At the beginning of his first school term, Haocheng used his coding skills to access learning
+resources. Sharing precious resources with classmates to build initial connections is one
+35
+
+strategy he took to expand his social network. Unsatisfied with his first dorm, where most
+residents were Chinese, and everyone was too content in their comfort zones, merely
+engrossed in card games, he moved into an international dorm. There, he immersed himself
+in a mix of cultures, a strategic move aimed at broadening his social interactions and seizing
+new opportunities. Additionally, Haocheng's initiative also brought academic gains. For
+example, he bravely travelled to Cambridge with comprehensive materials to persuade a
+professor to admit him into a desired research group. Both Stephanie and Haocheng
+demonstrated proactivity, a critical social skill, which enabled them to expand their networks
+and gather helpful information after transitioning. Notably, they both exhibited the courage to
+step out of their comfort zones. Their confidence and initiative, quintessential traits fostered
+by elite education (Meiklejohn, Hickey, and Riddle, 2023), are the reasons they continually
+seize opportunities, striving for success that, in turn, leads to even more cultural fit
+opportunities.
+
+5.2.4 Quality of the Information as the Watershed
+
+The effectiveness of information is primarily determined by its relevance to individuals, not
+merely by its abundance. Aligning with the previously discussed concept of information
+capital, the value of information lies in its applicability and potential conversion into
+beneficial capital rather than its sheer volume. A key strategy that enables individuals to
+utilize rules effectively, rather than being constrained by them, is the careful selection and
+discerning filtration of information. Haocheng noted the importance of maintaining a
+"dynamic balance" with information and rules: "It's not about rigidly adhering to the rules nor
+expending all efforts on exploiting the hidden rules." Similarly, Yifan pointed out her
+selective engagement with available resources:
+36
+
+I don't make much use of the career centre because I prioritize my campus life. This
+decision is a trade-off, saving me time for what I value more. (Yifan)
+
+By determining whether the information is usable for oneself, these students strategically
+select, integrate, and apply it to their educational pathways, internships, and other
+achievements. Informational capital thus represents the "rules of the game," necessitating that
+players not only know the game but also understand the correct strategies for engagement.
+
+When students face challenges accessing information, they often turn to external aids, with
+hiring consultants as a straightforward solution. Yutong remarks, "Almost everyone uses offcampus consultants." For these students, the cost of consulting fees is secondary to the ease
+of obtaining information. However, this immediate approach can lead to overlooked
+information reliability and appropriateness evaluations. Wenyi highlighted a more significant
+concern, "I consulted an external advisor who thought I'd suit Education Studies, but she
+didn't know me, nor did I know Education Studies." Moreover, as Mengke described, some
+consultants, despite their supposed expertise in overseas education, have no experience with
+studying abroad. Hence, they can't provide targeted advice.
+
+Therefore, more important than easily accessible information is the ability to judiciously
+evaluate it. Students should prioritize directness and reliability, such as seeking firsthand
+information from official sources. These capabilities and judgments are rooted in strategically
+using capital and adapting tactics to unfamiliar academic fields. This awareness, described by
+Sullivan et al. (2016) as a vital skill for maintaining one's position in higher social echelons,
+can fall under the globally recognized and rewarded mechanisms identified by Winkler and
+Sriram (2015).
+
+37
+
+From high school, Haocheng recognised the value of firsthand information in navigating
+unfamiliar environments. Due to internet regulations in China, he learned to use a Virtual
+Private Network to access Western universities' official websites years ago when applying for
+a summer camp. He was the sole participant who did not hire off-campus consultants in
+application. This manner of acquiring information while simultaneously being judgmental
+allowed him to "apply to undergraduate programs with minimal detours." This practice has
+evolved, enabling him to excel through information advantages over other students. In
+university, the occasion to make informed decisions based on the reliability and relevance of
+information became more common. Just as Stephanie prefers to gather insights from senior
+students about course details not listed on official sites: "This information is hard to seek but
+is crucial."
+
+Stephanie's keenness for information was shaped by her regrettable decision three years ago.
+Born in Hong Kong—a former British colony—she believed that studying in the UK would
+better align with her career prospects, particularly because of the similarities in the judicial
+systems. Reflecting on her choice of study location, she admits, "But that was not the case."
+She now regrets basing her decision solely on imagination and a consultant's advice without
+adequate career planning or seeking opinions from experienced law practitioners. This
+mentality she shares underscores the importance of informational capital in understanding the
+hidden mechanisms of the system, as highlighted by Santos and Costa (2015), who give the
+example of how hierarchies differentiate degrees in terms of academic quality, social
+prestige, and value.
+
+Unlike some students equipped with ready-to-use resources and skills, Stephanie's education
+emphasized empowering students to dynamically adapt and develop their capabilities to
+secure resources. Engaging in numerous trials when the cost of error was relatively low
+38
+
+provided her with experiences and insights that later heightened her sensitivity to
+information. Now, she employs more varied methods to gather and verify information,
+explaining, "Through internships and discussions with legal professionals at different stages,
+I realized..." Likewise, Haocheng's independence from his parents' intervention, supported by
+ample resources, allowed him to embark on ventures like starting a business in Africa during
+a gap year. It was during this period that he truly understood the meaning of the information
+gap and learned to exploit it for gains. They eventually accessed exclusive information
+through the habitus they honed. However, the habitus they used to grasp these opportunities
+was shaped by accumulated experience in elite education. As Gavillet (2019) notes, the
+benefits of elite education often stem from the accumulation of resources and enriching
+experiences that provide guidance and fault tolerance for their future choices (Nespor, 2014).
+
+39
+
+6 Conclusion
+
+In conclusion, the primary finding is that the ability of international students to adapt to life
+abroad and continuously gather valuable information is often developed through a globally
+esteemed elite mechanism before their transition. If informational capital represents the "rules
+of the game," the occurrence of cleft habitus presents each player with a choice. Consistent
+with existing research, cultural shock may be pervasive for international students, which
+usually thrust individuals into crisis. Successful cultural fit depends on whether this instance
+is perceived as an opportunity to achieve better fit-in rather than a signal to retreat and
+withdraw. Depending on their available resources and experience, individuals make different
+choices. Some Chinese international students use their accumulated pre-existing habitus,
+information, and social networks to cushion the initial discomforts of arriving in a new
+environment. This strategy helps minimize internal struggles and facilitates a smoother
+transition to university life overseas. However, to transcend superficial integration and gain a
+richer experience, well-developed social networking skills, command of crucial information,
+and proactivity in seizing opportunities should be necessary. Some Chinese international
+students may actively integrate into the new environment under the guidance of their preexisting habitus, achieving a better cultural fit that involves more significant interaction with
+40
+
+the local culture. Continuously accessing efficient information about the new environment
+using various strategies is decisive in this process.
+
+Current research on international students primarily emphasizes the post-study-abroad
+advantages and subsequent transformation in students' lives as they manage to shift sociocultural contexts to develop transnational identities and cultivate diverse selves. Instead of
+discussing the benefits of study abroad experiences, this study shifts attention to the existing
+capitals and habitus that shape international students' experiences in foreign academic and
+social environments. Specifically, the focus seeks to understand how the privileges of
+international students before studying abroad shape the practice forms that achieve cultural fit
+in their overseas experiences. In doing this, it complements existing research by filling a gap
+in understanding the antecedents of successful cultural fit. The findings also enhance the scope
+of employing Bourdieu's framework in discussing straddlers' situation in facing navigational
+difficulties within unfamiliar cultural territories. By offering critical insights into the transition
+challenges of international students, these considerations are necessary in developing a more
+inclusive and supportive educational environment to address their variegated needs.
+
+The study also acknowledges limitations. Although the qualitative approach provides depth,
+through the small sample size of eight participants from a controlled background, it lacks the
+breadth and statistical power for broader generalizations. Relying solely on Bourdieu's
+framework may restrict the interpretation of empirical results to one perspective. The sample
+of eight Chinese international students from a single university does not represent all Chinese
+students across the UK. Moreover, China's cultural and economic diversity suggests that
+students from different backgrounds might encounter unique challenges. This research captures
+a specific period of students' experiences. Future studies could employ longitudinal methods
+to watch changes over time, adding insights into the dynamics of cultural fit. Besides,
+41
+
+integrating quantitative and qualitative methodologies in future research could enhance the
+validity and breadth of understanding regarding the issues at hand.
+
+7 Reference List
+Andrade, M.S. (2006). International Students in English-speaking universities: Adjustment
+Factors. Journal of Research in International Education, 5(2), pp.131–154.
+Aries, E. and Seider, M. (2005). The Interactive Relationship between Class Identity and the
+College Experience: the Case of Lower-Income Students. Qualitative Sociology, 28(4),
+pp.419–443. doi:https://doi.org/10.1007/s11133-005-8366-1.
+Basaran, T. and Olsson, C. (2017). Becoming International: on Symbolic Capital, Conversion
+and Privilege. Millennium: Journal of International Studies, 46(2), pp.96–118.
+doi:https://doi.org/10.1177/0305829817739636.
+Bathmaker, A.-M., Ingram, N. and Waller, R. (2013). Higher education, Social Class and the
+Mobilisation of capitals: Recognising and Playing the Game. British Journal of Sociology of
+Education, 34(5-6), pp.723–743.
+Bhattacharya, K. (2017). Fundamentals of Qualitative Research. New York: Routledge,
+2017.: Routledge. doi:https://doi.org/10.4324/9781315231747.
+Bogdan, R.C. and Biklen, S.K. (1998). Qualitative Research in Education. An Introduction to
+Theory and Methods. Third Edition. Pearson.
+Bourdieu , P. (2002). Habitus. In: Habitus: a Sense of Place. Ashgate.
+Bourdieu , P. and Passeron, J.-C. (1977). Reproduction in Education, Society and
+Culture. Sage Publications , Sage. doi:https://doi.org/10.1080/0305006780140109.
+Bourdieu, P. (1977). Outline of a Theory of Practice. Cambridge: Cambridge University
+Press.
+42
+
+Bourdieu, P. (1984). Distinction: a Social Critique of the Judgement of Taste. London:
+Routledge, Taylor & Francis Group.
+Bourdieu, P. (1986). Forms of Capital. Journal of Economic Sociology, 3(5), pp.241–258.
+Bourdieu, P. (1990a). In Other Words : Essays Towards Reflexive Sociology. California:
+Stanford University Press.
+Bourdieu, P. (1990b). The Logic of Practice. Stanford: Stanford University Press.
+Bourdieu, P. (2000). Pascalian Meditations. [online] Translated by R. Nice. Stanford
+University Press. Stanford: Stanford University Press. Available at:
+https://www.sup.org/books/title/?id=2042 [Accessed 8 Dec. 2023].
+Bourdieu, P. (2006). Science of Science and Reflexivity. Cambridge ; Malden: Polity.
+Bourdieu, P. and Wacquant, L. (2001). Neoliberal newspeak: Notes on the New Planetary
+Vulgate. Radical Philosophy , 105(1).
+Braun, V. and Clarke, V. (2006). Using Thematic Analysis in Psychology. Qualitative
+Research in Psychology, 3(2), pp.77–101.
+Braun, V. and Clarke, V. (2012). Thematic Analysis. APA Handbook of Research Methods in
+psychology, Vol 2: Research designs: Quantitative, qualitative, neuropsychological, and
+biological., [online] 2(2), pp.57–71. doi:https://doi.org/10.1037/13620-004.
+Braun, V., Clarke, V. and Hayfield, N. (2019). ‘A Starting Point for Your journey, Not a
+map’: Nikki Hayfield in Conversation with Virginia Braun and Victoria Clarke about
+Thematic Analysis. Qualitative Research in Psychology, 19(2), pp.1–22.
+Brown, L. (2007). The Incidence of Study-Related Stress in International Students in the
+Initial Stage of the International Sojourn. Journal of Studies in International Education,
+12(1), pp.5–28. doi:https://doi.org/10.1177/1028315306291587.
+Brown, L. and Holloway, I. (2008). The Initial Stage of the International sojourn: Excitement
+or Culture shock? British Journal of Guidance & Counselling, 36(1), pp.33–49.
+doi:https://doi.org/10.1080/03069880701715689.
+Cassidy, T. (2004). Mapping Variables Related to Social Identity, Distress and Perceived
+Health in an Undergraduate Student Population. Social Psychology of Education, 7(3),
+pp.339–352. doi:https://doi.org/10.1023/b:spoe.0000037504.24380.b3.
+
+43
+
+Cebolla-Boado, H., Hu, Y. and Soysal, Y.N. (2018). Why Study abroad? Sorting of Chinese
+Students across British Universities. British Journal of Sociology of Education, 39(3),
+pp.365–380. doi:https://doi.org/10.1080/01425692.2017.1349649.
+Charmaz, K. (2019). Constructing Grounded Theory. [online] SAGE Publications Ltd.
+Available at: https://uk.sagepub.com/en-gb/eur/constructing-grounded-theory/book235960.
+Check, J. and Schutt, R.K. (2012). Research Methods in Education. Research Methods in
+Education. SAGE Publications. doi:https://doi.org/10.4135/9781544307725.
+Chen, Y. and Ross, H. (2015). ‘Creating a Home Away from Home’: Chinese Undergraduate
+Student Enclaves in US Higher Education. Journal of Current Chinese Affairs, 44(3),
+pp.155–181. doi:https://doi.org/10.1177/186810261504400307.
+Cohen, D. and Crabtree, B. (2006). Qualitative Research Guidelines Project. [online]
+Qualres.org. Available at: http://www.qualres.org/HomeSemi-3629.html.
+Creswell, J.W. (2013). Qualitative Inquiry & Research Design : Choosing among Five
+Approaches. 3rd ed. Los Angeles: Sage Publications.
+Creswell, J.W. and Poth, C.N. (2018). Qualitative Inquiry and Research Design. [online]
+SAGE Publications Inc. Available at: https://us.sagepub.com/en-us/nam/qualitative-inquiryand-research-design/book246896.
+Crozier, G., Reay, D., Clayton, J., Colliander, L. and Grinstead, J. (2008). Different Strokes
+for Different folks: Diverse Students in Diverse Institutions – Experiences of Higher
+Education. Research Papers in Education, 23(2), pp.167–177.
+doi:https://doi.org/10.1080/02671520802048703.
+DiCicco-Bloom, B. and Crabtree, B.F. (2006). The Qualitative Research Interview. Medical
+Education, 40(4), pp.314–321. doi:https://doi.org/10.1111/j.1365-2929.2006.02418.x.
+Doughty, H.A. (2020). Administrative Ethics in the Corporate College. Advances in higher
+education and professional development book series, pp.131–155.
+doi:https://doi.org/10.4018/978-1-7998-4141-8.ch008.
+Duffy, T.M. and Cunningham, D.J. (2006). Constructivism: Implications for the Design and
+Delivery of Instruction. [online] members.aect.org. Available at:
+https://members.aect.org/edtech/ed1/07/index.html.
+Dunne, C. (2013). Exploring Motivations for Intercultural Contact among Host Country
+University students: an Irish Case Study. International Journal of Intercultural Relations,
+37(5), pp.567–578. doi:https://doi.org/10.1016/j.ijintrel.2013.06.003.
+44
+
+Edgerton, J.D. and Roberts, L.W. (2014). Cultural Capital or habitus? Bourdieu and beyond
+in the Explanation of Enduring Educational Inequality. School Field, [online] 12(2), pp.193–
+220. doi:https://doi.org/10.1177/1477878514530231.
+Elliot, D.L., Reid, K. and Baumfield, V. (2015). Beyond the amusement, Puzzlement and
+challenges: an Enquiry into International Students’ Academic Acculturation. Studies in
+Higher Education, 41(12), pp.2198–2217.
+doi:https://doi.org/10.1080/03075079.2015.1029903.
+Field, J. (2016). Social Capital. Abingdon, Oxon ; New York, NY : Routledge,: Routledge.
+doi:https://doi.org/10.4324/9780203794623.
+Friebertshäuser, B. (1992). Übergangsphase Studienbeginn. Eine Feldstudie Über Riten Der
+Iniation in Einer Studentischen Fachkultur. www.abebooks.co.uk. Juventa Verlag.
+Friedman, S. (2016). Habitus Clivé and the Emotional Imprint of Social Mobility. The
+Sociological Review, 64(1), pp.129–147. doi:https://doi.org/10.1111/1467-954x.12280.
+Gavillet, R. (2019). Experiential Learning and Its Impact on College Students. Texas
+Education Review, [online] 7(1), pp.140–149. doi:https://doi.org/10.26153/tsw/21.
+Gigler, B.-S. (2011). Informational Capabilities - the Missing Link for the Impact of ICT on
+Development. SSRN Electronic Journal. doi:https://doi.org/10.2139/ssrn.2191594.
+Gill, S. (2010). The homecoming: an Investigation into the Effect That Studying Overseas
+Had on Chinese postgraduates’ Life and Work on Their Return to China. Compare: A
+Journal of Comparative and International Education, 40(3), pp.359–376.
+doi:https://doi.org/10.1080/03057920903464555.
+Grodsky, E. (2007). Compensatory Sponsorship in Higher Education. American Journal of
+Sociology, 112(6), pp.1662–1712. doi:https://doi.org/10.1086/512707.
+Gu, Q., Schweisfurth, M. and Day, C. (2009). Learning and Growing in a ‘Foreign’ context:
+Intercultural Experiences of International Students. Compare: A Journal of Comparative and
+International Education, 40(1), pp.7–23. doi:https://doi.org/10.1080/03057920903115983.
+Gurin, P., Dey, E., Hurtado, S. and Gurin, G. (2002). Diversity and Higher Education: Theory
+and Impact on Educational Outcomes. Harvard Educational Review, 72(3), pp.330–367.
+doi:https://doi.org/10.17763/haer.72.3.01151786u134n051.
+Hannerz, U. (1990). Cosmopolitans and Locals in World Culture. Theory, Culture & Society,
+7(2-3), pp.237–251. doi:https://doi.org/10.1177/026327690007002014.
+
+45
+
+Holliman, A.J., Bastaman, A.S., Wu, H.S., Xu, S. and Waldeck, D. (2023). Exploring the
+Experiences of International Chinese Students at a UK university: a Qualitative
+Inquiry. Multicultural Learning and Teaching. doi:https://doi.org/10.1515/mlt-2022-0020.
+Ingram, N. (2018). Working-Class Boys and Educational Success. Palgrave Studies in
+Gender and Education. London: Palgrave Macmillan UK. doi:https://doi.org/10.1057/978-1137-40159-5.
+Ingram, N. and Abrahams, J. (2015). Stepping outside of oneself: How a cleft-habitus Can
+Lead to Greater Reflexivity through Occupying ‘the Third space’. In: J. Thatcher, N. Ingram,
+C. Burke and J. Abrahams, eds., Bourdieu: the next generation: the Development of
+Bourdieu’s Intellectual Heritage in Contemporary UK Sociology. Routledge, pp.140–156.
+Ivemark, B. and Ambrose, A. (2023). From Doxic Breach to Cleft habitus: affect, Reflexivity
+and Dispositional Disjunctures. British Journal of Sociology of Education, 44(5), pp.944–
+961. doi:https://doi.org/10.1080/01425692.2023.2209286.
+Jamaluddin, A.S. and Idrus, F. (2021). Surmounting Stereotyping of International
+Students. Theory and Practice in Language Studies, 11(9), pp.1121–1130.
+doi:https://doi.org/10.17507/tpls.1109.20.
+Kallio, H., Pietilä, A.-M., Johnson, M. and Kangasniemi, M. (2016). Systematic
+Methodological review: Developing a Framework for a Qualitative semi-structured Interview
+Guide. Journal of Advanced Nursing, 72(12), pp.2954–2965.
+doi:https://doi.org/10.1111/jan.13031.
+Kim, T. (2010). Transnational Academic mobility, knowledge, and Identity
+Capital. Discourse: Studies in the Cultural Politics of Education, 31(5), pp.577–591.
+doi:https://doi.org/10.1080/01596306.2010.516939.
+Kim, Y.-R. (2020). Classed Education Trajectories and Intimate Partnering of International
+students: a Case of Chinese International Undergraduate Students in the United
+States. Journal of Ethnic and Migration Studies, 49(5), pp.1–19.
+doi:https://doi.org/10.1080/1369183x.2020.1828841.
+Kim, Y.Y. (2008). Intercultural personhood: Globalization and a Way of Being. International
+Journal of Intercultural Relations, 32(4), pp.359–368.
+doi:https://doi.org/10.1016/j.ijintrel.2008.04.005.
+Lamont, M. and Lareau, A. (1988). Cultural Capital: Allusions, Gaps and Glissandos in
+Recent Theoretical Developments. Sociological Theory, [online] 6(2), p.153.
+doi:https://doi.org/10.2307/202113.
+46
+
+Lareau, A. and Horvat, E.M. (1999). Moments of Social Inclusion and Exclusion race, class,
+and Cultural Capital in family-school Relationships. Sociology of Education, 72(1), pp.37–
+53. doi:https://doi.org/10.2307/2673185.
+Lareau, A. and Weininger, E.B. (2003). Cultural Capital in Educational research:
+A critical assessment. Theory and Society, [online] 32(5/6), pp.567–606.
+doi:https://doi.org/10.1023/b:ryso.0000004951.04408.b0.
+Lee, E.M. and Kramer, R. (2012). Out with the Old, In with the New? Habitus and Social
+Mobility at Selective Colleges. Sociology of Education, 86(1), pp.18–35.
+doi:https://doi.org/10.1177/0038040712445519.
+Lehmann, W. (2013). Habitus Transformation and Hidden Injuries. Sociology of Education,
+87(1), pp.1–15. doi:https://doi.org/10.1177/0038040713498777.
+Lessky, F., Nairz‐Wirth, E. and Feldmann, K. (2021). Informational capital and the transition
+to university: First‐in‐family students’ experiences in Austrian higher education. European
+Journal of Education, 56(1), pp.27–40. doi:https://doi.org/10.1111/ejed.12437.
+Long Finance (2020). GFCI 28 Rank. [online] www.longfinance.net. Available at:
+https://www.longfinance.net/programmes/financial-centre-futures/global-financial-centresindex/gfci-28-explore-data/gfci-28-rank/.
+Lubrano, A. (2005). Limbo : blue-collar roots, white-collar Dreams. [online] New York ;
+Chichester: Wiley. Available at: https://www.wiley.com/enus/Limbo%3A+Blue+Collar+Roots%2C+White+Collar+Dreams-p-9780471714392.
+Marginson, S. (2014a). Student Self-Formation in International Education. Journal of Studies
+in International Education, 18(1), pp.6–22. doi:https://doi.org/10.1177/1028315313513036.
+Marginson, S. (2014b). Student Self-Formation in International Education. Journal of Studies
+in International Education, 18(1), pp.6–22. doi:https://doi.org/10.1177/1028315313513036.
+Martin, F. (2016). Overseas Study as ‘Escape Route’ for Young Chinese Women. University
+of Nottingham.
+Martin, S.R. and Harrison, S. (2022). Upward Mobility, the Cleft Habitus, and Speaking Up:
+How Class Transitions Relate to Individual and Organizational Antecedents of
+Voice. Academy of Management Journal. doi:https://doi.org/10.5465/amj.2020.1550.
+Meiklejohn, C., Hickey, A. and Riddle, S. (2023). ‘It Comes with More Baggage than
+prestige’: Deferred Culpability and Disavowal among Elite Boys’ School Alumni. Discourse,
+18 Jun., pp.1–13. doi:https://doi.org/10.1080/01596306.2023.2224244.
+47
+
+Munk, M.D. (2009). Transnational Investments in Informational Capital. Acta Sociologica,
+52(1), pp.5–23. doi:https://doi.org/10.1177/0001699308100631.
+Nespor, J. (2014). Schooling for the long-term: Elite Education and Temporal
+Accumulation. Zeitschrift für Erziehungswissenschaft, 17(S3), pp.27–42.
+doi:https://doi.org/10.1007/s11618-014-0520-7.
+Newsome, L.K. and Cooper, P. (2016). International Students’ Cultural and Social
+Experiences in a British University: ‘Such a Hard Life [it] Is Here’. Journal of International
+Students, 6(1), pp.195–215. doi:https://doi.org/10.32674/jis.v6i1.488.
+Nuñez, A.-M. (2009). Latino Students’ Transitions to College: A Social and Intercultural
+Capital Perspective. Harvard Educational Review, 79(1), pp.22–48.
+doi:https://doi.org/10.17763/haer.79.1.wh7164658k33w477.
+O’Shea, D.W. and Richardson, J.G. (1987). Handbook of Theory and Research for the
+Sociology of Education. Contemporary Sociology, 16(4), p.571.
+doi:https://doi.org/10.2307/2069964.
+O’Shea, S. (2019). Crossing Boundaries: Rethinking the Ways That first-in-family Students
+Navigate ‘Barriers’ to Higher Education. British Journal of Sociology of Education, 41(1),
+pp.95–110. doi:https://doi.org/10.1080/01425692.2019.1668746.
+Ostrower, F. (1998). The arts as cultural capital among elites: Bourdieu’s theory
+reconsidered. Poetics, 26(1), pp.43–53. doi:https://doi.org/10.1016/s0304-422x(98)00010-2.
+Ovie, G.R. and Barrantes, L. (2019a). A Dialogue of Shared Discoveries on Immigration: a
+Duoethnography of International Students in Canada. Interchange, 50(3), pp.273–291.
+doi:https://doi.org/10.1007/s10780-019-09364-2.
+Ovie, G.R. and Barrantes, L. (2019b). A Dialogue of Shared Discoveries on Immigration: a
+Duoethnography of International Students in Canada. Interchange, 50(3), pp.273–291.
+doi:https://doi.org/10.1007/s10780-019-09364-2.
+Oyefuga, E. and Shakeshaft, C. (2021). Social Capital and the Higher Education Academic
+achievement: Using cross-classified Multilevel Models to Understanding the Impact of
+Society on Educational Outcomes. Youth & Society, 55(1), p.0044118X2110429.
+doi:https://doi.org/10.1177/0044118x211042912.
+Peacock, N. and Harrison, N. (2008). ‘It’s so Much Easier to Go with What’s Easy’. Journal
+of Studies in International Education, 13(4), pp.487–508.
+doi:https://doi.org/10.1177/1028315308319508.
+48
+
+Peng, H. (2015). Dandyism and Transcultural Modernity. Routledge.
+Ponzini, A. (2020). Educating the New Chinese middle-class youth: the Role of Quality
+Education on Ideas of Class and Status. The Journal of Chinese Sociology, 7(1).
+doi:https://doi.org/10.1186/s40711-019-0113-1.
+Ponzini, A. (2021). Institutional and policy-related Implications on Quality Education Access
+in Shanghai: Middle-class locals, Outsiders and Foreigners Compared. Cogent Social
+Sciences, 7(1), p.1909793. doi:https://doi.org/10.1080/23311886.2021.1909793.
+Ramsay, S., Jones, E. and Barker, M. (2006). Relationship between Adjustment and Support
+Types: Young and Mature-aged Local and International First Year University
+Students. Higher Education, [online] 54(2), pp.247–265. doi:https://doi.org/10.1007/s10734006-9001-0.
+Reay, D. (2017). Miseducation: Inequality, Education and the Working Classes. Bristol:
+Policy Press.
+Rizvi, F. (2011). Theorizing Student Mobility in an Era of Globalization. Teachers and
+Teaching, 17(6), pp.693–701. doi:https://doi.org/10.1080/13540602.2011.625145.
+Ryan, G.W. and Bernard, H.R. (2003). Techniques to Identify Themes. Field Methods, 15(1),
+pp.85–109. doi:https://doi.org/10.1177/1525822X02239569.
+Santos, C.T. and Costa, L.A.L. da S. (2015). Informational Capital and Sens Du jeu:
+Identifying the Quality of Higher Education. Vibrant: Virtual Brazilian Anthropology, 12(2),
+pp.233–272. doi:https://doi.org/10.1590/1809-43412015v12n2p233.
+Sassen, S. (2019). The Global City. [online] Princeton.edu. Available at:
+https://press.princeton.edu/books/paperback/9780691070636/the-global-city.
+Scanlon, L., Rowling, L. and Weber, Z. (2007). ‘You don’t Have like an Identity … you Are
+Just Lost in a crowd’: Forming a Student Identity in the First-year Transition to
+University. Journal of Youth Studies, 10(2), pp.223–241.
+doi:https://doi.org/10.1080/13676260600983684.
+Shen, J. (2023). A Study of Elite Education in Chinese International High Schools. Journal of
+education, humanities and social sciences, 17, pp.134–139.
+doi:https://doi.org/10.54097/ehss.v17i.10477.
+Sherry, M., Thomas, P. and Chui, W.H. (2010). International students: a Vulnerable Student
+Population. Higher Education, [online] 60(1), pp.33–46. doi:https://doi.org/10.1007/s10734009-9284-z.
+49
+
+Silverman, D. (2001). Interpreting Qualitative Research : Methods for Analysing talk, Text
+and Interaction. London: Sage.
+Sovic, S. (2009). Hi-bye Friends and the Herd instinct: International and Home Students in
+the Creative Arts. Higher Education, 58(6), pp.747–761. doi:https://doi.org/10.1007/s10734009-9223-z.
+Spencer-Oatey, H., Dauber, D., Jing, J. and Lifei, W. (2017). Chinese Students’ Social
+Integration into the University community: Hearing the Students’ Voices. Higher Education,
+74(5), pp.739–756. doi:https://doi.org/10.1007/s10734-016-0074-0.
+St, E.P., Hu, S. and Fisher, A.S. (2010). Breaking through the Access Barrier. Routledge.
+Stanton-Salazar, R. (1997). A Social Capital Framework for Understanding the Socialization
+of Racial Minority Children and Youths. Harvard Educational Review, 67(1), pp.1–41.
+doi:https://doi.org/10.17763/haer.67.1.140676g74018u73k.
+Sullivan, A., Parsons, S., Green, F. and Wiggins, R. (2016). Social origins, Elite Education
+and Elite Destinations. [online] Available at: https://www.ucl.ac.uk/ioe/sites/ioe/files/clssocial-origins-elite-education-and-elite-destinations.pdf.
+Swidler, A. (1986). Culture in Action: Symbols and Strategies. American Sociological
+Review, [online] 51(2), pp.273–286. doi:https://doi.org/10.2307/2095521.
+Tasic, J. and Amir, S. (2016). Informational Capital and Disaster resilience: the Case of Jalin
+Merapi. Disaster Prevention and Management: An International Journal, 25(3), pp.395–411.
+doi:https://doi.org/10.1108/dpm-07-2015-0163.
+Taylor, M.C. (2005). Qualitative Research in Health Care. www.scirp.org, New York: Open
+University Press, pp.39–55.
+Terenzini, P.T., Rendon, L.I., Lee Upcraft, M., Millar, S.B., Allison, K.W., Gregg, P.L. and
+Jalomo, R. (1994). The Transition to college: Diverse students, Diverse Stories. Research in
+Higher Education, [online] 35(1), pp.57–73. doi:https://doi.org/10.1007/bf02496662.
+Tsai, J.L., Chentsova-Dutton, Y. and Wong, Y. (2002). Why and How We Should Study
+Ethnic identity, acculturation, and Cultural orientation. In: Asian American psychology: the
+Science of Lives in context. American Psychological Association, pp.41–65.
+doi:https://doi.org/10.1037/10473-002.
+UK Council for International Students Affairs (2017). International Student Statistics. UK
+Higher Education.
+
+50
+
+United Nations Educational, Scientific and Cultural Organization (2019). Global Flow of
+Tertiary-Level Students. [online] uis.unesco.org. Available at: https://uis.unesco.org/en/uisstudent-flow.
+Wang, S. (2020). Self in mobility: Exploring the Transnational in-between Identity of
+Chinese Student Returnees from the UK. Compare: a Journal of Comparative and
+International Education, 52(6), pp.1–18.
+doi:https://doi.org/10.1080/03057925.2020.1840335.
+Wang, S. (2022). The Transnational In‐between Identity of Chinese Student Returnees from
+the UK: Mobility, Variations and Pathways. British Educational Research Journal, 48(3).
+doi:https://doi.org/10.1002/berj.3781.
+Wengraf, T. (2001). Qualitative Research Interviewing.
+doi:https://doi.org/10.4135/9781849209717.
+Winkler, C. and Sriram, R. (2015). Development of a Scale to Measure Academic Capital in
+High-Risk College Students. The Review of Higher Education, 38(4), pp.565–587.
+doi:https://doi.org/10.1353/rhe.2015.0032.
+Yin, R.K. (2016). Qualitative Research from Start to Finish. 2nd ed. New York ; London:
+The Guilford Press.
+Yosso, T.J. (2005). Whose Culture Has capital? a Critical Race Theory Discussion of
+Community Cultural Wealth. Race Ethnicity and Education, 8(1), pp.69–91.
+doi:https://doi.org/10.1080/1361332052000341006.
+Yu, Y. and Moskal, M. (2018). Missing Intercultural Engagements in the University
+Experiences of Chinese International Students in the UK. Compare: A Journal of
+Comparative and International Education, 49(4), pp.1–18.
+doi:https://doi.org/10.1080/03057925.2018.1448259.
+Zhang, S. and Tang, X. (2021). Cultural Capital as Class Strength and Gendered Educational
+Choices of Chinese Female Students in the United Kingdom. Frontiers in Psychology, 11.
+doi:https://doi.org/10.3389/fpsyg.2020.584360.
+Zhang, Y. (2023). Chinese students’ Social Experiences at a University in the United
+Kingdom. doi:https://doi.org/10.31219/osf.io/4d6tz.
+
+51
+
+8 Appendix
+Appendix 1
+BA Education Studies Dissertation Ethics Application Form 2023-2024
+Once you have gained the approval of your supervisor, you must upload the signed
+form in the ‘BA dissertation ethics application form’ submission box (available within
+the Ethics tab on moodle) at least one week before you plan to commence data
+collection.
+Name: GWLS2
+Title: Mapping the Journey: Understanding the Role of Habitus and Capitals in Chinese
+International Students' Cultural Fit
+Confirmation of Informed Consent. Will you gain the informed consent of participants? How
+will this be obtained?
+Yes, participants will be contacted via my ucl email address for confirmation of their
+willingness and pre-interview questions to gather essential information. The informed
+consent will be provided before the interview. Prior to their participation, participants will be
+fully informed about the research's objectives, benefits, potential risks, and data protection
+measures. This information will be provided through participant information sheets and
+written informed consent forms, which will be designed to ensure competence, non-coercion,
+full disclosure, and comprehension. Participants will be given the opportunity to understand
+and agree to take part in the research, including being made aware of any potential harm.
+They will also have the right to withdraw their participation at any point during the study.
+Will you guarantee the anonymity and confidentiality of your participants? How will this be
+achieved?
+Yes, I am committed to ensuring the anonymity and confidentiality of participants throughout
+the research process. I would claim that if the interview is taken place in any public space,
+then there might be a decrease in confidentiality. There may also limits to confidentiality if
+they tell you something that may put themselves, you or other people in danger. This will be
+explicitly communicated to participants in the information sheet. However, confidentiality
+will be rigorously upheld by employing aliases and obscuring specific personal details,
+including but not limited to exact location, institution, or occupation, as necessary. To
+achieve this, all personal identifiers will be carefully removed and replaced with pseudonyms
+to keep authenticity and respect for participants. The results will be presented in aggregate
+form, ensuring that individual participants cannot be identified. Additionally, all data will be
+securely stored, and access will be restricted to authorized members of the research team to
+safeguard participant information.
+52
+
+Storage of Data.
+During the Research:
+Where will the data be stored? What measures will you take to ensure the safe storage of
+data.
+All personal data will be stored and processed in compliance with the General Data
+Protection Registration (GDPR). Data collected will be processed anonymously in research
+findings to safeguard participants' privacy and prevent any potential breaches. The recordings
+will be transcribed as fast as possible after the interview and deleted immediately.
+Transcribed documents are uploaded to UCL (N:) Drive which provides secure, encrypted
+file storage that is backed up daily. All transcribed and analytical documents are deleted at
+the end of the academic year. Compliance with data protection regulations will be
+maintained, and data will not be used for any purposes beyond the research.
+After the Research:
+Where will the data be stored?
+How long will the data and records be kept for and in what format?
+I will delete all the data after I received my BA qualification. And I will not be archiving my
+data for other researchers to use.
+Confirm that all personal data will be stored and processed in compliance with the General
+Data Protection Regulation (GDPR). (see guidance on moodle).
+Yes
+Are there particular features of the proposed work which may raise ethical concerns or add
+to the complexity of ethical decision making? If so, please outline how you will deal with
+these.
+It is important that you demonstrate your awareness of potential risks or harm that may
+arise as a result of your research. You should then demonstrate that you have considered
+ways to minimise the likelihood and impact of each potential harm that you have
+identified. Please be as specific as possible in describing the ethical issues you will have to
+address. Please consider / address ALL issues that may apply.
+Ethical concerns may include, but not be limited to, the following areas:
+− International research
+− Methods
+− Risks to participants and/or researchers
+− Sampling
+− Confidentiality/Anonymity
+− Recruitment
+− Disclosures/limits to confidentiality
+− Gatekeepers
+− Data storage and security both during and after
+− Informed consent
+the research (including transfer, sharing,
+− Potentially vulnerable
+encryption, protection)
+participants
+− Reporting
+− Safeguarding/child
+− Dissemination and use of findings
+protection
+− Sensitive topics
+
+53
+
+My research covers the sensitive and personal topics of people’s social economic status. It
+is important to maintain a fair and balanced representation of fair and unbiased treatment of
+all participants, irrespective of their gender, age, university, proficiency and personal
+experiences will be ensured. Throughout the project I will ensure that I reflect on my
+position to minimize bias. Participants will confirm their voluntariness through my UCL
+email address and will ensure that the participant information form and written informed
+consent are signed by them prior to the start of the interview. I will use anonymity methods
+such as pseudonyms to ensure the confidentiality of this study. Audio recordings will be
+transcribed as soon as possible and deleted immediately. The transcription files will be
+stored in a password protected UCL (N:) and no one other than myself and my supervisor
+will have access to it. All participants will be able to withdraw at any time until the 1st of
+April. Transparency throughout the research process will allow participants and the public
+to be informed about the research methodology and results. Additionally, external
+oversight and peer review will be welcomed to guarantee the scientific validity and
+reliability of the research methods.
+Please attach the consent form and information sheet templates along with this form if you
+are undertaking empirical research. This is a prerequisite to gaining ethical approval for your
+project.
+I have read, understood and will abide by the BERA set of guidelines (if you are adhering to
+a different set of guidelines- eg. British Sociological Association, state here).
+Yes:
+No:
+I confirm that to the best of my knowledge:
+The above information is correct and that this is a full description of the ethics issues that
+may arise in the course of this project.
+Student’s signature:
+GWLS2
+27/01/2024
+Final Approval by Supervisor. It should be noted that the initial submission of this form
+(as an appendix to the final draft of your research proposal) is likely to lead to
+suggested amendments by your supervisor (e.g. requests for clarification, suggestions
+for considerations of ethical issues that may have been overlooked etc.). Once all
+relevant considerations have been sufficiently addressed your supervisor will sign
+below.
+Supervisor’s Approval
+I am satisfied the relevant ethical considerations have been addressed:
+Supervisors Signature
+
+Date: 25/01/2024
+Any Further comments:
+Once the above approval by the supervisor has been granted, the signed form must be
+uploaded by the student on the Ethics Approval Submission box at least one week before
+54
+
+you plan to begin data collection:
+https://moodle.ucl.ac.uk/course/view.php?id=34946&section=22
+
+Appendix 2
+Mapping the Journey:
+Understanding the Role of Habitus and Capitals in Chinese International Students'
+Cultural Fit
+11/2023-5/2024
+Information sheet for interviewees
+My name is GWLS2 and I am inviting you to take in part in my research project, Mapping
+the Journey: Understanding the Role of Habitus and Capitals in Chinese International
+Students' Cultural Fit. I am an undergraduate student at the UCL Institute of Education
+currently working on my dissertation research. The Institute of Education is responsible for a
+quarter of all education research in the UK and has consistently held the top global ranking in
+the field of Education for eight consecutive years (UCL 2021).
+In this study I am hoping to delve into the impact of mobility on international students'
+habitus, examining their level of awareness and how this phenomenon influences their lived
+experiences. This research aims to explore the experiences of international students during
+global transitions. I very much hope that you would like to take part. This information sheet
+will try and answer any questions you might have about the project, but please don’t hesitate
+to contact me if there is anything else you would like to know.
+Who is carrying out the research?
+All research is carried out by GWLS2 with support from my supervisor Olga Cara.
+Why are we doing this research?
+I would like to learn about your study abroad experience compared to your previous
+experiences in the home country and what the study abroad experience offered you.
+Why am I being invited to take part?
+You are selected because you are currently studying abroad, and you are an undergraduate
+student that meets the requirements of this study.
+What will happen if I choose to take part?
+You are expected to participate in a 30-minute in person interview to discuss your personal
+experience and insights. I will begin with some simple personal questions as an icebreaker
+and then invite you to share your study abroad experiences and discuss your views and
+attitudes. All questions are open and there no right or wrong answers.
+
+55
+
+Will anyone know I have been involved?
+Although this is a face-to-face interview, I will still ensure maximum anonymity and
+confidentiality. The recordings will be stored under the labels of your pseudonym. All
+transcripts and following analysis in the dissertation will not contain your names or any other
+identifiable information. Besides, you always have the right to withdrawal. Please inform me
+by 1st April.
+Could there be problems for me if I take part?
+You will not be judged by your performance during the research and there will be no
+consequences regarding if you decide not to answer some or all questions during the
+interview. All the results will be presented anonymously.
+What will happen to the results of the research?
+I will be recording this interview, but all recordings will be stored anonymously on a
+password-protected drive and will be deleted after transcripts have been made. No other use
+will be made of the data without your written permission, and no one outside the project will
+be allowed access to the original recordings.
+Do I have to take part?
+It is entirely up to you whether or not you choose to take part. I hope that if you do choose to
+be involved then you will find it a valuable experience. If you choose to participate, you will
+receive this information sheet for your records and will be requested to sign a consent form.
+You have the option to withdraw at any point, and your decision will not impact any entitled
+benefits. In the event of withdrawal, you will be inquired about your preferences regarding
+the data you have contributed up to that point. The decision is not related to any grades.
+Data Protection Privacy Notice
+The data controller for this project will be University College London (UCL). The UCL Data
+Protection Office provides oversight of UCL activities involving the processing of personal
+data, and can be contacted at data-protection@ucl.ac.uk. UCL’s Data Protection Officer can
+also be contacted at data-protection@ucl.ac.uk. Further information on how UCL uses
+participant information can be found here:
+https://www.ucl.ac.uk/legal-services/privacy/ucl-general-research-participant-privacynotice
+The legal basis that would be used to process your personal data will be UK GDPR
+legislation. The legal basis used to process special category personal data will be for
+scientific and historical research or statistical purposes/explicit consent.
+Your personal data will be processed so long as it is required for the research project.
+If we are able to anonymise or pseudonymise the personal data you provide we will
+undertake this, and will endeavour to minimise the processing of personal data wherever
+possible. If you are concerned about how your personal data is being processed, or if you
+would like to contact us about your rights, please contact UCL in the first instance at dataprotection@ucl.ac.uk.
+Contact for further information
+If you have any further questions before you decide whether to take part, you can reach me at
+email: stnvyg9@ucl.ac.uk, mobile: 07493830444.
+56
+
+If you would like to be involved, please complete the following consent form and return to
+stnvyg9@ucl.ac.uk.
+Thank you very much for taking the time to read this information sheet.
+
+Appendix 3
+Mapping the Journey: Understanding the Role of Habitus and Capitals in Chinese
+International Students' Cultural Fit
+Consent for Interviews: Chinese International Students
+
+57
+
+(tick as
+appropriate)
+I confirm that I have read and understood the information sheet, and have had the
+opportunity to consider the information, ask questions, and have had these questions
+adequately answered.
+I understand that my participation is voluntary and that I am free to withdraw at any
+time, without giving any reason.
+I know that I can refuse to answer any or all of the questions and that I can
+withdraw from the interview at any point.
+I agree for the interview to be recorded, and that recordings will be kept secure and
+destroyed at the end of the project. I know that all data will be kept under the terms
+of the General Data Protection Regulation (GDPR).
+I agree that small direct quotes may be used in reports (these will be anonymised).
+In understand that in exceptional circumstances anonymity and confidentiality
+would have to be broken, for example, if it was felt that my wellbeing is at risk, or
+there were concerns regarding academic misconduct or any safeguarding issues. In
+these circumstances advice would be sought from my dissertation supervisor and
+the module leader who will advise as to the appropriate course of action and as to
+whether an authority needs to be informed.
+
+Name:…………………………………………………………………………..………………….
+Signature: ……………………………………………….……………. Date: …………..……..
+Name of researcher: GWLS2
+Signature: GWLS2 Date:27/01/2024
+
+Appendix 4
+Interview Guide
+Warm-up: context pre-departure in China
+58
+
+1
+
+Which subject are you majoring in UCL? How does it compare so far to what you
+
+expected when you chose this school and your major?
+-
+
+Is there useful suggestion you gained during the application.
+
+2
+
+Could you tell me a little about your educational background? Which high school did
+
+you attend in China, and how would you describe the education this school provided?
+-
+
+Was your high school an international school and have you studied the British
+
+curriculum? How has this school experience impacted your studies uni in the UK?
+3
+
+Have your nuclear family members ever experience higher education? Have they
+
+described their experiences with you?
+-
+
+How do this information compare to your actual experiences at UCL?
+
+-
+
+How has this knowledge affected your expectations and adaptation to life in the UK?
+
+4
+
+What actions did you take to prepare and adapt more effectively? (For example, did
+
+you watch educational videos, learn specific dialects, or study colloquial expressions to blend
+in?)
+-
+
+How useful do you think is the information and skills you brought from China for
+
+studying in the UK?
+-
+
+Why did you feel it was necessary to take these actions?
+
+Cultural Fit: Cultural Shock and Adaptation
+1
+
+Upon arriving in the UK, what aspects of both your daily life and academic settings
+
+did you find different compared to China? What and why do they seem different?
+-
+
+In what ways the academic practices in the UK are different from the ones in China?
+
+(e.g. treating higher education as a consumption, plagiarism and referencing policies and the
+use of AI?)
+-
+
+In what ways do you feel that language has played a role in your cultural adaptation
+
+process in academic environment? Can you share a particular incident where language either
+facilitated or hindered your cultural integration?
+2
+
+What strategies have you employed to adjust to the academic and social environment
+
+at UCL?
+-
+
+Have there been any specific cultural aspects that you've embraced or particularly
+
+struggled with?
+59
+
+-
+
+Reflecting on your journey since arriving in the UK, would you say you've
+
+experienced a series of stages starting with cultural shock, then moving to acceptance, and
+finally integrating new cultural experiences with your existing culture?
+-
+
+Have there been moments during your time here when you've felt the need to
+
+withdraw or protect yourself from the cultural and psychological challenges of adapting?
+Informational Capital
+1
+
+Can you give an example of a ‘rule of the game’ for studying in UCL?
+
+2
+
+Have you observed instances where your peers seemed to understand and utilize
+
+resources and policies more efficiently? E.g. Google Scholar, the Extenuating Circumstances,
+or the UCL Career Center
+-
+
+Are these students sharing any properties? ( BBC/ABC? Local?)
+
+-
+
+What do you know about your dissertation or any exam and project you must pass in
+
+order to graduate (before year 3)?
+3
+
+How did you learn about critical timelines, such as exam schedules or assignment
+
+deadlines, and how important is this knowledge for your academic planning?
+4
+
+Have you experienced any setbacks due to unfamiliarity with these 'rules of the game'
+
+in the UK university system?
+5
+
+Through what channels have you found information that has been essential for
+
+navigating university life?
+-
+
+How did you come across these resources?
+
+-
+
+What role have platforms like WeChat groups, Whatsapp groups, or CSSA official
+
+accounts played in your social integration and information gathering?
+Peer Network and Activities
+1
+
+Did you know any friends or seniors before coming here who already studied in the UK?
+-
+
+Have they shared their experiences with you? How has this network affected
+
+your adaptation to life in the UK?
+-
+
+What tips have you learned about navigating university life that were shared by
+
+current classmates or seniors when you arrived at the UK?
+
+60
+
+2
+
+Have official school activities, such as the transition mentor program or orientation
+
+seminars, provided you with practical tips for university life?
+-
+
+Have university-organized social events been effective in helping you build lasting
+
+relationships? Can you give examples of such events and how they help you to gain more
+information?
+3
+
+Have you felt the difference in social interaction modes between university and high
+school?
+
+-
+
+What are they and how do you feel about them?
+
+4
+
+How well do you feel integrated into your peer group and the broader university
+
+community so far?
+-
+
+Does a sense of belonging or recognition contribute to you adapting more quickly?
+
+Cleft Habitus
+1
+
+Is there any tensions between the cultural habits of your upbringing and the
+
+environment and your life in the UK?
+-
+
+Have there been specific situations where you've had to make a choice between
+
+following the cultural practices of your home country and those you've encountered in the
+UK? Could you describe that experience and the decision you made?
+(Learn something you know won't be on a test or final paper or push yourself to attend the
+office hour)
+2
+
+Did you have to adapt to a new way of learning or a different academic expectation at
+
+UCL? Could you please mention some examples?
+3
+
+How have your pre-university habits and practices either facilitated or hindered your
+
+adaptation to the dominant academic and social norms at your university?
+4
+
+When you realize that you can't be culturally fit, do you think it's because you didn't
+
+try hard enough to reach out to these cultures, your family didn't provide a platform or
+because the school didn't assist you in a better way.
+
+61

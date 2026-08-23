@@ -1,0 +1,10 @@
+# Originals, working files and internal notes. Everything under here is kept
+# on disk and never published: full-resolution sources for the compressed
+# assets, every file the site does not reference, and the old build tooling.
+_originals/
+
+.DS_Store
+*.log
+node_modules/
+.wrangler/
+ffmpeg2pass-*

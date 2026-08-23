@@ -1,0 +1,190 @@
+Introduction
+
+In the context of capital theory, the correlation between the arts and socioeconomic status (SES) is a
+virtuous circle for the upper classes and a pernicious circle for the lower classes. Numerous studies
+have investigated how art education influences people’s SES, but relatively few studies have
+examined how SES itself influences the chance of a child being exposed to the arts. As a means of
+filling the research gap in this area, this research will test the hypothesis that people's socioeconomic
+status influences their arts engagement. If the correlation coefficient falls within the designated range
+and satisfies the significance level, one-way regression analysis can be used to elucidate and
+anticipate the impact of SES on arts engagement. This provides valuable insight on the outcomes of
+the City Beautiful movement (Olsen, 1998). In addition, it can increase awareness and promote art
+education.
+
+Literature Review
+
+Reid (1926) argues that the wide variety of art forms makes the definition of arts engagement highly
+ambiguous and variable, which empowers us to inspect it more subjectively. Despite asking specific
+questions about participation in 28 artistic activities, Wang et al. (2020) still acknowledged the
+challenge of ensuring the inclusion of all artistic activities. In his discussion of artistic experiences,
+Wziak-Biaowolska (2016) seeks to differentiate between active participation in the arts (playing
+instruments, dancing, painting, etc.) and passive participation (watching films, theater, exhibitions,
+etc.). Nonetheless, when analyzing the results, he continues to refer to them collectively as voluntary
+cultural activity. This indicates that there is no discernible distinction between the two, at least in
+
+2
+
+terms of outcomes. According to Novak-Leonard et al. (2015), the discourse surrounding arts
+engagement is inclined towards Western artistic practices and disregards the broader meaning of the
+term in ethnic minority and migrant communities (Brown & Cousins, 2001). In this instance, when
+the phrase "arts engagement" is employed holistically without a comprehensive delineation of the
+particular activities encompassed, the freedom to interpret the phrase may be ceded to the participants.
+
+The UK has abundant artistic resources; nevertheless, how it reproduces socioeconomic inequality
+exemplifies the significance of cultural capital. According to statistics given by the Museum
+Association and Theatres Trust, there are approximately 2,500 museums and 1,100 active theaters in
+the country. However, it is more essential to note that the top five most-visited attractions that year
+were all located in London (Association of Leading Visitor Attractions, 2019). The England Arts
+Council has cited geographical inequality in arts funding as a contributing factor (Mak et al., 2020b).
+Inequalities are not solely based on geography. Since art has always been an exclusive concept, only a
+select few have the authority to define it (Grenfell & Hardy, 2007). Discourse on art implies a value, a
+specific flavor, or a standard (Silva, 2008). Disparities in people's access to artistic resources can be
+discussed within the theoretical framework of cultural capital. There is a correlation between
+accumulated cultural knowledge and social status and power (Bourdieu & Passeron, 1977). The key to
+understanding the significance of cultural capital in practice is to recognize how it is intertwined with
+privileged life, enabling the emergence of privileged habits and dispositions in packs that cannot be
+taught individually to other classes (Ostrower, 1998; Reay, 2017). Consistent with Frow and
+Emmison's (1998) expansion of cultural capital in their discourse on information technology, arts
+engagement serves as a means of expression and self-presentation, conferring benefits upon
+individuals who possess expertise and familiarity with the arts. The upper classes have exclusive
+knowledge that is not available to the lower classes. Meanwhile, this knowledge facilitates the
+integration of privileged groups into society.
+
+3
+
+According to earlier studies (Devine & Dowds, 2013; McManus & Furnham, 2006), exposure to
+artistic resources positively correlates with socioeconomic status, and arts engagement is
+geographically and socially context-dependent (Mak et al., 2020b). There is a social gradient of
+interest in artistic activities, as indicated by mixed evidence (Bone et al., 2021). When proposing the
+concept of capitals, Bourdieu and Passeron (1977) placed special emphasis on the inheritance passed
+down from one generation to the next. Parents should invest in their children's cultural capital by
+exposing them to the arts (Kapitzke, 2000). Frow and Emmison (1998) found that families with
+satisfactory financial situations are more likely to involve their children in artistic activities. Lynch
+and Kaplan (2000) describe socioeconomic status (SES) as a conceptualization of social and
+economic stratification. Research suggests that people with greater educational attainment and better
+employment prospects are more likely to participate in artistic activities than those with lower
+socioeconomic status (Parkinson et al., 2014; Mak et al., 2020a). Traditional measures of SES in
+health-related reporting include income, education, and occupation (Adler & Ostrove, 1999).
+Following Quon and McGrath's (2015) notion of relative SES and emphasis on the significance of
+evaluating multiple dimensions, the present research introduces subjective SES and the geographical
+context dimension. Individuals' subjective socioeconomic status (SES) is based on their perception of
+their position in society, which can be influenced by their comparison to others in their community
+(Singh-Manoux et al., 2003).
+
+Methodology
+
+Following is the overarching logic of this research. First of all, a correlation between two variables,
+SES and the proportion of their expenditure spent on arts engagement, should be confirmed. A
+hypothesis is formulated to establish a functional relationship between the independent and dependent
+variables. As part of the modeling process, a regression analysis will be conducted to assess the
+
+4
+
+hypothesis. The correlation coefficient between the two variables is calculated using SPSS. The
+correlation will only be considered valid if the absolute value of the coefficient is greater than 0.5 and
+the significance level is less than 0.05. Mak et al. (2020a) recommend a 95% confidence interval for
+the coefficient to account for interplay between household members and prevent underestimation of
+the standard error that arises from evaluating SES and arts engagement within the context of the
+household. Assuming the presence of correlations, one-way regression analysis will be employed to
+furnish additional comprehensive insights, including forecasting changes in the dependent variable.
+
+Data will be collected through a questionnaire. I will conduct a pilot test and modify the options on
+the questionnaire based on the results. The population of this research is comprised of non-art
+undergraduates at UCL who have spent most of their formative years in Europe. The study limits the
+population to non-arts students in order to regulate their exposure to the arts in everyday learning.
+Undergraduates are selected for the purpose of controlling for their educational attainment and age.
+Additionally, the study focuses specifically on UCL to mitigate the influence of school resources on
+the population. The sampling methodology is stratified sampling based on majors. Moreover, in
+asking questions like monthly expenditures,a specific month like "March 2023" would be clarified.
+Although there is a wealth of resources for the arts in London all year round, there are also exhibition
+cycles when galleries update their displays or highly concentrated seasons for performances, so the
+survey period needs to be longer than a month to ensure consistency.
+
+The independent variable of the study is the socioeconomic status of the student's family, and the
+dependent variable is the proportion of arts participation expenditures. Due to the fact that correlation
+analysis can only be performed on continuous data, the results will be presented as continuous data,
+which is better suited for statistical testing and modeling purposes. The options for the questions are
+in ordinal form, however, to ease collection and more accurately reflect the circumstances of
+
+5
+
+participants. In order to simplify the weighting computation, the data discretization approach is
+frequently utilized. For instance, convert proportion data into categorical ranks. To explore the
+relationship between the dependent variable and several independent variables, we will measure the
+independent variables in five dimensions: income level, education (attainment and grade point
+average), occupation (category and level), subjective judgment, and the ranking of the city in the
+Cultural and Creative Cities Monitor (European Cultural Foundation, 2020). We will employ an
+equal-weighted summation method to derive a continuous value that represents the collective impact
+of the independent variables. Specifically, calculate the mean value for each dimension, which will
+serve as the central value. Weights will be assigned to the central values to account for their relative
+importance in the model. We will assign 10% weight to each of the two values of educational
+attainment and occupation and 20% weight to income, subjective SES, and the city lived in during
+formative years. Finally, we will calculate the weighted central values to obtain a continuous dataset
+that will be used for correlation coefficient and regression analyses. This process will ensure the
+validity and reliability of the findings.
+
+The relative income index will be calculated by dividing the family's income from the previous year
+by the national average family income for that year. After that, a scale may be used to convert the
+continuous variables into ordinal data by having the participants place their calculated results into
+predetermined categories. For instance, Option A, which ranges from 0% to 25%, would be selected if
+the calculated value was 18%. The scale is generated according to a pilot, designating each equal
+portion an ordinal number. The measurement of educational attainment is based on the primary
+caregiver with whom the participant spent the most time before university. Besieds, the grade point
+average attained at the time of acquiring the aforementioned qualification would be obtained and
+converted to ordinal data. The occupation of that family member will also be evaluated on two
+dimensions: the nature and level of the occupation. Both dimensions will be determined using the
+International Standard Classification of Occupations, which categorizes occupations according to their
+
+6
+
+level of complexity and level of specialization. Participants will be asked to provide an occupation
+category and level. Based on the work of Quon and McGrath (2015), we will pose the question, "Do
+you think your family's SES is better or worse than that of your classmates?" Options, each
+corresponding to one ordinal data point, will be provided to participants. Besides, inquire about the
+artistic richness of a growing city as a variable control. Participants will be asked to identify cities that
+meet certain conditions in the city question. According to the comprehensive ranking in the European
+Cultural Foundation's Cultural and Creative Cities Monitor (2020), an ordinal figure will be derived.
+
+The study's dependent variable is the proportion of monthly expenditure on arts engagement, obtained
+by dividing monthly art engagement expenditures by total monthly expenditures and multiplying by
+100%. Both interpretation and design problems are complicated by the term arts engagement's
+flexibility and subjectivity (Novak-Leonard et al., 2015). Thus, participants will be given a list of
+examples of arts engagement in the form of phrases like "Arts engagement includes but is not limited
+to..."; however, arts engagement will be viewed as a subjectively interpreted term as a whole.
+
+The most necessary of all ethical safeguards is to ensure that participants are comfortable identifying
+their SES, which is highly personal and sensitive. It is essential to protect the respondents'
+information, for example by anonymizing and encrypting it, and to ensure that no hidden damage
+occurs throughout the survey. Respondents' informed consent should be secured by both the content
+of the survey and its intended application. Furthermore, discussion should avoid personal bias to
+maintain the credibility and reliability of the results. In addition, the methodology, data collection, and
+analysis process should be made public in order to promote transparency and guarantee that the results
+are used appropriately.
+
+7
+
+Conclusion
+
+However, it is important to acknowledge that there may be recall bias in the data collection process,
+as the survey questionnaire relies on self-reporting. In some cases, the participants must subjectively
+understand and decide which family member to report on. Additionally, the situation of one particular
+family member may not fully represent the situation of the entire family, such as when a mother with
+no regular income spends the most time with her child but the grandparents own a profitable
+company. In terms of data analysis, conversions between continuous and ordinal data can result in
+data loss and reduce the flexibility of analysis. Due to the many limiting conditions imposed during
+sampling, it is challenging to generalize the research findings to a larger population. Our research is
+expected to have a number of notable strengths, providing new insights from two perspectives. Firstly,
+it can serve as a means for directing and improving the redistribution of artistic resources. Secondly, it
+aims to investigate the practical application of capital theory. The enduring system of dispositions that
+is acquired through participating in artistic activities is referred to as "habitus" (Bourdieu, 1987;
+Navarro, 2006). In the context of the accelerating segregation caused by constantly evolving
+information technology (Choi et al., 2020), art has become even more exclusive. Therefore, previous
+results may be outdated and require updating research progress. Moving forward, research in this area
+should focus on the mutual influence among multiple independent variables or the mutual influence
+between independent variables and dependent variables. A collective environment composed of
+people carrying the same social capital makes society increasingly segregated. Expanding the
+discussion of Bourdieu's (1986) concept of capital reveals that the relationships between variables
+exceed one-way regression analysis. Bidirectional regression analysis is a promising area for further
+study.
+
+8
