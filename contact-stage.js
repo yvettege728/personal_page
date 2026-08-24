@@ -23,20 +23,20 @@
     const home = options.home || "index.html";
     return `
     <section class="contact contact-tv dark dark-nav" id="contact" aria-label="Contact" data-contact-stage data-nav-section>
-      <div class="contact-tv__set" aria-hidden="true">
-        <div class="contact-tv__screen">
+      <div class="contact-tv__set">
+        <div class="contact-tv__screen" aria-hidden="true">
           <video src="web-assets/picvideo-web.mp4" autoplay muted loop playsinline preload="none"></video>
         </div>
-        <img class="contact-tv__frame" src="web-assets/eric-cole-assets/WkbjqM8K5hqKOUzSBrsnPMKBcI.png" alt="">
-      </div>
-      <div class="contact-links contact-tv__links">
-        <span>${CONTACT_PHONE}</span>
-        <a href="mailto:${CONTACT_MAIL}" data-decrypt data-text="${CONTACT_MAIL}">${CONTACT_MAIL}</a>
-        <a href="${CONTACT_LINKEDIN}" target="_blank" rel="noopener" data-decrypt data-text="LinkedIn">LinkedIn</a>
-        <a href="${CONTACT_CV}" data-decrypt data-text="Download CV">Download CV</a>
-        <a href="${CONTACT_CARD}" download="Yvette-Ge-Namecard.png" data-decrypt data-text="Download Card">Download Card</a>
-        <a href="${home}" data-decrypt data-text="Home">Home</a>
-        <a href="#" data-back-to-top data-decrypt data-text="Back to Top">Back to Top</a>
+        <img class="contact-tv__frame" src="web-assets/eric-cole-assets/WkbjqM8K5hqKOUzSBrsnPMKBcI.png" alt="" aria-hidden="true">
+        <div class="contact-links contact-tv__links">
+          <span>${CONTACT_PHONE}</span>
+          <a href="mailto:${CONTACT_MAIL}" data-decrypt data-text="${CONTACT_MAIL}">${CONTACT_MAIL}</a>
+          <a href="${CONTACT_LINKEDIN}" target="_blank" rel="noopener" data-decrypt data-text="LinkedIn">LinkedIn</a>
+          <a href="${CONTACT_CV}" data-decrypt data-text="Download CV">Download CV</a>
+          <a href="${CONTACT_CARD}" download="Yvette-Ge-Namecard.png" data-decrypt data-text="Download Card">Download Card</a>
+          <a href="${home}" data-decrypt data-text="Home">Home</a>
+          <a href="#" data-back-to-top data-decrypt data-text="Back to Top">Back to Top</a>
+        </div>
       </div>
     </section>`;
   }
