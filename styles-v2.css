@@ -1876,18 +1876,6 @@ body.tree-card-open::before {
   margin-bottom: 90px;
 }
 
-.contact {
-  min-height: 152vh;
-  align-items: end;
-  padding: clamp(30px, 5vw, 76px) clamp(28px, 4.6vw, 94px);
-  background:
-    var(--grain),
-    radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.09), transparent 30%),
-    #080808;
-  background-size: 160px 160px, auto, auto;
-  background-blend-mode: overlay, normal, normal;
-}
-
 .contact-tv__screen::after {
   animation: contactScan 5.6s linear infinite;
   opacity: 0.78;
@@ -2317,14 +2305,12 @@ body.hero-ready .surface-reel::before {
   padding: clamp(30px, 5vw, 76px) clamp(28px, 4.6vw, 94px);
   perspective: 1500px;
   perspective-origin: 50% 60%;
-  background:
-    linear-gradient(to bottom, var(--paper) 0, rgba(247, 247, 243, 0) 260px),
-    var(--grain),
-    radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.09), transparent 30%),
-    #080808;
-  background-size: 100% 260px, 160px 160px, auto, auto;
-  background-repeat: no-repeat, repeat, no-repeat, no-repeat;
-  background-blend-mode: normal, overlay, normal, normal;
+  /* A soft paper-to-transparent band used to sit across the top here, meant
+     to ease the join with the section above. It read as an unexplained line
+     instead, so the section now just starts black. */
+  background: var(--grain), #080808;
+  background-size: 160px 160px, auto;
+  background-blend-mode: overlay, normal;
   transform: none;
 }
 

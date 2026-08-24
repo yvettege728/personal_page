@@ -7296,9 +7296,7 @@ body[data-project] .contact-tv {
   gap: clamp(28px, 4.5vh, 52px);
   padding: clamp(30px, 5vw, 76px) clamp(28px, 4.6vw, 94px);
   overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.07), transparent 32%),
-    #080808;
+  background: #080808;
   color: var(--fg);
   perspective: 1500px;
   perspective-origin: 50% 60%;
