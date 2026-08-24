@@ -327,9 +327,11 @@ function initScrollHighlight(selector) {
     const rect = el.getBoundingClientRect();
     const viewport = window.innerHeight || 1;
     const span = Math.max(rect.height, viewport * 0.55);
-    // top center -> bottom center of a box "span" tall: 0 once the top
-    // reaches mid-screen, 1 once the bottom (top + span) has passed it.
-    const overall = clamp((viewport * 0.5 - rect.top) / span, 0, 1);
+    // 0 the instant the paragraph's top edge first crosses into the bottom
+    // of the screen, not once it reaches mid-screen, so a paragraph that
+    // first appears low in the viewport starts lighting up as soon as it is
+    // visible at all, rather than sitting fully dim until scrolled further up.
+    const overall = clamp((viewport - rect.top) / span, 0, 1);
     wordEls.forEach((wordEl, index) => {
       const start = count > 1 ? (index / (count - 1)) * (1 - spanWindow) : 0;
       const local = clamp((overall - start) / spanWindow, 0, 1);
@@ -362,11 +364,25 @@ function initTextGather(selector) {
       [...node.childNodes].forEach((child) => {
         if (child.nodeType === Node.TEXT_NODE) {
           const frag = document.createDocumentFragment();
-          [...child.textContent].forEach((ch) => {
-            const span = document.createElement("span");
-            span.className = "gather-char";
-            span.textContent = ch === " " ? "\u00A0" : ch;
-            frag.append(span);
+          // Real spaces stay as text so the browser's normal wrap points
+          // still apply; each word's letters are grouped into one
+          // unbreakable .gather-word box so a line can never split mid-word
+          // the way bare adjacent .gather-char boxes otherwise allow.
+          child.textContent.split(/( +)/).forEach((token) => {
+            if (!token) return;
+            if (/^ +$/.test(token)) {
+              frag.append(document.createTextNode(token));
+              return;
+            }
+            const wordSpan = document.createElement("span");
+            wordSpan.className = "gather-word";
+            [...token].forEach((ch) => {
+              const span = document.createElement("span");
+              span.className = "gather-char";
+              span.textContent = ch;
+              wordSpan.append(span);
+            });
+            frag.append(wordSpan);
           });
           node.replaceChild(frag, child);
         } else if (child.nodeType === Node.ELEMENT_NODE) {
@@ -416,6 +432,42 @@ function initTextGather(selector) {
     );
     observer.observe(heading);
   });
+}
+
+// Choreographed entrance for the skill section: the headline lands first as
+// one declarative statement, the three paragraphs follow it in reading
+// order at a deliberate pace, and the tag chips pop in quickly afterwards
+// as a scannable, clickable set rather than more prose. All three read
+// differently because they ARE different: a statement, a passage, a toolbox.
+function initSkillChoreography() {
+  const section = document.querySelector(".skill-section");
+  if (!section) return;
+  const lead = section.querySelector(".skill-lead");
+  const paras = [...section.querySelectorAll(".skill-copy p")];
+  const chips = [...section.querySelectorAll(".skill-strips button")];
+  const all = [lead, ...paras, ...chips].filter(Boolean);
+  if (!all.length) return;
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    all.forEach((el) => el.classList.add("is-revealed"));
+    return;
+  }
+
+  paras.forEach((p, i) => p.style.setProperty("--reveal-delay", `${260 + i * 210}ms`));
+  const chipBase = 260 + paras.length * 210 + 120;
+  chips.forEach((chip, i) => chip.style.setProperty("--reveal-delay", `${chipBase + i * 55}ms`));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        all.forEach((el) => el.classList.add("is-revealed"));
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+  );
+  observer.observe(section);
 }
 
 function initSkillStrips() {
@@ -734,6 +786,7 @@ initAboutReveal();
 initWritingReveal();
 initTextGather("#projects-title, #method-title, #writing-title, #about-title");
 initSkillStrips();
+initSkillChoreography();
 initTreeCard();
 initWritingPreview();
 initDecryptLinks();

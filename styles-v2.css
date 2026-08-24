@@ -332,7 +332,9 @@ button { font: inherit; color: inherit; }
   text-transform: uppercase;
 }
 
-.positioning span {
+/* Direct child only: the caption line, not the .reveal-word spans that
+   initScrollHighlight() now injects inside the paragraph above it. */
+.positioning > span {
   font-family: var(--mono);
   font-size: clamp(12px, 1.1vw, 16px);
   text-transform: uppercase;
@@ -1204,6 +1206,49 @@ button { font: inherit; color: inherit; }
 
 .skill-copy p { margin: 0; }
 
+/* Skill-section choreography, set by initSkillChoreography(): the headline
+   punches in as one statement, the paragraphs cascade in reading order,
+   the chips pop in fast afterwards as a set to scan and click rather than
+   read. */
+.skill-lead {
+  opacity: 0;
+  transform: translateY(28px) scale(1.035);
+  transition:
+    opacity 720ms cubic-bezier(0.16, 0.84, 0.2, 1),
+    transform 720ms cubic-bezier(0.16, 0.84, 0.2, 1);
+}
+
+.skill-lead.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.skill-copy p {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 640ms cubic-bezier(0.16, 0.84, 0.2, 1) var(--reveal-delay, 0ms),
+    transform 640ms cubic-bezier(0.16, 0.84, 0.2, 1) var(--reveal-delay, 0ms);
+}
+
+.skill-copy p.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-strips button {
+  opacity: 0;
+  transform: translateY(14px) scale(0.88);
+  transition:
+    opacity 460ms cubic-bezier(0.34, 1.56, 0.64, 1) var(--reveal-delay, 0ms),
+    transform 460ms cubic-bezier(0.34, 1.56, 0.64, 1) var(--reveal-delay, 0ms);
+}
+
+.skill-strips button.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 .skill-strips {
   display: flex;
   flex-wrap: wrap;
@@ -1472,7 +1517,7 @@ button { font: inherit; color: inherit; }
 
 /* Main-page readability pass: keep labels light, let prose read normally. */
 .topbar nav a,
-.positioning span,
+.positioning > span,
 .work-list,
 .project-preview figcaption,
 .project-note span,
@@ -2444,6 +2489,14 @@ body.hero-ready .surface-reel::before {
    inline per character by initTextGather()) and gathers into place once,
    the first time its heading scrolls into view.
 --------------------------------------------------------------------------- */
+/* Each word is its own unbreakable box so the line can only wrap at a real
+   space between words, never between two letters of the same word - which
+   is what plain adjacent .gather-char boxes allow by default. */
+.gather-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .gather-char {
   display: inline-block;
   opacity: 0.28;
@@ -2464,6 +2517,14 @@ body.hero-ready .surface-reel::before {
   }
 
   .gather-char {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .skill-lead,
+  .skill-copy p,
+  .skill-strips button {
     opacity: 1;
     transform: none;
     transition: none;
