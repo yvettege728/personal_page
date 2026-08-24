@@ -246,24 +246,53 @@ function initMethodBackdrop() {
   window.addEventListener("resize", update);
 }
 
-// The positioning statement no longer fades or blurs into view: it reads at
-// full clarity throughout and only its colour deepens, from a dark gray to
-// black, as the reader scrolls past it.
+// The positioning statement reads at full clarity throughout, never blurred,
+// but it settles in on two channels at once: colour deepens from a dark gray
+// to black, and the line lifts the last few pixels into place, the same
+// fade-up used for the manifesto lines on eric-cole.framer.website.
+// The dark writing section used to just appear once scrolled to. The
+// heading and each entry now fade up in place as the section is reached,
+// the row-by-row "SERVICES" reveal used on eric-cole.framer.website.
+function initWritingReveal() {
+  const targets = [document.querySelector(".writing-dark__intro"), ...document.querySelectorAll(".writing-table a")].filter(Boolean);
+  if (!targets.length) return;
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    targets.forEach((el) => el.classList.add("is-revealed"));
+    return;
+  }
+
+  targets.forEach((el, index) => el.style.setProperty("--reveal-delay", `${Math.min(index, 7) * 70}ms`));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+  );
+  targets.forEach((el) => observer.observe(el));
+}
+
 function initPositionReveal() {
   const el = document.querySelector("[data-position-reveal]");
   if (!el) return;
 
   const from = [150, 150, 150];
   const to = [10, 10, 10];
-  const setColor = (eased) => {
+  const setFrame = (eased) => {
     const r = Math.round(from[0] + (to[0] - from[0]) * eased);
     const g = Math.round(from[1] + (to[1] - from[1]) * eased);
     const b = Math.round(from[2] + (to[2] - from[2]) * eased);
     el.style.setProperty("--position-color", `rgb(${r}, ${g}, ${b})`);
+    el.style.setProperty("--position-y", `${(22 * (1 - eased)).toFixed(1)}px`);
   };
 
   if (reducedMotion) {
-    setColor(1);
+    setFrame(1);
     return;
   }
 
@@ -271,7 +300,7 @@ function initPositionReveal() {
     const rect = el.getBoundingClientRect();
     const viewport = window.innerHeight || 1;
     const progress = clamp((viewport * 0.82 - rect.top) / (viewport * 0.62), 0, 1);
-    setColor(1 - Math.pow(1 - progress, 3));
+    setFrame(1 - Math.pow(1 - progress, 3));
   }
 
   update();
@@ -596,6 +625,7 @@ initMoves();
 initMethodCards();
 initMethodBackdrop();
 initPositionReveal();
+initWritingReveal();
 initAboutDecrypt();
 initSkillStrips();
 initTreeCard();
