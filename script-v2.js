@@ -277,37 +277,64 @@ function initWritingReveal() {
   targets.forEach((el) => observer.observe(el));
 }
 
-// Shared by the positioning statement and the About intro: both read at full
-// clarity throughout, never blurred or scrambled, and only deepen from a
-// dark gray to black as the reader scrolls past. The About line used to run
-// an encrypted-text scramble instead; dropped in favour of matching the
-// positioning statement exactly. The scroll distance the colour travels
-// over is 3x what it originally was, so the shift reads as a slow settle
-// rather than something that resolves the moment the line is glanced at.
-function initColorReveal(selector, yLiftPx) {
+// Scroll Text Highlight, after Originkit's ScrollHighlight component: split
+// into words, each dim until the paragraph scrolls through the centre of
+// the screen, then lit word by word, scrubbed directly to scroll position
+// rather than played on a timer. Reimplemented in vanilla JS/CSS (the site
+// has no build step to hang GSAP off), and the reference's white-on-dark
+// defaults (dimColor/highlightColor) are flipped for this site's ink-on-
+// paper page. A short one-line paragraph would otherwise sweep across its
+// own small height in a few dozen pixels of scroll; a viewport-relative
+// floor keeps the sweep at a deliberate pace regardless of how tall the
+// paragraph itself is.
+function initScrollHighlight(selector) {
   const el = document.querySelector(selector);
   if (!el) return;
 
-  const from = [150, 150, 150];
-  const to = [10, 10, 10];
-  const setFrame = (eased) => {
-    const r = Math.round(from[0] + (to[0] - from[0]) * eased);
-    const g = Math.round(from[1] + (to[1] - from[1]) * eased);
-    const b = Math.round(from[2] + (to[2] - from[2]) * eased);
-    el.style.setProperty("--reveal-color", `rgb(${r}, ${g}, ${b})`);
-    if (yLiftPx) el.style.setProperty("--reveal-y", `${(yLiftPx * (1 - eased)).toFixed(1)}px`);
+  const dim = [150, 150, 150];
+  const highlight = [10, 10, 10];
+  const spanWindow = 0.5; // fraction of the overall sweep each word's own transition takes
+
+  const original = (el.textContent || "").trim();
+  const words = original.split(/\s+/).filter(Boolean);
+  el.setAttribute("role", "text");
+  el.setAttribute("aria-label", original);
+  el.textContent = "";
+  const wordEls = words.map((word, index) => {
+    const span = document.createElement("span");
+    span.className = "reveal-word";
+    span.textContent = word;
+    el.append(span);
+    if (index < words.length - 1) el.append(" ");
+    return span;
+  });
+
+  const setColor = (span, t) => {
+    const r = Math.round(dim[0] + (highlight[0] - dim[0]) * t);
+    const g = Math.round(dim[1] + (highlight[1] - dim[1]) * t);
+    const b = Math.round(dim[2] + (highlight[2] - dim[2]) * t);
+    span.style.color = `rgb(${r}, ${g}, ${b})`;
   };
 
   if (reducedMotion) {
-    setFrame(1);
+    wordEls.forEach((span) => setColor(span, 1));
     return;
   }
+
+  const count = wordEls.length;
 
   function update() {
     const rect = el.getBoundingClientRect();
     const viewport = window.innerHeight || 1;
-    const progress = clamp((viewport * 0.82 - rect.top) / (viewport * 0.62 * 3), 0, 1);
-    setFrame(1 - Math.pow(1 - progress, 3));
+    const span = Math.max(rect.height, viewport * 0.55);
+    // top center -> bottom center of a box "span" tall: 0 once the top
+    // reaches mid-screen, 1 once the bottom (top + span) has passed it.
+    const overall = clamp((viewport * 0.5 - rect.top) / span, 0, 1);
+    wordEls.forEach((wordEl, index) => {
+      const start = count > 1 ? (index / (count - 1)) * (1 - spanWindow) : 0;
+      const local = clamp((overall - start) / spanWindow, 0, 1);
+      setColor(wordEl, local);
+    });
   }
 
   update();
@@ -316,11 +343,79 @@ function initColorReveal(selector, yLiftPx) {
 }
 
 function initPositionReveal() {
-  initColorReveal("[data-position-reveal]", 22);
+  initScrollHighlight("[data-position-reveal]");
 }
 
 function initAboutReveal() {
-  initColorReveal("[data-about-reveal]", 0);
+  initScrollHighlight("[data-about-reveal]");
+}
+
+// Text Gather, after Originkit's MagneticPull component: every character
+// starts scattered (random offset, rotation, dim) and gathers into place
+// once, the first time its heading is scrolled into view. Existing markup
+// (including the .script cursive spans already inside these headings) is
+// left in place; only the text nodes inside it are split into per-character
+// spans, so the cursive styling still applies to its own letters.
+function initTextGather(selector) {
+  document.querySelectorAll(selector).forEach((heading) => {
+    const splitNode = (node) => {
+      [...node.childNodes].forEach((child) => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          const frag = document.createDocumentFragment();
+          [...child.textContent].forEach((ch) => {
+            const span = document.createElement("span");
+            span.className = "gather-char";
+            span.textContent = ch === " " ? "\u00A0" : ch;
+            frag.append(span);
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+          splitNode(child);
+        }
+      });
+    };
+    splitNode(heading);
+
+    const chars = [...heading.querySelectorAll(".gather-char")];
+    if (!chars.length) return;
+
+    if (reducedMotion) {
+      chars.forEach((c) => c.classList.add("is-gathered"));
+      return;
+    }
+
+    chars.forEach((c) => {
+      const x = (Math.random() * 2 - 1) * 120;
+      const y = (Math.random() * 2 - 1) * 120;
+      const r = (Math.random() * 2 - 1) * 14;
+      c.style.setProperty("--gx", `${x.toFixed(1)}px`);
+      c.style.setProperty("--gy", `${y.toFixed(1)}px`);
+      c.style.setProperty("--gr", `${r.toFixed(1)}deg`);
+    });
+
+    const play = () => {
+      chars.forEach((c, i) => {
+        window.setTimeout(() => c.classList.add("is-gathered"), i * 18);
+      });
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      play();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          play();
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.3, rootMargin: "0px 0px -10% 0px" }
+    );
+    observer.observe(heading);
+  });
 }
 
 function initSkillStrips() {
@@ -637,6 +732,7 @@ initMethodBackdrop();
 initPositionReveal();
 initAboutReveal();
 initWritingReveal();
+initTextGather("#projects-title, #method-title, #writing-title, #about-title");
 initSkillStrips();
 initTreeCard();
 initWritingPreview();

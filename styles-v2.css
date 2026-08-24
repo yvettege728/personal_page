@@ -326,12 +326,10 @@ button { font: inherit; color: inherit; }
 .positioning p {
   max-width: 920px;
   margin: 0;
-  color: var(--reveal-color, #9a9a9a);
   font-size: clamp(28px, 3.2vw, 42px);
   font-weight: 700;
   line-height: 0.98;
   text-transform: uppercase;
-  transform: translateY(var(--reveal-y, 22px));
 }
 
 .positioning span {
@@ -910,7 +908,6 @@ button { font: inherit; color: inherit; }
 .about-current {
   width: min(620px, 100%);
   margin: 0;
-  color: var(--reveal-color, #9a9a9a);
   font-size: clamp(16px, 1.32vw, 22px);
   font-weight: 700;
   line-height: 1.16;
@@ -2311,7 +2308,10 @@ body.hero-ready .surface-reel::before {
   position: relative;
   left: auto;
   bottom: auto;
-  width: min(860px, 68vw);
+  /* Wider, so the set fills more of the section: at the old size the TV was
+     short enough that the section's own black ground showed as a plain bar
+     above and below it, with nothing happening in either. */
+  width: min(1200px, 86vw);
   transform-origin: 50% 100%;
   transform:
     translateY(var(--tv-y, 60px))
@@ -2419,6 +2419,51 @@ body.hero-ready .surface-reel::before {
 @media (prefers-reduced-motion: reduce) {
   .writing-dark__intro,
   .writing-table a {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll Text Highlight, after Originkit
+   Each word starts dim and lights up word by word as its paragraph scrolls
+   through the centre of the screen, scrubbed directly to scroll position.
+   The colour itself is set inline per word by initScrollHighlight(); this
+   just makes the words inline-block so each can carry its own colour without
+   breaking the line.
+--------------------------------------------------------------------------- */
+.reveal-word {
+  display: inline-block;
+  color: rgb(150, 150, 150);
+}
+
+/* ---------------------------------------------------------------------------
+   Text Gather, after Originkit
+   Every character starts scattered, dim, and slightly rotated (values set
+   inline per character by initTextGather()) and gathers into place once,
+   the first time its heading scrolls into view.
+--------------------------------------------------------------------------- */
+.gather-char {
+  display: inline-block;
+  opacity: 0.28;
+  transform: translate(var(--gx, 0px), var(--gy, 0px)) rotate(var(--gr, 0deg));
+  transition:
+    transform 850ms cubic-bezier(0.16, 0.84, 0.2, 1),
+    opacity 850ms cubic-bezier(0.16, 0.84, 0.2, 1);
+}
+
+.gather-char.is-gathered {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-word {
+    color: rgb(10, 10, 10);
+  }
+
+  .gather-char {
     opacity: 1;
     transform: none;
     transition: none;

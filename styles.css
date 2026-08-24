@@ -7318,7 +7318,7 @@ body[data-project] .contact-tv::before {
 body[data-project] .contact-tv__set {
   position: relative;
   z-index: 1;
-  width: min(860px, 68vw);
+  width: min(1200px, 86vw);
   aspect-ratio: 2048 / 1080;
   transform-origin: 50% 100%;
   transform:
