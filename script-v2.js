@@ -431,6 +431,8 @@ function initTreeCard() {
   const closeButton = open?.querySelector("[data-tree-close]");
   if (!trigger || !open) return;
   let endTimer = 0;
+  let closeTimer = 0;
+  let lockedScrollY = 0;
 
   const resetTree = () => {
     open.classList.remove("is-tree-open");
@@ -438,22 +440,59 @@ function initTreeCard() {
     if (treeCopy) treeCopy.scrollTop = 0;
   };
 
+  // The card covers the page, but scrolling inside its own letter panel was
+  // still reaching the page underneath once that panel hit its own top or
+  // bottom edge. The body is held in place with position: fixed for exactly
+  // as long as the card is open, then handed back its scroll position.
+  const lockScroll = () => {
+    lockedScrollY = window.scrollY || window.pageYOffset || 0;
+    document.body.style.top = `${-lockedScrollY}px`;
+    document.body.classList.add("tree-card-open");
+  };
+
+  const unlockScroll = () => {
+    document.body.classList.remove("tree-card-open");
+    document.body.style.top = "";
+    window.scrollTo(0, lockedScrollY);
+  };
+
   const openCard = () => {
+    window.clearTimeout(closeTimer);
+    open.classList.remove("is-closing");
     trigger.setAttribute("aria-expanded", "true");
     resetTree();
-    document.body.classList.add("tree-card-open");
+    lockScroll();
     open.hidden = false;
     video?.play().catch(() => {});
   };
 
+  // Closing now plays the card back out before it disappears, rather than
+  // cutting straight to display: none. The page underneath is only handed
+  // its scroll back once that exit has actually finished, so nothing shifts
+  // while the card is still visible.
   const closeCard = (restoreFocus = false) => {
     window.clearTimeout(endTimer);
     endTimer = 0;
-    open.hidden = true;
-    resetTree();
-    document.body.classList.remove("tree-card-open");
+    if (open.hidden || open.classList.contains("is-closing")) return;
+
     trigger.setAttribute("aria-expanded", "false");
-    if (restoreFocus) trigger.focus({ preventScroll: true });
+    window.clearTimeout(closeTimer);
+
+    const finish = () => {
+      open.hidden = true;
+      open.classList.remove("is-closing");
+      resetTree();
+      unlockScroll();
+      if (restoreFocus) trigger.focus({ preventScroll: true });
+    };
+
+    if (reducedMotion) {
+      finish();
+      return;
+    }
+
+    open.classList.add("is-closing");
+    closeTimer = window.setTimeout(finish, 340);
   };
 
   // Opening used to arm itself a second after the pointer merely rested on

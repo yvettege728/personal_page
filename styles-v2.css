@@ -49,6 +49,14 @@ body::after {
   background-size: 3px 3px;
 }
 
+body.tree-card-open {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
 body.tree-card-open::before {
   content: "";
   position: fixed;
@@ -982,10 +990,16 @@ button { font: inherit; color: inherit; }
   background: rgba(247, 247, 243, 0.96);
   color: #2f2f2f;
   box-shadow: 0 28px 80px rgba(48, 48, 48, 0.18);
-  opacity: 0;
   overflow: hidden;
-  transform: translate(-50%, calc(-50% + 28px));
   animation: tree-pop 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* Reaching the last line, or pressing Close, now plays this in reverse
+   before the element actually disappears, held visible by JS for exactly
+   the animation's length. Without a class to switch to, closing had no way
+   to run any animation at all: [hidden] cuts to display:none immediately. */
+.tree-card__open.is-closing {
+  animation: tree-pop-out 320ms cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 .tree-card__open img,
@@ -1096,6 +1110,7 @@ button { font: inherit; color: inherit; }
   padding: 18px 16px;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
   background: rgba(208, 208, 208, 0.88);
   opacity: 0;
   pointer-events: none;
@@ -1146,6 +1161,11 @@ button { font: inherit; color: inherit; }
 @keyframes tree-pop {
   from { opacity: 0; transform: translate(-50%, calc(-50% + 34px)) scale(0.985); }
   to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes tree-pop-out {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to { opacity: 0; transform: translate(-50%, calc(-50% + 20px)) scale(0.98); }
 }
 
 @keyframes tv-signal-jump {
