@@ -7376,9 +7376,12 @@ body[data-project] .contact-tv__screen::after {
 
 /* Nested inside .contact-tv__set rather than trailing below the cabinet as
    a separate block, so it reads as a lower third printed on the screen. */
+/* Centred on the screen's own bounds (left: 0.6%, width: 67.2% above),
+   not the whole cabinet: at 50% of the full image the band was centred
+   past the screen's right edge, onto the wood speaker grille. */
 body[data-project] .contact-tv__links {
   position: absolute;
-  left: 50%;
+  left: 34.2%;
   bottom: 6%;
   z-index: 9;
   display: flex;
@@ -7386,7 +7389,7 @@ body[data-project] .contact-tv__links {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px 22px;
-  width: 62%;
+  width: 58%;
   padding: 10px 14px;
   border-radius: 3px;
   background: rgba(3, 3, 3, 0.5);
@@ -7452,7 +7455,7 @@ body[data-project] .contact-tv__links a:focus-visible {
 
   body[data-project] .contact-tv__links {
     bottom: 8%;
-    width: 82%;
+    width: 60%;
     padding: 8px 10px;
     flex-wrap: wrap;
     justify-content: flex-start;

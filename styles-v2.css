@@ -326,12 +326,12 @@ button { font: inherit; color: inherit; }
 .positioning p {
   max-width: 920px;
   margin: 0;
-  color: var(--position-color, #9a9a9a);
+  color: var(--reveal-color, #9a9a9a);
   font-size: clamp(28px, 3.2vw, 42px);
   font-weight: 700;
   line-height: 0.98;
   text-transform: uppercase;
-  transform: translateY(var(--position-y, 22px));
+  transform: translateY(var(--reveal-y, 22px));
 }
 
 .positioning span {
@@ -910,7 +910,7 @@ button { font: inherit; color: inherit; }
 .about-current {
   width: min(620px, 100%);
   margin: 0;
-  color: var(--ink);
+  color: var(--reveal-color, #9a9a9a);
   font-size: clamp(16px, 1.32vw, 22px);
   font-weight: 700;
   line-height: 1.16;
@@ -1742,13 +1742,6 @@ body.tree-card-open::before {
   font-size: 20px;
 }
 
-/* Encrypted-text reveal: the line sits scrambled until it is scrolled into
-   view, then resolves into real words left to right, in place of the old
-   blur-to-clear fade. */
-.about-current[data-decrypting]::selection {
-  background: transparent;
-}
-
 .about-beside {
   font-size: 19px;
 }
@@ -2333,12 +2326,17 @@ body.hero-ready .surface-reel::before {
    background, landing as a second, disconnected block once the television
    was no longer big enough to sit behind it by accident. They now live on
    the set itself, low on the screen, the way a lower third sits on a CRT. */
+/* Centred at 50% of the whole cabinet, the links sat off-centre from the
+   actual screen: the wood speaker grille takes up the right third of the
+   image, so the screen's own centre is at 34.2%, not 50%, and the wider
+   50%-centred band was spilling past the screen's right edge onto the
+   grille. Centred and sized to the screen's own bounds instead. */
 .contact-tv__links {
   position: absolute;
-  left: 50%;
+  left: 34.2%;
   bottom: 6%;
   z-index: 9;
-  width: 62%;
+  width: 58%;
   padding: 10px 14px;
   border-radius: 3px;
   background: rgba(3, 3, 3, 0.5);
@@ -2391,7 +2389,7 @@ body.hero-ready .surface-reel::before {
 
   .contact-tv__links {
     bottom: 8%;
-    width: 82%;
+    width: 60%;
     padding: 8px 10px;
   }
 }

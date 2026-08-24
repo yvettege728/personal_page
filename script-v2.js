@@ -277,8 +277,15 @@ function initWritingReveal() {
   targets.forEach((el) => observer.observe(el));
 }
 
-function initPositionReveal() {
-  const el = document.querySelector("[data-position-reveal]");
+// Shared by the positioning statement and the About intro: both read at full
+// clarity throughout, never blurred or scrambled, and only deepen from a
+// dark gray to black as the reader scrolls past. The About line used to run
+// an encrypted-text scramble instead; dropped in favour of matching the
+// positioning statement exactly. The scroll distance the colour travels
+// over is 3x what it originally was, so the shift reads as a slow settle
+// rather than something that resolves the moment the line is glanced at.
+function initColorReveal(selector, yLiftPx) {
+  const el = document.querySelector(selector);
   if (!el) return;
 
   const from = [150, 150, 150];
@@ -287,8 +294,8 @@ function initPositionReveal() {
     const r = Math.round(from[0] + (to[0] - from[0]) * eased);
     const g = Math.round(from[1] + (to[1] - from[1]) * eased);
     const b = Math.round(from[2] + (to[2] - from[2]) * eased);
-    el.style.setProperty("--position-color", `rgb(${r}, ${g}, ${b})`);
-    el.style.setProperty("--position-y", `${(22 * (1 - eased)).toFixed(1)}px`);
+    el.style.setProperty("--reveal-color", `rgb(${r}, ${g}, ${b})`);
+    if (yLiftPx) el.style.setProperty("--reveal-y", `${(yLiftPx * (1 - eased)).toFixed(1)}px`);
   };
 
   if (reducedMotion) {
@@ -299,7 +306,7 @@ function initPositionReveal() {
   function update() {
     const rect = el.getBoundingClientRect();
     const viewport = window.innerHeight || 1;
-    const progress = clamp((viewport * 0.82 - rect.top) / (viewport * 0.62), 0, 1);
+    const progress = clamp((viewport * 0.82 - rect.top) / (viewport * 0.62 * 3), 0, 1);
     setFrame(1 - Math.pow(1 - progress, 3));
   }
 
@@ -308,68 +315,12 @@ function initPositionReveal() {
   window.addEventListener("resize", update);
 }
 
-// Encrypted-text reveal for the About intro line: the line sits scrambled
-// until it is scrolled into view, then resolves into real words left to
-// right, once, the way aceternity's encrypted-text component does.
-function initAboutDecrypt() {
-  const el = document.querySelector("[data-about-reveal]");
-  if (!el) return;
+function initPositionReveal() {
+  initColorReveal("[data-position-reveal]", 22);
+}
 
-  const original = (el.textContent || "").trim();
-  el.setAttribute("role", "text");
-  el.setAttribute("aria-label", original);
-
-  if (reducedMotion) return;
-
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  const scrambleFrom = (progress) =>
-    original
-      .split("")
-      .map((letter, index) => {
-        if (letter === " ") return " ";
-        return index < progress ? original[index] : chars[Math.floor(Math.random() * chars.length)];
-      })
-      .join("");
-
-  el.setAttribute("aria-hidden", "true");
-  el.textContent = scrambleFrom(0);
-
-  let played = false;
-  let timer = 0;
-
-  const play = () => {
-    if (played) return;
-    played = true;
-    el.setAttribute("data-decrypting", "true");
-    let frame = 0;
-    timer = window.setInterval(() => {
-      frame += 1;
-      el.textContent = scrambleFrom(frame / 1.7);
-      if (frame > original.length * 2) {
-        window.clearInterval(timer);
-        el.textContent = original;
-        el.removeAttribute("data-decrypting");
-        el.removeAttribute("aria-hidden");
-      }
-    }, 24);
-  };
-
-  if (!("IntersectionObserver" in window)) {
-    play();
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        play();
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.4, rootMargin: "0px 0px -10% 0px" }
-  );
-  observer.observe(el);
+function initAboutReveal() {
+  initColorReveal("[data-about-reveal]", 0);
 }
 
 function initSkillStrips() {
@@ -684,8 +635,8 @@ initMoves();
 initMethodCards();
 initMethodBackdrop();
 initPositionReveal();
+initAboutReveal();
 initWritingReveal();
-initAboutDecrypt();
 initSkillStrips();
 initTreeCard();
 initWritingPreview();
