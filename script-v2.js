@@ -401,7 +401,6 @@ function initTreeCard() {
   const treeCopy = open?.querySelector(".tree-card__content");
   const closeButton = open?.querySelector("[data-tree-close]");
   if (!trigger || !open) return;
-  let hoverTimer = 0;
   let endTimer = 0;
 
   const resetTree = () => {
@@ -411,7 +410,6 @@ function initTreeCard() {
   };
 
   const openCard = () => {
-    window.clearTimeout(hoverTimer);
     trigger.setAttribute("aria-expanded", "true");
     resetTree();
     document.body.classList.add("tree-card-open");
@@ -420,38 +418,29 @@ function initTreeCard() {
   };
 
   const closeCard = (restoreFocus = false) => {
-    window.clearTimeout(hoverTimer);
     window.clearTimeout(endTimer);
     endTimer = 0;
     open.hidden = true;
     resetTree();
     document.body.classList.remove("tree-card-open");
     trigger.setAttribute("aria-expanded", "false");
-    trigger.classList.remove("is-unblurred");
     if (restoreFocus) trigger.focus({ preventScroll: true });
   };
 
-  const queueOpen = () => {
-    trigger.classList.add("is-unblurred");
-    if (!open.hidden) return;
-    window.clearTimeout(hoverTimer);
-    hoverTimer = window.setTimeout(openCard, 1000);
-  };
-
-  const cancelQueuedOpen = () => {
-    window.clearTimeout(hoverTimer);
-    if (open.hidden) trigger.classList.remove("is-unblurred");
-  };
-
+  // Opening used to arm itself a second after the pointer merely rested on
+  // the trigger, with no cooldown against re-arming. Closing the card hands
+  // the trigger's own screen position back to whatever the pointer is
+  // sitting near at that moment (the card is centred over the page, and the
+  // trigger sits in the paragraph right underneath it), so the very next
+  // pixel of mouse movement after a close could re-enter the trigger and
+  // queue another open, which is what made it feel like the card would not
+  // stop popping back up. Opening is a click now, full stop; the blur lift
+  // on hover/focus is handled entirely by :hover/:focus-visible in CSS.
   trigger.addEventListener("click", (event) => {
     event.preventDefault();
     if (open.hidden) openCard();
     else trigger.setAttribute("aria-expanded", "true");
   });
-  trigger.addEventListener("mouseenter", queueOpen);
-  trigger.addEventListener("focus", queueOpen);
-  trigger.addEventListener("mouseleave", cancelQueuedOpen);
-  trigger.addEventListener("blur", cancelQueuedOpen);
 
   treeButton?.addEventListener("click", (event) => {
     event.stopPropagation();
