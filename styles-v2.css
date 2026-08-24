@@ -2289,22 +2289,34 @@ body.hero-ready .surface-reel::before {
    time it settles. Every value comes from --tv-* written by contact-stage.js.
 --------------------------------------------------------------------------- */
 .contact {
-  min-height: 108vh;
-  align-items: end;
-  padding: clamp(30px, 5vw, 76px) clamp(28px, 4.6vw, 94px) clamp(34px, 5vw, 70px);
+  min-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(28px, 4.5vh, 52px);
+  padding: clamp(30px, 5vw, 76px) clamp(28px, 4.6vw, 94px);
   perspective: 1500px;
-  perspective-origin: 50% 88%;
+  perspective-origin: 50% 60%;
+  background:
+    linear-gradient(to bottom, var(--paper) 0, rgba(247, 247, 243, 0) 260px),
+    var(--grain),
+    radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.09), transparent 30%),
+    #080808;
+  background-size: 100% 260px, 160px 160px, auto, auto;
+  background-repeat: no-repeat, repeat, no-repeat, no-repeat;
+  background-blend-mode: normal, overlay, normal, normal;
   transform: none;
 }
 
 .contact-tv__set {
-  left: 50%;
-  bottom: clamp(-250px, -12vw, -120px);
-  width: max(1420px, 122vw);
+  position: relative;
+  left: auto;
+  bottom: auto;
+  width: min(860px, 68vw);
   transform-origin: 50% 100%;
   transform:
-    translateX(-50%)
-    translateY(var(--tv-y, 140px))
+    translateY(var(--tv-y, 60px))
     rotateX(var(--tv-rot, 34deg))
     scale(var(--tv-scale, 0.8));
   opacity: var(--tv-opacity, 0.3);
@@ -2313,8 +2325,10 @@ body.hero-ready .surface-reel::before {
 }
 
 .contact-tv__links {
+  position: relative;
+  width: min(860px, 68vw);
   opacity: var(--tv-progress, 0);
-  transform: translateY(calc((1 - var(--tv-progress, 0)) * 34px));
+  transform: translateY(calc((1 - var(--tv-progress, 0)) * 24px));
   transition: none;
 }
 
@@ -2331,7 +2345,7 @@ body.hero-ready .surface-reel::before {
 
 @media (prefers-reduced-motion: reduce) {
   .contact-tv__set {
-    transform: translateX(-50%);
+    transform: none;
     opacity: 1;
     filter: saturate(0.92) contrast(1.12) brightness(0.9);
   }
@@ -2349,13 +2363,14 @@ body.hero-ready .surface-reel::before {
 
 @media (max-width: 760px) {
   .contact {
-    min-height: 96vh;
+    min-height: 86vh;
     perspective: 900px;
+    gap: 24px;
   }
 
-  .contact-tv__set {
-    width: max(760px, 152vw);
-    bottom: -80px;
+  .contact-tv__set,
+  .contact-tv__links {
+    width: min(94vw, 480px);
   }
 }
 

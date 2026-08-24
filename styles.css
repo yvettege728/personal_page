@@ -7288,17 +7288,20 @@ body[data-project] .callout-sub {
 body[data-project] .contact-tv {
   position: relative;
   z-index: 2;
-  min-height: 104vh;
-  display: grid;
-  align-items: end;
-  padding: clamp(30px, 5vw, 76px) clamp(28px, 4.6vw, 94px) clamp(34px, 5vw, 70px);
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(28px, 4.5vh, 52px);
+  padding: clamp(30px, 5vw, 76px) clamp(28px, 4.6vw, 94px);
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.07), transparent 32%),
     #080808;
   color: var(--fg);
   perspective: 1500px;
-  perspective-origin: 50% 88%;
+  perspective-origin: 50% 60%;
 }
 
 body[data-project] .contact-tv::before {
@@ -7315,16 +7318,13 @@ body[data-project] .contact-tv::before {
 }
 
 body[data-project] .contact-tv__set {
-  position: absolute;
-  left: 50%;
-  bottom: clamp(-250px, -12vw, -120px);
+  position: relative;
   z-index: 1;
-  width: max(1420px, 122vw);
+  width: min(860px, 68vw);
   aspect-ratio: 2048 / 1080;
   transform-origin: 50% 100%;
   transform:
-    translateX(-50%)
-    translateY(var(--tv-y, 140px))
+    translateY(var(--tv-y, 60px))
     rotateX(var(--tv-rot, 34deg))
     scale(var(--tv-scale, 0.8));
   opacity: var(--tv-opacity, 0.3);
@@ -7384,7 +7384,7 @@ body[data-project] .contact-tv__links {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px 22px;
-  width: min(1080px, 80vw);
+  width: min(860px, 68vw);
   padding: 14px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.34);
   border-bottom: 1px solid rgba(255, 255, 255, 0.34);
@@ -7420,7 +7420,7 @@ body[data-project] .contact-tv__links a:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   body[data-project] .contact-tv__set {
-    transform: translateX(-50%);
+    transform: none;
     opacity: 1;
     filter: saturate(0.92) contrast(1.12) brightness(0.9);
   }
@@ -7435,17 +7435,17 @@ body[data-project] .contact-tv__links a:focus-visible {
 
 @media (max-width: 860px) {
   body[data-project] .contact-tv {
-    min-height: 92vh;
+    min-height: 84vh;
     perspective: 900px;
+    gap: 24px;
   }
 
-  body[data-project] .contact-tv__set {
-    width: max(760px, 152vw);
-    bottom: -80px;
+  body[data-project] .contact-tv__set,
+  body[data-project] .contact-tv__links {
+    width: min(94vw, 480px);
   }
 
   body[data-project] .contact-tv__links {
-    width: 100%;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 10px 16px;

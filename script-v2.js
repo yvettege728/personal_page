@@ -579,43 +579,63 @@ function initWritingPreview() {
   });
 }
 
-function initDecryptLinks() {
+// Shared by every [data-decrypt] link and by the two tree-card buttons: the
+// label is overwritten with junk on hover, then resolves back into itself
+// left to right, the same encrypted-text idiom as Originkit's Encrypt
+// Button, just without a measured width or a light sweep, since these are
+// plain-text labels rather than a fixed-size pill.
+function wireDecrypt(el, triggerEl, text) {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+*/_<>[]";
+  const original = text || el.dataset.text || el.textContent;
+  let frame = 0;
+  let timer;
+
+  const restore = () => {
+    window.clearInterval(timer);
+    el.textContent = original;
+  };
+
+  const scramble = () => {
+    window.clearInterval(timer);
+    frame = 0;
+    timer = window.setInterval(() => {
+      el.textContent = original
+        .split("")
+        .map((letter, index) => {
+          if (letter === " ") return " ";
+          if (index < frame / 1.8) return original[index];
+          return chars[Math.floor(Math.random() * chars.length)];
+        })
+        .join("");
+      frame += 1;
+      if (frame > original.length * 2.1) restore();
+    }, 24);
+  };
+
+  (triggerEl || el).addEventListener("mouseenter", scramble);
+  (triggerEl || el).addEventListener("focus", scramble);
+  (triggerEl || el).addEventListener("mouseleave", restore);
+  (triggerEl || el).addEventListener("blur", restore);
+}
+
+function initDecryptLinks() {
   const links = [...document.querySelectorAll("[data-decrypt]")];
   if (!links.length || reducedMotion) return;
+  links.forEach((link) => wireDecrypt(link));
+}
 
-  links.forEach((link) => {
-    const original = link.dataset.text || link.textContent;
-    let frame = 0;
-    let timer;
+// The Open tag sits on the tree artwork with pointer-events disabled (clicks
+// pass through to the tree button beneath it), so it cannot receive its own
+// hover; it decrypts when the tree button underneath it is hovered instead.
+// The Close button is a normal target and decrypts on its own hover.
+function initTreeCardDecrypt() {
+  if (reducedMotion) return;
+  const tree = document.querySelector(".tree-card__tree");
+  const hint = document.querySelector(".tree-card__hint");
+  if (tree && hint) wireDecrypt(hint, tree, hint.textContent.trim());
 
-    const restore = () => {
-      window.clearInterval(timer);
-      link.textContent = original;
-    };
-
-    const scramble = () => {
-      window.clearInterval(timer);
-      frame = 0;
-      timer = window.setInterval(() => {
-        link.textContent = original
-          .split("")
-          .map((letter, index) => {
-            if (letter === " ") return " ";
-            if (index < frame / 1.8) return original[index];
-            return chars[Math.floor(Math.random() * chars.length)];
-          })
-          .join("");
-        frame += 1;
-        if (frame > original.length * 2.1) restore();
-      }, 24);
-    };
-
-    link.addEventListener("mouseenter", scramble);
-    link.addEventListener("focus", scramble);
-    link.addEventListener("mouseleave", restore);
-    link.addEventListener("blur", restore);
-  });
+  const close = document.querySelector("[data-tree-close]");
+  if (close) wireDecrypt(close, close, close.textContent.trim());
 }
 
 initOpeningGate(playHeroEntrance);
@@ -631,6 +651,7 @@ initSkillStrips();
 initTreeCard();
 initWritingPreview();
 initDecryptLinks();
+initTreeCardDecrypt();
 initPageTransition();
 window.setTimeout(playHeroEntrance, 9600);
 window.addEventListener("load", () => window.setTimeout(playHeroEntrance, 1200));
