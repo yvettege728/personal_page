@@ -43,10 +43,11 @@ function initOpeningGate(onClear) {
     window.setTimeout(clear, 240);
   };
 
+  const isSmallScreen = window.matchMedia("(max-width: 760px)").matches;
   video?.play().catch(() => {});
   video?.addEventListener("ended", hide, { once: true });
   gate.addEventListener("click", hide, { once: true });
-  window.setTimeout(hide, 9000);
+  window.setTimeout(hide, isSmallScreen ? 4800 : 9000);
 }
 
 // The television, the reel behind its glass, and the two annotations around it
