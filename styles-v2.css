@@ -2541,6 +2541,10 @@ body.hero-ready .surface-reel::before {
   display: none;
 }
 
+.contact-mobile-actions {
+  display: none;
+}
+
 @media (max-width: 760px) {
   body {
     background:
@@ -3156,5 +3160,221 @@ body.hero-ready .surface-reel::before {
 
   .contact-tv__links {
     width: 86vw;
+  }
+}
+
+/* Mobile finesse pass, 2026-09-03: more tactile, less oversized, less blue. */
+@media (max-width: 760px) {
+  body {
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.022) 1px, transparent 1px),
+      var(--paper);
+    background-size: 7px 100%, auto;
+  }
+
+  .mobile-recruiter {
+    background:
+      linear-gradient(180deg, rgba(247, 247, 243, 0.94), rgba(239, 238, 232, 0.78)),
+      var(--paper);
+  }
+
+  .mobile-recruiter__eyebrow,
+  .work-list span {
+    color: rgba(48, 48, 48, 0.58);
+  }
+
+  .mobile-recruiter__tags span {
+    background: rgba(247, 247, 243, 0.52);
+  }
+
+  .project-preview__media {
+    min-height: 168px;
+    background: rgba(239, 238, 232, 0.42);
+  }
+
+  .project-preview__media img,
+  .project-preview__media video {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.05) brightness(0.95);
+  }
+
+  .skill-section {
+    display: block;
+    padding: 42px 18px 52px;
+  }
+
+  .skill-lead {
+    max-width: 9.5ch;
+    margin: 0 0 20px;
+    font-size: clamp(34px, 10.5vw, 46px);
+    line-height: 0.94;
+    text-align: left;
+  }
+
+  .skill-copy {
+    width: 100%;
+    gap: 12px;
+    margin: 0 0 24px;
+    text-align: left;
+  }
+
+  .skill-copy p {
+    color: rgba(48, 48, 48, 0.76);
+    font-size: 14px;
+    line-height: 1.42;
+  }
+
+  .skill-strips {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .skill-strips button {
+    width: 100%;
+    min-height: 0;
+    padding: 12px 12px;
+    border-color: rgba(48, 48, 48, 0.42);
+    background: rgba(247, 247, 243, 0.58);
+    text-align: left;
+    transform: none;
+  }
+
+  .skill-strips button:hover,
+  .skill-strips button:focus-visible,
+  .skill-strips button[aria-expanded="true"] {
+    background: rgba(48, 48, 48, 0.92);
+    color: var(--paper);
+  }
+
+  .skill-strips .tag-label {
+    display: block;
+    font-size: 12.5px;
+    line-height: 1.2;
+  }
+
+  .skill-strips .tag-note {
+    position: static;
+    width: 100%;
+    max-width: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: rgba(247, 247, 243, 0.76);
+    font-size: 13px;
+    line-height: 1.38;
+    text-align: left;
+    opacity: 1;
+    overflow: hidden;
+    visibility: visible;
+    transform: none;
+    transition: max-height 240ms ease, margin-top 240ms ease;
+  }
+
+  .skill-strips .tag-note::after {
+    content: none;
+  }
+
+  .skill-strips button[aria-expanded="true"] .tag-note {
+    max-height: 260px;
+    margin-top: 10px;
+  }
+
+  .tool-chips {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .tool-chips span {
+    border-color: rgba(247, 247, 243, 0.22);
+    color: rgba(247, 247, 243, 0.78);
+  }
+
+  .contact {
+    min-height: auto;
+    display: block;
+    padding: 38px 18px 42px;
+    background: var(--grain), #080808;
+    background-size: 160px 160px, auto;
+  }
+
+  .contact-tv__set {
+    width: min(100%, 430px);
+    margin: 0 auto;
+    transform:
+      translateY(calc(var(--tv-y, 28px) * 0.24))
+      rotateX(calc(var(--tv-rot, 18deg) * 0.32))
+      scale(max(var(--tv-scale, 0.92), 0.94));
+  }
+
+  .contact-tv__screen {
+    background:
+      radial-gradient(circle at 50% 42%, rgba(247, 247, 243, 0.08), transparent 46%),
+      url("web-assets/og-card.jpg") center / cover,
+      #030303;
+  }
+
+  .contact-tv__screen video {
+    opacity: 0.82;
+    filter: saturate(0.66) contrast(1.16) brightness(0.62);
+  }
+
+  .contact-tv__screen::after {
+    animation: contactScan 5.6s linear infinite;
+  }
+
+  .contact-tv__links {
+    display: none;
+  }
+
+  .contact.is-in-view .contact-tv__links {
+    opacity: 0;
+  }
+
+  .contact-mobile-actions {
+    width: min(100%, 430px);
+    margin: 18px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    font-family: var(--mono);
+  }
+
+  .contact-mobile-actions span,
+  .contact-mobile-actions a {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    border: 1px solid rgba(247, 247, 243, 0.28);
+    border-radius: 3px;
+    background: rgba(247, 247, 243, 0.08);
+    color: rgba(247, 247, 243, 0.78);
+    font-size: 12px;
+    line-height: 1.15;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .contact-mobile-actions span,
+  .contact-mobile-actions a[href^="mailto"] {
+    grid-column: 1 / -1;
+  }
+
+  .contact-mobile-actions a:active {
+    background: rgba(247, 247, 243, 0.18);
+    transform: translateY(1px);
+  }
+
+  .contact a::before {
+    content: none;
   }
 }
