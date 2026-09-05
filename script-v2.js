@@ -180,6 +180,47 @@ function initWork() {
   setProject(projects[0]);
 }
 
+function initMobileProjectCards() {
+  const section = document.querySelector(".work-section");
+  const projects = [...document.querySelectorAll("[data-project]")];
+  const toggle = document.querySelector("[data-project-toggle]");
+  if (!section || !projects.length) return;
+
+  projects.forEach((project, index) => {
+    if (!project.querySelector(".mobile-project-media")) {
+      const media = document.createElement("span");
+      media.className = "mobile-project-media";
+      media.setAttribute("aria-hidden", "true");
+      media.append(createMedia(project, { posterOnly: true }));
+      project.prepend(media);
+    }
+
+    if (!project.querySelector(".mobile-project-meta")) {
+      const meta = document.createElement("span");
+      meta.className = "mobile-project-meta";
+      meta.innerHTML = `<b>${project.dataset.year || ""}</b><i>Open case</i>`;
+      project.append(meta);
+    }
+
+    if (index < 3) project.dataset.featured = "true";
+  });
+
+  if (!toggle) return;
+
+  const update = () => {
+    const expanded = section.classList.contains("is-expanded");
+    toggle.textContent = expanded ? "Show fewer projects" : "View all projects";
+    toggle.setAttribute("aria-expanded", String(expanded));
+  };
+
+  toggle.addEventListener("click", () => {
+    section.classList.toggle("is-expanded");
+    update();
+  });
+
+  update();
+}
+
 function initMoves() {
   const tip = document.querySelector("[data-move-tip]");
   if (!tip) return;
@@ -779,6 +820,7 @@ function initTreeCardDecrypt() {
 initOpeningGate(playHeroEntrance);
 initSurfaceReel();
 initWork();
+initMobileProjectCards();
 initMoves();
 initMethodCards();
 initMethodBackdrop();

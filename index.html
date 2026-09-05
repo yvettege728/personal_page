@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><rect width='240' height='240' rx='30' fill='%23f7f7f3'/><g fill='none' stroke='%232f2f2f' stroke-width='15' stroke-linecap='round'><line x1='58' y1='54' x2='120' y2='140'/><line x1='182' y1='54' x2='120' y2='140'/><line x1='120' y1='140' x2='120' y2='206'/></g><circle cx='58' cy='54' r='16' fill='%232f2f2f'/><circle cx='182' cy='54' r='16' fill='%232f2f2f'/><circle cx='120' cy='140' r='26' fill='%232f2f2f'/><circle cx='120' cy='206' r='17' fill='%232f2f2f'/></svg>">
-    <link rel="stylesheet" href="styles-v2.css?v=20260903-mobile-finesse">
+    <link rel="stylesheet" href="styles-v2.css?v=20260904-mobile-product">
   </head>
   <body>
     <div class="opening-gate" data-opening-gate aria-hidden="true">
@@ -94,6 +94,11 @@
           <a href="mailto:yvette_ge@gsd.harvard.edu">Email</a>
           <a href="https://www.linkedin.com/in/yanqin-ge-a43512228/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+        <nav class="mobile-jump" aria-label="Mobile portfolio sections">
+          <a href="#projects">Work</a>
+          <a href="#mobile-skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </section>
 
       <section class="positioning" aria-label="Positioning statement">
@@ -120,6 +125,7 @@
             <a href="new-orleans-case.html" data-project data-title="New Orleans" data-kicker="Reveal / civic system" data-year="2025" data-src="web-assets/d4d-blueprint.jpg" data-images="web-assets/d4d-blueprint.jpg|web-assets/d4d-stakeholder.png" data-interval="500" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2012.webp" data-copy="A civic research project about recovery before disaster, mapping social vulnerability, infrastructure, and institutional readiness."><span>009</span><strong>New Orleans</strong><em>Civic</em></a>
             <a href="los-balcones-case.html" data-project data-title="Los Balcones Ecotourism" data-kicker="Translate / visual field" data-year="2025" data-src="web-assets/los-balcones-phrase1.png" data-images="web-assets/los-balcones-phrase1.png|web-assets/los-balcones-phrase2.png|web-assets/los-balcones-phrase3.png|web-assets/los-balcones-phrase4.png" data-interval="500" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2015.webp" data-copy="A spatial and atmospheric study of balcony life, thresholds, looking, and the everyday politics of enclosure."><span>010</span><strong>Los Balcones Ecotourism</strong><em>Field</em></a>
           </nav>
+          <button class="mobile-project-toggle" type="button" data-project-toggle aria-expanded="false">View all projects</button>
 
           <figure class="project-preview">
             <div class="project-preview__media" data-preview-media></div>
@@ -258,21 +264,22 @@
         </div>
       </section>
 
-      <section class="skill-section" aria-label="How skills form">
+      <section class="skill-section" id="mobile-skills" aria-label="How skills form">
         <p class="skill-lead">Every skill I have, I needed first.</p>
+        <p class="skill-mobile-brief">A compact map of how I move from ambiguity to product, evidence, and adoption.</p>
         <div class="skill-copy">
           <p>I chase the problem, not the toolkit.</p>
           <p>I learned social science, theory and method, to take a structure apart and see why it holds together the way it does. I learned design, fabrication, visualization, methodology, to build something that could act on what I found. I learned AI and infrastructure because the problem in front of me needed it. None of it was the goal. The problem was.</p>
           <p>Drop me into a problem outside my training, and I will go acquire whatever it takes to solve it: a research method, a fabrication process, an unfamiliar piece of software, a new part of the AI stack. I do not wait until I am already qualified to start.</p>
         </div>
         <div class="skill-strips" aria-label="Seven skill strips">
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Structural & Stakeholder Analysis +</span><span class="tag-note" role="note">Taking a mess of scattered detail, interviews, documents, incentives, timelines, and composing it into one picture where you can see who moves whom, and where a decision would actually land.</span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Digital Fabrication & Visualization +</span><span class="tag-note" role="note">Getting hands dirty early. A rough prototype or MVP in front of people beats a finished argument, because the making and the critique iterate on each other.<span class="tool-chips"><span>Figma</span><span>Adobe CC</span><span>InDesign</span><span>Rhino</span><span>Grasshopper</span><span>Blender</span><span>Cursor</span></span></span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">AI Tooling & Infrastructure +</span><span class="tag-note" role="note">Building with models rather than around them: agent pipelines, multi-turn context, tool calls, retrieval, and the data structures underneath.<span class="tool-chips"><span>Claude Code</span><span>Codex</span><span>VLMs</span><span>Retrieval</span><span>Agent pipelines</span></span></span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Full-Stack Prototyping +</span><span class="tag-note" role="note">Carrying an idea from sketch to a live URL without handing it off. Front end, data layer, deploy.<span class="tool-chips"><span>Vanilla JS/CSS</span><span>Cloudflare Workers</span><span>Cloudflare Pages</span><span>Supabase</span><span>Firebase</span><span>Framer</span><span>Webflow</span><span>Vercel</span></span></span></button>
+          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Systems Research +</span><span class="tag-note" role="note">Taking a mess of scattered detail, interviews, documents, incentives, timelines, and composing it into one picture where you can see who moves whom, and where a decision would actually land.</span></button>
+          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Prototype & Visualize +</span><span class="tag-note" role="note">Getting hands dirty early. A rough prototype or MVP in front of people beats a finished argument, because the making and the critique iterate on each other.<span class="tool-chips"><span>Figma</span><span>Adobe CC</span><span>InDesign</span><span>Rhino</span><span>Grasshopper</span><span>Blender</span><span>Cursor</span></span></span></button>
+          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">AI Tooling + Infrastructure +</span><span class="tag-note" role="note">Building with models rather than around them: agent pipelines, multi-turn context, tool calls, retrieval, and the data structures underneath.<span class="tool-chips"><span>Claude Code</span><span>Codex</span><span>VLMs</span><span>Retrieval</span><span>Agent pipelines</span></span></span></button>
+          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Ship Product Experiments +</span><span class="tag-note" role="note">Carrying an idea from sketch to a live URL without handing it off. Front end, data layer, deploy.<span class="tool-chips"><span>Vanilla JS/CSS</span><span>Cloudflare Workers</span><span>Cloudflare Pages</span><span>Supabase</span><span>Firebase</span><span>Framer</span><span>Webflow</span><span>Vercel</span></span></span></button>
           <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Ambiguity to Structure +</span><span class="tag-note" role="note">Holding an undefined problem long enough for its shape to appear, then turning it into maps, criteria, workflows and staged decisions people can actually work from.</span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Cross-Disciplinary Translation +</span><span class="tag-note" role="note">Carrying one argument between social science, design and engineering, and keeping it true in each language. What counts as evidence changes at every border.</span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Adoption & Organizational Change +</span><span class="tag-note" role="note">Designing for the people who have to act on it, not only the people who use it. What gets adopted depends on incentives, existing workflow and who has to defend the decision.</span></button>
+          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Translate Across Disciplines +</span><span class="tag-note" role="note">Carrying one argument between social science, design and engineering, and keeping it true in each language. What counts as evidence changes at every border.</span></button>
+          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Adoption & Change +</span><span class="tag-note" role="note">Designing for the people who have to act on it, not only the people who use it. What gets adopted depends on incentives, existing workflow and who has to defend the decision.</span></button>
         </div>
       </section>
 
@@ -303,6 +310,6 @@
     </main>
 
     <script src="contact-stage.js?v=20260823-live"></script>
-    <script src="script-v2.js?v=20260903-mobile-finesse"></script>
+    <script src="script-v2.js?v=20260904-mobile-product"></script>
   </body>
 </html>

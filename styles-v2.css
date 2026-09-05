@@ -3258,6 +3258,7 @@ body.hero-ready .surface-reel::before {
   }
 
   .skill-strips .tag-note {
+    display: none;
     position: static;
     width: 100%;
     max-width: none;
@@ -3283,7 +3284,8 @@ body.hero-ready .surface-reel::before {
   }
 
   .skill-strips button[aria-expanded="true"] .tag-note {
-    max-height: 260px;
+    display: block;
+    max-height: none;
     margin-top: 10px;
   }
 
@@ -3376,5 +3378,492 @@ body.hero-ready .surface-reel::before {
 
   .contact a::before {
     content: none;
+  }
+}
+
+/* Mobile product pass, 2026-09-04: recruiter-first flow with tactile cards. */
+.mobile-jump,
+.mobile-project-toggle,
+.skill-mobile-brief,
+.mobile-project-media,
+.mobile-project-meta {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 64px;
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.022) 1px, transparent 1px),
+      linear-gradient(180deg, #f8f8f4 0%, #efeee8 54%, #f8f8f4 100%);
+    background-size: 7px 100%, auto;
+  }
+
+  .topbar {
+    border-bottom: 1px solid rgba(48, 48, 48, 0.1);
+    background: rgba(248, 248, 244, 0.82);
+    backdrop-filter: blur(14px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 26px 18px 12px;
+  }
+
+  .hero h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(58px, 18.5vw, 78px);
+    justify-items: center;
+  }
+
+  .hero h1 > span:first-child {
+    transform: scaleX(0.92);
+    transform-origin: center;
+  }
+
+  .television {
+    width: min(82vw, 330px);
+    margin-top: 14px;
+  }
+
+  .television figcaption {
+    max-width: 24ch;
+    margin-top: 4px;
+    font-size: 15px;
+  }
+
+  .hero__dial {
+    margin-top: 12px;
+  }
+
+  .mobile-recruiter {
+    gap: 16px;
+    padding: 24px 18px 22px;
+    background: rgba(248, 248, 244, 0.9);
+  }
+
+  .mobile-recruiter > *,
+  .work-section > *,
+  .methodology > *,
+  .skill-section > *,
+  .contact > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .mobile-recruiter__eyebrow {
+    color: rgba(48, 48, 48, 0.56);
+    font-size: 11px;
+  }
+
+  .mobile-recruiter h2 {
+    max-width: 12ch;
+    font-size: clamp(36px, 10.8vw, 48px);
+  }
+
+  .mobile-recruiter p:not(.mobile-recruiter__eyebrow) {
+    max-width: 36ch;
+    font-size: 15.5px;
+    line-height: 1.45;
+  }
+
+  .mobile-recruiter__tags {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    width: 100%;
+    max-width: 354px;
+    justify-self: center;
+  }
+
+  .mobile-recruiter__tags span {
+    min-width: 0;
+    padding: 6px 8px;
+    color: rgba(48, 48, 48, 0.68);
+    font-size: 11px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .mobile-recruiter__actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+    width: 100%;
+    max-width: 354px;
+    justify-self: center;
+  }
+
+  .mobile-recruiter__actions a {
+    min-width: 0;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 6px;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-jump {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    width: 100%;
+    max-width: 354px;
+    max-width: 100%;
+    justify-self: center;
+    margin-top: 2px;
+    overflow: hidden;
+    border: 1px solid rgba(48, 48, 48, 0.28);
+    border-radius: 4px;
+    font-family: var(--mono);
+  }
+
+  .mobile-jump a {
+    min-width: 0;
+    min-height: 36px;
+    display: grid;
+    place-items: center;
+    background: rgba(48, 48, 48, 0.92);
+    color: var(--paper);
+    font-size: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .positioning {
+    display: none;
+  }
+
+  .work-section {
+    min-height: auto !important;
+    padding: 34px 14px 36px;
+  }
+
+  .section-title--work {
+    margin-bottom: 4px;
+    padding-left: 6px;
+  }
+
+  .section-title h2,
+  .methodology__title h2,
+  .writing-dark h2,
+  .about h2 {
+    font-size: clamp(48px, 15vw, 72px);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .time-range {
+    margin-bottom: 16px;
+    color: rgba(48, 48, 48, 0.52);
+    font-size: 11px;
+  }
+
+  .work-stage {
+    gap: 14px;
+  }
+
+  .project-preview {
+    display: none;
+  }
+
+  .work-list {
+    order: 1;
+    gap: 10px;
+    width: 100%;
+    max-width: 362px;
+    justify-self: center;
+  }
+
+  .work-list a {
+    position: relative;
+    grid-template-columns: 82px minmax(0, 1fr) auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 12px;
+    row-gap: 4px;
+    min-height: 112px;
+    padding: 10px;
+    border: 1px solid rgba(48, 48, 48, 0.18);
+    border-radius: 6px;
+    background: rgba(248, 248, 244, 0.78);
+    box-shadow: 0 10px 26px rgba(48, 48, 48, 0.055);
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+  }
+
+  .work-list a:nth-of-type(n + 4) {
+    display: none;
+  }
+
+  .work-section.is-expanded .work-list a:nth-of-type(n + 4) {
+    display: grid;
+  }
+
+  .work-list a:hover,
+  .work-list a:focus-visible,
+  .work-list a.is-active {
+    border-color: rgba(48, 48, 48, 0.34);
+    background: rgba(255, 255, 252, 0.9);
+    transform: translateY(-1px);
+  }
+
+  .work-list a:active {
+    transform: translateY(1px);
+  }
+
+  .mobile-project-media {
+    grid-row: 1 / -1;
+    grid-column: 1;
+    display: block;
+    min-height: 92px;
+    overflow: hidden;
+    border: 1px solid rgba(48, 48, 48, 0.16);
+    border-radius: 4px;
+    background: #e8e6de;
+  }
+
+  .mobile-project-media img,
+  .mobile-project-media video {
+    width: 100%;
+    height: 100%;
+    min-height: 92px;
+    display: block;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.05) brightness(0.96);
+  }
+
+  .work-list span:not(.mobile-project-media):not(.mobile-project-meta) {
+    grid-column: 2;
+    padding: 0;
+    color: rgba(48, 48, 48, 0.48);
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  .work-list strong {
+    grid-column: 2 / 4;
+    font-size: clamp(20px, 5.8vw, 25px);
+    line-height: 0.98;
+  }
+
+  .work-list em {
+    grid-column: 2 / 4;
+    color: rgba(48, 48, 48, 0.58);
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .work-list a::after {
+    grid-column: 2 / 4;
+    display: -webkit-box;
+    color: rgba(48, 48, 48, 0.72);
+    font-size: 13px;
+    line-height: 1.28;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .mobile-project-meta {
+    grid-column: 2 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 2px;
+    color: rgba(48, 48, 48, 0.5);
+    font-family: var(--mono);
+    font-size: 10.5px;
+  }
+
+  .mobile-project-meta b,
+  .mobile-project-meta i {
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .mobile-project-meta i::after {
+    content: " ->";
+  }
+
+  .mobile-project-toggle {
+    order: 2;
+    width: 100%;
+    max-width: 362px;
+    justify-self: center;
+    min-height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(48, 48, 48, 0.32);
+    border-radius: 4px;
+    background: rgba(48, 48, 48, 0.92);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .methodology {
+    min-height: auto !important;
+    padding: 40px 14px 50px !important;
+  }
+
+  .methodology__title,
+  .methodology.is-pinned .methodology__title,
+  .methodology__claim,
+  .methodology.is-pinned .methodology__claim {
+    position: relative !important;
+    inset: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  .methodology__title {
+    margin: 0 0 16px;
+  }
+
+  .methodology__title h2 {
+    justify-content: flex-start;
+    font-size: clamp(38px, 11.5vw, 54px);
+    line-height: 0.86;
+  }
+
+  .methodology__title h2 span {
+    display: inline-block;
+  }
+
+  .methodology__claim p {
+    max-width: 100%;
+    font-size: clamp(23px, 7.2vw, 30px);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .methodology__claim {
+    gap: 12px;
+    margin: 0 0 18px;
+  }
+
+  .method-stack {
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .skill-section {
+    padding: 42px 14px 50px;
+  }
+
+  .skill-lead {
+    max-width: 10.5ch;
+    margin-bottom: 10px;
+    font-size: clamp(34px, 10.2vw, 45px);
+  }
+
+  .skill-mobile-brief {
+    display: block;
+    max-width: 31ch;
+    margin: 0 0 18px;
+    color: rgba(48, 48, 48, 0.64);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .skill-copy {
+    display: none;
+  }
+
+  .skill-strips {
+    gap: 9px;
+    width: 100%;
+    max-width: 362px;
+    justify-content: stretch;
+    justify-self: center;
+  }
+
+  .skill-strips button {
+    position: relative;
+    display: block;
+    height: auto;
+    min-height: 44px;
+    max-height: none;
+    padding: 13px 12px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(48, 48, 48, 0.045);
+    overflow: hidden;
+  }
+
+  .skill-strips .tag-label {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .skill-strips .tag-note {
+    display: none;
+    font-size: 13px;
+  }
+
+  .skill-strips button[aria-expanded="true"] .tag-note {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .writing-dark {
+    padding-top: 48px;
+  }
+
+  .writing-table a {
+    border-top-color: rgba(247, 247, 243, 0.16);
+  }
+
+  .about {
+    padding-top: 48px;
+  }
+
+  .contact {
+    padding-top: 34px;
+  }
+
+  .contact-tv__set {
+    width: min(94vw, 390px);
+  }
+
+  .contact-mobile-actions {
+    gap: 7px;
+  }
+
+  .contact-mobile-actions span,
+  .contact-mobile-actions a {
+    min-height: 44px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-recruiter__actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-list a {
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+  }
+
+  .mobile-project-media,
+  .mobile-project-media img,
+  .mobile-project-media video {
+    min-height: 86px;
   }
 }
