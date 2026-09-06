@@ -3867,3 +3867,220 @@ body.hero-ready .surface-reel::before {
     min-height: 86px;
   }
 }
+
+/* Mobile polish pass, 2026-09-05: remove rough poster scale and mobile-only bugs. */
+@media (max-width: 760px) {
+  .tree-card__open[hidden] {
+    display: none !important;
+  }
+
+  .mobile-recruiter {
+    padding: 22px 20px 24px;
+    border-top-color: rgba(48, 48, 48, 0.1);
+    border-bottom-color: rgba(48, 48, 48, 0.1);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 252, 0.78), rgba(242, 241, 236, 0.9)),
+      var(--paper);
+  }
+
+  .mobile-recruiter__eyebrow {
+    font-size: 10.5px;
+    line-height: 1.2;
+  }
+
+  .mobile-recruiter h2 {
+    max-width: 11.5ch;
+    font-size: clamp(32px, 8.9vw, 42px);
+    line-height: 0.96;
+    text-transform: none;
+  }
+
+  .mobile-recruiter p:not(.mobile-recruiter__eyebrow) {
+    max-width: 32ch;
+    color: rgba(48, 48, 48, 0.72);
+    font-size: 14.5px;
+    line-height: 1.42;
+  }
+
+  .mobile-recruiter__tags,
+  .mobile-recruiter__actions,
+  .mobile-jump {
+    width: 100%;
+    max-width: 332px;
+  }
+
+  .mobile-recruiter__tags span {
+    min-height: 34px;
+    display: grid;
+    place-items: center;
+    padding: 5px 8px;
+    border-color: rgba(48, 48, 48, 0.16);
+    background: rgba(255, 255, 252, 0.42);
+    color: rgba(48, 48, 48, 0.62);
+    font-size: 10.5px;
+  }
+
+  .mobile-recruiter__actions a {
+    min-height: 46px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .mobile-jump {
+    border-color: rgba(48, 48, 48, 0.18);
+    background: rgba(48, 48, 48, 0.92);
+  }
+
+  .mobile-jump a {
+    min-height: 42px;
+  }
+
+  .work-list,
+  .mobile-project-toggle,
+  .skill-strips {
+    max-width: 344px;
+  }
+
+  .work-list a {
+    grid-template-columns: 76px minmax(0, 1fr);
+    min-height: 104px;
+    padding: 9px;
+  }
+
+  .mobile-project-media {
+    min-height: 86px;
+  }
+
+  .mobile-project-media img,
+  .mobile-project-media video {
+    min-height: 86px;
+  }
+
+  .work-list strong,
+  .work-list em,
+  .work-list a::after,
+  .mobile-project-meta {
+    grid-column: 2;
+  }
+
+  .mobile-project-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .contact-mobile-actions {
+    max-width: 348px;
+  }
+
+  .contact-mobile-actions span,
+  .contact-mobile-actions a {
+    position: relative;
+    min-height: 46px;
+    border: 1px solid rgba(247, 247, 243, 0.24);
+    outline: 0;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .contact-mobile-actions .contact-mobile-phone {
+    grid-column: 1 / -1;
+    pointer-events: auto;
+  }
+
+  .contact-mobile-actions .contact-mobile-phone:focus,
+  .contact-mobile-actions .contact-mobile-phone:focus-visible {
+    border-color: rgba(247, 247, 243, 0.5);
+    outline: 0;
+    box-shadow: 0 0 0 1px rgba(247, 247, 243, 0.18);
+  }
+
+  body.tree-card-open::before {
+    background: rgba(247, 247, 243, 0.9);
+    backdrop-filter: blur(14px);
+  }
+
+  .tree-card__open {
+    top: max(12px, env(safe-area-inset-top)) !important;
+    right: 12px !important;
+    bottom: auto !important;
+    left: 12px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    overflow: auto;
+    border: 1px solid rgba(48, 48, 48, 0.18);
+    border-radius: 10px;
+    background: rgba(248, 248, 244, 0.94);
+    box-shadow: 0 18px 56px rgba(48, 48, 48, 0.14);
+    animation: none;
+    transform: none !important;
+  }
+
+  .tree-card__open::before {
+    display: none;
+  }
+
+  .tree-card__close {
+    position: relative;
+    inset: auto;
+    z-index: 20;
+    justify-self: start;
+    margin: 14px;
+    min-height: 40px;
+    padding: 0 14px;
+    background: rgba(255, 255, 252, 0.78);
+    font-size: 12px;
+  }
+
+  .tree-card__open .tree-card__cyanotype,
+  .tree-card__open .tree-card__dogwood,
+  .tree-card__open .tree-card__feather {
+    display: none !important;
+  }
+
+  .tree-card__tree,
+  .tree-card__hint {
+    display: none;
+  }
+
+  .tree-card__content,
+  .tree-card__open.is-tree-open .tree-card__content {
+    position: relative;
+    inset: auto;
+    z-index: 10;
+    width: auto;
+    height: auto;
+    max-height: calc(100vh - 112px);
+    max-height: calc(100dvh - 112px);
+    margin: 0 16px 18px;
+    padding: 18px 16px 42px;
+    overflow: auto;
+    border: 1px solid rgba(48, 48, 48, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 252, 0.78);
+    box-shadow: 0 12px 30px rgba(48, 48, 48, 0.08);
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+
+  .tree-card__copy {
+    display: block;
+  }
+
+  .tree-card__content p {
+    width: auto;
+    margin: 0 0 18px;
+    color: rgba(48, 48, 48, 0.78);
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .tree-card__content p:last-child {
+    margin-bottom: 0;
+  }
+}

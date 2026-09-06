@@ -604,6 +604,10 @@ function initTreeCard() {
     lockScroll();
     open.hidden = false;
     video?.play().catch(() => {});
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      open.classList.add("is-tree-open");
+      treeButton?.setAttribute("aria-expanded", "true");
+    }
   };
 
   // Closing now plays the card back out before it disappears, rather than
