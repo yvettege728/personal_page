@@ -98,26 +98,62 @@
 
   // Free-form blocks, so a page can carry whatever its argument actually needs:
   // prose, a numbered sequence, or a table. Nothing is forced on pages without them.
-  const sections = (project.sections || []).map((block) => {
+  const darkAttrs = (block) => (block.dark ? " dark dark-nav" : "");
+  const navAttr = (block) => (block.dark ? " data-nav-section" : "");
+  const kickerHead = (block) => !block.kicker && !block.title ? "" :
+    `<div class="section-kicker"><span class="section-number">${block.kicker || ""}</span>${block.title ? `<h2 class="section-title">${block.title}</h2>` : ""}</div>`;
+
+  const renderBlock = (block) => {
     if (block.type === "table") {
       const head = `<tr>${block.head.map((h) => `<th>${h}</th>`).join("")}</tr>`;
       const rows = block.rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("");
-      return `<section class="case-section${block.dark ? " dark dark-nav" : ""}"${block.dark ? " data-nav-section" : ""}><div class="section-inner"><div class="section-kicker"><span class="section-number">${block.kicker || ""}</span>${block.title ? `<h2 class="section-title">${block.title}</h2>` : ""}</div><div class="case-table-wrap"><table class="case-table"><thead>${head}</thead><tbody>${rows}</tbody></table></div>${renderMedia(block)}</div></section>`;
+      return `<div class="section-inner">${kickerHead(block)}<div class="case-table-wrap"><table class="case-table"><thead>${head}</thead><tbody>${rows}</tbody></table></div>${renderMedia(block)}</div>`;
     }
     if (block.type === "fold") {
       const paras = (block.body || []).map((para) => `<p>${para}</p>`).join("");
-      return `<section class="case-section${block.dark ? " dark dark-nav" : ""}"${block.dark ? " data-nav-section" : ""}><div class="case-two"><div><p class="eyebrow">${block.kicker || ""}</p></div><div class="case-copy"><details class="disclose"><summary class="disclose-summary"><span class="disclose-title">${block.title}</span><span class="disclose-mark" aria-hidden="true"></span></summary><div class="disclose-body">${paras}</div></details></div></div></section>`;
+      return `<div class="case-two"><div><p class="eyebrow">${block.kicker || ""}</p></div><div class="case-copy"><details class="disclose"><summary class="disclose-summary"><span class="disclose-title">${block.title}</span><span class="disclose-mark" aria-hidden="true"></span></summary><div class="disclose-body">${paras}</div></details></div></div>`;
     }
     if (block.type === "steps") {
       const steps = block.items
         .map((s, i) => `<article><span class="mono">${String(i + 1).padStart(2, "0")}</span><div><h3>${s.title}</h3><p>${s.body}</p></div></article>`)
         .join("");
-      return `<section class="case-section${block.dark ? " dark dark-nav" : ""}"${block.dark ? " data-nav-section" : ""}><div class="section-inner"><div class="section-kicker"><span class="section-number">${block.kicker || ""}</span>${block.title ? `<h2 class="section-title">${block.title}</h2>` : ""}</div><div class="case-steps">${steps}</div>${renderMedia(block)}</div></section>`;
+      return `<div class="section-inner">${kickerHead(block)}<div class="case-steps">${steps}</div>${renderMedia(block)}</div>`;
     }
     const paras = (block.body || []).map((p) => `<p>${p}</p>`).join("");
-    const media = renderMedia(block);
-    return `<section class="case-section${block.dark ? " dark dark-nav" : ""}"${block.dark ? " data-nav-section" : ""}><div class="case-two"><div><p class="eyebrow">${block.kicker || ""}</p></div><div class="case-copy">${block.title ? `<h2>${block.title}</h2>` : ""}${paras}${media}</div></div></section>`;
+    return `<div class="case-two"><div><p class="eyebrow">${block.kicker || ""}</p></div><div class="case-copy">${block.title ? `<h2>${block.title}</h2>` : ""}${paras}${renderMedia(block)}</div></div>`;
+  };
+
+  // A block marked `more` stays on the page as a single labelled line and
+  // opens on demand, so the default read is the short version of the case.
+  const sections = (project.sections || []).map((block) => {
+    if (!block.more) {
+      return `<section class="case-section${darkAttrs(block)}"${navAttr(block)}>${renderBlock(block)}</section>`;
+    }
+    // The summary line already carries the kicker and title.
+    const inner = renderBlock({ ...block, kicker: "", title: "" });
+    const label = [block.kicker, block.title].filter(Boolean).join(" · ");
+    return `<section class="case-section case-more${darkAttrs(block)}"${navAttr(block)}><div class="section-inner"><details class="disclose more-block"><summary class="disclose-summary"><span class="disclose-title">${label}</span><span class="disclose-mark" aria-hidden="true"></span></summary><div class="more-body">${inner}</div></details></div></section>`;
   }).join("");
+
+  // The at-a-glance panel answers the three questions a first-time reader has
+  // (what was wrong, what did you make, what happened) before any prose, and
+  // carries the role list and metadata that used to sit further down.
+  const g = project.glance;
+  const glance = g
+    ? `<section class="case-section glance" aria-label="Project at a glance" style="--glance-accent: var(--${project.accent})">
+        <div class="section-inner">
+          <div class="glance-grid">
+            <div class="glance-cell"><span class="glance-label">Problem</span><p>${g.problem}</p></div>
+            <div class="glance-cell"><span class="glance-label">What I made</span><p>${g.made}</p></div>
+            <div class="glance-cell glance-cell--result"><span class="glance-label">Result</span><p>${g.result}</p></div>
+          </div>
+          <div class="glance-foot">
+            <div class="glance-role"><span class="glance-label">My part</span><ul>${did}</ul></div>
+            <div class="glance-meta">${meta}${project.ai ? `<div class="glance-meta-wide"><strong>AI angle</strong>${project.ai}</div>` : ""}</div>
+          </div>
+        </div>
+      </section>`
+    : "";
 
   const galleryHeading = project.galleryTitle
     ? `<div class="section-kicker"><span class="section-number">${project.galleryKicker || ""}</span><h2 class="section-title">${project.galleryTitle}</h2></div>`
@@ -127,7 +163,7 @@
     ? `<section class="case-section${project.galleryDark ? " dark dark-nav" : ""}"${project.galleryDark ? " data-nav-section" : ""}><div class="section-inner">${galleryHeading}${accordion || `<div class="case-gallery${project.galleryLayout ? " " + project.galleryLayout : ""}">${gallery}</div>`}</div></section>`
     : "";
 
-  const ai = project.ai
+  const ai = project.ai && !g
     ? `<section class="case-section dark dark-nav" data-nav-section><div class="case-two"><div><p class="eyebrow">AI Angle</p></div><div class="case-copy"><h2>Where AI enters the system</h2><p>${project.ai}</p></div></div></section>`
     : "";
 
@@ -144,11 +180,13 @@
       </div>
     </section>
 
+    ${glance}
+
     ${lead}
 
-    <section class="case-section">
+    ${g ? "" : `<section class="case-section">
       <div class="section-inner meta-grid" aria-label="Project metadata">${meta}</div>
-    </section>
+    </section>`}
 
     <section class="case-section">
       <div class="case-two">
@@ -162,12 +200,12 @@
 
     ${sections}
 
-    <section class="case-section dark dark-nav" data-nav-section>
+    ${g ? "" : `<section class="case-section dark dark-nav" data-nav-section>
       <div class="case-two">
         <div><p class="eyebrow">What I Did</p></div>
         <div class="case-copy"><ul>${did}</ul></div>
       </div>
-    </section>
+    </section>`}
 
     ${ai}
 

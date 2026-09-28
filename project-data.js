@@ -1,5 +1,10 @@
 window.PROJECTS = {
   "roll-up": {
+    glance: {
+      problem: "Teachers’ best classroom ideas stay in one room. Creativity in teaching has no small, shareable unit and no place to accumulate.",
+      made: "A trademarked EdTech venture concept: the crease as a shareable teaching unit, a Crease Bank as the commons, and Conexa, an AI teaching agent. Brand system, website mockup, and pitch film.",
+      result: "Running since March 2024 across five cities, with trademarks registered in the US and China. Concept stage: Conexa is a product design, not a shipped product."
+    },
     galleryLayout: "spreads",
     title: "Rollup",
     category: "Translate / Reveal",
@@ -48,6 +53,11 @@ window.PROJECTS = {
     next: "shadow-within-case.html"
   },
   "make-a-wish": {
+    glance: {
+      problem: "Wishes are usually read one at a time. Collected from strangers, could they show the structural pressures shaping people’s lives?",
+      made: "A one-day installation in the Gund Hall backyard, a wooden frame and rope field for wish cards, paired with a web archive I built alone (Express, Supabase).",
+      result: "Sixty wishes hung in one day and archived online, where they read as patterns around housing, work, migration, health, and belonging."
+    },
     title: "Make a Wish",
     category: "Mediate",
     accent: "mediate",
@@ -65,7 +75,7 @@ window.PROJECTS = {
     },
     body: "A one-day participatory installation paired with a web archive, treating a wish as both a private note and a public social record. Participants entered the wooden frame, wrote a wish card, attached it to the rope field, and could also submit the wish online. I developed the concept, organized the event, presented the proposal, fabricated the physical structure, and built the web archive as the sole developer. The project makes private language visible as patterns shaped by housing, work, migration, health, family, identity, and belonging.",
     did: [
-      "Concept Development，event organization, Proposal Presentation",
+      "Concept development, event organization, Proposal Presentation",
       "Physical fabrication",
       "Sole developer of the web archive"
     ],
@@ -101,11 +111,16 @@ window.PROJECTS = {
     next: "roll-up-case.html"
   },
   "tangle-holder": {
+    glance: {
+      problem: "A fifteen-minute appointment cannot hold a patient’s accumulated state. Someone has to translate it: a patient who may lack the words, or a doctor who lacks the time.",
+      made: "A three-part product system: a soft wearable, a companion app whose AI layer (the Reader) runs on the Claude API, and a 3D-printed Holder that encodes a week of bodily state as an object a doctor can read by hand.",
+      result: "In prototype sessions people used the Holder to start the conversation, a job I had not designed for. The open objection is the clinician’s reading time. No clinical pilot yet."
+    },
     title: "Tangle to Holder",
     category: "Mediate",
     accent: "mediate",
     oneLiner: "Care is the infrastructure that holds complexity with clarity, continuity, accountability and care.",
-    oneLinerSub: "A fifteen-minute appointment cannot absorb a life’s worth of accumulated state. We design this product system that physicalize information into solid object. It procide the media for patients and clinicians to start their conversation with confidence and consensus.",
+    oneLinerSub: "A fifteen-minute appointment cannot absorb a life’s worth of accumulated state. We design this product system that physicalize information into solid object. It provide the media for patients and clinicians to start their conversation with confidence and consensus.",
     hero: "web-assets/tangle-product-system.jpg",
     heroVideo: "web-assets/tangle-product-system.mp4",
     heroAlt: "The Tangle product system: wearable, companion app, and Holder in use",
@@ -151,7 +166,7 @@ window.PROJECTS = {
       },
       {
         kicker: "What got built",
-        title: "Three prototypes(2 physical, 1 digital)",
+        title: "Three prototypes (2 physical, 1 digital)",
         body: [
           "For the digital interface, it includes a Holder simulator drives real geometry in Three.js from five live sliders, so you can watch a week of state deform an object in your hand. The companion app carries five screens, and the Reader is wired to the Claude API with its own written voice guideline rather than mocked with placeholder text. The clinic dashboard shows the doctor-facing side of the same data.",
         ],
@@ -176,6 +191,7 @@ window.PROJECTS = {
         ]
       },
       {
+        more: true,
         kicker: "Where the money would come from",
         title: "A product that hides its medical nature has to earn its way back to the payer.",
         body: [
@@ -199,11 +215,16 @@ window.PROJECTS = {
     next: "thermal-commons-case.html"
   },
   "thermal-commons": {
+    glance: {
+      problem: "Gund Hall is cold and the machines work. A complaint takes about five minutes to file and about eighteen days to answer, so discomfort never reaches anyone who can act on it.",
+      made: "A live three-mode web tool on one Supabase data layer: occupants vote in ten seconds, facilities see a spatial pattern with preset actions, decision-makers play a six-role governance game.",
+      result: "At the final review, 70% of the room changed position after using it. The facilities lead, who had argued envelope-first, said it opened the problem up for him."
+    },
     title: "Thermal Commons",
     category: "Mediate",
     accent: "mediate",
-    oneLiner: "Thermal discomfort not only contribute to engineering failure but also organizational insufficiency.",
-    oneLinerSub: "From envelop first to information first. I shipped a live interface that turned private complaints into a signal the institution had to answer. At the final review, 70% of the room changed its position after using it.",
+    oneLiner: "Thermal discomfort not only contributes to engineering failure but also organizational insufficiency.",
+    oneLinerSub: "From envelope first to information first. I shipped a live interface that turned private complaints into a signal the institution had to answer. At the final review, 70% of the room changed its position after using it.",
     hero: "web-assets/thermal-mockup.jpg",
     heroVideo: "web-assets/thermal-mockup.mp4",
     heroAlt: "The Thermal Commons interface running at building scale",
@@ -223,6 +244,7 @@ window.PROJECTS = {
     },
     sections: [
       {
+        more: true,
         kicker: "Who it is for",
         title: "Three groups who cannot see each other, plus one I missed.",
         body: [
@@ -278,6 +300,7 @@ window.PROJECTS = {
         dark: true
       },
       {
+        more: true,
         type: "table",
         kicker: "Six positions",
         title: "Who you are decides what Gund becomes",
@@ -293,6 +316,7 @@ window.PROJECTS = {
         dark: true
       },
       {
+        more: true,
         type: "steps",
         kicker: "Why it works",
         title: "Every element is a nudge",
@@ -303,6 +327,7 @@ window.PROJECTS = {
         ]
       },
       {
+        more: true,
         kicker: "What shipped",
         title: "Three modes, one data layer, one live URL.",
         body: [
@@ -350,6 +375,11 @@ window.PROJECTS = {
     next: "make-a-wish-case.html"
   },
   "simultaneously": {
+    glance: {
+      problem: "A city’s impression is set by its frame: a sightseeing tram’s fixed angle, blocked sightlines, and curated sequence.",
+      made: "An interactive spatial installation linking audiences in Shanghai and Hong Kong in real time through light beams and exchanged photographs, with prism massing built from obstructed sightlines.",
+      result: "Completed Oct to Nov 2024 as a self-initiated project, advised by Qiuping Huang at ECADI."
+    },
     galleryLayout: "accordion",
     title: "Simultaneously",
     category: "Reveal",
@@ -386,6 +416,11 @@ window.PROJECTS = {
     next: "new-orleans-case.html"
   },
   "shadow-within": {
+    glance: {
+      problem: "Dissociation happens inside a person, so nobody else can see it.",
+      made: "A real-time installation: four screens, four cameras, and OpenCV face detection mirror and fragment a visitor’s own face across a four-stage sequence.",
+      result: "Built and run as a working installation in Aug to Sep 2024, with the subject handled carefully: no aestheticized suffering, no long participant quotes."
+    },
     title: "Shadow Within",
     category: "Translate",
     accent: "translate",
@@ -426,6 +461,11 @@ window.PROJECTS = {
     next: "liminal-grounds-case.html"
   },
   "liminal-grounds": {
+    glance: {
+      problem: "The Bartlett’s Gordon Street entrance is narrow, hidden, and stopped by a turnstile and a security desk. A campus that calls itself open withdraws public access at the door.",
+      made: "A spatial design proposal for semi-public zones between street and interior (seating, cafes, open areas), with the Chinese button knot as its motif.",
+      result: "Completed individual proposal for the Data Narrative workshop at the Bartlett, UCL, Jul to Nov 2024."
+    },
     galleryLayout: "accordion",
     title: "Liminal Ground",
     category: "Reveal / Mediate",
@@ -461,6 +501,11 @@ window.PROJECTS = {
     next: "simultaneously-case.html"
   },
   "los-balcones": {
+    glance: {
+      problem: "A Peruvian conservation area caught between oil extraction and rising tourism. The question was how tourism, conservation, and livelihoods could be organized together.",
+      made: "My layer of a team co-management proposal: visitor-behavior analysis and nudge-based Time-Place-Manner rules, delivered as bilingual interpretive panels, a guide script, one-minute rule panels, and per-node two-pagers.",
+      result: "Completed team proposal for Harvard GSD SES 5525, Fall 2025."
+    },
     title: "Los Balcones Ecotourism",
     category: "Mediate",
     accent: "mediate",
@@ -495,6 +540,11 @@ window.PROJECTS = {
     next: "chula-case.html"
   },
   "new-orleans": {
+    glance: {
+      problem: "Money flows easily to visible disaster damage and poorly to invisible preparedness, so recovery housing gets built after the flood.",
+      made: "A policy-system framework (D4D) that treats distributed ADUs as civic infrastructure funded before a disaster. I led the policy, funding, and infrastructure mapping: stakeholder maps, a six-phase service blueprint, crisis-phase comparisons.",
+      result: "Completed team proposal for Harvard GSD PRO 7445, Fall 2025, compared across Gentilly and Bywater to show the same instrument landing differently."
+    },
     title: "New Orleans",
     category: "Translate",
     accent: "translate",
