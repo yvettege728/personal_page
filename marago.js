@@ -40,7 +40,7 @@
         track.style.transform = "";
         return;
       }
-      span = Math.max(0, track.scrollWidth - window.innerWidth);
+      span = Math.max(0, track.scrollWidth - strip.clientWidth);
       strip.style.height = `${span + window.innerHeight}px`;
       paint();
     };
@@ -52,14 +52,15 @@
       const top = strip.getBoundingClientRect().top;
       const p = Math.min(1, Math.max(0, -top / (span || 1)));
       track.style.transform = `translate3d(${-p * span}px,0,0)`;
-      const mid = window.innerWidth / 2;
+      const box = strip.getBoundingClientRect();
+      const mid = box.left + box.width / 2;
       let best = cards[0];
       let gap = Infinity;
       cards.forEach((card) => {
         const r = card.getBoundingClientRect();
         const d = Math.abs(r.left + r.width / 2 - mid);
         if (d < gap) { gap = d; best = card; }
-        if (r.left < window.innerWidth * 0.92 && r.right > 0) card.classList.add("is-open");
+        if (r.left < box.right - box.width * 0.08 && r.right > box.left) card.classList.add("is-open");
       });
       strip.style.setProperty("--ground", best.style.getPropertyValue("--card"));
       if (counter) counter.textContent = best.querySelector(".strip-card__num").textContent;

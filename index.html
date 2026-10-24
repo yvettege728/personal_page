@@ -17,34 +17,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><rect width='240' height='240' rx='30' fill='%23f7f7f3'/><g fill='none' stroke='%232f2f2f' stroke-width='15' stroke-linecap='round'><line x1='58' y1='54' x2='120' y2='140'/><line x1='182' y1='54' x2='120' y2='140'/><line x1='120' y1='140' x2='120' y2='206'/></g><circle cx='58' cy='54' r='16' fill='%232f2f2f'/><circle cx='182' cy='54' r='16' fill='%232f2f2f'/><circle cx='120' cy='140' r='26' fill='%232f2f2f'/><circle cx='120' cy='206' r='17' fill='%232f2f2f'/></svg>">
     <link rel="stylesheet" href="styles-v2.css?v=20261024-marago">
+    <link rel="stylesheet" href="shell.css?v=20261024">
   </head>
   <body>
     <div class="opening-gate" data-opening-gate aria-hidden="true">
       <video src="web-assets/opening-video.mp4" autoplay muted playsinline preload="auto" aria-label="Opening video"></video>
     </div>
 
-    <header class="topbar">
-      <a class="brand" href="#top" aria-label="Yvette Ge home">
-        <svg class="brand-mark" viewBox="0 0 240 240" aria-hidden="true">
-          <line x1="58" y1="54" x2="120" y2="140"></line>
-          <line x1="182" y1="54" x2="120" y2="140"></line>
-          <line x1="120" y1="140" x2="120" y2="206"></line>
-          <circle cx="58" cy="54" r="13"></circle>
-          <circle cx="182" cy="54" r="13"></circle>
-          <circle cx="120" cy="140" r="23"></circle>
-          <circle cx="120" cy="206" r="14"></circle>
-        </svg>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="#work" data-decrypt data-text="Work">Work</a>
-        <a href="#profile" data-decrypt data-text="Profile">Profile</a>
-        <a href="#mobile-skills" data-decrypt data-text="Skills">Skills</a>
-        <a href="methodology.html" data-decrypt data-text="Methodology">Methodology</a>
-        <a href="writing.html" data-decrypt data-text="Writing">Writing</a>
-      </nav>
-    </header>
 
-    <main id="top">
+    <aside class="shell-side" data-shell-side></aside>
+
+    <div class="cover" data-cover>
       <section class="hero" aria-labelledby="hero-title">
         <h1 id="hero-title"><span>YVETTE</span><span class="script">Ge</span></h1>
 
@@ -79,7 +62,25 @@
           <span>+852</span>
         </p>
       </section>
+      <button class="cover__enter" type="button" data-cover-enter>Enter <span aria-hidden="true">↓</span></button>
+    </div>
 
+    <main class="stage" id="top">
+      <div class="view" data-view="home">
+      <section class="intro" aria-label="Selected projects, arriving" data-intro>
+        <div class="intro__pin">
+          <p class="intro__mark" aria-hidden="true">Yvette<span>Ge</span></p>
+          <p class="intro__side intro__side--l">Design research and practice<br>at Harvard</p>
+          <p class="intro__side intro__side--r">Infrastructure for the<br>agentic web at MIT</p>
+          <div class="intro__deck" data-intro-deck></div>
+          <p class="intro__cap"><span data-intro-name></span><span data-intro-kind></span></p>
+        </div>
+      </section>
+      <section class="positioning" aria-label="Positioning statement">
+        <p data-position-reveal>Design research and practice at Harvard. Infrastructure for the agentic web at MIT.</p>
+        <span>■ I translate between what people struggle with, what technology can enable, and what can become a viable product.</span>
+        <a class="intro__all" href="#work" data-view-link="work">All work →</a>
+      </section>
       <section class="mobile-recruiter" aria-label="Recruiter summary">
         <p class="mobile-recruiter__eyebrow">AI Product · Multi-Agent Systems · Agentic Web Infrastructure</p>
         <h2>Translating between people, technology, and product.</h2>
@@ -103,12 +104,9 @@
           <a href="#contact">Contact</a>
         </nav>
       </section>
+      </div>
 
-      <section class="positioning" aria-label="Positioning statement">
-        <p data-position-reveal>Design research and practice at Harvard. Infrastructure for the agentic web at MIT.</p>
-        <span>■ I translate between what people struggle with, what technology can enable, and what can become a viable product.</span>
-      </section>
-
+      <div class="view" data-view="work">
       <section class="work-strip" id="work" aria-label="Selected projects, at a glance" data-work-strip>
         <div class="work-strip__pin">
           <p class="work-strip__label"><span>Selected projects</span><span class="work-strip__arrow" aria-hidden="true">→</span></p>
@@ -116,21 +114,7 @@
           <p class="work-strip__hint" aria-hidden="true">Scroll · <span data-strip-count>01</span></p>
         </div>
       </section>
-
-      <section class="studio" aria-label="About and work">
-        <aside class="studio__side">
-          <img class="studio__portrait" src="web-assets/portrait-2026.jpg" alt="Yvette Ge">
-          <div class="studio__intro">
-            <p>I’m Yvette, a Master in Design Studies candidate at Harvard GSD. My work covers incentive mechanism and system design, multi-agent architecture, and service and product prototyping, grounded in social science research and theory.</p>
-            <p>I work in the space between what users say they need and what they actually need, between what the technology can do and what the story promises, and between what a business can sustain and what its founders hope for. I build the systems myself, so I know where the tradeoffs sit.</p>
-          </div>
-          <nav class="studio__links" aria-label="Quick links">
-            <a href="mailto:yvette_ge@gsd.harvard.edu">Email</a>
-            <a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="web-assets/Yvette_Ge_CV.pdf?v=20261024">CV</a>
-            <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261024" lang="zh">中文简历</a>
-          </nav>
-        </aside>
+      <section class="studio studio--solo" aria-label="Project index">
         <div class="studio__main">
         <section class="work-section" id="projects" aria-labelledby="projects-heading">
           <header class="studio-head">
@@ -174,14 +158,12 @@
           </div>
         </section>
 
-        <section class="method-teaser" id="methodology" aria-label="Methodology">
-          <p>Hold complexity long enough for negotiation to become possible.</p>
-          <a href="methodology.html">Read the methodology →</a>
-        </section>
 
         </div>
       </section>
+      </div>
 
+      <div class="view" data-view="profile">
       <section class="profile" id="profile" aria-labelledby="profile-heading" data-profile>
         <header class="profile__head">
           <p class="profile__eyebrow">Profile</p>
@@ -230,7 +212,6 @@
           <a class="profile-panel__link" href="#mobile-skills" data-profile-close>See how each skill formed ↓</a>
         </aside>
       </section>
-
       <section class="skill-section" id="mobile-skills" aria-label="How skills form">
         <div class="skill-layout">
           <figure class="skill-portrait">
@@ -257,38 +238,60 @@
           </div>
         </div>
       </section>
+      </div>
 
-      <section class="contact contact-tv" id="contact" aria-label="Contact" data-contact-stage>
-        <div class="contact-tv__set">
-          <div class="contact-tv__screen" aria-hidden="true">
-            <video src="web-assets/picvideo-web.mp4" poster="web-assets/og-card.jpg" autoplay muted loop playsinline preload="metadata"></video>
-          </div>
-          <img class="contact-tv__frame" src="web-assets/eric-cole-assets/WkbjqM8K5hqKOUzSBrsnPMKBcI.png" alt="" aria-hidden="true">
-          <div class="contact-links contact-tv__links">
-            <span>+1 6176808178</span>
-            <a href="mailto:yvette_ge@gsd.harvard.edu" data-decrypt data-text="yvette_ge@gsd.harvard.edu">yvette_ge@gsd.harvard.edu</a>
-            <a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener" data-decrypt data-text="LinkedIn">LinkedIn</a>
-            <a href="web-assets/Yvette_Ge_CV.pdf?v=20261024" data-decrypt data-text="Download CV">Download CV</a>
-            <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261024" lang="zh">中文简历</a>
-            <a href="web-assets/yvette-ge-namecard.png" download="Yvette-Ge-Namecard.png" data-decrypt data-text="Download Card">Download Card</a>
-            <a href="#top" data-decrypt data-text="Back to Top">Back to Top</a>
-          </div>
-        </div>
-        <div class="contact-mobile-actions" aria-label="Mobile contact links">
-          <a href="tel:+16176808178" class="contact-mobile-phone">+1 617 680 8178</a>
-          <a href="mailto:yvette_ge@gsd.harvard.edu">yvette_ge@gsd.harvard.edu</a>
-          <a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="web-assets/Yvette_Ge_CV.pdf?v=20261024">Download CV</a>
-          <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261024" lang="zh">中文简历</a>
-          <a href="web-assets/yvette-ge-namecard.png" download="Yvette-Ge-Namecard.png">Download Card</a>
-          <a href="#top">Back to Top</a>
+      <div class="view" data-view="writing">
+      <section class="writing-view" aria-labelledby="writing-heading">
+        <header class="view-head">
+          <p class="profile__eyebrow">Writing</p>
+          <h2 id="writing-heading">Essays &amp; method</h2>
+          <p class="view-head__note">Seven papers from UCL (2021–2024), where most of my vocabulary comes from, and the methodology I work by now.</p>
+        </header>
+        <div class="paper-list" data-paper-list>
+          <a href="writing-00-dissertation.html" data-paper-img="web-assets/ucl-00-dissertation-cover.jpg"><span>00</span><strong>Mapping the Journey</strong><em>Sociology · dissertation</em></a>
+          <a href="writing-01-feminisms.html" data-paper-img="web-assets/ucl-01-feminisms-cover.jpg"><span>01</span><strong>Thinking with Feminisms</strong><em>Anthropology · gender studies</em></a>
+          <a href="writing-02-communicating.html" data-paper-img="web-assets/ucl-02-communicating-cover.jpg"><span>02</span><strong>Communicating Knowledge</strong><em>Science communication</em></a>
+          <a href="writing-03-malegaze.html" data-paper-img="web-assets/ucl-03-malegaze-cover.jpg"><span>03</span><strong>Heroine Films and the Male Gaze</strong><em>Film studies</em></a>
+          <a href="writing-04-arts-engagement.html" data-paper-img="web-assets/ucl-04-arts-engagement-cover.jpg"><span>04</span><strong>Who Can Afford Culture</strong><em>Quantitative sociology</em></a>
+          <a href="writing-05-uniform-skirt.html" data-paper-img="web-assets/ucl-05-uniform-skirt-cover.jpg"><span>05</span><strong>The School Uniform Skirt</strong><em>Sociology of the body</em></a>
+          <a href="writing-06-media-education.html" data-paper-img="web-assets/ucl-06-media-education-cover.jpg"><span>06</span><strong>New Literacies and Production</strong><em>Media literacy</em></a>
+          <figure class="paper-list__cover" aria-hidden="true"><img alt="" data-paper-cover></figure>
         </div>
       </section>
+        <section class="method-teaser" id="methodology" aria-label="Methodology">
+          <p>Hold complexity long enough for negotiation to become possible.</p>
+          <a href="methodology.html">Read the methodology →</a>
+        </section>
+      </div>
+
+      <div class="view" data-view="contact">
+      <section class="contact-page" id="contact" aria-labelledby="contact-heading">
+        <header class="view-head">
+          <p class="profile__eyebrow">Contact</p>
+          <h2 id="contact-heading">Say hello.</h2>
+          <p class="view-head__note">Happy to talk about AI products, agent infrastructure, or anything you saw here.</p>
+        </header>
+        <div class="contact-page__grid">
+          <dl class="contact-page__list">
+            <div><dt>Email</dt><dd><a href="mailto:yvette_ge@gsd.harvard.edu">yvette_ge@gsd.harvard.edu</a></dd></div>
+            <div><dt>Phone</dt><dd><a href="tel:+16176808178">+1 617 680 8178</a></dd></div>
+            <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener">yvette-ge-a43512228</a></dd></div>
+            <div><dt>CV</dt><dd><a href="web-assets/Yvette_Ge_CV.pdf?v=20261024">English</a> · <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261024" lang="zh">中文简历</a></dd></div>
+            <div><dt>Card</dt><dd><a href="web-assets/yvette-ge-namecard.png" download="Yvette-Ge-Namecard.png">Download name card</a></dd></div>
+          </dl>
+          <figure class="ctv" aria-hidden="true">
+            <div class="ctv__screen"><video src="web-assets/picvideo-web.mp4" poster="web-assets/og-card.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+            <img class="ctv__frame" src="web-assets/eric-cole-assets/WkbjqM8K5hqKOUzSBrsnPMKBcI.png" alt="">
+          </figure>
+        </div>
+      </section>
+      </div>
     </main>
 
     <script src="contact-stage.js?v=20260823-live"></script>
     <script src="script-v2.js?v=20260905-mobile-polish"></script>
-    <script src="marago.js?v=20261024"></script>
+    <script src="marago.js?v=20261024b"></script>
+    <script src="shell.js?v=20261024"></script>
     <script>
       // Page two: the heading takes the hovered project's name, and a
       // bar slides down the index edge to the active row.

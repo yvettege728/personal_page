@@ -1,0 +1,324 @@
+/* The fixed frame (2026-10-24): one sidebar that never moves, one stage
+   that turns to a section at a time. Loaded on the home page and, through
+   shell.js, on case and writing pages. */
+:root { --side: clamp(230px, 19vw, 290px); }
+
+.shell-side {
+  --paper: #e8e6e1;
+  --ink: #262626;
+  --soft: rgba(38, 38, 38, 0.42);
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 80;
+  width: var(--side);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 26px 26px;
+  background: var(--paper);
+  color: var(--ink);
+  border-right: 1px solid rgba(38, 38, 38, 0.14);
+  font-family: "Hanken Grotesk", sans-serif;
+}
+.shell-side a { color: inherit; text-decoration: none; }
+.shell-side .shell-side__top { display: grid; gap: 22px; flex-shrink: 0; }
+.shell-side .shell-side__brand { display: flex; align-items: center; gap: 12px; font: 400 22px/1 "Instrument Serif", "Times New Roman", serif; }
+.shell-side .shell-side__brand svg { width: 28px; height: 28px; stroke: currentColor; stroke-width: 15; stroke-linecap: round; fill: none; }
+.shell-side .shell-side__brand svg circle { fill: currentColor; stroke: none; }
+.shell-side .shell-side__where {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.shell-side .shell-side__where [data-clock] { color: var(--ink); font-variant-numeric: tabular-nums; }
+.shell-side .shell-side__menu { display: none; }
+
+.shell-side .shell-side__nav { display: grid; gap: 18px; }
+.shell-side .shell-side__nav a { display: grid; gap: 5px; color: var(--soft); transition: color 300ms ease; }
+.shell-side .shell-side__nav strong {
+  font: 400 clamp(38px, 3.3vw, 54px)/0.9 "Instrument Serif", "Times New Roman", serif;
+  letter-spacing: -0.01em;
+  transition: transform 400ms cubic-bezier(.2,.8,.2,1);
+}
+.shell-side .shell-side__nav small { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+.shell-side .shell-side__nav a:hover strong { transform: translateX(6px); }
+.shell-side .shell-side__nav a:hover,
+.shell-side .shell-side__nav a.is-current { color: var(--ink); }
+.shell-side .shell-side__nav a.is-current strong { font-style: italic; }
+.shell-side .shell-side__nav a.is-current small::before { content: ""; display: inline-block; width: 18px; height: 1px; margin-right: 8px; vertical-align: middle; background: currentColor; }
+
+.shell-side .shell-side__foot { margin: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+.shell-side .shell-side__foot a { border-bottom: 1px solid transparent; }
+.shell-side .shell-side__foot a:hover { border-color: currentColor; }
+
+/* The stage sits beside the frame. */
+body.has-shell { padding-left: var(--side); }
+body.has-shell .line-nav.case-nav,
+body.has-shell > .topbar { display: none; }
+
+/* Home: one view at a time, arriving with a short rise. */
+.stage { min-height: 100vh; }
+.view[hidden] { display: none; }
+.view { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease, transform 700ms cubic-bezier(.2,.8,.2,1); }
+.view.is-shown { opacity: 1; transform: none; }
+
+/* The cover is the old opening set, laid over everything until you enter. */
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 86;
+  display: grid;
+  align-content: center;
+  background: var(--paper);
+  transform: translateY(-102%);
+  visibility: hidden;
+  transition: transform 900ms cubic-bezier(.7,0,.2,1), visibility 0s linear 900ms;
+}
+body.at-cover .cover { transform: none; visibility: visible; transition: transform 900ms cubic-bezier(.7,0,.2,1); }
+body.at-cover { overflow: hidden; }
+.cover .hero { min-height: 100vh; }
+.cover__enter {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  padding: 0;
+  border: 0;
+  background: none;
+  font: 500 12px/1 "Hanken Grotesk", sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  cursor: pointer;
+}
+.cover__enter span { display: inline-block; animation: drop 2s ease-in-out infinite; }
+@keyframes drop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+/* Home intro: a wordmark, and project heroes arriving from the four sides. */
+.intro { position: relative; --ground: var(--paper); background: var(--ground); transition: background-color 700ms ease; }
+.intro__pin { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.intro__mark {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.12em;
+  font: 400 calc((100vw - var(--side)) * 0.3)/0.8 "Instrument Serif", "Times New Roman", serif;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  white-space: nowrap;
+  animation: mark-in 1200ms cubic-bezier(.2,.8,.2,1) both;
+}
+.intro__mark span { font-family: var(--script); font-size: 0.62em; letter-spacing: 0; }
+@keyframes mark-in { from { opacity: 0; letter-spacing: 0.05em; } to { opacity: 1; letter-spacing: -0.03em; } }
+.intro__side {
+  position: absolute;
+  top: 32px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft);
+  animation: mark-in 900ms ease 500ms both;
+}
+.intro__side--l { left: clamp(24px, 3vw, 48px); }
+.intro__side--r { right: clamp(24px, 3vw, 48px); text-align: right; }
+.intro__deck { position: absolute; inset: 0; }
+.intro__card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(50%, 760px);
+  aspect-ratio: 16 / 10;
+  opacity: 0;
+  background: var(--card);
+  overflow: hidden;
+  will-change: transform, clip-path;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+}
+.intro__card img { width: 100%; height: 100%; object-fit: cover; }
+.intro__cap {
+  position: absolute;
+  z-index: 50;
+  left: clamp(24px, 3vw, 48px);
+  right: clamp(24px, 3vw, 48px);
+  bottom: 28px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.intro__cap [data-intro-name] { font: 400 clamp(28px, 2.6vw, 42px)/1 "Instrument Serif", serif; }
+.intro__cap [data-intro-kind] { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); }
+.intro__cap.is-swap > * { animation: cap-in 600ms cubic-bezier(.2,.8,.2,1) both; }
+.intro__cap.is-swap > *:last-child { animation-delay: 120ms; }
+@keyframes cap-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.intro.has-card .intro__mark { color: rgba(38, 38, 38, 0.9); }
+.view[data-view="home"] .positioning { position: relative; }
+.intro__all {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid currentColor;
+}
+
+/* Work: the index runs the full width of the stage now that the frame holds the intro. */
+.studio.studio--solo { display: block; }
+
+/* Writing: a numbered list; the paper's cover peeks out beside the row. */
+.writing-view { padding: 140px clamp(36px, 6vw, 120px) 40px; }
+.view-head { display: grid; gap: 14px; margin-bottom: 56px; max-width: 760px; }
+.view-head h2 { margin: 0; font: 400 clamp(40px, 4.4vw, 72px)/0.95 "Instrument Serif", serif; }
+.view-head__note { margin: 0; font-size: 14px; line-height: 1.55; color: var(--soft); max-width: 52ch; }
+.paper-list { position: relative; display: grid; border-top: 1px solid var(--line); max-width: 920px; }
+.paper-list a {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  transition: padding 400ms cubic-bezier(.2,.8,.2,1), background-color 300ms ease;
+}
+.paper-list a:hover { padding-left: 14px; background: rgba(38, 38, 38, 0.04); }
+.paper-list span { font: 15px/1 "Times New Roman", Times, serif; color: var(--soft); }
+.paper-list strong { font: 400 clamp(22px, 2vw, 30px)/1.1 "Instrument Serif", serif; }
+.paper-list em { font-style: normal; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); }
+.paper-list__cover {
+  position: absolute;
+  right: -220px;
+  top: 0;
+  width: 180px;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(-20%) rotate(2deg);
+  pointer-events: none;
+  transition: opacity 300ms ease, top 400ms cubic-bezier(.2,.8,.2,1);
+}
+.paper-list__cover img { width: 100%; box-shadow: 0 18px 40px rgba(0,0,0,0.15); }
+.paper-list.is-peeking .paper-list__cover { opacity: 1; }
+.view[data-view="writing"] .method-teaser { padding: 80px clamp(36px, 6vw, 120px) 140px; }
+
+/* Phones: the frame becomes a bar along the top with a full-screen menu. */
+@media (max-width: 860px) {
+  body.has-shell { padding-left: 0; padding-top: 58px; }
+  .shell-side {
+    inset: 0 0 auto 0;
+    width: auto;
+    height: 58px;
+    padding: 0 18px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(38, 38, 38, 0.14);
+    overflow: hidden;
+    transition: height 600ms cubic-bezier(.7,0,.2,1);
+  }
+  .shell-side .shell-side__top { grid-template-columns: auto 1fr auto; align-items: center; height: 58px; gap: 12px; }
+  .shell-side .shell-side__where { font-size: 10px; text-align: right; }
+  .shell-side .shell-side__where br { display: none; }
+  .shell-side .shell-side__menu {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: 500 12px/1 "Hanken Grotesk", sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .shell-side .shell-side__nav, .shell-side .shell-side__foot { opacity: 0; transition: opacity 300ms ease; }
+  .shell-side.is-open { height: 100vh; padding-bottom: 28px; }
+  .shell-side.is-open .shell-side__nav, .shell-side.is-open .shell-side__foot { opacity: 1; transition-delay: 250ms; }
+  .shell-side .shell-side__nav strong { font-size: 52px; }
+  .intro__card { width: 84%; aspect-ratio: 4 / 5; }
+  .intro__mark { font-size: 27vw; }
+  .intro__side { font-size: 9px; top: 18px; }
+  .paper-list__cover { display: none; }
+  .writing-view { padding: 72px 18px 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view, .cover, .shell-side { transition: none; }
+  .intro__mark, .intro__side, .cover__enter span { animation: none; }
+}
+
+/* Before the first card lands, the caption invites a scroll. */
+.intro:not(.has-card) .intro__cap::before {
+  content: "Scroll to open the work";
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft);
+  animation: mark-in 900ms ease 900ms both;
+}
+.intro__deck { transition: opacity 300ms linear; }
+
+/* Home: the two lines read as a magazine standfirst, not a headline. */
+.view[data-view="home"] .positioning { min-height: 80vh; padding: 140px clamp(36px, 6vw, 120px); display: grid; align-content: center; }
+.view[data-view="home"] .positioning p {
+  max-width: 18ch;
+  font: 400 clamp(40px, 4.6vw, 76px)/1.02 "Instrument Serif", "Times New Roman", serif;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+.view[data-view="home"] .positioning > span { margin-top: 32px; max-width: 46ch; font-size: 15px; line-height: 1.55; }
+.view[data-view="home"] .intro__all { justify-self: start; }
+
+/* Contact: a short list, and the old television kept small beside it. */
+.contact-page { min-height: 100vh; padding: 140px clamp(36px, 6vw, 120px) 80px; }
+.contact-page__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 96px); align-items: center; }
+.contact-page__list { margin: 0; border-top: 1px solid var(--line); }
+.contact-page__list div { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.contact-page__list dt { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); }
+.contact-page__list dd { margin: 0; font: 400 clamp(20px, 1.8vw, 28px)/1.2 "Instrument Serif", serif; }
+.contact-page__list a { color: var(--ink); text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 400ms cubic-bezier(.2,.8,.2,1); }
+.contact-page__list a:hover { background-size: 100% 1px; }
+.ctv { position: relative; margin: 0; aspect-ratio: 2048 / 1080; }
+.ctv__screen { position: absolute; left: 0.6%; top: 13.4%; width: 67.2%; height: 82.4%; overflow: hidden; border-radius: 0 0 7% 7% / 0 0 7% 7%; background: #030303; }
+.ctv__screen video { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.72) contrast(1.18) brightness(0.6); }
+.ctv__frame { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: saturate(0.92) contrast(1.05) brightness(0.9); }
+@media (max-width: 860px) {
+  .contact-page { padding: 72px 18px 56px; }
+  .contact-page__grid { grid-template-columns: 1fr; }
+  .contact-page__list div { grid-template-columns: 72px 1fr; }
+}
+
+@media (max-width: 860px) {
+  :root { --side: 0px; }
+  .shell-side { justify-content: flex-start; }
+  .shell-side .shell-side__nav { margin-top: auto; }
+  .shell-side .shell-side__foot { margin-top: auto; }
+  .shell-side .shell-side__city { display: none; }
+  .shell-side .shell-side__brand { font-size: 20px; }
+}
+
+/* Case pages close on the next project, not a second contact block. */
+body.cv3-page .contact-tv { display: none; }
+.next-band {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 8px 24px;
+  min-height: 46vh;
+  padding: clamp(32px, 4vw, 64px) clamp(28px, 4vw, 64px);
+  background: var(--card);
+  color: #262626;
+  text-decoration: none;
+  overflow: hidden;
+}
+.next-band small { grid-column: 1 / -1; align-self: start; font: 500 11px/1 "Hanken Grotesk", sans-serif; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.65; }
+.next-band strong { font: 400 clamp(56px, 8vw, 140px)/0.9 "Instrument Serif", "Times New Roman", serif; letter-spacing: -0.02em; transition: transform 700ms cubic-bezier(.2,.8,.2,1); }
+.next-band span { font: 400 clamp(40px, 5vw, 80px)/1 "Instrument Serif", serif; transition: transform 700ms cubic-bezier(.2,.8,.2,1); }
+.next-band:hover strong { transform: translateX(14px); }
+.next-band:hover span { transform: translateX(20px); }

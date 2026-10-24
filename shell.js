@@ -1,0 +1,248 @@
+// The fixed frame. A sidebar that never moves holds the name, the time in
+// Cambridge and four sections; on the home page the stage beside it shows one
+// section at a time, like turning to a page in a magazine. Case and writing
+// pages get the same sidebar, so the frame stays put wherever you go.
+(() => {
+  const onIndex = !!document.querySelector("[data-view]");
+  const home = onIndex ? "" : "index.html";
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const SECTIONS = [
+    ["work", "Work", "Selected projects"],
+    ["profile", "Profile", "Who I am · What I do"],
+    ["writing", "Writing", "Essays & method"],
+    ["contact", "Contact", "Say hello"],
+  ];
+
+  let side = document.querySelector("[data-shell-side]");
+  if (!side) {
+    side = document.createElement("aside");
+    side.className = "shell-side";
+    document.body.prepend(side);
+  }
+  document.body.classList.add("has-shell");
+
+  side.innerHTML = `
+    <div class="shell-side__top">
+      <a class="shell-side__brand" href="${home}#home" data-view-link="home" aria-label="Yvette Ge, home">
+        <svg viewBox="0 0 240 240" aria-hidden="true"><line x1="58" y1="54" x2="120" y2="140"/><line x1="182" y1="54" x2="120" y2="140"/><line x1="120" y1="140" x2="120" y2="206"/><circle cx="58" cy="54" r="13"/><circle cx="182" cy="54" r="13"/><circle cx="120" cy="140" r="23"/><circle cx="120" cy="206" r="14"/></svg>
+        <span>Yvette Ge</span>
+      </a>
+      <p class="shell-side__where"><span class="shell-side__city">Cambridge, MA</span><br> <span data-clock>--:--</span> <span class="shell-side__tz">EST</span></p>
+      <button class="shell-side__menu" type="button" aria-expanded="false" data-menu>Menu</button>
+    </div>
+    <nav class="shell-side__nav" aria-label="Sections">
+      ${SECTIONS.map(([id, label, sub]) =>
+        `<a href="${home}#${id}" data-view-link="${id}"><strong>${label}</strong><small>${sub}</small></a>`).join("")}
+    </nav>
+    <p class="shell-side__foot">
+      <a href="web-assets/Yvette_Ge_CV.pdf?v=20261024">CV</a>
+      <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261024" lang="zh">中文简历</a>
+      <a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:yvette_ge@gsd.harvard.edu">Email</a>
+    </p>`;
+
+  // The time where she is, to the minute.
+  const clock = side.querySelector("[data-clock]");
+  const tz = side.querySelector(".shell-side__tz");
+  const tick = () => {
+    const now = new Date();
+    clock.textContent = new Intl.DateTimeFormat("en-GB", { timeZone: "America/New_York", hour: "2-digit", minute: "2-digit" }).format(now);
+    const name = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", timeZoneName: "short" })
+      .formatToParts(now).find((part) => part.type === "timeZoneName");
+    if (name) tz.textContent = name.value;
+  };
+  tick();
+  window.setInterval(tick, 20000);
+
+  // Phones: the sidebar folds into a bar with a menu.
+  const menu = side.querySelector("[data-menu]");
+  const setMenu = (open) => {
+    side.classList.toggle("is-open", open);
+    menu.setAttribute("aria-expanded", String(open));
+    menu.textContent = open ? "Close" : "Menu";
+  };
+  menu.addEventListener("click", () => setMenu(!side.classList.contains("is-open")));
+  side.querySelectorAll("nav a, .shell-side__brand").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+
+  const mark = (id) => side.querySelectorAll("[data-view-link]").forEach((a) =>
+    a.classList.toggle("is-current", a.dataset.viewLink === id));
+
+  if (!onIndex) {
+    const here = document.body.dataset.paper ? "writing"
+      : /methodology|writing/.test(location.pathname) ? "writing" : "work";
+    mark(here);
+    // A case page ends on the next project, in that project's colour,
+    // rather than on a second contact block (the frame already has one).
+    const ORDER = [
+      ["referral", "Referral", "-01", "#c9d8c5"], ["sci", "Behavioral Cognition Study", "-02", "#e6d6bf"],
+      ["chula", "The Incomplete Archive", "01", "#c7cfe3"], ["echo", "Echo", "02", "#efd2bf"],
+      ["tangle-holder", "Tangle to Holder", "03", "#dccbe3"], ["thermal-commons", "Thermal Commons", "04", "#eec0a4"],
+      ["make-a-wish", "Make a Wish", "05", "#efdc98"], ["roll-up", "Rollup", "06", "#bfdcd6"],
+      ["shadow-within", "Shadow Within", "07", "#c4c3cf"], ["liminal-grounds", "Liminal Ground", "08", "#d9d0bb"],
+      ["simultaneously", "Simultaneously", "09", "#bed3ea"], ["new-orleans", "New Orleans", "10", "#cfdcb8"],
+      ["los-balcones", "Los Balcones Ecotourism", "11", "#b9d6c2"],
+    ];
+    const at = ORDER.findIndex(([id]) => id === document.body.dataset.project);
+    if (at >= 0 && document.body.classList.contains("cv3-page")) {
+      const [id, title, num, color] = ORDER[(at + 1) % ORDER.length];
+      const band = document.createElement("a");
+      band.className = "next-band";
+      band.href = `${id}-case.html`;
+      band.style.setProperty("--card", color);
+      band.innerHTML = `<small>Next project · ${num}</small><strong>${title}</strong><span aria-hidden="true">→</span>`;
+      const place = () => { const main = document.querySelector("main"); if (main) main.after(band); else document.body.append(band); };
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", place);
+      else place();
+    }
+    return;
+  }
+
+  // ---- Home page only from here ----
+
+  // Old anchors still land somewhere sensible.
+  const ALIAS = { projects: "work", about: "profile", "mobile-skills": "profile", methodology: "writing", top: "home" };
+  const views = [...document.querySelectorAll("[data-view]")];
+  const cover = document.querySelector("[data-cover]");
+  let current = null;
+
+  const parse = () => {
+    const raw = decodeURIComponent(location.hash.slice(1));
+    if (!raw || raw === "cover") return { view: "cover" };
+    const view = ALIAS[raw] || raw;
+    if (views.some((v) => v.dataset.view === view)) return { view, anchor: ALIAS[raw] && raw !== "projects" ? raw : null };
+    return { view: "home" };
+  };
+
+  const show = ({ view, anchor }) => {
+    const atCover = view === "cover";
+    document.body.classList.toggle("at-cover", atCover);
+    if (atCover) { mark(null); return; }
+    if (view !== current) {
+      views.forEach((v) => {
+        const on = v.dataset.view === view;
+        v.hidden = !on;
+        v.classList.toggle("is-shown", false);
+      });
+      const target = views.find((v) => v.dataset.view === view);
+      current = view;
+      window.scrollTo(0, 0);
+      // Pieces that measure themselves need a pass once they are visible.
+      window.dispatchEvent(new Event("resize"));
+      requestAnimationFrame(() => requestAnimationFrame(() => target.classList.add("is-shown")));
+    }
+    mark(view);
+    if (anchor) {
+      const el = document.getElementById(anchor);
+      if (el) window.setTimeout(() => el.scrollIntoView({ behavior: still ? "auto" : "smooth" }), 120);
+    }
+  };
+
+  window.addEventListener("hashchange", () => show(parse()));
+  show(parse());
+
+  // Leaving the cover: the button, a click on the set, a scroll or a key.
+  const enter = () => {
+    if (!document.body.classList.contains("at-cover")) return;
+    if (location.hash === "#home") show({ view: "home" });
+    else location.hash = "home";
+  };
+  document.querySelector("[data-cover-enter]")?.addEventListener("click", enter);
+  cover?.addEventListener("wheel", (e) => { if (e.deltaY > 8) enter(); }, { passive: true });
+  let touchY = null;
+  cover?.addEventListener("touchstart", (e) => { touchY = e.touches[0].clientY; }, { passive: true });
+  cover?.addEventListener("touchmove", (e) => { if (touchY !== null && touchY - e.touches[0].clientY > 40) { touchY = null; enter(); } }, { passive: true });
+  document.addEventListener("keydown", (e) => {
+    if (["ArrowDown", "PageDown", " ", "Enter"].includes(e.key) && document.body.classList.contains("at-cover")) {
+      e.preventDefault();
+      enter();
+    }
+  });
+
+  // Home: project heroes arrive one at a time from the four sides, open
+  // from their centre over the wordmark, and the ground takes their colour.
+  const intro = document.querySelector("[data-intro]");
+  const deck = intro?.querySelector("[data-intro-deck]");
+  const rows = [...document.querySelectorAll(".studio .work-list [data-project]")];
+  const FEATURE = ["chula-case.html", "echo-case.html", "tangle-holder-case.html", "make-a-wish-case.html", "thermal-commons-case.html", "roll-up-case.html", "shadow-within-case.html"];
+  const FROM = [[-1, 0], [0, 1], [1, 0], [0, -1]];
+  if (intro && deck) {
+    const picks = FEATURE.map((href) => rows.find((r) => r.getAttribute("href") === href)).filter(Boolean);
+    const cards = picks.map((row, i) => {
+      const a = document.createElement("a");
+      a.className = "intro__card";
+      a.href = row.getAttribute("href");
+      a.style.setProperty("--card", row.dataset.color || "#d8d6d0");
+      a.dataset.name = row.dataset.title;
+      a.dataset.kind = row.dataset.kicker || "";
+      a.innerHTML = `<img src="${row.dataset.poster || row.dataset.src}" alt="${row.dataset.title}" loading="${i < 2 ? "eager" : "lazy"}">`;
+      a.style.zIndex = String(i + 1);
+      deck.append(a);
+      return a;
+    });
+    const nameEl = intro.querySelector("[data-intro-name]");
+    const kindEl = intro.querySelector("[data-intro-kind]");
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
+
+    const paint = () => {
+      if (intro.offsetParent === null) return;
+      const vh = window.innerHeight;
+      const rect = intro.getBoundingClientRect();
+      // One screen of scroll per project, after a first screen for the wordmark alone.
+      const pos = (-rect.top) / vh - 0.4;
+      let active = -1;
+      cards.forEach((card, i) => {
+        const t = Math.min(1, Math.max(0, pos - i));
+        const [dx, dy] = FROM[i % 4];
+        const e = ease(Math.min(1, t / 0.7));
+        const off = 1 - e;
+        card.style.transform = `translate(calc(-50% + ${dx * off * 70}vw), calc(-50% + ${dy * off * 80}vh)) scale(${0.86 + 0.14 * e})`;
+        card.style.clipPath = `inset(${off * 30}% ${off * 30}% ${off * 30}% ${off * 30}%)`;
+        card.style.opacity = t > 0 ? "1" : "0";
+        // Earlier cards settle back and dim once the next one lands on top.
+        const after = Math.min(1, Math.max(0, pos - i - 1));
+        if (after > 0) card.style.filter = `brightness(${1 - after * 0.25})`;
+        else card.style.filter = "";
+        if (t > 0.35) active = i;
+      });
+      // Past the last card the deck lifts away so the standfirst can follow.
+      const exit = Math.min(1, Math.max(0, (pos - cards.length + 0.1) / 0.3));
+      deck.style.opacity = String(1 - exit);
+      if (exit >= 1) active = -1;
+      const pick = cards[active];
+      intro.style.setProperty("--ground", pick ? pick.style.getPropertyValue("--card") : "var(--paper)");
+      intro.classList.toggle("has-card", !!pick);
+      if (pick && nameEl.textContent !== pick.dataset.name) {
+        nameEl.textContent = pick.dataset.name;
+        kindEl.textContent = pick.dataset.kind;
+        intro.querySelector(".intro__cap").classList.remove("is-swap");
+        void intro.offsetWidth;
+        intro.querySelector(".intro__cap").classList.add("is-swap");
+      }
+      if (!pick) { nameEl.textContent = ""; kindEl.textContent = ""; }
+    };
+    const size = () => { intro.style.height = `${(cards.length + 1.7) * 100}vh`; paint(); };
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { paint(); ticking = false; });
+    }, { passive: true });
+    window.addEventListener("resize", size);
+    size();
+  }
+
+  // Writing: the paper's cover follows the pointer down the list.
+  const list = document.querySelector("[data-paper-list]");
+  const coverImg = list?.querySelector("[data-paper-cover]");
+  if (list && coverImg) {
+    list.querySelectorAll("a[data-paper-img]").forEach((a) => {
+      a.addEventListener("mouseenter", () => {
+        coverImg.src = a.dataset.paperImg;
+        list.classList.add("is-peeking");
+        coverImg.parentElement.style.top = `${a.offsetTop}px`;
+      });
+    });
+    list.addEventListener("mouseleave", () => list.classList.remove("is-peeking"));
+  }
+})();
