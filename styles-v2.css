@@ -4497,3 +4497,95 @@ main.subpage { padding-top: 96px; }
   .skill-layout { grid-template-columns: 1fr; }
   .skill-portrait { position: static; width: 180px; }
 }
+
+/* Unified pass + motion + cyanotype prints (2026-10-24). The accent moves
+   from steel blue to the Prussian blue of her cyanotype prints. */
+:root { --blue: #2c5a86; --cyan-wash: rgba(44, 90, 134, 0.08); }
+
+.positioning { position: relative; overflow: hidden; }
+.positioning p, .positioning > span { position: relative; z-index: 1; max-width: min(920px, 62vw); }
+
+.positioning__prints {
+  position: absolute;
+  right: clamp(24px, 6vw, 120px);
+  top: 50%;
+  width: clamp(220px, 26vw, 420px);
+  height: clamp(300px, 34vw, 520px);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.print {
+  position: absolute;
+  margin: 0;
+  padding: 10px 10px 26px;
+  background: #fbfaf6;
+  box-shadow: 0 18px 40px rgba(20, 30, 45, 0.14), 0 2px 6px rgba(20, 30, 45, 0.08);
+  transform: translateY(var(--drift, 0px)) rotate(var(--tilt, 0deg));
+  transition: transform 120ms linear;
+}
+
+.print img { display: block; width: 100%; height: auto; }
+.print--feather { --tilt: -5deg; width: 62%; left: 0; top: 0; }
+.print--dogwood { --tilt: 6deg; width: 54%; right: 0; bottom: 0; }
+
+.print::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 70px;
+  height: 20px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(230, 222, 200, 0.75);
+}
+
+.print__caption {
+  position: absolute;
+  left: 8%;
+  bottom: -8px;
+  font: 400 26px/1 var(--script);
+  color: var(--blue);
+  transform: rotate(-4deg);
+}
+
+/* Rise-in on first view */
+.rise { opacity: 0; transform: translateY(22px); transition: opacity 700ms ease var(--rise-delay, 0ms), transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1) var(--rise-delay, 0ms); }
+.rise.is-in { opacity: 1; transform: none; }
+.positioning__prints.rise { transform: translateY(calc(-50% + 22px)); }
+.positioning__prints.rise.is-in { transform: translateY(-50%); }
+
+/* Preview media fades in on every switch; images lift slightly on hover */
+@keyframes media-in { from { opacity: 0; transform: scale(0.985); } to { opacity: 1; transform: none; } }
+.studio .project-preview__media > * { animation: media-in 420ms ease both; }
+.studio .project-preview__media img,
+.studio .project-preview__media video { transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+.studio .project-preview:hover .project-preview__media img,
+.studio .project-preview:hover .project-preview__media video { transform: scale(1.025); }
+.studio .work-list a:hover { padding-left: 14px; }
+
+/* One heading voice: script lead word + mixed-case sans */
+.studio-head h2,
+.skill-section .skill-lead,
+.method-teaser p { font-family: var(--sans); font-weight: 600; letter-spacing: -0.015em; text-transform: none; }
+
+.studio { padding-top: 120px; padding-bottom: 120px; }
+.studio__links a { background: var(--cyan-wash); }
+
+@media (max-width: 900px) {
+  .positioning p, .positioning > span { max-width: none; }
+  .positioning__prints { position: relative; right: auto; top: auto; transform: none; width: 240px; height: 300px; margin: 24px auto 0; }
+  .positioning__prints.rise, .positioning__prints.rise.is-in { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise { opacity: 1; transform: none; }
+  .studio .project-preview__media > * { animation: none; }
+}
+
+@media (max-width: 760px) {
+  .studio { padding: 56px 18px 72px; }
+  .studio .work-stage { grid-template-columns: 1fr; }
+  .studio .work-list a { grid-template-columns: none; }
+}
+.studio .work-list a.is-wip em { justify-self: start; width: fit-content; }

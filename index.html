@@ -107,6 +107,11 @@
       <section class="positioning" aria-label="Positioning statement">
         <p data-position-reveal>Design research and practice at Harvard. Infrastructure for the agentic web at MIT.</p>
         <span>■ I translate between what people struggle with, what technology can enable, and what can become a viable product.</span>
+        <div class="positioning__prints" aria-hidden="true">
+          <figure class="print print--feather" data-parallax="-0.10"><img src="web-assets/about-feather.jpeg" alt=""></figure>
+          <figure class="print print--dogwood" data-parallax="0.08"><img src="web-assets/about-dogwood.webp" alt=""></figure>
+          <span class="print__caption">cyanotype</span>
+        </div>
       </section>
 
       <section class="studio" aria-label="About and work">
@@ -267,6 +272,41 @@
         start();
         window.addEventListener("resize", start);
         window.addEventListener("load", start);
+      })();
+    </script>
+    <script>
+      // Motion layer: blocks rise in once as they enter view, and the
+      // cyanotype prints drift slightly against the scroll.
+      (() => {
+        const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const targets = document.querySelectorAll(".studio__side, .studio-head, .studio .project-preview, .studio .project-note, .method-teaser, .skill-portrait, .positioning__prints");
+        if (!still && "IntersectionObserver" in window) {
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-in");
+              io.unobserve(entry.target);
+            });
+          }, { threshold: 0.12 });
+          targets.forEach((el, i) => {
+            el.classList.add("rise");
+            el.style.setProperty("--rise-delay", `${(i % 3) * 80}ms`);
+            io.observe(el);
+          });
+        }
+
+        const prints = [...document.querySelectorAll("[data-parallax]")];
+        if (still || !prints.length) return;
+        const drift = () => {
+          prints.forEach((print) => {
+            const box = print.parentElement.getBoundingClientRect();
+            const offset = (box.top + box.height / 2 - window.innerHeight / 2) * Number(print.dataset.parallax);
+            print.style.setProperty("--drift", `${offset.toFixed(1)}px`);
+          });
+        };
+        drift();
+        window.addEventListener("scroll", drift, { passive: true });
+        window.addEventListener("resize", drift);
       })();
     </script>
   </body>
