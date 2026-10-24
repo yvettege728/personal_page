@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yvette Ge | Layout preview</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --paper: #f7f7f3;
+        --ink: #303030;
+        --soft: rgba(48, 48, 48, 0.5);
+        --line: rgba(48, 48, 48, 0.16);
+        --blue: #4e7ea7;
+        --sans: "Hanken Grotesk", sans-serif;
+        --display: "Barlow Condensed", "Hanken Grotesk", sans-serif;
+        --script: "Allura", cursive;
+        --left: clamp(260px, 26vw, 360px);
+        --top: 44px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 400 14px/1.5 var(--sans);
+      }
+      a { color: inherit; text-decoration: none; }
+
+      /* Top nav: one quiet line */
+      .topnav {
+        position: fixed; inset: 0 0 auto 0; z-index: 20;
+        height: var(--top);
+        display: flex; align-items: center; justify-content: flex-end; gap: 22px;
+        padding: 0 28px;
+        background: rgba(247, 247, 243, 0.92);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--line);
+        font: 500 12px/1 var(--sans);
+        letter-spacing: 0.06em; text-transform: uppercase;
+      }
+      .topnav a, .topnav button {
+        background: none; border: 0; padding: 0; cursor: pointer;
+        font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--soft);
+      }
+      .topnav a:hover, .topnav button:hover, .topnav [aria-expanded="true"] { color: var(--ink); }
+
+      /* Fixed left column */
+      .identity {
+        position: fixed; top: var(--top); bottom: 0; left: 0;
+        width: var(--left);
+        padding: 36px 28px 28px;
+        display: flex; flex-direction: column;
+        border-right: 1px solid var(--line);
+      }
+      .mark { width: 28px; height: 28px; margin-bottom: 28px; }
+      .mark line { stroke: var(--ink); stroke-width: 15; stroke-linecap: round; }
+      .mark circle { fill: var(--ink); }
+      .identity h1 {
+        margin: 0 0 18px;
+        font: 500 44px/0.9 var(--display);
+        letter-spacing: 0.02em;
+      }
+      .identity h1 .script { font: 400 0.95em/1 var(--script); margin-left: 4px; text-transform: none; }
+      .identity .claim { margin: 0 0 14px; font-size: 15px; line-height: 1.45; }
+      .identity .where { margin: 0; color: var(--soft); font-size: 13px; }
+      .identity .links {
+        margin-top: auto;
+        display: grid; gap: 6px;
+        font-size: 13px;
+      }
+      .identity .links a { border-bottom: 1px solid transparent; width: fit-content; }
+      .identity .links a:hover { border-color: var(--ink); }
+
+      /* Right side */
+      main {
+        margin-left: var(--left);
+        padding: calc(var(--top) + 28px) 28px 80px;
+      }
+      .work {
+        display: grid;
+        grid-template-columns: minmax(300px, 1fr) minmax(320px, 1.25fr);
+        gap: 32px;
+        align-items: start;
+      }
+      .label {
+        margin: 0 0 10px;
+        font: 500 11px/1 var(--sans);
+        letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft);
+      }
+      .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+      .list a {
+        display: grid;
+        grid-template-columns: 34px 1fr auto;
+        gap: 10px; align-items: baseline;
+        padding: 11px 0;
+        border-bottom: 1px solid var(--line);
+        color: var(--soft);
+        transition: color 0.15s;
+      }
+      .list a .num { font-size: 11px; }
+      .list a strong { font-weight: 500; font-size: 15px; color: var(--ink); }
+      .list a .kind { font-size: 12px; }
+      .list a.is-active strong, .list a:hover strong { color: var(--blue); }
+      .list a.is-active .num { color: var(--blue); }
+
+      .preview { position: sticky; top: calc(var(--top) + 28px); }
+      .preview__media {
+        aspect-ratio: 16 / 10;
+        background: #e9e8e1;
+        overflow: hidden;
+      }
+      .preview__media img, .preview__media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .preview__meta { display: flex; justify-content: space-between; margin: 12px 0 6px; font-size: 12px; color: var(--soft); }
+      .preview p { margin: 0 0 10px; max-width: 52ch; font-size: 14px; }
+      .preview .open { font-size: 13px; border-bottom: 1px solid var(--ink); }
+
+      .wip { margin-top: 64px; max-width: 760px; }
+      .wip-row {
+        display: grid; grid-template-columns: 34px 1fr; gap: 10px;
+        padding: 14px 0; border-bottom: 1px solid var(--line);
+      }
+      .wip-row:first-of-type { border-top: 1px solid var(--line); }
+      .wip-row .num { font-size: 11px; color: var(--soft); padding-top: 3px; }
+      .wip-row h3 { margin: 0; font-weight: 500; font-size: 15px; }
+      .wip-row .meta { margin: 2px 0 6px; font-size: 12px; color: var(--soft); }
+      .wip-row p { margin: 0; max-width: 62ch; }
+
+      /* Info panel pulled down from the nav */
+      .info {
+        position: fixed; top: var(--top); left: 0; right: 0; z-index: 15;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+        padding: 32px 28px 36px calc(var(--left) + 28px);
+        display: grid; grid-template-columns: 140px minmax(0, 560px) 1fr; gap: 28px;
+        transform: translateY(-110%); transition: transform 0.35s ease;
+      }
+      .info.is-open { transform: none; }
+      .info img { width: 140px; aspect-ratio: 4/5; object-fit: cover; filter: grayscale(0.2); }
+      .info p { margin: 0 0 12px; }
+      .info .contact { font-size: 13px; display: grid; gap: 6px; align-content: start; }
+
+      @media (max-width: 900px) {
+        .identity { position: static; width: auto; border-right: 0; border-bottom: 1px solid var(--line); padding-top: calc(var(--top) + 28px); }
+        .identity .links { margin-top: 20px; grid-auto-flow: column; justify-content: start; gap: 16px; }
+        main { margin-left: 0; padding-top: 24px; }
+        .work { grid-template-columns: 1fr; }
+        .preview { position: static; order: -1; }
+        .info { padding: 24px 16px; grid-template-columns: 1fr; }
+        .info img { display: none; }
+        .topnav { gap: 14px; padding: 0 16px; overflow-x: auto; justify-content: flex-start; white-space: nowrap; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topnav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#wip">In Progress</a>
+      <button type="button" data-info-toggle aria-expanded="false">Info</button>
+      <a href="methodology.html">Methodology</a>
+      <a href="writing.html">Writing</a>
+      <a href="web-assets/Yvette_Ge_CV.pdf?v=20260824">CV</a>
+    </nav>
+
+    <section class="info" data-info aria-label="Info">
+      <img src="web-assets/headshot.jpg" alt="Yvette Ge">
+      <div>
+        <p>I’m a Master in Design Studies candidate at Harvard’s Graduate School of Design (Publics Domain), after a First Class Honours degree in social science at UCL. At MIT Media Lab’s AI Studio I work on infrastructure for the agentic web.</p>
+        <p>I chase the problem, not the toolkit: social science to take a structure apart, design to build something that acts on it, and AI and infrastructure when the problem needs them.</p>
+      </div>
+      <div class="contact">
+        <a href="mailto:yvette_ge@gsd.harvard.edu">yvette_ge@gsd.harvard.edu</a>
+        <a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="web-assets/Yvette_Ge_CV.pdf?v=20260824">Download CV</a>
+      </div>
+    </section>
+
+    <aside class="identity">
+      <svg class="mark" viewBox="0 0 240 240" aria-hidden="true">
+        <line x1="58" y1="54" x2="120" y2="140"></line>
+        <line x1="182" y1="54" x2="120" y2="140"></line>
+        <line x1="120" y1="140" x2="120" y2="206"></line>
+        <circle cx="58" cy="54" r="13"></circle><circle cx="182" cy="54" r="13"></circle>
+        <circle cx="120" cy="140" r="23"></circle><circle cx="120" cy="206" r="14"></circle>
+      </svg>
+      <h1>YVETTE<span class="script">Ge</span></h1>
+      <p class="claim">I translate between what people struggle with, what technology can enable, and what can become a viable product.</p>
+      <p class="where">Design research and practice at Harvard GSD. Infrastructure for the agentic web at MIT Media Lab.</p>
+      <div class="links">
+        <a href="mailto:yvette_ge@gsd.harvard.edu">Email</a>
+        <a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="web-assets/Yvette_Ge_CV.pdf?v=20260824">CV</a>
+      </div>
+    </aside>
+
+    <main>
+      <section class="work" id="work">
+        <div>
+          <p class="label">Selected projects · 2023–2026</p>
+          <ul class="list" data-list></ul>
+        </div>
+        <figure class="preview" style="margin:0">
+          <div class="preview__media" data-media></div>
+          <div class="preview__meta"><span data-kicker></span><span data-year></span></div>
+          <p data-copy></p>
+          <a class="open" data-link href="#">Open case →</a>
+        </figure>
+      </section>
+
+      <section class="wip" id="wip">
+        <p class="label">In progress · Fall 2026</p>
+        <article class="wip-row">
+          <span class="num">A</span>
+          <div>
+            <h3>Referral</h3>
+            <p class="meta">MIT Media Lab · AI Studio</p>
+            <p>An MCP server for agents that hire other agents. The worker agent locks its forecast before a job, a separate checker verifies the delivery, and the hiring agent gets a trust tier instead of ratings that are easy to fake.</p>
+          </div>
+        </article>
+        <article class="wip-row">
+          <span class="num">B</span>
+          <div>
+            <h3>Behavioral Cognition Study</h3>
+            <p class="meta">Harvard GSD · SCI</p>
+            <p>A human-computer interaction study that reverse-engineers how people perceive and decide, as groundwork for using AI to model human behavior.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const projects = [
+        ["The Incomplete Archive", "AI archive", "2026", "chula-case.html", "video", "web-assets/theincompletearchive.mp4", "web-assets/speculative-chula-exhibition-poster.webp", "A digital platform that makes land conflict and institutional power relations legible through maps, chatbot, archive, dossier, and game."],
+        ["Echo", "Civic AI product", "2026", "echo-case.html", "image", "web-assets/echo-mock.jpg", "", "A privacy-first product that helps people affected by a federal rule file evidence-based public comments anonymously and see how the agency responds."],
+        ["Tangle to Holder", "Product system", "2026", "tangle-holder-case.html", "video", "web-assets/tangle-product-system.mp4", "web-assets/tangle-product-system.jpg", "A wearable, app, and printed object that redistributes the labor of being understood in a fifteen-minute medical appointment."],
+        ["Thermal Commons", "Dashboard", "2026", "thermal-commons-case.html", "video", "web-assets/thermal-decisionmaker.mp4", "web-assets/thermal-decisionmaker.jpg", "A dashboard that turns an HVAC setpoint into a participatory governance device residents can read and contest."],
+        ["Make a Wish", "Installation + archive", "2026", "make-a-wish-case.html", "video", "web-assets/makeawish-install.mp4", "web-assets/makeawish-install-poster.jpg", "A one-day installation and web archive where private wishes became a readable pattern of structural pressure."],
+        ["Rollup", "EdTech AI", "2024–", "roll-up-case.html", "video", "web-assets/rollup-cover.mp4", "web-assets/rollup-home-hero-crop.png", "A teaching venture that treats creativity as distributed infrastructure, with Conexa as an AI teaching agent concept."],
+        ["Shadow Within", "Body interface", "2025", "shadow-within-case.html", "video", "web-assets/shadow-within-cover.mp4", "web-assets/shadow-within-cover-poster.jpg", "An installation that turns dissociation into a space visitors can stand inside, mirror, and read through their own body."],
+        ["Liminal Ground", "Spatial proposal", "2025", "liminal-grounds-case.html", "image", "web-assets/liminal-grounds-main.jpg", "", "A spatial proposal that reopens a campus entrance closed off by a turnstile and security desk."],
+        ["Simultaneously", "Installation", "2025", "simultaneously-case.html", "image", "web-assets/simultaneously-main.jpg", "", "An installation linking audiences in Shanghai and Hong Kong through light beams and exchanged photos."],
+        ["New Orleans", "Policy system", "2025", "new-orleans-case.html", "image", "web-assets/d4d-blueprint.jpg", "", "A policy framework that funds distributed ADUs as civic infrastructure before a disaster, rather than as emergency housing after one."],
+        ["Los Balcones Ecotourism", "Co-management", "2025", "los-balcones-case.html", "image", "web-assets/los-balcones-phrase1.png", "", "A co-management proposal for a Peruvian conservation area. I led the visitor-behavior and nudge-design layer."]
+      ];
+
+      const list = document.querySelector("[data-list]");
+      const media = document.querySelector("[data-media]");
+      const out = {
+        kicker: document.querySelector("[data-kicker]"),
+        year: document.querySelector("[data-year]"),
+        copy: document.querySelector("[data-copy]"),
+        link: document.querySelector("[data-link]")
+      };
+
+      function show(i) {
+        const [title, kind, year, href, type, src, poster, copy] = projects[i];
+        list.querySelectorAll("a").forEach((a, j) => a.classList.toggle("is-active", j === i));
+        media.innerHTML = type === "video"
+          ? `<video src="${src}" poster="${poster}" autoplay muted loop playsinline></video>`
+          : `<img src="${src}" alt="${title}">`;
+        out.kicker.textContent = `${title} · ${kind}`;
+        out.year.textContent = year;
+        out.copy.textContent = copy;
+        out.link.href = href;
+      }
+
+      projects.forEach(([title, kind, year, href], i) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${href}"><span class="num">${String(i + 1).padStart(3, "0")}</span><strong>${title}</strong><span class="kind">${year}</span></a>`;
+        li.firstChild.addEventListener("mouseenter", () => show(i));
+        li.firstChild.addEventListener("focus", () => show(i));
+        list.appendChild(li);
+      });
+      show(0);
+
+      const toggle = document.querySelector("[data-info-toggle]");
+      const info = document.querySelector("[data-info]");
+      toggle.addEventListener("click", () => {
+        const open = info.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", open);
+      });
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape") { info.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); }
+      });
+    </script>
+  </body>
+</html>
