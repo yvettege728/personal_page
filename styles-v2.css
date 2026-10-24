@@ -8,7 +8,7 @@
   --dark-soft: rgba(247, 247, 243, 0.62);
   --dark-line: rgba(247, 247, 243, 0.25);
   --blue: #4e7ea7;
-  --mono: system-ui, sans-serif;
+  --mono: "Roboto Mono", ui-monospace, monospace;
   --sans: "Hanken Grotesk", sans-serif;
   --display: "Barlow Condensed", "Hanken Grotesk", sans-serif;
   --script: "Allura", cursive;

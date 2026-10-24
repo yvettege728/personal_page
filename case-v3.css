@@ -22,9 +22,10 @@
 .cv3__panel > *:nth-child(4) { animation-delay: 380ms; }
 .cv3__panel > *:nth-child(5) { animation-delay: 480ms; }
 @keyframes cv3-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-.cv3__kicker {
-  font: 500 11px/1 "Hanken Grotesk", sans-serif;
-  letter-spacing: 0.12em;
+.cv3__kicker,
+body[data-project] .cv3__kicker {
+  font: 400 11px/1 "Roboto Mono", ui-monospace, monospace;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   opacity: 0.7;
 }
@@ -40,7 +41,7 @@
 }
 .cv3__more summary {
   width: fit-content;
-  font: 500 12px/1 "Hanken Grotesk", sans-serif;
+  font: 400 12px/1 "Roboto Mono", ui-monospace, monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
@@ -59,8 +60,8 @@
 }
 .cv3__meta dt {
   margin-bottom: 6px;
-  font: 500 10px/1 "Hanken Grotesk", sans-serif;
-  letter-spacing: 0.12em;
+  font: 400 10px/1 "Roboto Mono", ui-monospace, monospace;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   opacity: 0.6;
 }

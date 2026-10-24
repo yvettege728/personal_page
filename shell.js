@@ -55,6 +55,34 @@
   tick();
   window.setInterval(tick, 20000);
 
+  // The dot cursor, on desktops with a real pointer only.
+  if (!still && window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 1024px)").matches) {
+    const dot = document.createElement("div");
+    dot.className = "dot-cursor";
+    document.body.append(dot);
+    document.documentElement.classList.add("has-dot");
+    let mx = 0, my = 0, x = 0, y = 0, seen = false;
+    const clickable = (el) => !!el?.closest?.("a, button, [role='button'], label, summary, [data-project], video[controls]");
+    window.addEventListener("mousemove", (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+      if (!seen) { x = mx; y = my; seen = true; dot.classList.add("is-on"); }
+      dot.classList.toggle("is-big", clickable(e.target));
+    }, { passive: true });
+    document.addEventListener("mouseleave", () => dot.classList.remove("is-on"));
+    document.addEventListener("mouseenter", () => { if (seen) dot.classList.add("is-on"); });
+    window.addEventListener("mousedown", () => dot.classList.add("is-down"));
+    window.addEventListener("mouseup", () => dot.classList.remove("is-down"));
+    const follow = () => {
+      x += (mx - x) * 0.25;
+      y += (my - y) * 0.25;
+      dot.style.left = `${x}px`;
+      dot.style.top = `${y}px`;
+      requestAnimationFrame(follow);
+    };
+    follow();
+  }
+
   // Phones: the sidebar folds into a bar with a menu.
   const menu = side.querySelector("[data-menu]");
   const setMenu = (open) => {

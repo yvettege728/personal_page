@@ -26,7 +26,7 @@
   --fg: #ffffff;
   --fg-rgb: 255, 255, 255;
   --nav-glass: rgba(15, 16, 17, 0.66);
-  --mono: system-ui, sans-serif;
+  --mono: "Roboto Mono", ui-monospace, monospace;
   --sans: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
   --serif: "Fraunces", Georgia, serif;
 }
@@ -6838,7 +6838,7 @@ main { position: relative; z-index: 1; }
 }
 
 body[data-project] {
-  --mono: system-ui, sans-serif;
+  --mono: "Roboto Mono", ui-monospace, monospace;
   --project-black: #000;
   background: var(--project-black);
   font-family: var(--sans);
