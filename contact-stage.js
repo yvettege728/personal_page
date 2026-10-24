@@ -13,8 +13,8 @@
 (function () {
   const CONTACT_PHONE = "+1 6176808178";
   const CONTACT_MAIL = "yvette_ge@gsd.harvard.edu";
-  const CONTACT_LINKEDIN = "https://www.linkedin.com/in/yanqin-ge-a43512228/";
-  const CONTACT_CV = "web-assets/Yvette_Ge_CV.pdf?v=20260824";
+  const CONTACT_LINKEDIN = "https://www.linkedin.com/in/yvette-ge-a43512228/";
+  const CONTACT_CV = "web-assets/Yvette_Ge_CV.pdf?v=20261024";
   const CONTACT_CARD = "web-assets/yvette-ge-namecard.png";
 
   // Case pages build their body from JS, so the closing block is generated
@@ -33,6 +33,7 @@
           <a href="mailto:${CONTACT_MAIL}" data-decrypt data-text="${CONTACT_MAIL}">${CONTACT_MAIL}</a>
           <a href="${CONTACT_LINKEDIN}" target="_blank" rel="noopener" data-decrypt data-text="LinkedIn">LinkedIn</a>
           <a href="${CONTACT_CV}" data-decrypt data-text="Download CV">Download CV</a>
+          <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261024" lang="zh">中文简历</a>
           <a href="${CONTACT_CARD}" download="Yvette-Ge-Namecard.png" data-decrypt data-text="Download Card">Download Card</a>
           <a href="${home}" data-decrypt data-text="Home">Home</a>
           <a href="#" data-back-to-top data-decrypt data-text="Back to Top">Back to Top</a>

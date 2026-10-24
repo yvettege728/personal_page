@@ -4121,3 +4121,166 @@ main.subpage { padding-top: 96px; }
   .wip-card { padding: 20px 18px; }
   .method-teaser { padding: 48px 18px; }
 }
+
+/* Studio: page two. A sticky left column carries the positioning lines and
+   a live "now viewing" counter; the right column holds a compact project
+   index, work in progress and the methodology link. */
+.studio {
+  display: grid;
+  grid-template-columns: minmax(260px, 30%) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 72px);
+  padding: 96px clamp(30px, 5.2vw, 106px) 120px;
+  align-items: start;
+}
+
+.studio__side {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 28px;
+}
+
+.studio .positioning {
+  min-height: 0;
+  padding: 0;
+  gap: 18px;
+}
+
+.studio .positioning p {
+  font-size: clamp(22px, 2.1vw, 32px);
+  line-height: 1.04;
+}
+
+.studio .positioning > span {
+  max-width: 34ch;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.studio__now {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--soft);
+}
+
+.studio__now span { color: var(--blue); }
+
+.studio__now em {
+  display: block;
+  margin-top: 4px;
+  font: 400 clamp(26px, 2.4vw, 38px)/1 var(--script);
+  color: var(--ink);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.studio__now em.is-swapping { opacity: 0; transform: translateY(4px); }
+
+.studio__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 13px;
+}
+
+.studio__links a { border-bottom: 1px solid var(--line); }
+.studio__links a:hover { border-color: var(--ink); }
+
+.studio__main { min-width: 0; }
+
+.studio .work-section {
+  min-height: 0;
+  padding: 0;
+}
+
+.studio-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 18px;
+}
+
+.studio-head h2 {
+  margin: 0;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.studio-head h2 .script {
+  margin-right: 6px;
+  font-size: 1.05em;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.studio .time-range { position: static; margin: 0; }
+
+.studio .work-stage {
+  grid-template-columns: minmax(200px, 250px) minmax(0, 1fr);
+  gap: clamp(20px, 2.4vw, 36px);
+}
+
+.studio .work-list { align-self: start; }
+
+.studio .work-list a {
+  min-height: 38px;
+  font-size: 15px;
+  grid-template-columns: 40px minmax(0, 1fr);
+}
+
+.studio .work-list strong { font-size: 15px; }
+.studio .work-list span { font-size: 11px; }
+
+.studio .project-preview__media img,
+.studio .project-preview__media video {
+  max-height: min(46vh, 440px);
+}
+
+.studio .project-note {
+  grid-column: 2;
+  margin-top: 6px;
+  gap: 6px;
+}
+
+.studio .project-note h3 { font-size: clamp(18px, 1.4vw, 22px); }
+.studio .project-note p { font-size: 14px; line-height: 1.45; }
+
+.studio .wip-section,
+.studio .method-teaser {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.studio .wip-section { margin-top: 88px; }
+
+@media (max-width: 1120px) {
+  .studio { grid-template-columns: 1fr; }
+  .studio__side { position: static; }
+  .studio__now { display: none; }
+}
+
+@media (max-width: 760px) {
+  .studio { padding: 48px 18px 72px; }
+  .studio .work-stage { grid-template-columns: 1fr; }
+  .studio .project-note { grid-column: auto; }
+}
+
+.studio .wip-head h2 { font-size: clamp(30px, 3vw, 46px); line-height: 1; }
+.studio .wip-head h2 .script { margin-right: 6px; font-weight: 400; text-transform: none; }
+.studio .method-teaser { margin-top: 48px; padding-top: 36px; padding-bottom: 36px; }
+.studio .project-note,
+.studio .project-note p { text-transform: none; }
+.studio .work-list { grid-row: 1 / span 2; }
+.studio .project-preview { grid-row: 1; }
+.studio .project-note { grid-row: 2; }
+.studio .wip-head .script { display: inline; font-size: 1.05em; margin: 0 6px 0 0; }
+.studio .wip-card h3 { font-size: clamp(22px, 1.9vw, 30px); }
+.studio .wip-card p { font-size: 14px; }
+@media (max-width: 760px) {
+  .studio .work-list, .studio .project-preview, .studio .project-note { grid-row: auto; }
+}
+.studio .method-teaser p { font-size: clamp(20px, 1.8vw, 28px); line-height: 1.1; }
