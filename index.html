@@ -38,7 +38,7 @@
       <nav aria-label="Primary navigation">
         <a href="#about" data-decrypt data-text="About">About</a>
         <a href="#projects" data-decrypt data-text="Projects">Projects</a>
-        <a href="#wip" data-decrypt data-text="In Progress">In Progress</a>
+        <a href="#projects" data-decrypt data-text="In Progress">In Progress</a>
         <a href="methodology.html" data-decrypt data-text="Methodology">Methodology</a>
         <a href="writing.html" data-decrypt data-text="Writing">Writing</a>
       </nav>
@@ -104,13 +104,18 @@
         </nav>
       </section>
 
-      <section class="studio" aria-label="Positioning and work">
+      <section class="positioning" aria-label="Positioning statement">
+        <p data-position-reveal>Design research and practice at Harvard. Infrastructure for the agentic web at MIT.</p>
+        <span>■ I translate between what people struggle with, what technology can enable, and what can become a viable product.</span>
+      </section>
+
+      <section class="studio" aria-label="About and work">
         <aside class="studio__side">
-          <div class="positioning" aria-label="Positioning statement">
-            <p data-position-reveal>Design research and practice at Harvard. Infrastructure for the agentic web at MIT.</p>
-            <span>■ I translate between what people struggle with, what technology can enable, and what can become a viable product.</span>
+          <img class="studio__portrait" src="web-assets/portrait-2026.jpg" alt="Yvette Ge">
+          <div class="studio__intro">
+            <p>I’m Yvette, a Master in Design Studies candidate at Harvard GSD, cross-registered at MIT Media Lab’s AI Studio, where I work on infrastructure for the agentic web. My work covers incentive mechanism and system design, multi-agent architecture, and service and product prototyping, grounded in social science research and theory.</p>
+            <p>I work in the space between what users say they need and what they actually need, between what the technology can do and what the story promises, and between what a business can sustain and what its founders hope for. I build the systems myself, so I know where the tradeoffs sit.</p>
           </div>
-          <p class="studio__now" aria-live="polite"><span data-now-num>001</span> / 011 <em data-now-title>The Incomplete Archive</em></p>
           <nav class="studio__links" aria-label="Quick links">
             <a href="mailto:yvette_ge@gsd.harvard.edu">Email</a>
             <a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener">LinkedIn</a>
@@ -119,15 +124,18 @@
           </nav>
         </aside>
         <div class="studio__main">
-        <section class="work-section" id="projects" aria-labelledby="projects-title">
+        <section class="work-section" id="projects" aria-labelledby="projects-heading">
           <header class="studio-head">
-            <h2 id="projects-title"><span class="script">Selected</span> Projects</h2>
+            <h2 id="projects-heading" aria-live="polite"><span class="script">Selected</span> <span class="studio-head__swap" data-heading-swap>Projects</span></h2>
             <p class="time-range">[2023 – 2026]</p>
           </header>
 
           <div class="work-stage">
             <nav class="work-list" aria-label="Selected projects">
-              <a class="is-active" href="chula-case.html" data-project data-title="The Incomplete Archive" data-kicker="Reveal / AI archive" data-year="2026" data-src="web-assets/theincompletearchive.mp4" data-poster="web-assets/speculative-chula-exhibition-poster.webp" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%202.webp" data-copy="A digital platform that makes land conflict and institutional power relations legible through maps, chatbot, archive, dossier, and game."><span>001</span><strong>The Incomplete Archive</strong><em>Reveal</em></a>
+              <a class="is-wip" href="referral-case.html" data-project data-title="Referral" data-kicker="WIP / MIT Media Lab AI Studio" data-year="Fall 2026" data-src="web-assets/referral-diagram.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="An MCP server for agents that hire other agents. The worker agent locks its forecast before a job, a separate checker verifies the delivery, and the hiring agent gets a trust tier instead of ratings that are easy to fake. I lead the protocol, the tamper-evident log and the insight layer."><span>-01</span><strong>Referral</strong><em>WIP</em></a>
+              <a class="is-wip" href="sci-case.html" data-project data-title="Behavioral Cognition Study" data-kicker="WIP / Harvard GSD SCI" data-year="Fall 2026" data-src="web-assets/sci-wip.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A human-computer interaction study that reverse-engineers how people perceive and decide, as groundwork for using AI to model human behavior."><span>-02</span><strong>Behavioral Cognition Study</strong><em>WIP</em></a>
+              <span class="axis-zero" aria-hidden="true">0 · now</span>
+              <a class="is-active" href="chula-case.html" data-project data-default data-title="The Incomplete Archive" data-kicker="Reveal / AI archive" data-year="2026" data-src="web-assets/theincompletearchive.mp4" data-poster="web-assets/speculative-chula-exhibition-poster.webp" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%202.webp" data-copy="A digital platform that makes land conflict and institutional power relations legible through maps, chatbot, archive, dossier, and game."><span>001</span><strong>The Incomplete Archive</strong><em>Reveal</em></a>
               <a href="echo-case.html" data-project data-title="Echo" data-kicker="Translate / civic AI product" data-year="2026" data-src="web-assets/echo-cover.jpg" data-images="web-assets/echo-cover.jpg|web-assets/echo-fig04.jpg|web-assets/echo-fig05.jpg|web-assets/echo-fig06.jpg|web-assets/echo-fig07.jpg" data-interval="1600" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A privacy-first product that helps people affected by a federal rule file evidence-based public comments anonymously and see how the agency responds. Full PRD, including evaluation and launch criteria for its AI features."><span>002</span><strong>Echo</strong><em>Product</em></a>
               <a href="tangle-holder-case.html" data-project data-title="Tangle to Holder" data-kicker="Mediate / product system" data-year="2026" data-src="web-assets/tangle-product-system.mp4" data-poster="web-assets/tangle-product-system.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%207.webp" data-copy="A wearable, app, and printed object that redistributes the labor of being understood in a fifteen-minute medical appointment."><span>003</span><strong>Tangle to Holder</strong><em>Mediate</em></a>
               <a href="thermal-commons-case.html" data-project data-title="Thermal Commons" data-kicker="Mediate / dashboard" data-year="2026" data-src="web-assets/thermal-decisionmaker.mp4" data-poster="web-assets/thermal-decisionmaker.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%203.webp" data-copy="A dashboard that turns an HVAC setpoint into a participatory governance device residents can read and contest."><span>004</span><strong>Thermal Commons</strong><em>Dashboard</em></a>
@@ -155,27 +163,6 @@
               <p data-preview-copy>A digital platform that makes land conflict and institutional power relations legible through maps, chatbot, archive, dossier, and game.</p>
               <a data-preview-link href="chula-case.html">Open case</a>
             </aside>
-          </div>
-        </section>
-
-        <section class="wip-section" id="wip" aria-labelledby="wip-title">
-          <div class="wip-head">
-            <h2 id="wip-title"><span class="script">Work in</span> Progress</h2>
-            <p class="time-range">[FALL 2026]</p>
-          </div>
-          <div class="wip-grid">
-            <article class="wip-card">
-              <p class="wip-card__meta">MIT Media Lab · AI Studio</p>
-              <h3>Referral</h3>
-              <p>An MCP server for agents that hire other agents. Before a job, the worker agent locks its forecast of success, cost and time; after delivery, a separate checker verifies what it delivered, and the hiring agent gets a trust tier instead of ratings that are easy to fake. I lead the protocol, the tamper-evident log and the insight layer.</p>
-              <p class="wip-card__tags"><span>Agentic web</span><span>MCP</span><span>Trust &amp; verification</span></p>
-            </article>
-            <article class="wip-card">
-              <p class="wip-card__meta">Harvard GSD · SCI</p>
-              <h3>Behavioral Cognition Study</h3>
-              <p>A human-computer interaction study that reverse-engineers how people perceive and decide, as groundwork for using AI to model human behavior.</p>
-              <p class="wip-card__tags"><span>HCI</span><span>Behavioral science</span><span>Experiment design</span></p>
-            </article>
           </div>
         </section>
 
@@ -275,24 +262,42 @@
     <script src="contact-stage.js?v=20260823-live"></script>
     <script src="script-v2.js?v=20260905-mobile-polish"></script>
     <script>
-      // Keep the left column's "now viewing" line in step with the project index.
+      // Page two: the heading takes the hovered project's name, and a
+      // thermometer on the index rises from its bulb to the active row.
       (() => {
-        const num = document.querySelector("[data-now-num]");
-        const title = document.querySelector("[data-now-title]");
-        if (!num || !title) return;
-        document.querySelectorAll(".work-list [data-project]").forEach((link, index) => {
-          const show = () => {
-            if (title.textContent === link.dataset.title) return;
-            title.classList.add("is-swapping");
-            window.setTimeout(() => {
-              num.textContent = String(index + 1).padStart(3, "0");
-              title.textContent = link.dataset.title;
-              title.classList.remove("is-swapping");
-            }, 160);
-          };
-          link.addEventListener("mouseenter", show);
-          link.addEventListener("focus", show);
+        const list = document.querySelector(".studio .work-list");
+        const swap = document.querySelector("[data-heading-swap]");
+        if (!list || !swap) return;
+        const fill = document.createElement("span");
+        fill.className = "thermo-fill";
+        fill.setAttribute("aria-hidden", "true");
+        const bulb = document.createElement("span");
+        bulb.className = "thermo-bulb";
+        bulb.setAttribute("aria-hidden", "true");
+        list.append(fill, bulb);
+
+        const level = (row) => {
+          if (row) fill.style.top = `${row.offsetTop + row.offsetHeight / 2}px`;
+        };
+        const rename = (text) => {
+          if (swap.textContent === text) return;
+          swap.classList.add("is-swapping");
+          window.setTimeout(() => {
+            swap.textContent = text;
+            swap.classList.remove("is-swapping");
+          }, 150);
+        };
+
+        list.querySelectorAll("[data-project]").forEach((row) => {
+          const show = () => { level(row); rename(row.dataset.title); };
+          row.addEventListener("mouseenter", show);
+          row.addEventListener("focus", show);
         });
+        list.addEventListener("mouseleave", () => rename("Projects"));
+        const start = () => level(list.querySelector("[data-project].is-active"));
+        start();
+        window.addEventListener("resize", start);
+        window.addEventListener("load", start);
       })();
     </script>
   </body>

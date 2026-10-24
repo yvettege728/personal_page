@@ -177,7 +177,7 @@ function initWork() {
     project.addEventListener("focus", () => setProject(project));
   });
 
-  setProject(projects[0]);
+  setProject(projects.find((item) => "default" in item.dataset) || projects[0]);
 }
 
 function initMobileProjectCards() {
