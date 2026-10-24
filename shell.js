@@ -232,7 +232,7 @@
     size();
   }
 
-  // Writing: the paper's cover follows the pointer down the list.
+  // Writing: the hovered paper's cover shows in the column beside the list.
   const list = document.querySelector("[data-paper-list]");
   const coverImg = list?.querySelector("[data-paper-cover]");
   if (list && coverImg) {
@@ -240,7 +240,6 @@
       a.addEventListener("mouseenter", () => {
         coverImg.src = a.dataset.paperImg;
         list.classList.add("is-peeking");
-        coverImg.parentElement.style.top = `${a.offsetTop}px`;
       });
     });
     list.addEventListener("mouseleave", () => list.classList.remove("is-peeking"));
