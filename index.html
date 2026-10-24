@@ -36,7 +36,7 @@
         </svg>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#about" data-decrypt data-text="About">About</a>
+        <a href="#mobile-skills" data-decrypt data-text="Skills">Skills</a>
         <a href="#projects" data-decrypt data-text="Projects">Projects</a>
         <a href="#projects" data-decrypt data-text="In Progress">In Progress</a>
         <a href="methodology.html" data-decrypt data-text="Methodology">Methodology</a>
@@ -113,7 +113,7 @@
         <aside class="studio__side">
           <img class="studio__portrait" src="web-assets/portrait-2026.jpg" alt="Yvette Ge">
           <div class="studio__intro">
-            <p>I’m Yvette, a Master in Design Studies candidate at Harvard GSD, cross-registered at MIT Media Lab’s AI Studio, where I work on infrastructure for the agentic web. My work covers incentive mechanism and system design, multi-agent architecture, and service and product prototyping, grounded in social science research and theory.</p>
+            <p>I’m Yvette, a Master in Design Studies candidate at Harvard GSD. My work covers incentive mechanism and system design, multi-agent architecture, and service and product prototyping, grounded in social science research and theory.</p>
             <p>I work in the space between what users say they need and what they actually need, between what the technology can do and what the story promises, and between what a business can sustain and what its founders hope for. I build the systems myself, so I know where the tradeoffs sit.</p>
           </div>
           <nav class="studio__links" aria-label="Quick links">
@@ -174,60 +174,29 @@
         </div>
       </section>
 
-      <section class="about" id="about" aria-labelledby="about-title">
-        <h2 id="about-title">A<span class="script">bou</span>t</h2>
-        <div class="about__grid">
-          <figure class="about__portrait">
+      <section class="skill-section" id="mobile-skills" aria-label="How skills form">
+        <div class="skill-layout">
+          <figure class="skill-portrait">
             <img src="web-assets/headshot.jpg" alt="Yvette Ge">
           </figure>
-
-          <div class="about__text">
-            <p class="about-current" data-about-reveal>I’m currently a Master in Design Studies candidate at Harvard’s Graduate School of Design, in the Publics Domain track, after a First Class Honours Bachelor degree at UCL.</p>
-            <p class="about-beside">Besides that, I am <button class="aside-trigger" type="button" data-tree-open aria-expanded="false">a person who always keeps her impulse</button></p>
-            <div class="tree-card" data-tree-card>
-              <div class="tree-card__open" hidden>
-                <button class="tree-card__close" type="button" data-tree-close aria-label="Close the other introduction">Close ×</button>
-                <video class="tree-card__cyanotype" src="web-assets/about-cyanotype-web.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Cyanotype process video"></video>
-                <img class="tree-card__dogwood" src="web-assets/about-dogwood.webp" alt="">
-                <img class="tree-card__feather" src="web-assets/about-feather.jpeg" alt="">
-                <button class="tree-card__tree" type="button" data-tree-swap aria-label="Open the other introduction" aria-expanded="false">
-                  <img class="tree-card__tree-img tree-card__tree-img--closed" src="web-assets/about-tree-closed.png" alt="">
-                  <img class="tree-card__tree-img tree-card__tree-img--open" src="web-assets/about-tree-open.png" alt="">
-                </button>
-                <p class="tree-card__hint" aria-hidden="true">Open</p>
-                <div class="tree-card__content" aria-label="The other introduction" tabindex="0">
-                  <div class="tree-card__copy">
-                    <p>I go to 9am with cinnamon roll amd oat matcha.</p>
-                    <p>I love my impossible impulses and I love to being audacity. I act to&nbsp; turn curiosity&nbsp; into stamina , and I can hold that for a long time.</p>
-                    <p>I feel a lot, and I notice myself feeling it. I am still learning what that sensitivity is for, what it can lift. The struggle built both halves, the one that senses and the one that reasons.</p>
-                    <p>I like seesaws. I go all in, but what thrills me is the search for the balance point.</p>
-                    <p>I am competitive, and I am in full wing when I see the meanings.</p>
-                    <p>I love a story that refuses what it was told to want, and writing that finds one clever way in and opens a structural unfairness with it.</p>
-                    <p>I want deep connection and I work for it.</p>
-                  </div>
-                </div>
-              </div>
+          <div class="skill-body">
+            <p class="skill-lead">Every skill I have, I needed first.</p>
+            <div class="skill-copy">
+              <p>I chase the problem, not the toolkit.</p>
+              <p>I learned social science, theory and method, to take a structure apart and see why it holds together the way it does. I learned design, fabrication, visualization, methodology, to build something that could act on what I found. I learned AI and infrastructure because the problem in front of me needed it. None of it was the goal. The problem was.</p>
+              <p>Drop me into a problem outside my training, and I will go acquire whatever it takes to solve it: a research method, a fabrication process, an unfamiliar piece of software, a new part of the AI stack. I do not wait until I am already qualified to start.</p>
+            </div>
+            <div class="skill-strips" aria-label="Skill strips">
+              <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Product Judgment +</span><span class="tag-note" role="note">Pulling structure out of messy input, then weighing what users struggle with against what AI can actually do, to cut an MVP small enough to test.</span></button>
+              <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Multi-Agent Architecture +</span><span class="tag-note" role="note">Designing agent teams and the runtime underneath them: roles, prompt and context engineering, tool calls, harnesses, and how agents hand work to each other.<span class="tool-chips"><span>Claude Code</span><span>Codex</span><span>Cursor</span><span>OpenClaw</span><span>Hermes</span><span>Ollama</span></span></span></button>
+              <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Agent Infrastructure &amp; Trust +</span><span class="tag-note" role="note">Building the layer agents rely on to work with each other: protocols, tamper-evident logs, verification, and incentive design that makes honest behavior pay.<span class="tool-chips"><span>MCP</span><span>Calibration scoring</span><span>Incentive design</span></span></span></button>
+              <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">AI Evaluation &amp; Guardrails +</span><span class="tag-note" role="note">Setting what an AI feature must pass before it ships: test cases, human-in-the-loop review, privacy guardrails, and a north-star metric people can trust.<span class="tool-chips"><span>Launch criteria</span><span>Human-in-the-loop</span><span>Governance</span></span></span></button>
+              <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Research to Insight +</span><span class="tag-note" role="note">Mapping how a system already works from records and public sources first, so interviews stay short and specific, then choosing the one visualization that makes the insight hard to miss.<span class="tool-chips"><span>Airtable</span><span>QGIS</span></span></span></button>
+              <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Prototype &amp; Ship +</span><span class="tag-note" role="note">Getting a rough prototype in front of people early, and carrying it from sketch to a live URL across front end, data and deploy.<span class="tool-chips"><span>Figma</span><span>Adobe CC</span><span>Rhino</span><span>SketchUp</span><span>Lovable</span><span>Base44</span><span>Supabase</span><span>Vercel</span></span></span></button>
+              <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Frontier AI Practice +</span><span class="tag-note" role="note">Picking up new models and tools early, learning the theory while building, and turning them into cross-modal products.<span class="tool-chips"><span>Multimodal models</span><span>VLMs</span><span>OCR pipelines</span><span>Midjourney</span><span>Runway</span></span></span></button>
+              <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Cross-Functional Translation +</span><span class="tag-note" role="note">Moving between what users need, what technology can do, and what a business can sustain, and explaining the same tradeoff to a founder, an engineer and an investor in the terms each cares about.</span></button>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="skill-section" id="mobile-skills" aria-label="How skills form">
-        <p class="skill-lead">Every skill I have, I needed first.</p>
-        <p class="skill-mobile-brief">A compact map of how I move from ambiguity to product, evidence, and adoption.</p>
-        <div class="skill-copy">
-          <p>I chase the problem, not the toolkit.</p>
-          <p>I learned social science, theory and method, to take a structure apart and see why it holds together the way it does. I learned design, fabrication, visualization, methodology, to build something that could act on what I found. I learned AI and infrastructure because the problem in front of me needed it. None of it was the goal. The problem was.</p>
-          <p>Drop me into a problem outside my training, and I will go acquire whatever it takes to solve it: a research method, a fabrication process, an unfamiliar piece of software, a new part of the AI stack. I do not wait until I am already qualified to start.</p>
-        </div>
-        <div class="skill-strips" aria-label="Seven skill strips">
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Product Judgment +</span><span class="tag-note" role="note">Pulling structure out of messy input, then weighing what users struggle with against what AI can actually do, to cut an MVP small enough to test.</span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Multi-Agent Architecture +</span><span class="tag-note" role="note">Building agents hands-on and designing the runtime underneath them: roles, turn-by-turn context, tool calls, verification, and how agents hand work to each other.<span class="tool-chips"><span>Claude Code</span><span>Codex</span><span>Cursor</span><span>OpenClaw</span><span>Hermes</span><span>Ollama</span></span></span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Frontier AI Practice +</span><span class="tag-note" role="note">Picking up new models, infrastructure and tools early, learning the theory while building, and turning them into cross-modal products.<span class="tool-chips"><span>Multimodal models</span><span>VLMs</span><span>OCR pipelines</span><span>Midjourney</span><span>Runway</span></span></span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Prototype &amp; Ship +</span><span class="tag-note" role="note">Getting a rough prototype in front of people early, then carrying it from sketch to a live URL without handing it off.<span class="tool-chips"><span>Figma</span><span>Adobe CC</span><span>Rhino</span><span>SketchUp</span><span>Lovable</span><span>Base44</span><span>Supabase</span><span>Vercel</span></span></span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Systems Research +</span><span class="tag-note" role="note">Taking scattered interviews, records, incentives and timelines and composing them into one picture where you can see who moves whom, and where a decision would actually land.<span class="tool-chips"><span>Airtable</span><span>QGIS</span></span></span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Cross-Functional Translation +</span><span class="tag-note" role="note">Moving between what users need, what technology can do, and what the business can sustain, and saying each one in the terms that function cares about.</span></button>
-          <button class="has-note" type="button" aria-expanded="false"><span class="tag-label">Pitch &amp; Narrative +</span><span class="tag-note" role="note">Framing the same tradeoff for a founder, an engineer and an investor, each around what they actually care about.</span></button>
         </div>
       </section>
 

@@ -4428,3 +4428,72 @@ main.subpage { padding-top: 96px; }
   .studio__portrait { width: 160px; }
 }
 .studio .work-stage { grid-template-columns: minmax(250px, 300px) minmax(0, 1fr); }
+
+/* Softer pass (2026-10-24): mixed-case headings, rounded media, pill tags,
+   fewer hard rules, and a two-column skills section carrying the portrait. */
+.studio-head h2 { text-transform: none; font-weight: 600; letter-spacing: -0.01em; }
+.studio-head__swap { text-transform: none; }
+.studio .time-range { color: var(--soft); }
+
+.studio__portrait { border-radius: 14px; }
+.studio__intro p { color: rgba(48, 48, 48, 0.86); }
+.studio__links a { border-bottom-color: transparent; padding: 3px 10px; border-radius: 999px; background: rgba(78, 126, 167, 0.08); }
+.studio__links a:hover { background: rgba(78, 126, 167, 0.18); border-color: transparent; }
+
+.studio .work-list a { border-bottom: 1px dotted rgba(48, 48, 48, 0.18); transition: color 160ms ease, padding-left 220ms ease; }
+.studio .work-list a:first-child { border-top: 0; }
+.studio .work-list a.is-wip em { border: 0; border-radius: 999px; padding: 2px 8px; background: rgba(78, 126, 167, 0.12); }
+.axis-zero { border-bottom: 1px dashed rgba(78, 126, 167, 0.4); color: var(--blue); }
+
+.studio .project-preview__media { border-radius: 12px; overflow: hidden; }
+.studio .project-preview__media img,
+.studio .project-preview__media video { border-radius: 12px; }
+.studio .project-note a,
+.method-teaser a { border-bottom-width: 1px; }
+
+.studio .method-teaser { border-top: 0; border-bottom: 0; padding-top: 24px; }
+.method-teaser p { text-transform: none; font-weight: 500; letter-spacing: -0.01em; }
+.method-teaser a { text-transform: none; }
+
+.skill-section { min-height: 0; padding: 120px clamp(30px, 5.2vw, 106px); }
+.skill-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: start;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.skill-portrait { margin: 0; position: sticky; top: 96px; }
+.skill-portrait img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; }
+.skill-body { display: grid; gap: 28px; }
+.skill-section .skill-lead {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(26px, 2.6vw, 40px);
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+.skill-section .skill-copy { max-width: 62ch; margin: 0; text-align: left; font-size: 15px; line-height: 1.55; }
+.skill-section .skill-copy p + p { margin-top: 12px; }
+.skill-section .skill-strips { justify-content: flex-start; gap: 10px; margin: 8px 0 0; padding: 0; max-width: none; }
+.skill-section .skill-strips button {
+  min-height: 38px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(48, 48, 48, 0.06);
+  font-size: 13px;
+  text-transform: none;
+}
+.skill-section .skill-strips button:hover,
+.skill-section .skill-strips button:focus-visible,
+.skill-section .skill-strips button[aria-expanded="true"] { background: rgba(78, 126, 167, 0.16); color: var(--ink); }
+
+@media (max-width: 900px) {
+  .skill-layout { grid-template-columns: 1fr; }
+  .skill-portrait { position: static; width: 180px; }
+}
