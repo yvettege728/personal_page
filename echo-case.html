@@ -13,30 +13,33 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><rect width='240' height='240' rx='30' fill='%23f7f7f3'/><g fill='none' stroke='%232f2f2f' stroke-width='15' stroke-linecap='round'><line x1='58' y1='54' x2='120' y2='140'/><line x1='182' y1='54' x2='120' y2='140'/><line x1='120' y1='140' x2='120' y2='206'/></g><circle cx='58' cy='54' r='16' fill='%232f2f2f'/><circle cx='182' cy='54' r='16' fill='%232f2f2f'/><circle cx='120' cy='140' r='26' fill='%232f2f2f'/><circle cx='120' cy='206' r='17' fill='%232f2f2f'/></svg>">
     <link rel="stylesheet" href="styles.css?v=20260928-glance">
+    <link rel="stylesheet" href="case-v3.css?v=20261024b">
   </head>
-  <body>
+  <body data-project="echo" class="cv3-page">
     <nav class="line-nav case-nav" aria-label="Case navigation">
       <a class="line-nav__brand" href="index.html" aria-label="Back to portfolio"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 240 240" class="hub-mark"><line class="arm" x1="58" y1="54" x2="120" y2="140"/><line class="arm" x1="182" y1="54" x2="120" y2="140"/><line class="spine" x1="120" y1="140" x2="120" y2="206"/><circle class="node-lilac" cx="58" cy="54" r="13"/><circle class="node-lilac" cx="182" cy="54" r="13"/><circle class="node-coral" cx="120" cy="140" r="23"/><circle class="node-coral" cx="120" cy="206" r="14"/></svg></span><span class="line-nav__name">Yvette Ge</span></a>
-      <div class="line-nav__links"><a href="index.html#projects">All projects</a></div>
+      <div class="line-nav__links" data-case-switch></div>
     </nav>
+    <section class="cv3" style="--cv3: #efd2bf">
+      <div class="cv3__panel">
+        <p class="cv3__kicker"><a href="index.html#projects">Selected work</a> · Translate</p>
+        <h1 class="cv3__title">Echo</h1>
+        <p class="cv3__lede">A privacy-first product that helps people affected by a federal rule file evidence-based public comments anonymously, and see how the agency responds without ever leaving their name.</p>
+        <details class="cv3__more"><summary>+ info</summary><p>Below is the full PRD, including the evaluation and launch criteria for its AI features. <a href="web-assets/echo-prd.pdf" target="_blank" rel="noopener">Open the PDF in a new tab</a>.</p></details>
+        <dl class="cv3__meta"><div><dt>Year</dt><dd>2026</dd></div><div><dt>Context</dt><dd>Harvard Kennedy School, Product Management and Society</dd></div><div><dt>Role</dt><dd>Product Lead</dd></div><div><dt>Output</dt><dd>Full PRD with AI evaluation and launch criteria</dd></div></dl>
+      </div>
+      <div class="cv3__media"><img src="web-assets/echo-cover.jpg" alt="Echo: anonymous, evidence-based public comments on federal rules. Three phone screens from the MVP prototype." style="object-fit: contain; background: #1c1d1a;"></div>
+    </section>
     <main class="echo-case">
-      <header class="echo-case__head">
-        <p class="echo-case__meta">2026 · Harvard Kennedy School, Product Management and Society · Product Lead</p>
-        <h1>Echo</h1>
-        <p class="echo-case__lede">A privacy-first product that helps people affected by a federal rule file evidence-based public comments anonymously, and see how the agency responds without ever leaving their name.</p>
-        <p class="echo-case__note">Below is the full PRD, including the evaluation and launch criteria for its AI features.</p>
-        <a class="echo-case__dl" href="web-assets/echo-prd.pdf" target="_blank" rel="noopener">Open the PDF in a new tab</a>
-      </header>
-      <img class="echo-case__cover" src="web-assets/echo-cover.jpg" alt="Echo: anonymous, evidence-based public comments on federal rules. Three phone screens from the MVP prototype.">
       <object class="echo-case__pdf" data="web-assets/echo-prd.pdf#view=FitH" type="application/pdf" aria-label="Echo PRD">
         <p>Your browser can't show the PDF here. <a href="web-assets/echo-prd.pdf">Open the Echo PRD</a>.</p>
       </object>
     </main>
     <style>
-      .echo-case { max-width: 1180px; margin: 0 auto; padding: 120px clamp(18px, 4vw, 48px) 80px; }
+      .echo-case { max-width: 1180px; margin: 0 auto; padding: 64px clamp(18px, 4vw, 48px) 80px; }
       .echo-case__head { display: grid; gap: 14px; margin-bottom: 36px; }
       .echo-case__meta { margin: 0; font-size: 13px; text-transform: uppercase; opacity: 0.6; }
       .echo-case h1 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: clamp(64px, 9vw, 140px); line-height: 0.85; text-transform: uppercase; }
@@ -47,5 +50,7 @@
       .echo-case__pdf { width: 100%; height: 88vh; border: 1px solid rgba(48,48,48,0.28); background: #fff; }
       @media (max-width: 720px) { .echo-case__pdf { height: 70vh; } }
     </style>
+    <script src="contact-stage.js?v=20260823-live"></script>
+    <script src="script.js?v=20261024-nav"></script>
   </body>
 </html>

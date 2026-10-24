@@ -1,0 +1,98 @@
+/* Case opening (2026-10-24), after mariamarago.com: a colour panel holding
+   the title, one sentence and the facts; the image fills the rest. */
+.cv3 {
+  --ink3: #262626;
+  display: grid;
+  grid-template-columns: minmax(340px, 40%) minmax(0, 1fr);
+  min-height: 100vh;
+  padding-top: 76px;
+  background: #0f1011;
+}
+.cv3__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: clamp(36px, 4vw, 64px) clamp(28px, 3.4vw, 56px) 40px;
+  background: var(--cv3);
+  color: var(--ink3);
+}
+.cv3__panel > * { margin: 0; animation: cv3-rise 700ms cubic-bezier(.2,.8,.2,1) both; }
+.cv3__panel > *:nth-child(2) { animation-delay: 120ms; }
+.cv3__panel > *:nth-child(3) { animation-delay: 260ms; }
+.cv3__panel > *:nth-child(4) { animation-delay: 380ms; }
+.cv3__panel > *:nth-child(5) { animation-delay: 480ms; }
+@keyframes cv3-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.cv3__kicker {
+  font: 500 11px/1 "Hanken Grotesk", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.cv3__kicker a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+.cv3__title {
+  font: 400 clamp(48px, 5.6vw, 92px)/0.95 "Instrument Serif", "Times New Roman", serif;
+  letter-spacing: -0.015em;
+  text-transform: none;
+}
+.cv3__lede {
+  max-width: 34ch;
+  font: 400 clamp(18px, 1.5vw, 23px)/1.35 "Hanken Grotesk", sans-serif;
+}
+.cv3__more summary {
+  width: fit-content;
+  font: 500 12px/1 "Hanken Grotesk", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+}
+.cv3__more summary::-webkit-details-marker { display: none; }
+.cv3__more[open] summary { margin-bottom: 12px; }
+.cv3__more p { margin: 0; max-width: 44ch; font-size: 14px; line-height: 1.55; }
+.cv3__meta {
+  margin-top: auto !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 18px 24px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(38, 38, 38, 0.3);
+}
+.cv3__meta dt {
+  margin-bottom: 6px;
+  font: 500 10px/1 "Hanken Grotesk", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+.cv3__meta dd { margin: 0; font-size: 12.5px; line-height: 1.45; }
+.cv3__media {
+  position: relative;
+  overflow: hidden;
+  animation: cv3-open 1100ms cubic-bezier(.7,0,.2,1) 150ms both;
+}
+@keyframes cv3-open { from { clip-path: inset(50% 50% 50% 50%); } to { clip-path: inset(0 0 0 0); } }
+.cv3__media img,
+.cv3__media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+.cv3-page .case-hero { display: none; }
+
+@media (max-width: 860px) {
+  .cv3 { grid-template-columns: 1fr; min-height: 0; padding-top: 64px; }
+  .cv3__media { order: -1; aspect-ratio: 4 / 3; }
+  .cv3__panel { padding: 28px 20px 32px; }
+  .cv3__meta { margin-top: 8px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv3__panel > *, .cv3__media { animation: none; }
+}
+.cv3-page main > .cv3:first-child { padding-top: 0; }
+.cv3 .cv3__lede { font-size: clamp(18px, 1.5vw, 23px); line-height: 1.35; }
+.cv3 .cv3__meta dd { font-size: 12.5px; line-height: 1.45; }
+.cv3 .cv3__title { margin: 0; }
+.cv3-page .cv3 { padding-top: 0; }

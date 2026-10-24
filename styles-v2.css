@@ -4661,3 +4661,287 @@ main.subpage { padding-top: 96px; }
 .studio__portrait { width: min(150px, 100%); }
 .studio .work-stage { grid-template-rows: auto 1fr; align-content: start; }
 .studio .project-note { align-self: start; }
+
+/* Marago pass (2026-10-24): a sideways project strip, a colour wash behind
+   the index, and a two-layer profile (personal first, formal on request). */
+
+/* Strip: vertical scroll drives horizontal travel; the ground follows the
+   card in the middle, and each image opens from its centre on arrival. */
+.work-strip {
+  position: relative;
+  --ground: var(--paper);
+  background: var(--ground);
+  transition: background-color 700ms ease;
+}
+.work-strip__pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 96px 0 32px;
+}
+.work-strip__label {
+  margin: 0 0 28px;
+  padding: 0 clamp(36px, 6vw, 120px);
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  font: 400 clamp(34px, 3.4vw, 54px)/1 var(--serif);
+}
+.work-strip__arrow { display: inline-block; animation: nudge 2.4s ease-in-out infinite; }
+@keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
+.work-strip__track {
+  display: flex;
+  gap: clamp(20px, 2.4vw, 40px);
+  align-items: stretch;
+  width: max-content;
+  padding: 0 clamp(36px, 6vw, 120px);
+  will-change: transform;
+}
+.work-strip__hint {
+  margin: 0;
+  padding: 0 clamp(36px, 6vw, 120px);
+  font: 400 11px/1 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.strip-card {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  width: clamp(260px, 30vw, 460px);
+  height: 100%;
+  max-height: 62vh;
+  color: var(--ink);
+  text-decoration: none;
+}
+.strip-card__media {
+  position: relative;
+  overflow: hidden;
+  background: var(--card);
+  clip-path: inset(50% 50% 50% 50%);
+  transition: clip-path 900ms cubic-bezier(.7,0,.2,1);
+}
+.strip-card.is-open .strip-card__media { clip-path: inset(0 0 0 0); }
+.strip-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 1200ms cubic-bezier(.2,.8,.2,1), filter 400ms ease;
+}
+.strip-card.is-open .strip-card__media img { transform: scale(1); }
+.strip-card:hover .strip-card__media img { transform: scale(1.03); }
+.strip-card__foot {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 14px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 500ms ease 450ms, transform 500ms ease 450ms;
+}
+.strip-card.is-open .strip-card__foot { opacity: 1; transform: none; }
+.strip-card__num { font: 15px/1 "Times New Roman", Times, serif; color: var(--soft); }
+.strip-card strong { font: 400 22px/1.1 var(--serif); }
+.strip-card__tag { font: 400 10px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); }
+
+@media (max-width: 760px) {
+  .work-strip__pin { position: static; height: auto; padding: 64px 0 40px; }
+  .work-strip__track {
+    width: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 18px 12px;
+  }
+  .work-strip__label, .work-strip__hint { padding: 0 18px; }
+  .strip-card { width: 78vw; height: 58vh; scroll-snap-align: start; flex: none; }
+}
+
+/* Studio: the ground leans toward the hovered project's colour. */
+.studio {
+  background: color-mix(in srgb, var(--wash, var(--paper)) 38%, var(--paper));
+  transition: background-color 600ms ease;
+}
+.studio .project-preview__media.is-opening { animation: open-centre 700ms cubic-bezier(.7,0,.2,1); }
+@keyframes open-centre {
+  from { clip-path: inset(18% 22% 18% 22%); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* Profile: personal paragraphs on the left, a sticky photo that follows
+   them on the right, and a formal panel that slides in on "+ info". */
+.profile {
+  position: relative;
+  padding: 160px clamp(36px, 6vw, 120px) 120px;
+}
+.profile__head {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+.profile__eyebrow {
+  margin: 0;
+  font: 400 11px/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.profile__head h2 { margin: 0; font: 400 clamp(34px, 3.4vw, 54px)/1 var(--serif); }
+.profile__more {
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: 500 13px/1 var(--sans);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  cursor: pointer;
+}
+.profile__more span { display: inline-block; transition: transform 300ms ease; }
+.profile__more[aria-expanded="true"] span { transform: rotate(45deg); }
+.profile__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(40px, 6vw, 120px);
+  align-items: start;
+}
+.profile__text { display: grid; gap: 34vh; padding: 6vh 0 30vh; }
+.who {
+  margin: 0;
+  font: 400 clamp(30px, 3.6vw, 58px)/1.08 var(--serif);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  opacity: 0.22;
+  transition: opacity 600ms ease;
+}
+.who.is-current { opacity: 1; }
+.who small {
+  display: block;
+  margin-top: 14px;
+  font: 400 11px/1.4 var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.profile__photo {
+  position: sticky;
+  top: 18vh;
+  margin: 0;
+}
+.profile__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #d6d3cc;
+}
+.profile__frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 700ms ease, transform 1400ms cubic-bezier(.2,.8,.2,1);
+}
+.profile__frame img.is-on { opacity: 1; transform: none; }
+.profile__count {
+  margin-top: 12px;
+  font: 400 11px/1 var(--mono);
+  letter-spacing: 0.1em;
+  color: var(--soft);
+}
+.sparkle {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  fill: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+}
+.sparkle--a { top: -18px; right: -14px; }
+.sparkle--b { bottom: 40px; left: -20px; width: 20px; height: 20px; fill: var(--blue); }
+.sparkle.is-flash { animation: sparkle 900ms ease-out both; }
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0.2) rotate(0deg); }
+  30% { opacity: 1; transform: scale(1.1) rotate(45deg); }
+  55% { opacity: 0.2; }
+  70% { opacity: 1; transform: scale(0.9) rotate(70deg); }
+  100% { opacity: 0; transform: scale(0.4) rotate(90deg); }
+}
+
+.profile-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 60;
+  width: min(620px, 94vw);
+  height: 100vh;
+  overflow-y: auto;
+  padding: 72px clamp(28px, 4vw, 56px) 56px;
+  background: #d9d7d2;
+  color: var(--ink);
+  transform: translateX(102%);
+  transition: transform 700ms cubic-bezier(.7,0,.2,1);
+  box-shadow: -30px 0 60px rgba(0,0,0,0.06);
+}
+.profile-panel.is-open { transform: none; }
+.profile-panel > * { opacity: 0; transform: translateY(10px); transition: opacity 400ms ease, transform 400ms ease; }
+.profile-panel.is-open > * { opacity: 1; transform: none; }
+.profile-panel.is-open > *:nth-child(2) { transition-delay: 300ms; }
+.profile-panel.is-open > *:nth-child(3) { transition-delay: 380ms; }
+.profile-panel.is-open > *:nth-child(4) { transition-delay: 460ms; }
+.profile-panel.is-open > *:nth-child(5) { transition-delay: 540ms; }
+.profile-panel.is-open > *:nth-child(n+6) { transition-delay: 620ms; }
+.profile-panel__close {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  border: 0;
+  background: none;
+  font: 300 30px/1 var(--sans);
+  cursor: pointer;
+  color: var(--ink);
+}
+.profile-panel h3 { margin: 14px 0 22px; font: 400 clamp(40px, 4vw, 64px)/1 var(--serif); }
+.profile-panel__lede { margin: 0 0 32px; font-size: 15px; line-height: 1.55; max-width: 46ch; }
+.profile-panel dl { margin: 0 0 40px; display: grid; gap: 0; border-top: 1px solid rgba(48,48,48,0.25); }
+.profile-panel dl div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(48,48,48,0.25); }
+.profile-panel dt { font: 400 11px/1.5 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--soft); }
+.profile-panel dd { margin: 0; font-size: 14px; line-height: 1.5; }
+.profile-panel__big { margin: 0 0 14px; font: 400 clamp(32px, 3.4vw, 52px)/1 var(--serif); }
+.profile-panel__skills { margin: 0 0 32px; padding: 0; list-style: none; font: 400 clamp(20px, 1.8vw, 26px)/1.35 var(--serif); }
+.profile-panel__link { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink); }
+
+@media (max-width: 760px) {
+  .profile { padding: 80px 18px 64px; }
+  .profile__head { flex-wrap: wrap; margin-bottom: 32px; }
+  .profile__grid { grid-template-columns: 1fr; }
+  .profile__photo { position: sticky; top: 64px; order: -1; width: 62%; margin-left: auto; z-index: 1; }
+  .profile__text { gap: 22vh; padding: 10vh 0 18vh; }
+  .who { font-size: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-strip__arrow, .sparkle.is-flash, .studio .project-preview__media.is-opening { animation: none; }
+  .strip-card__media, .profile-panel, .profile-panel > * { transition: none; }
+}
+
+/* Clip rather than hide sideways overflow, so the page itself stays the
+   scroller and sticky blocks (strip, profile photo, studio side) can pin. */
+html, body { overflow-x: clip; }
+.strip-card__media.is-contain img { object-fit: contain; padding: 6%; }
+.profile-panel { z-index: 1000; }
+@media (max-width: 760px) {
+  .work-strip__hint { display: none; }
+  .profile__photo { width: 100%; top: 56px; padding: 8px 0 12px; background: var(--paper); }
+  .profile__frame { aspect-ratio: 16 / 10; }
+  .profile__count { display: none; }
+  .sparkle--a { top: 0; right: 4px; }
+}

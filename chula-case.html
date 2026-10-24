@@ -13,30 +13,27 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><rect width='240' height='240' rx='30' fill='%23f7f7f3'/><g fill='none' stroke='%232f2f2f' stroke-width='15' stroke-linecap='round'><line x1='58' y1='54' x2='120' y2='140'/><line x1='182' y1='54' x2='120' y2='140'/><line x1='120' y1='140' x2='120' y2='206'/></g><circle cx='58' cy='54' r='16' fill='%232f2f2f'/><circle cx='182' cy='54' r='16' fill='%232f2f2f'/><circle cx='120' cy='140' r='26' fill='%232f2f2f'/><circle cx='120' cy='206' r='17' fill='%232f2f2f'/></svg>">
     <link rel="stylesheet" href="styles.css?v=20260928-glance">
+    <link rel="stylesheet" href="case-v3.css?v=20261024b">
   </head>
-  <body data-project="chula">
+  <body data-project="chula" class="cv3-page">
     <nav class="line-nav case-nav" aria-label="Case navigation">
       <a class="line-nav__brand" href="index.html" aria-label="Back to portfolio"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 240 240" class="hub-mark"><line class="arm" x1="58" y1="54" x2="120" y2="140"/><line class="arm" x1="182" y1="54" x2="120" y2="140"/><line class="spine" x1="120" y1="140" x2="120" y2="206"/><circle class="node-lilac" cx="58" cy="54" r="13"/><circle class="node-lilac" cx="182" cy="54" r="13"/><circle class="node-coral" cx="120" cy="140" r="23"/><circle class="node-coral" cx="120" cy="206" r="14"/></svg></span><span class="line-nav__name">Yvette Ge</span></a>
       <div class="line-nav__links" data-case-switch></div>
     </nav>
 
     <main>
-      <section class="section case-hero" data-nav-section>
-        <div class="section-inner case-hero-grid">
-          <div class="case-hero-copy">
-            <p class="eyebrow">Reveal</p>
-            <h1>The Incomplete Archive · Issue 01</h1>
-            <p class="callout blur-highlight" style="--bh-accent: var(--reveal)">To Acknowledge is to Empower</p>
-            <p class="callout-sub">A century-old Teochew shrine on Block 33, Sam Yan, is still standing. Its fourth-generation caretaker now faces a 122-million-baht civil-damages claim from Chulalongkorn University's property arm, PMCU. It's not the first time this pattern has run: the same institutional grammar has already played out at Scala, at Sam Yan Market, at Suanluang.</p>
-            <a class="button light magnetic" href="https://chula-powermap.yvette-geyanqin.workers.dev/">Visit the Site <span aria-hidden="true">-></span></a>
-          </div>
-          <div class="image-frame">
-            <video src="web-assets/theincompletearchive.mp4" poster="web-assets/speculative-chula-exhibition-poster.webp" autoplay muted loop playsinline aria-label="Opening sequence from The Incomplete Archive"></video>
-          </div>
+      <section class="cv3" style="--cv3: #c7cfe3">
+        <div class="cv3__panel">
+          <p class="cv3__kicker"><a href="index.html#projects">Selected work</a> · Reveal</p>
+          <h1 class="cv3__title">The Incomplete Archive</h1>
+          <p class="cv3__lede">To acknowledge is to empower. A live trilingual archive that makes land conflict and institutional power in Sam Yan, Bangkok, legible. <a href="https://chula-powermap.yvette-geyanqin.workers.dev/">Visit the site →</a></p>
+          <details class="cv3__more"><summary>+ info</summary><p>A century-old Teochew shrine on Block 33, Sam Yan, is still standing. Its fourth-generation caretaker now faces a 122-million-baht civil-damages claim from Chulalongkorn University's property arm, PMCU. It's not the first time this pattern has run: the same institutional grammar has already played out at Scala, at Sam Yan Market, at Suanluang.</p></details>
+          <dl class="cv3__meta"><div><dt>Year</dt><dd>2026</dd></div><div><dt>Context</dt><dd>Harvard GSD studio, Speculative Chula: Not Yet Built</dd></div><div><dt>Team</dt><dd>10-group studio; I owned 3 sites within my group</dd></div><div><dt>Output</dt><dd>Trilingual interactive website, five reading paths, 176-entry database</dd></div><div><dt>Status</dt><dd>Deployed, live, exhibited</dd></div></dl>
         </div>
+        <div class="cv3__media"><video src="web-assets/theincompletearchive.mp4" poster="web-assets/speculative-chula-exhibition-poster.webp" autoplay muted loop playsinline aria-label="Opening sequence from The Incomplete Archive"></video></div>
       </section>
 
       <section class="case-section glance" aria-label="Project at a glance" style="--glance-accent: var(--reveal)">
@@ -55,13 +52,8 @@
               <li>Designed nine composite personas with no built-in allegiance, so readers reach their own position instead of following a script.</li>
             </ul></div>
             <div class="glance-meta">
-          <div><strong>Year</strong>2026</div>
-          <div><strong>Context</strong>Harvard GSD studio, Speculative Chula: Not Yet Built</div>
-          <div><strong>Team</strong>10-group studio; I owned 3 sites within my group</div>
           <div><strong>Role</strong>Main author and editor of the relational database; full-stack build and deployment</div>
           <div><strong>Tools</strong>Figma, relational database tooling, Cloudflare Workers/Pages, vanilla JS</div>
-          <div><strong>Output</strong>Trilingual interactive website, five reading paths, 176-entry database</div>
-          <div><strong>Status</strong>Deployed, live, exhibited</div>
           <div class="glance-meta-wide"><strong>AI Angle</strong>Oral-history chatbot feeding a real research archive</div>
             </div>
           </div>
@@ -149,6 +141,6 @@
 
     <script src="contact-stage.js?v=20260823-live"></script>
 
-    <script src="script.js?v=20260823-live"></script>
+    <script src="script.js?v=20261024-nav"></script>
   </body>
 </html>

@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><rect width='240' height='240' rx='30' fill='%23f7f7f3'/><g fill='none' stroke='%232f2f2f' stroke-width='15' stroke-linecap='round'><line x1='58' y1='54' x2='120' y2='140'/><line x1='182' y1='54' x2='120' y2='140'/><line x1='120' y1='140' x2='120' y2='206'/></g><circle cx='58' cy='54' r='16' fill='%232f2f2f'/><circle cx='182' cy='54' r='16' fill='%232f2f2f'/><circle cx='120' cy='140' r='26' fill='%232f2f2f'/><circle cx='120' cy='206' r='17' fill='%232f2f2f'/></svg>">
-    <link rel="stylesheet" href="styles-v2.css?v=20261024-studio">
+    <link rel="stylesheet" href="styles-v2.css?v=20261024-marago">
   </head>
   <body>
     <div class="opening-gate" data-opening-gate aria-hidden="true">
@@ -36,9 +36,9 @@
         </svg>
       </a>
       <nav aria-label="Primary navigation">
+        <a href="#work" data-decrypt data-text="Work">Work</a>
+        <a href="#profile" data-decrypt data-text="Profile">Profile</a>
         <a href="#mobile-skills" data-decrypt data-text="Skills">Skills</a>
-        <a href="#projects" data-decrypt data-text="Projects">Projects</a>
-        <a href="#projects" data-decrypt data-text="In Progress">In Progress</a>
         <a href="methodology.html" data-decrypt data-text="Methodology">Methodology</a>
         <a href="writing.html" data-decrypt data-text="Writing">Writing</a>
       </nav>
@@ -109,6 +109,14 @@
         <span>■ I translate between what people struggle with, what technology can enable, and what can become a viable product.</span>
       </section>
 
+      <section class="work-strip" id="work" aria-label="Selected projects, at a glance" data-work-strip>
+        <div class="work-strip__pin">
+          <p class="work-strip__label"><span>Selected projects</span><span class="work-strip__arrow" aria-hidden="true">→</span></p>
+          <div class="work-strip__track" data-strip-track></div>
+          <p class="work-strip__hint" aria-hidden="true">Scroll · <span data-strip-count>01</span></p>
+        </div>
+      </section>
+
       <section class="studio" aria-label="About and work">
         <aside class="studio__side">
           <img class="studio__portrait" src="web-assets/portrait-2026.jpg" alt="Yvette Ge">
@@ -132,20 +140,20 @@
 
           <div class="work-stage">
             <nav class="work-list" aria-label="Selected projects">
-              <a class="is-wip" href="referral-case.html" data-project data-title="Referral" data-kicker="WIP / MIT Media Lab AI Studio" data-year="Fall 2026" data-src="web-assets/referral-diagram.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="An MCP server for agents that hire other agents. The worker agent locks its forecast before a job, a separate checker verifies the delivery, and the hiring agent gets a trust tier instead of ratings that are easy to fake. I lead the protocol, the tamper-evident log and the insight layer."><span>-01</span><strong>Referral</strong><em>WIP</em></a>
-              <a class="is-wip" href="sci-case.html" data-project data-title="Behavioral Cognition Study" data-kicker="WIP / Harvard GSD SCI" data-year="Fall 2026" data-src="web-assets/sci-wip.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A human-computer interaction study that reverse-engineers how people perceive and decide, as groundwork for using AI to model human behavior."><span>-02</span><strong>Behavioral Cognition Study</strong><em>WIP</em></a>
+              <a class="is-wip" href="referral-case.html" data-fit="contain" data-color="#c9d8c5" data-project data-title="Referral" data-kicker="WIP / MIT Media Lab AI Studio" data-year="Fall 2026" data-src="web-assets/referral-diagram.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="An MCP server for agents that hire other agents. The worker agent locks its forecast before a job, a separate checker verifies the delivery, and the hiring agent gets a trust tier instead of ratings that are easy to fake. I lead the protocol, the tamper-evident log and the insight layer."><span>-01</span><strong>Referral</strong><em>WIP</em></a>
+              <a class="is-wip" href="sci-case.html" data-fit="contain" data-color="#e6d6bf" data-project data-title="Behavioral Cognition Study" data-kicker="WIP / Harvard GSD SCI" data-year="Fall 2026" data-src="web-assets/sci-wip.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A human-computer interaction study that reverse-engineers how people perceive and decide, as groundwork for using AI to model human behavior."><span>-02</span><strong>Behavioral Cognition Study</strong><em>WIP</em></a>
               <span class="axis-zero" aria-hidden="true">0 · now</span>
-              <a class="is-active" href="chula-case.html" data-project data-default data-title="The Incomplete Archive" data-kicker="Reveal / AI archive" data-year="2026" data-src="web-assets/theincompletearchive.mp4" data-poster="web-assets/speculative-chula-exhibition-poster.webp" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%202.webp" data-copy="A digital platform that makes land conflict and institutional power relations legible through maps, chatbot, archive, dossier, and game."><span>01</span><strong>The Incomplete Archive</strong><em>Reveal</em></a>
-              <a href="echo-case.html" data-project data-title="Echo" data-kicker="Translate / civic AI product" data-year="2026" data-src="web-assets/echo-cover.jpg" data-images="web-assets/echo-cover.jpg|web-assets/echo-fig04.jpg|web-assets/echo-fig05.jpg|web-assets/echo-fig06.jpg|web-assets/echo-fig07.jpg" data-interval="1600" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A privacy-first product that helps people affected by a federal rule file evidence-based public comments anonymously and see how the agency responds. Full PRD, including evaluation and launch criteria for its AI features."><span>02</span><strong>Echo</strong><em>Product</em></a>
-              <a href="tangle-holder-case.html" data-project data-title="Tangle to Holder" data-kicker="Mediate / product system" data-year="2026" data-src="web-assets/tangle-product-system.mp4" data-poster="web-assets/tangle-product-system.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%207.webp" data-copy="A wearable, app, and printed object that redistributes the labor of being understood in a fifteen-minute medical appointment."><span>03</span><strong>Tangle to Holder</strong><em>Mediate</em></a>
-              <a href="thermal-commons-case.html" data-project data-title="Thermal Commons" data-kicker="Mediate / dashboard" data-year="2026" data-src="web-assets/thermal-decisionmaker.mp4" data-poster="web-assets/thermal-decisionmaker.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%203.webp" data-copy="A dashboard that turns an HVAC setpoint into a participatory governance device residents can read and contest."><span>04</span><strong>Thermal Commons</strong><em>Dashboard</em></a>
-              <a href="make-a-wish-case.html" data-project data-title="Make a Wish" data-kicker="Mediate / installation" data-year="2026" data-src="web-assets/makeawish-install.mp4" data-poster="web-assets/makeawish-install-poster.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%208.webp" data-copy="A one-day installation and web archive where private wishes became a readable pattern of structural pressure."><span>05</span><strong>Make a Wish</strong><em>Archive</em></a>
-              <a href="roll-up-case.html" data-project data-title="Rollup" data-kicker="Translate / EdTech AI" data-year="2024-" data-src="web-assets/rollup-cover.mp4" data-poster="web-assets/rollup-home-hero-crop.png" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%2010.webp" data-copy="A teaching venture that treats creativity as distributed infrastructure, with Conexa as an AI teaching agent concept."><span>06</span><strong>Rollup</strong><em>AI</em></a>
-              <a href="shadow-within-case.html" data-project data-title="Shadow Within" data-kicker="Translate / body interface" data-year="2025" data-src="web-assets/shadow-within-cover.mp4" data-poster="web-assets/shadow-within-cover-poster.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%2011.webp" data-copy="An installation that turns dissociation into a space visitors can stand inside, mirror, and read through their own body."><span>07</span><strong>Shadow Within</strong><em>Body</em></a>
-              <a href="liminal-grounds-case.html" data-project data-title="Liminal Ground" data-kicker="Reveal / spatial proposal" data-year="2025" data-src="web-assets/liminal-grounds-main.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%209.webp" data-copy="A spatial proposal that reopens a campus entrance closed off by a turnstile and security desk, using semi-public zones between street and interior."><span>08</span><strong>Liminal Ground</strong><em>Space</em></a>
-              <a href="simultaneously-case.html" data-project data-title="Simultaneously" data-kicker="Reveal / installation" data-year="2025" data-src="web-assets/simultaneously-main.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%204.webp" data-copy="An installation linking audiences in Shanghai and Hong Kong through light beams and exchanged photos, so two cities can be true at once."><span>09</span><strong>Simultaneously</strong><em>Space</em></a>
-              <a href="new-orleans-case.html" data-project data-title="New Orleans" data-kicker="Translate / policy system" data-year="2025" data-src="web-assets/d4d-blueprint.jpg" data-images="web-assets/d4d-blueprint.jpg|web-assets/d4d-stakeholder.png" data-interval="500" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2012.webp" data-copy="A policy framework that funds distributed ADUs as civic infrastructure before a disaster, rather than as emergency housing after one."><span>10</span><strong>New Orleans</strong><em>Civic</em></a>
-              <a href="los-balcones-case.html" data-project data-title="Los Balcones Ecotourism" data-kicker="Mediate / co-management" data-year="2025" data-src="web-assets/los-balcones-phrase1.png" data-images="web-assets/los-balcones-phrase1.png|web-assets/los-balcones-phrase2.png|web-assets/los-balcones-phrase3.png|web-assets/los-balcones-phrase4.png" data-interval="500" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2015.webp" data-copy="A co-management proposal for a Peruvian conservation area between oil rigs and rising tourism. I led the visitor-behavior and nudge-design layer."><span>11</span><strong>Los Balcones Ecotourism</strong><em>Policy</em></a>
+              <a class="is-active" href="chula-case.html" data-color="#c7cfe3" data-project data-default data-title="The Incomplete Archive" data-kicker="Reveal / AI archive" data-year="2026" data-src="web-assets/theincompletearchive.mp4" data-poster="web-assets/speculative-chula-exhibition-poster.webp" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%202.webp" data-copy="A digital platform that makes land conflict and institutional power relations legible through maps, chatbot, archive, dossier, and game."><span>01</span><strong>The Incomplete Archive</strong><em>Reveal</em></a>
+              <a href="echo-case.html" data-color="#efd2bf" data-project data-title="Echo" data-kicker="Translate / civic AI product" data-year="2026" data-src="web-assets/echo-cover.jpg" data-images="web-assets/echo-cover.jpg|web-assets/echo-fig04.jpg|web-assets/echo-fig05.jpg|web-assets/echo-fig06.jpg|web-assets/echo-fig07.jpg" data-interval="1600" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A privacy-first product that helps people affected by a federal rule file evidence-based public comments anonymously and see how the agency responds. Full PRD, including evaluation and launch criteria for its AI features."><span>02</span><strong>Echo</strong><em>Product</em></a>
+              <a href="tangle-holder-case.html" data-color="#dccbe3" data-project data-title="Tangle to Holder" data-kicker="Mediate / product system" data-year="2026" data-src="web-assets/tangle-product-system.mp4" data-poster="web-assets/tangle-product-system.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%207.webp" data-copy="A wearable, app, and printed object that redistributes the labor of being understood in a fifteen-minute medical appointment."><span>03</span><strong>Tangle to Holder</strong><em>Mediate</em></a>
+              <a href="thermal-commons-case.html" data-color="#eec0a4" data-project data-title="Thermal Commons" data-kicker="Mediate / dashboard" data-year="2026" data-src="web-assets/thermal-decisionmaker.mp4" data-poster="web-assets/thermal-decisionmaker.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%203.webp" data-copy="A dashboard that turns an HVAC setpoint into a participatory governance device residents can read and contest."><span>04</span><strong>Thermal Commons</strong><em>Dashboard</em></a>
+              <a href="make-a-wish-case.html" data-color="#efdc98" data-project data-title="Make a Wish" data-kicker="Mediate / installation" data-year="2026" data-src="web-assets/makeawish-install.mp4" data-poster="web-assets/makeawish-install-poster.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%208.webp" data-copy="A one-day installation and web archive where private wishes became a readable pattern of structural pressure."><span>05</span><strong>Make a Wish</strong><em>Archive</em></a>
+              <a href="roll-up-case.html" data-color="#bfdcd6" data-project data-title="Rollup" data-kicker="Translate / EdTech AI" data-year="2024-" data-src="web-assets/rollup-cover.mp4" data-poster="web-assets/rollup-home-hero-crop.png" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%2010.webp" data-copy="A teaching venture that treats creativity as distributed infrastructure, with Conexa as an AI teaching agent concept."><span>06</span><strong>Rollup</strong><em>AI</em></a>
+              <a href="shadow-within-case.html" data-color="#c4c3cf" data-project data-title="Shadow Within" data-kicker="Translate / body interface" data-year="2025" data-src="web-assets/shadow-within-cover.mp4" data-poster="web-assets/shadow-within-cover-poster.jpg" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%2011.webp" data-copy="An installation that turns dissociation into a space visitors can stand inside, mirror, and read through their own body."><span>07</span><strong>Shadow Within</strong><em>Body</em></a>
+              <a href="liminal-grounds-case.html" data-color="#d9d0bb" data-project data-title="Liminal Ground" data-kicker="Reveal / spatial proposal" data-year="2025" data-src="web-assets/liminal-grounds-main.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%209.webp" data-copy="A spatial proposal that reopens a campus entrance closed off by a turnstile and security desk, using semi-public zones between street and interior."><span>08</span><strong>Liminal Ground</strong><em>Space</em></a>
+              <a href="simultaneously-case.html" data-color="#bed3ea" data-project data-title="Simultaneously" data-kicker="Reveal / installation" data-year="2025" data-src="web-assets/simultaneously-main.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%204.webp" data-copy="An installation linking audiences in Shanghai and Hong Kong through light beams and exchanged photos, so two cities can be true at once."><span>09</span><strong>Simultaneously</strong><em>Space</em></a>
+              <a href="new-orleans-case.html" data-color="#cfdcb8" data-project data-title="New Orleans" data-kicker="Translate / policy system" data-year="2025" data-src="web-assets/d4d-blueprint.jpg" data-images="web-assets/d4d-blueprint.jpg|web-assets/d4d-stakeholder.png" data-interval="500" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2012.webp" data-copy="A policy framework that funds distributed ADUs as civic infrastructure before a disaster, rather than as emergency housing after one."><span>10</span><strong>New Orleans</strong><em>Civic</em></a>
+              <a href="los-balcones-case.html" data-color="#b9d6c2" data-project data-title="Los Balcones Ecotourism" data-kicker="Mediate / co-management" data-year="2025" data-src="web-assets/los-balcones-phrase1.png" data-images="web-assets/los-balcones-phrase1.png|web-assets/los-balcones-phrase2.png|web-assets/los-balcones-phrase3.png|web-assets/los-balcones-phrase4.png" data-interval="500" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2015.webp" data-copy="A co-management proposal for a Peruvian conservation area between oil rigs and rising tourism. I led the visitor-behavior and nudge-design layer."><span>11</span><strong>Los Balcones Ecotourism</strong><em>Policy</em></a>
             </nav>
             <button class="mobile-project-toggle" type="button" data-project-toggle aria-expanded="false">View all projects</button>
 
@@ -174,12 +182,62 @@
         </div>
       </section>
 
+      <section class="profile" id="profile" aria-labelledby="profile-heading" data-profile>
+        <header class="profile__head">
+          <p class="profile__eyebrow">Profile</p>
+          <h2 id="profile-heading">Who I am</h2>
+          <button class="profile__more" type="button" aria-expanded="false" aria-controls="profile-panel" data-profile-open><span aria-hidden="true">+</span> info</button>
+        </header>
+        <div class="profile__grid">
+          <div class="profile__text">
+            <p class="who" data-photo="0">Hi, I’m Yvette. Usually laughing, often into the wind. <small>(the hair never cooperates)</small></p>
+            <p class="who" data-photo="1">I started in social science at UCL, taking structures apart to see why they hold together the way they do. <small>(BA Education Studies)</small></p>
+            <p class="who" data-photo="2">Then I walked into an architecture school, and learned to build the thing instead of only writing about it. <small>(Harvard GSD, class of 2027)</small></p>
+            <p class="who" data-photo="3">Give me a field I don’t know yet. I read everything, find the people inside it, and come back speaking their language in words everyone else can use. <small>(my favourite part of any project)</small></p>
+            <p class="who" data-photo="4">Most of my work happens in rooms full of people who want different things. I am the one translating. <small>(+86 · +44 · +1 · +852)</small></p>
+            <p class="who" data-photo="5">And when it gets loud, I find a window, sit in it, and think. <small>(then I go back and build)</small></p>
+          </div>
+          <figure class="profile__photo" aria-hidden="true">
+            <div class="profile__frame">
+              <img class="is-on" src="web-assets/me-wind.jpg" alt="" style="object-position: 52% 50%">
+              <img src="web-assets/me/me-l-03.jpg" alt="" loading="lazy" style="object-position: 55% 50%">
+              <img src="web-assets/me/me-p-18.jpg" alt="" loading="lazy">
+              <img src="web-assets/me/me-p-04.jpg" alt="" loading="lazy">
+              <img src="web-assets/me/me-l-09.jpg" alt="" loading="lazy">
+              <img src="web-assets/me-window.jpg" alt="" loading="lazy" style="object-position: 62% 50%">
+            </div>
+            <svg class="sparkle sparkle--a" viewBox="0 0 40 40"><path d="M20 0 C21 14 26 19 40 20 C26 21 21 26 20 40 C19 26 14 21 0 20 C14 19 19 14 20 0Z"/></svg>
+            <svg class="sparkle sparkle--b" viewBox="0 0 40 40"><path d="M20 0 C21 14 26 19 40 20 C26 21 21 26 20 40 C19 26 14 21 0 20 C14 19 19 14 20 0Z"/></svg>
+            <figcaption class="profile__count"><span data-photo-count>01</span> / 06</figcaption>
+          </figure>
+        </div>
+        <aside class="profile-panel" id="profile-panel" aria-label="What I do" data-profile-panel aria-hidden="true">
+          <button class="profile-panel__close" type="button" aria-label="Close" data-profile-close>×</button>
+          <p class="profile__eyebrow">+ info</p>
+          <h3>What I do</h3>
+          <p class="profile-panel__lede">AI product and multi-agent systems, grounded in social science. I work out what people struggle with, what the technology can do, and what can become a viable product, then build it myself.</p>
+          <dl>
+            <div><dt>Now</dt><dd>Master in Design Studies, Harvard GSD (2025–2027). Cross-registered at MIT Media Lab: AI Studio and Art, Culture + Technology.</dd></div>
+            <div><dt>Before</dt><dd>BA Education Studies (social science), UCL, First Class Honours.</dd></div>
+            <div><dt>Focus</dt><dd>Product and service design, AI infrastructure, the agentic web, behavioral economics, data visualization.</dd></div>
+            <div><dt>Languages</dt><dd>Mandarin, English</dd></div>
+            <div><dt>Based in</dt><dd>Cambridge, MA</dd></div>
+          </dl>
+          <p class="profile-panel__big">Services · skills</p>
+          <ul class="profile-panel__skills">
+            <li>Product judgment</li><li>Multi-agent architecture</li><li>Agent infrastructure</li><li>AI evaluation</li><li>Research to insight</li><li>Prototype &amp; ship</li>
+          </ul>
+          <a class="profile-panel__link" href="#mobile-skills" data-profile-close>See how each skill formed ↓</a>
+        </aside>
+      </section>
+
       <section class="skill-section" id="mobile-skills" aria-label="How skills form">
         <div class="skill-layout">
           <figure class="skill-portrait">
             <img src="web-assets/headshot.jpg" alt="Yvette Ge">
           </figure>
           <div class="skill-body">
+            <p class="profile__eyebrow">What I do</p>
             <p class="skill-lead">Every skill I have, I needed first.</p>
             <div class="skill-copy">
               <p>I chase the problem, not the toolkit.</p>
@@ -230,6 +288,7 @@
 
     <script src="contact-stage.js?v=20260823-live"></script>
     <script src="script-v2.js?v=20260905-mobile-polish"></script>
+    <script src="marago.js?v=20261024"></script>
     <script>
       // Page two: the heading takes the hovered project's name, and a
       // bar slides down the index edge to the active row.

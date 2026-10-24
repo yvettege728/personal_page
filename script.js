@@ -181,16 +181,19 @@ function initPortfolioInteractions() {
   // Case pages use the same top nav as the index. The Projects item opens a
   // numbered archive menu, so project-to-project movement stays in the navbar.
   const PROJECT_INDEX = [
-    ["chula", "The Incomplete Archive", "Reveal"],
-    ["tangle-holder", "Tangle to Holder", "Mediate"],
-    ["thermal-commons", "Thermal Commons", "Mediate"],
-    ["make-a-wish", "Make a Wish", "Mediate"],
-    ["roll-up", "Rollup", "Translate"],
-    ["shadow-within", "Shadow Within", "Translate"],
-    ["liminal-grounds", "Liminal Ground", "Reveal"],
-    ["simultaneously", "Simultaneously", "Reveal"],
-    ["new-orleans", "New Orleans", "Translate"],
-    ["los-balcones", "Los Balcones Ecotourism", "Mediate"]
+    ["referral", "Referral", "-01"],
+    ["sci", "Behavioral Cognition Study", "-02"],
+    ["chula", "The Incomplete Archive", "01"],
+    ["echo", "Echo", "02"],
+    ["tangle-holder", "Tangle to Holder", "03"],
+    ["thermal-commons", "Thermal Commons", "04"],
+    ["make-a-wish", "Make a Wish", "05"],
+    ["roll-up", "Rollup", "06"],
+    ["shadow-within", "Shadow Within", "07"],
+    ["liminal-grounds", "Liminal Ground", "08"],
+    ["simultaneously", "Simultaneously", "09"],
+    ["new-orleans", "New Orleans", "10"],
+    ["los-balcones", "Los Balcones Ecotourism", "11"]
   ];
 
   document.querySelectorAll("[data-case-switch]").forEach((holder) => {
@@ -200,13 +203,12 @@ function initPortfolioInteractions() {
     const home = onIndex ? "" : "index.html";
 
     const here = document.body.dataset.project || "";
-    const projectItems = PROJECT_INDEX.map(([id, title], i) => {
-      const number = String(i + 1).padStart(3, "0");
+    const projectItems = PROJECT_INDEX.map(([id, title, number]) => {
       return `<a class="project-menu__item${id === here ? " is-here" : ""}" role="menuitem" href="${id}-case.html"><span>${number}</span><strong>${title}</strong></a>`;
     }).join("");
 
     holder.innerHTML =
-      `<a class="nav-drop__flat case-switch__meta" href="${home}#about">+ About</a>` +
+      `<a class="nav-drop__flat case-switch__meta" href="${home}#profile">+ Profile</a>` +
       `<div class="nav-drop project-menu" data-nav-drop>` +
       `<button class="nav-drop__trigger case-switch__meta project-menu__trigger" type="button" aria-expanded="false">` +
       `<span class="project-menu__label">+ Projects</span>` +
@@ -214,8 +216,8 @@ function initPortfolioInteractions() {
       `</button>` +
       `<div class="nav-drop__panel project-menu__panel" role="menu">${projectItems}</div>` +
       `</div>` +
-      `<a class="nav-drop__flat case-switch__meta" href="${home}#methodology">+ Methodology</a>` +
-      `<a class="nav-drop__flat case-switch__meta" href="${home}#writing">+ Writing</a>`;
+      `<a class="nav-drop__flat case-switch__meta" href="methodology.html">+ Methodology</a>` +
+      `<a class="nav-drop__flat case-switch__meta" href="writing.html">+ Writing</a>`;
   });
 
   // Open on hover for pointers, on click for touch and keyboards, and close on

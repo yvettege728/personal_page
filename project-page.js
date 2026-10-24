@@ -10,10 +10,6 @@
 
   document.title = `${project.title} | Yvette Ge`;
 
-  const meta = Object.entries(project.meta)
-    .map(([label, value]) => `<div><strong>${label}</strong>${value}</div>`)
-    .join("");
-
   const did = project.did.map((item) => `<li>${item}</li>`).join("");
 
   // Gallery entries are [src, caption] for stills, or [src, caption, "video", poster]
@@ -40,12 +36,6 @@
   const heroAttrs = project.heroSound
     ? "autoplay loop playsinline controls data-sound-autoplay"
     : "autoplay muted loop playsinline";
-
-  const heroMedia = project.heroVideo
-    ? `<div class="image-frame project-hero-image cover"><video src="${project.heroVideo}" poster="${project.hero}" ${heroAttrs} aria-label="${project.heroAlt}"></video></div>`
-    : project.hero
-      ? `<div class="image-frame project-hero-image ${project.heroFit === "cover" ? "cover" : ""}"><img class="${project.accent === "reveal" ? "scan" : ""}" src="${project.hero}" alt="${project.heroAlt}"></div>`
-      : "";
 
   // Optional full-bleed opener, for projects where a film explains it faster than prose.
   const leadAttrs = project.lead && project.lead.sound
@@ -149,7 +139,7 @@
           </div>
           <div class="glance-foot">
             <div class="glance-role"><span class="glance-label">My part</span><ul>${did}</ul></div>
-            <div class="glance-meta">${meta}${project.ai ? `<div class="glance-meta-wide"><strong>AI angle</strong>${project.ai}</div>` : ""}</div>
+            <div class="glance-meta">${project.ai ? `<div class="glance-meta-wide"><strong>AI angle</strong>${project.ai}</div>` : ""}</div>
           </div>
         </div>
       </section>`
@@ -167,26 +157,40 @@
     ? `<section class="case-section dark dark-nav" data-nav-section><div class="case-two"><div><p class="eyebrow">AI Angle</p></div><div class="case-copy"><h2>Where AI enters the system</h2><p>${project.ai}</p></div></div></section>`
     : "";
 
+  // Each project carries one colour, shared with its row and card on the home page.
+  const COLORS = {
+    "chula": "#c7cfe3", "echo": "#efd2bf", "tangle-holder": "#dccbe3", "thermal-commons": "#eec0a4",
+    "make-a-wish": "#efdc98", "roll-up": "#bfdcd6", "shadow-within": "#c4c3cf", "liminal-grounds": "#d9d0bb",
+    "simultaneously": "#bed3ea", "new-orleans": "#cfdcb8", "los-balcones": "#b9d6c2"
+  };
+  const metaList = Object.entries(project.meta)
+    .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
+    .join("");
+  const coverMedia = project.heroVideo
+    ? `<video src="${project.heroVideo}" poster="${project.hero}" ${heroAttrs} aria-label="${project.heroAlt}"></video>`
+    : project.hero
+      ? `<img src="${project.hero}" alt="${project.heroAlt}">`
+      : "";
+  document.body.classList.add("cv3-page");
+
+  // The opening reads at two depths: a colour panel with the title, one
+  // sentence and the facts, and "+ info" for the longer framing.
   root.innerHTML = `
-    <section class="section case-hero project-case ${project.accent}" data-nav-section>
-      <div class="section-inner case-hero-grid">
-        <div class="case-hero-copy">
-          <p class="eyebrow">Selected Work · ${project.category}</p>
-          <h1>${project.title}</h1>
-          <p class="callout blur-highlight" style="--bh-accent: var(--${project.accent})">${project.oneLiner}</p>
-          ${project.oneLinerSub ? `<p class="callout-sub">${project.oneLinerSub}</p>` : ""}
-        </div>
-        ${heroMedia}
+    <section class="cv3" style="--cv3: ${COLORS[key] || "#d9d7d2"}">
+      <div class="cv3__panel">
+        <p class="cv3__kicker"><a href="index.html#projects">Selected work</a> · ${project.category}</p>
+        <h1 class="cv3__title">${project.title}</h1>
+        <p class="cv3__lede">${project.oneLiner}</p>
+        ${project.oneLinerSub ? `<details class="cv3__more"><summary>+ info</summary><p>${project.oneLinerSub}</p></details>` : ""}
+        <dl class="cv3__meta">${metaList}</dl>
       </div>
+      <div class="cv3__media">${coverMedia}</div>
     </section>
 
     ${glance}
 
     ${lead}
 
-    ${g ? "" : `<section class="case-section">
-      <div class="section-inner meta-grid" aria-label="Project metadata">${meta}</div>
-    </section>`}
 
     <section class="case-section">
       <div class="case-two">
