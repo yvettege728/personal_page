@@ -107,11 +107,6 @@
       <section class="positioning" aria-label="Positioning statement">
         <p data-position-reveal>Design research and practice at Harvard. Infrastructure for the agentic web at MIT.</p>
         <span>■ I translate between what people struggle with, what technology can enable, and what can become a viable product.</span>
-        <div class="positioning__prints" aria-hidden="true">
-          <figure class="print print--feather" data-parallax="-0.10"><img src="web-assets/about-feather.jpeg" alt=""></figure>
-          <figure class="print print--dogwood" data-parallax="0.08"><img src="web-assets/about-dogwood.webp" alt=""></figure>
-          <span class="print__caption">cyanotype</span>
-        </div>
       </section>
 
       <section class="studio" aria-label="About and work">
@@ -237,18 +232,15 @@
     <script src="script-v2.js?v=20260905-mobile-polish"></script>
     <script>
       // Page two: the heading takes the hovered project's name, and a
-      // thermometer on the index rises from its bulb to the active row.
+      // pointer slides along the ruler beside the index to the active row.
       (() => {
         const list = document.querySelector(".studio .work-list");
         const swap = document.querySelector("[data-heading-swap]");
         if (!list || !swap) return;
         const fill = document.createElement("span");
-        fill.className = "thermo-fill";
+        fill.className = "axis-pointer";
         fill.setAttribute("aria-hidden", "true");
-        const bulb = document.createElement("span");
-        bulb.className = "thermo-bulb";
-        bulb.setAttribute("aria-hidden", "true");
-        list.append(fill, bulb);
+        list.append(fill);
 
         const level = (row) => {
           if (row) fill.style.top = `${row.offsetTop + row.offsetHeight / 2}px`;
@@ -275,11 +267,10 @@
       })();
     </script>
     <script>
-      // Motion layer: blocks rise in once as they enter view, and the
-      // cyanotype prints drift slightly against the scroll.
+      // Motion layer: blocks rise in once as they enter view.
       (() => {
         const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const targets = document.querySelectorAll(".studio__side, .studio-head, .studio .project-preview, .studio .project-note, .method-teaser, .skill-portrait, .positioning__prints");
+        const targets = document.querySelectorAll(".studio__side, .studio-head, .studio .project-preview, .studio .project-note, .method-teaser, .skill-portrait");
         if (!still && "IntersectionObserver" in window) {
           const io = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -295,18 +286,6 @@
           });
         }
 
-        const prints = [...document.querySelectorAll("[data-parallax]")];
-        if (still || !prints.length) return;
-        const drift = () => {
-          prints.forEach((print) => {
-            const box = print.parentElement.getBoundingClientRect();
-            const offset = (box.top + box.height / 2 - window.innerHeight / 2) * Number(print.dataset.parallax);
-            print.style.setProperty("--drift", `${offset.toFixed(1)}px`);
-          });
-        };
-        drift();
-        window.addEventListener("scroll", drift, { passive: true });
-        window.addEventListener("resize", drift);
       })();
     </script>
   </body>
