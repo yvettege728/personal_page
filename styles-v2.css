@@ -4084,3 +4084,40 @@ body.hero-ready .surface-reel::before {
     margin-bottom: 0;
   }
 }
+
+/* 2026-10 refresh: work in progress + methodology teaser + subpages */
+.wip-section {
+  position: relative;
+  padding: 40px clamp(30px, 5.2vw, 106px) 96px;
+  scroll-margin-top: 110px;
+}
+.wip-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+.wip-head h2 { margin: 0 0 10px; font-size: clamp(48px, 6.4vw, 104px); font-weight: 700; line-height: 0.86; text-transform: uppercase; }
+.wip-head .script { display: block; font-size: 0.7em; text-transform: none; margin-bottom: -0.2em; }
+.wip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(18px, 2.4vw, 32px); }
+.wip-card { border: 1px solid var(--line); padding: 26px 26px 22px; background: rgba(255, 255, 255, 0.35); display: grid; gap: 12px; align-content: start; }
+.wip-card__meta { margin: 0; font-family: var(--mono); font-size: 12px; text-transform: uppercase; color: var(--soft); }
+.wip-card h3 { margin: 0; font-family: var(--display); font-size: clamp(30px, 3vw, 44px); font-weight: 600; line-height: 1; text-transform: uppercase; }
+.wip-card p { margin: 0; font-size: 16px; line-height: 1.5; }
+.wip-card__tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.wip-card__tags span { font-family: var(--mono); font-size: 11px; text-transform: uppercase; border: 1px solid var(--line); padding: 4px 8px; }
+
+.method-teaser {
+  padding: 72px clamp(30px, 5.2vw, 106px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 18px 40px;
+  scroll-margin-top: 110px;
+}
+.method-teaser p { margin: 0; max-width: 900px; font-size: clamp(24px, 2.6vw, 36px); font-weight: 700; line-height: 1.05; text-transform: uppercase; }
+.method-teaser a { font-family: var(--mono); font-size: 14px; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.method-teaser a:hover { color: var(--blue); border-color: var(--blue); }
+
+main.subpage { padding-top: 96px; }
+
+@media (max-width: 720px) {
+  .wip-section { padding: 32px 18px 64px; }
+  .wip-head { flex-direction: column; gap: 4px; }
+  .wip-card { padding: 20px 18px; }
+  .method-teaser { padding: 48px 18px; }
+}
