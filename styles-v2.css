@@ -4557,3 +4557,107 @@ main.subpage { padding-top: 96px; }
   transition: top 360ms cubic-bezier(0.2, 0.8, 0.2, 1), height 360ms ease;
 }
 .studio .work-list .axis-zero { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--soft); padding: 8px 0 8px 16px; }
+
+/* Refinement pass (2026-10-24), after rafter.work and ominina.art:
+   a warmer grey ground, a condensed serif for headings, smaller body copy,
+   much more air, staggered text that arrives a beat after its block, and a
+   brief contrast flicker on images when the pointer lands. */
+:root {
+  --paper: #e8e6e1;
+  --serif: "Instrument Serif", "Times New Roman", serif;
+}
+
+.studio {
+  grid-template-columns: minmax(240px, 26%) minmax(0, 1fr);
+  gap: clamp(48px, 7vw, 140px);
+  padding: 160px clamp(36px, 6vw, 120px) 160px;
+}
+
+.studio__side { gap: 28px; }
+.studio__portrait { width: min(180px, 100%); border-radius: 2px; }
+.studio__intro p { font-size: 13px; line-height: 1.6; max-width: 40ch; }
+.studio__intro p:first-child { font: 400 22px/1.2 var(--serif); color: var(--ink); max-width: 22ch; }
+.studio__links { flex-direction: column; gap: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+.studio__links::before { content: ""; width: 120px; height: 1px; margin-bottom: 18px; background: var(--ink); }
+.studio__links a { padding: 0; background: none; border-radius: 0; width: fit-content; }
+.studio__links a:hover { background: none; color: var(--blue); }
+
+.studio-head { margin-bottom: 40px; }
+.studio-head h2 { font: 400 clamp(34px, 3.4vw, 54px)/1 var(--serif); letter-spacing: -0.01em; }
+.studio-head h2 .script { font-size: 0.9em; }
+.studio .time-range { font-size: 11px; letter-spacing: 0.06em; }
+
+.studio .work-stage { gap: clamp(32px, 4vw, 72px); }
+.studio .work-list a { min-height: 44px; }
+.studio .work-list strong { font-size: 14px; font-weight: 400; }
+.studio .work-list a.is-wip em { background: none; padding: 0; font-size: 10px; letter-spacing: 0.1em; }
+
+.studio .project-preview__media,
+.studio .project-preview__media img,
+.studio .project-preview__media video { border-radius: 2px; }
+.studio .project-preview figcaption { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--soft); }
+.studio .project-note { margin-top: 18px; gap: 8px; }
+.studio .project-note h3 { font: 400 26px/1.1 var(--serif); }
+.studio .project-note p { font-size: 13px; line-height: 1.6; max-width: 56ch; }
+.studio .project-note a { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.studio .method-teaser { margin-top: 120px; }
+.method-teaser p { font: 400 clamp(26px, 2.4vw, 38px)/1.15 var(--serif); letter-spacing: -0.005em; }
+.method-teaser a { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.skill-section { padding-top: 160px; padding-bottom: 160px; }
+.skill-section .skill-lead { font: 400 clamp(30px, 3vw, 46px)/1.1 var(--serif); }
+.skill-section .skill-copy { font-size: 14px; line-height: 1.65; }
+.skill-portrait img { border-radius: 2px; }
+
+/* Text a beat behind its block */
+.rise > *,
+.rise .studio__intro p { opacity: 0; transform: translateY(8px); transition: opacity 600ms ease, transform 600ms ease; }
+.rise.is-in > *,
+.rise.is-in .studio__intro p { opacity: 1; transform: none; }
+.rise.is-in > *:nth-child(1) { transition-delay: 180ms; }
+.rise.is-in > *:nth-child(2) { transition-delay: 320ms; }
+.rise.is-in > *:nth-child(3) { transition-delay: 460ms; }
+.rise.is-in > *:nth-child(4) { transition-delay: 600ms; }
+.rise.is-in .studio__intro p:nth-child(2) { transition-delay: 560ms; }
+
+/* Project note re-types itself on each switch, slower than the image */
+@keyframes note-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.project-note.is-switching > * { animation: note-in 520ms ease both; }
+.project-note.is-switching > *:nth-child(2) { animation-delay: 90ms; }
+.project-note.is-switching > *:nth-child(3) { animation-delay: 180ms; }
+.project-note.is-switching > *:nth-child(4) { animation-delay: 270ms; }
+
+/* Contrast flicker when the pointer lands on an image */
+@keyframes flicker {
+  0% { filter: none; }
+  18% { filter: contrast(1.9) grayscale(1) brightness(1.08); }
+  32% { filter: none; }
+  48% { filter: contrast(1.5) grayscale(0.6); }
+  64%, 100% { filter: none; }
+}
+.studio .project-preview:hover .project-preview__media img,
+.studio .project-preview:hover .project-preview__media video,
+.skill-portrait:hover img,
+.studio__portrait:hover { animation: flicker 460ms steps(1, end) 1; }
+.studio .project-preview:hover .project-preview__media img,
+.studio .project-preview:hover .project-preview__media video { transform: none; }
+
+@media (max-width: 1120px) {
+  .studio { grid-template-columns: 1fr; padding: 96px clamp(24px, 5vw, 60px); }
+}
+@media (max-width: 760px) {
+  .studio { padding: 64px 18px 80px; }
+  .studio-head h2 { font-size: 34px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise > *, .rise .studio__intro p { opacity: 1; transform: none; }
+  .project-note.is-switching > *,
+  .studio .project-preview:hover .project-preview__media img,
+  .skill-portrait:hover img,
+  .studio__portrait:hover { animation: none; }
+}
+.studio__intro p:first-child { font-size: 19px; line-height: 1.25; max-width: 28ch; }
+.studio__portrait { width: min(150px, 100%); }
+.studio .work-stage { grid-template-rows: auto 1fr; align-content: start; }
+.studio .project-note { align-self: start; }
