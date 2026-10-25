@@ -14,10 +14,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Roboto+Mono:wght@300;400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="web-assets/favicon-yg.svg">
     <link rel="stylesheet" href="styles-v2.css?v=20261024m">
-    <link rel="stylesheet" href="shell.css?v=20261025j">
+    <link rel="stylesheet" href="shell.css?v=20261025k">
   </head>
   <body>
     <div class="opening-gate" data-opening-gate aria-hidden="true">
@@ -260,61 +260,33 @@
 
       <div class="view" data-view="writing">
       <section class="writing-view" aria-labelledby="writing-heading">
-        <header class="view-head">
-          <p class="profile__eyebrow">Writing</p>
-          <h2 id="writing-heading">Essays &amp; method</h2>
-          <p class="view-head__note">How I work, written as I go. Then the seven UCL papers (2021&ndash;2024) its vocabulary comes from, and the writing tool I am building.</p>
-        </header>
-        <section class="wmethod" aria-labelledby="method-heading">
-          <div class="wmethod__top">
-            <p class="wmethod__label" id="method-heading"><span>How I work</span><span>A method, still being written</span></p>
-            <p class="wmethod__claim">Hold complexity long enough for <em>negotiation</em> to become possible.</p>
-            <p class="wmethod__lede">Between private experience and public structure runs a seam, one that was designed, and is actively maintained. I design and build tools that make it legible, contestable, and deliberately crossable.</p>
+        <h2 id="writing-heading" class="sr-only">Method and essays</h2>
+        <section class="wmethod" aria-label="Method">
+          <div class="sw-head">
+            <p class="sw-label">Method:</p>
+            <h3 class="sw-title" data-reveal><span><i>Hold</i></span><span><i>complexity</i></span><span><i>long enough</i></span></h3>
           </div>
-          <div class="wmethod__why">
-            <article>
-              <p class="wmethod__no">001 &middot; Manifesto</p>
-              <h3>Turn humanistic insights from a predicament into a method.</h3>
-              <p>After three years tracing habitus, my thesis landed on cleft habitus: the condition of being caught between two mutually untranslatable worlds, forced to hold two logics of action at once. It is structural, produced by capital, institutions, language, and access to information, then internalized as the pattern by which we react.</p>
-              <p>I refuse to romanticize this position. Bilingual advantage and cross-cultural vision give me not an advantage but constant friction, and friction is a force. I convert that dislocation into method rather than curing it.</p>
-            </article>
-            <article>
-              <p class="wmethod__no">002 &middot; What I care about</p>
-              <h3>Problems are tangled causal chains under one structure, so the question is always where to pull.</h3>
-              <p>Across contexts, I care about how occlusion becomes a problem, and how it becomes an entry point.</p>
-              <p>Restricted information flow constrains the thinking that could produce change. Information silos make a system&rsquo;s complexity available to only some. I can&rsquo;t erase the inequalities of institution, information, and resource, so I design interfaces that at least make them visible, contestable, and acknowledgeable.</p>
-            </article>
+          <div class="sw-lede" data-reveal>
+            <p class="sw-tag">[How I work / ongoing]</p>
+            <p class="sw-big">Hold complexity long enough for negotiation to become possible. Between private experience and public structure runs a seam, one that was designed, and is actively maintained. I design and build tools that make it legible, contestable, and deliberately crossable.</p>
           </div>
-          <ol class="wmethod__verbs">
-            <li><span>003</span><strong>Reveal</strong><em>Make hidden structure visible.</em><p>Surface the institutional grammar, decompose a seemingly natural outcome into deliberate moves, and hold any settlement accountable before and after it occurs.</p></li>
-            <li><span>004</span><strong>Mediate</strong><em>Get opposing sides to the same table.</em><p>The represented are never silent; their speech simply isn&rsquo;t on the channel that gets heard. I build the channel, the surface, and the shared object.</p></li>
-            <li><span>005</span><strong>Translate</strong><em>Turn discussion into something you can act on.</em><p>I wrap evidence of how power relations and capital flows operate into formats different actors can read, question, and use.</p></li>
-          </ol>
-          <div class="wmethod__moves">
-            <p class="wmethod__no">006 &middot; Six repeatable moves</p>
-            <div class="wmethod__chips" data-moves>
-              <button type="button" data-tip="Mapping is how I refuse to commit to a narrative too early.">Mapping as understanding</button>
-              <button type="button" data-tip="Information is filtered, hierarchized, optimized for external readability.">Most appropriate expression</button>
-              <button type="button" data-tip="I treat my own position as dynamic, relational, and self-aware.">Social science awareness</button>
-              <button type="button" data-tip="I build mechanisms that make readers inhabit several perspectives at once.">Perspective shifting</button>
-              <button type="button" data-tip="I compress the mess into a takeaway a smart non-expert can follow.">Complex, not complicated</button>
-              <button type="button" data-tip="I phrase evidence in the least-distorting way that lets readers keep judgment.">Evidence without distortion</button>
-            </div>
-            <p class="wmethod__tip" data-move-tip aria-live="polite">Hover a move to read how it behaves.</p>
-          </div>
-          <div class="wmethod__permits">
-            <p class="wmethod__no">007 &middot; What this method permits</p>
-            <ul>
-              <li>Permission to say <em>I don&rsquo;t know.</em></li>
-              <li>Permission to show <em>messy tooling</em> beside polished artifacts.</li>
-              <li>Permission to <em>hold a position,</em> as long as it is acknowledged.</li>
-              <li>Permission to make something <em>discussable</em> before calling it solved.</li>
-            </ul>
+          <div class="sw-grid">
+            <details class="sw-item" data-reveal><summary><span class="sw-item__top"><span>Manifesto</span><span>#01</span></span><span class="sw-item__title">Turn humanistic insights from a predicament into a method.</span><span class="sw-item__more" aria-hidden="true">Read +</span></summary><div class="sw-item__body"><p>After three years tracing habitus, my thesis landed on cleft habitus: the condition of being caught between two mutually untranslatable worlds, forced to hold two logics of action at once. It is structural, produced by capital, institutions, language, and access to information, then internalized as the pattern by which we react.</p><p>I refuse to romanticize this position. Bilingual advantage and cross-cultural vision give me not an advantage but constant friction, and friction is a force. I convert that dislocation into method rather than curing it.</p></div></details>
+            <details class="sw-item" data-reveal><summary><span class="sw-item__top"><span>What I care about</span><span>#02</span></span><span class="sw-item__title">Problems are tangled causal chains under one structure. The question is where to pull.</span><span class="sw-item__more" aria-hidden="true">Read +</span></summary><div class="sw-item__body"><p>Across contexts, I care about how occlusion becomes a problem, and how it becomes an entry point.</p><p>Restricted information flow constrains the thinking that could produce change. Information silos make a system&rsquo;s complexity available to only some. I can&rsquo;t erase the inequalities of institution, information, and resource, so I design interfaces that at least make them visible, contestable, and acknowledgeable.</p></div></details>
+            <details class="sw-item" data-reveal><summary><span class="sw-item__top"><span>Reveal</span><span>#03</span></span><span class="sw-item__title">Make hidden structure visible.</span><span class="sw-item__more" aria-hidden="true">Read +</span></summary><div class="sw-item__body"><p>Surface the institutional grammar, decompose a seemingly natural outcome into deliberate moves, and hold any settlement accountable before and after it occurs.</p></div></details>
+            <details class="sw-item" data-reveal><summary><span class="sw-item__top"><span>Mediate</span><span>#04</span></span><span class="sw-item__title">Get opposing sides to the same table.</span><span class="sw-item__more" aria-hidden="true">Read +</span></summary><div class="sw-item__body"><p>The represented are never silent; their speech simply isn&rsquo;t on the channel that gets heard. I build the channel, the surface, and the shared object.</p></div></details>
+            <details class="sw-item" data-reveal><summary><span class="sw-item__top"><span>Translate</span><span>#05</span></span><span class="sw-item__title">Turn discussion into something you can act on.</span><span class="sw-item__more" aria-hidden="true">Read +</span></summary><div class="sw-item__body"><p>I wrap evidence of how power relations and capital flows operate into formats different actors can read, question, and use.</p></div></details>
+            <details class="sw-item" data-reveal><summary><span class="sw-item__top"><span>Six repeatable moves</span><span>#06</span></span><span class="sw-item__title">Mapping, expression, awareness, perspective, complexity, evidence.</span><span class="sw-item__more" aria-hidden="true">Read +</span></summary><div class="sw-item__body"><ul><li><b>Mapping as understanding.</b> Mapping is how I refuse to commit to a narrative too early.</li><li><b>Most appropriate expression.</b> Information is filtered, hierarchized, optimized for external readability.</li><li><b>Social science awareness.</b> I treat my own position as dynamic, relational, and self-aware.</li><li><b>Perspective shifting.</b> I build mechanisms that make readers inhabit several perspectives at once.</li><li><b>Complex, not complicated.</b> I compress the mess into a takeaway a smart non-expert can follow.</li><li><b>Evidence without distortion.</b> I phrase evidence in the least-distorting way that lets readers keep judgment.</li></ul></div></details>
+            <details class="sw-item" data-reveal><summary><span class="sw-item__top"><span>What it permits</span><span>#07</span></span><span class="sw-item__title">Saying I don&rsquo;t know. Messy tooling. Holding a position.</span><span class="sw-item__more" aria-hidden="true">Read +</span></summary><div class="sw-item__body"><ul><li>Permission to say I don&rsquo;t know.</li><li>Permission to show messy tooling beside polished artifacts.</li><li>Permission to hold a position, as long as it is acknowledged.</li><li>Permission to make something discussable before calling it solved.</li></ul></div></details>
           </div>
         </section>
+        <section class="wpapers" aria-label="Academic writing">
+          <div class="sw-head">
+            <p class="sw-label">Academic writing:</p>
+            <h3 class="sw-title" data-reveal><span><i>Seven papers,</i></span><span><i>UCL 2021&ndash;24</i></span></h3>
+          </div>
         <div class="shelf-index" data-paper-list>
           <div class="shelf-index__list">
-            <p class="shelf-index__group">Academic writing &middot; UCL papers, 2021&ndash;2024</p>
             <a href="writing-00-dissertation.html" data-paper-img="web-assets/ucl-00-dissertation-cover.jpg"><span class="shelf__num">.00</span><span class="shelf__title"><strong>Mapping the Journey</strong><small>Habitus and capitals in Chinese international students' cultural fit</small></span><span class="shelf__meta">&#8627; Sociology of education<br>Dissertation, 15,234 words</span></a>
             <a href="writing-01-feminisms.html" data-paper-img="web-assets/ucl-01-feminisms-cover.jpg"><span class="shelf__num">.01</span><span class="shelf__title"><strong>Thinking with Feminisms</strong><small>Reflections on ballet, binaries, and beyond</small></span><span class="shelf__meta">&#8627; Anthropology, gender studies<br>Essay + blog, 2,224 words</span></a>
             <a href="writing-02-communicating.html" data-paper-img="web-assets/ucl-02-communicating-cover.jpg"><span class="shelf__num">.02</span><span class="shelf__title"><strong>Communicating Knowledge</strong><small>Possibilities and opportunities</small></span><span class="shelf__meta">&#8627; Science communication<br>Reflective essay, 2,500 words</span></a>
@@ -327,20 +299,21 @@
           </div>
           <figure class="shelf-index__cover" aria-hidden="true"><img alt="" data-paper-cover></figure>
         </div>
+        </section>
       </section>
       </div>
 
     </main>
 
     <script src="contact-stage.js?v=20261025c"></script>
-    <script src="script-v2.js?v=20261025j"></script>
+    <script src="script-v2.js?v=20261025k"></script>
     <script src="marago.js?v=20261025c"></script>
     <script>
       // Cut-outs of her as a child; on Profile they take the cursor's place.
       window.YG_STICKERS = ["peace", "face", "hk", "jump", "towel", "night", "piano"].map((n) => `web-assets/me/cut-${n}.webp`);
       window.YG_STICKERS.forEach((src) => { const i = new Image(); i.src = src; });
     </script>
-    <script src="shell.js?v=20261025j"></script>
+    <script src="shell.js?v=20261025k"></script>
     <script>
       // Page two: the heading takes the hovered project's name, and a
       // bar slides down the index edge to the active row.

@@ -8,9 +8,9 @@
   const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const SECTIONS = [
-    ["work", "Work", "Selected projects"],
-    ["profile", "Profile", "Who I am · What I do"],
-    ["writing", "Writing", "Essays & method"],
+    ["work", "Work", "Selected|projects"],
+    ["profile", "Profile", "Who I am &|what I do"],
+    ["writing", "Writing", "Method &|essays"],
   ];
 
   let side = document.querySelector("[data-shell-side]");
@@ -32,7 +32,7 @@
     </div>
     <nav class="shell-side__nav" aria-label="Sections">
       ${SECTIONS.map(([id, label, sub]) =>
-        `<a href="${home}#${id}" data-view-link="${id}"><strong>${label}</strong><small>${sub}</small></a>`).join("")}
+        `<a href="${home}#${id}" data-view-link="${id}"><strong>${label}</strong><small>${sub.split("|").join("<br>")}</small></a>`).join("")}
     </nav>
     <p class="shell-side__foot">
       <a href="web-assets/Yvette_Ge_CV.pdf?v=20261024">CV</a>
@@ -387,6 +387,18 @@
     const reset = () => { target = -0.3; pos = -0.3; lastStep = null; paint(-1); intro.classList.remove("is-end"); window.dispatchEvent(new CustomEvent("cover:step", { detail: 0 })); };
     window.addEventListener("view:shown", (e) => { if (e.detail === "cover") reset(); });
     reset();
+  }
+
+  // Writing: titles rise and blocks lift in as they come on screen.
+  const reveals = document.querySelectorAll("[data-reveal]");
+  if (reveals.length) {
+    if (still || !("IntersectionObserver" in window)) reveals.forEach((el) => el.classList.add("is-in"));
+    else {
+      const seen = new IntersectionObserver((entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("is-in"); seen.unobserve(e.target); }
+      }), { threshold: 0.15 });
+      reveals.forEach((el) => seen.observe(el));
+    }
   }
 
   // Writing: the hovered paper's cover shows in the column beside the list.

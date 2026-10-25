@@ -576,52 +576,8 @@ body.has-shell .cover .television { width: min(44%, 64vh); }
 .me-drawer__more { display: inline-block; margin-top: 10px; font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .me-drawer__more:hover { opacity: 0.6; }
 
-/* Writing opens on the method itself, read in place on a black ground so it
-   reads as a different register from the academic papers that follow. */
-.wmethod { --pad: clamp(36px, 6vw, 120px); margin: 0 calc(-1 * var(--pad)) 96px; padding: 96px var(--pad) 104px; background: #111; color: #f4f2ee; }
-.wmethod__label { display: flex; justify-content: space-between; gap: 18px; margin: 0; padding-bottom: 14px; border-bottom: 1px solid rgba(244, 242, 238, 0.22); font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(244, 242, 238, 0.6); }
-.wmethod__claim { margin: 44px 0 0; max-width: 16ch; font: 400 clamp(48px, 6.4vw, 112px)/0.92 "Instrument Serif", serif; letter-spacing: -0.015em; }
-.wmethod__claim em { font-style: italic; color: #ff5a36; }
-.wmethod__lede { margin: 30px 0 0 auto; max-width: 46ch; font-size: 15px; line-height: 1.6; color: rgba(244, 242, 238, 0.68); }
-.wmethod__no { margin: 0 0 14px; font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(244, 242, 238, 0.55); }
-.wmethod__why { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 72px); margin-top: 88px; }
-.wmethod__why h3 { margin: 0 0 18px; font: 400 clamp(24px, 2.2vw, 34px)/1.08 "Instrument Serif", serif; }
-.wmethod__why article > p:not(.wmethod__no) { margin: 0 0 12px; font-size: 14px; line-height: 1.62; color: rgba(244, 242, 238, 0.72); }
-.wmethod__verbs { display: grid; grid-template-columns: repeat(3, 1fr); margin: 88px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(244, 242, 238, 0.22); border-bottom: 1px solid rgba(244, 242, 238, 0.22); }
-.wmethod__verbs li { position: relative; display: grid; align-content: start; gap: 12px; min-height: 340px; padding: 22px 24px 28px; border-left: 1px solid rgba(244, 242, 238, 0.22); transition: background 420ms ease, color 420ms ease; }
-.wmethod__verbs li:first-child { border-left: 0; padding-left: 0; }
-.wmethod__verbs span { font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; color: rgba(244, 242, 238, 0.55); }
-.wmethod__verbs strong { font: 400 clamp(52px, 5.6vw, 96px)/0.9 "Instrument Serif", serif; letter-spacing: -0.02em; transition: transform 500ms cubic-bezier(.2,.8,.2,1); }
-.wmethod__verbs em { font-style: normal; font-size: 15px; line-height: 1.4; }
-.wmethod__verbs p { margin: auto 0 0; max-width: 34ch; font-size: 13px; line-height: 1.6; color: rgba(244, 242, 238, 0.66); }
-.wmethod__verbs li:hover { background: #f4f2ee; color: #111; }
-.wmethod__verbs li:first-child:hover { padding-left: 24px; }
-.wmethod__verbs li:hover span, .wmethod__verbs li:hover p { color: rgba(17, 17, 17, 0.62); }
-.wmethod__verbs li:hover strong { font-style: italic; transform: translateX(6px); }
-.wmethod__moves { margin-top: 88px; }
-.wmethod__chips { display: flex; flex-wrap: wrap; gap: 10px; }
-.wmethod__chips button { padding: 12px 18px; border: 1px solid rgba(244, 242, 238, 0.4); border-radius: 999px; background: none; color: inherit; font: 400 clamp(18px, 1.6vw, 24px)/1 "Instrument Serif", serif; cursor: pointer; transition: background 260ms ease, color 260ms ease; }
-.wmethod__chips button:hover, .wmethod__chips button:focus-visible, .wmethod__chips button.is-on { background: #f4f2ee; color: #111; outline: none; }
-.wmethod__tip { min-height: 1.6em; margin: 22px 0 0; max-width: 60ch; font-size: 15px; line-height: 1.55; color: rgba(244, 242, 238, 0.78); }
-.wmethod__permits { margin-top: 88px; }
-.wmethod__permits ul { margin: 0; padding: 0; list-style: none; }
-.wmethod__permits li { padding: 14px 0; border-top: 1px solid rgba(244, 242, 238, 0.16); font: 400 clamp(24px, 2.6vw, 40px)/1.1 "Instrument Serif", serif; color: rgba(244, 242, 238, 0.5); transition: color 300ms ease; }
-.wmethod__permits li em { color: #f4f2ee; }
-.wmethod__permits li:hover { color: #f4f2ee; }
-.wmethod + .shelf-index .shelf-index__group:first-child { font-size: 12px; color: var(--ink); }
-/* The method plays in when Writing opens: the claim, then each block in turn. */
-.view[data-view="writing"].is-shown .wmethod__claim { animation: cap-in 900ms cubic-bezier(.2,.8,.2,1) both; }
-.view[data-view="writing"].is-shown .wmethod__lede { animation: cap-in 900ms cubic-bezier(.2,.8,.2,1) 200ms both; }
-.view[data-view="writing"].is-shown .wmethod__verbs li { animation: cap-in 800ms cubic-bezier(.2,.8,.2,1) both; }
-.view[data-view="writing"].is-shown .wmethod__verbs li:nth-child(2) { animation-delay: 120ms; }
-.view[data-view="writing"].is-shown .wmethod__verbs li:nth-child(3) { animation-delay: 240ms; }
 .shelf-index__wip { display: grid; grid-template-columns: 52px minmax(0, 1fr) minmax(230px, 0.5fr); align-items: baseline; gap: 18px; padding: 16px 0 18px; border-top: 1px solid rgba(38, 38, 38, 0.12); border-bottom: 1px solid rgba(38, 38, 38, 0.12); }
 @media (max-width: 760px) {
-  .wmethod { --pad: 18px; padding: 64px 18px 72px; }
-  .wmethod__why, .wmethod__verbs { grid-template-columns: 1fr; }
-  .wmethod__verbs li { min-height: 0; padding-left: 0; border-left: 0; border-top: 1px solid rgba(244, 242, 238, 0.22); }
-  .wmethod__verbs li:first-child { border-top: 0; }
-  .wmethod__lede { margin-left: 0; }
   .shelf-index__wip { grid-template-columns: 44px minmax(0, 1fr); }
   .shelf-index__wip .shelf__meta { display: none; }
 }
@@ -638,3 +594,62 @@ html.has-sticker .dot-cursor { opacity: 0 !important; }
 .intro__hint span { display: inline-block; animation: hint-bob 1.6s ease-in-out infinite; }
 .intro.has-card .intro__hint, .intro.is-end .intro__hint { opacity: 0; }
 @keyframes hint-bob { 50% { transform: translateY(4px); } }
+
+/* Sidebar rows (mariamarago.com): the name on the left, a two-line note set
+   flush right, and a hairline under each row. */
+.shell-side .shell-side__nav { gap: 0; }
+.shell-side .shell-side__nav a { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0 12px; border-bottom: 1px solid rgba(17, 17, 17, 0.85); }
+.shell-side .shell-side__nav strong { font-size: clamp(34px, 2.7vw, 44px); }
+.shell-side .shell-side__nav small { font-size: 10px; line-height: 1.35; letter-spacing: 0.08em; text-align: right; }
+
+/* Writing (after rodrigoachivi.com): Swiss sections. A label on a short rule,
+   a giant upper-case title whose lines step across the page and rise into
+   place, a bracketed tag over a large paragraph, then a two-column index.
+   The method sits on black, the academic papers follow on white. */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.view[data-view="writing"] .writing-view { padding-top: 0; }
+.wmethod, .wpapers { --pad: clamp(36px, 6vw, 120px); --sans: "Inter Tight", "Hanken Grotesk", system-ui, sans-serif; font-family: var(--sans); }
+.wmethod { margin: 0 calc(-1 * var(--pad)) 0; padding: 120px var(--pad) 140px; background: #0b0b0b; color: #fff; }
+.wpapers { padding-top: 140px; }
+.sw-head { position: relative; display: grid; grid-template-columns: minmax(140px, 0.22fr) 1fr; align-items: start; }
+.sw-label { margin: 0; padding-bottom: 8px; border-bottom: 1px solid currentColor; font: 500 13px/1 var(--sans); text-transform: uppercase; letter-spacing: 0.01em; align-self: start; margin-top: 1.2vw; }
+.sw-title { margin: 0; font: 500 clamp(64px, 8.6vw, 168px)/0.86 var(--sans); letter-spacing: -0.045em; text-transform: uppercase; }
+.sw-title > span { display: block; overflow: hidden; padding-bottom: 0.04em; }
+.sw-title > span > i { display: inline-block; font-style: normal; transform: translateY(105%); transition: transform 1100ms cubic-bezier(.16,1,.3,1); }
+.sw-title > span:nth-child(1) { padding-left: 4%; }
+.sw-title > span:nth-child(2) { padding-left: 0; }
+.sw-title > span:nth-child(3) { padding-left: 22%; }
+.sw-title > span:nth-child(2) > i { transition-delay: 90ms; }
+.sw-title > span:nth-child(3) > i { transition-delay: 180ms; }
+.sw-title.is-in > span > i { transform: none; }
+.sw-lede { margin-top: 120px; max-width: 1180px; }
+.sw-tag { margin: 0 0 14px; font: 400 12px/1 var(--sans); text-transform: uppercase; letter-spacing: 0.02em; }
+.sw-big { margin: 0; font: 400 clamp(24px, 2.3vw, 38px)/1.2 var(--sans); letter-spacing: -0.015em; }
+.sw-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(24px, 3vw, 48px); row-gap: 72px; margin-top: 140px; }
+.sw-item summary { display: grid; gap: 18px; cursor: pointer; list-style: none; }
+.sw-item summary::-webkit-details-marker { display: none; }
+.sw-item__top { display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.4); font: 500 13px/1 var(--sans); text-transform: uppercase; letter-spacing: 0.01em; }
+.sw-item__title { max-width: 26ch; font: 500 clamp(22px, 2vw, 32px)/1.15 var(--sans); letter-spacing: -0.02em; transition: opacity 300ms ease; }
+.sw-item summary:hover .sw-item__title { opacity: 0.6; }
+.sw-item__more { font: 400 11px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); }
+.sw-item[open] .sw-item__more { display: none; }
+.sw-item__body { padding-top: 18px; max-width: 58ch; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, 0.72); animation: cap-in 600ms cubic-bezier(.2,.8,.2,1) both; }
+.sw-item__body p { margin: 0 0 12px; }
+.sw-item__body ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.sw-item__body b { font-weight: 500; color: #fff; }
+.sw-lede, .sw-item { opacity: 0; transform: translateY(40px); transition: opacity 900ms ease, transform 1000ms cubic-bezier(.16,1,.3,1); }
+.sw-lede.is-in, .sw-item.is-in { opacity: 1; transform: none; }
+.sw-item:nth-child(even) { transition-delay: 120ms; }
+.wpapers .shelf-index { margin-top: 110px; }
+@media (prefers-reduced-motion: reduce) {
+  .sw-title > span > i, .sw-lede, .sw-item { transform: none; opacity: 1; transition: none; }
+}
+@media (max-width: 760px) {
+  .wmethod, .wpapers { --pad: 18px; }
+  .wmethod { padding: 72px 18px 88px; }
+  .sw-head { grid-template-columns: 1fr; gap: 24px; }
+  .sw-label { justify-self: start; }
+  .sw-title > span { padding-left: 0 !important; }
+  .sw-grid { grid-template-columns: 1fr; row-gap: 48px; margin-top: 88px; }
+  .sw-lede { margin-top: 72px; }
+}
