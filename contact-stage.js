@@ -11,11 +11,12 @@
 // takes the stage.
 
 (function () {
-  const CONTACT_PHONE = "+1 6176808178";
+  const CONTACT_PHONE = "+1 617 680 8178";
   const CONTACT_MAIL = "yvette_ge@gsd.harvard.edu";
   const CONTACT_LINKEDIN = "https://www.linkedin.com/in/yvette-ge-a43512228/";
   const CONTACT_CV = "web-assets/Yvette_Ge_CV.pdf?v=20261024";
   const CONTACT_CARD = "web-assets/yvette-ge-namecard.png";
+  const CONTACT_INSTAGRAM = "https://www.instagram.com/yvt_to_come/";
 
   // Case pages build their body from JS, so the closing block is generated
   // here rather than repeated in eleven files.
@@ -29,14 +30,10 @@
         </div>
         <img class="contact-tv__frame" src="web-assets/eric-cole-assets/WkbjqM8K5hqKOUzSBrsnPMKBcI.png" alt="" aria-hidden="true">
         <div class="contact-links contact-tv__links">
-          <span>${CONTACT_PHONE}</span>
+          <a href="${CONTACT_CARD}" download="Yvette-Ge-Namecard.png" data-decrypt data-text="Name card">Name card</a>
+          <a href="tel:+16176808178" data-decrypt data-text="${CONTACT_PHONE}">${CONTACT_PHONE}</a>
           <a href="mailto:${CONTACT_MAIL}" data-decrypt data-text="${CONTACT_MAIL}">${CONTACT_MAIL}</a>
-          <a href="${CONTACT_LINKEDIN}" target="_blank" rel="noopener" data-decrypt data-text="LinkedIn">LinkedIn</a>
-          <a href="${CONTACT_CV}" data-decrypt data-text="Download CV">Download CV</a>
-          <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261024" lang="zh">中文简历</a>
-          <a href="${CONTACT_CARD}" download="Yvette-Ge-Namecard.png" data-decrypt data-text="Download Card">Download Card</a>
-          <a href="${home}" data-decrypt data-text="Home">Home</a>
-          <a href="#" data-back-to-top data-decrypt data-text="Back to Top">Back to Top</a>
+          <a href="${CONTACT_INSTAGRAM}" target="_blank" rel="noopener" data-decrypt data-text="Instagram">Instagram</a>
         </div>
       </div>
     </section>`;

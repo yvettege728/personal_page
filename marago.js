@@ -23,11 +23,39 @@
       const fit = row.dataset.fit === "contain" ? " is-contain" : "";
       const tag = row.querySelector("em")?.textContent || "";
       card.innerHTML =
-        `<span class="strip-card__media${fit}"><img src="${img}" alt="" loading="lazy"></span>` +
+        `<span class="strip-card__media${fit}"><img src="${img}" alt="" loading="lazy">` +
+        (row.dataset.kind === "video" ? `<video src="${row.dataset.src}" muted loop playsinline preload="none" aria-hidden="true"></video>` : "") +
+        `</span>` +
         `<span class="strip-card__foot"><span class="strip-card__num">${num}</span>` +
         `<strong>${row.dataset.title}</strong><span class="strip-card__tag">${tag}</span></span>`;
+      if (row.dataset.images) {
+        card.dataset.images = row.dataset.images;
+        card.dataset.interval = row.dataset.interval || "900";
+      }
       track.append(card);
     });
+
+    // Moving cards come alive only while they are on screen: a film plays,
+    // a set of images flips, and both stop again once the card slides away.
+    const live = (card, on) => {
+      const video = card.querySelector("video");
+      if (video) {
+        if (on) video.play().catch(() => {}); else video.pause();
+      }
+      if (card.dataset.images) {
+        window.clearInterval(card._flip);
+        if (on && !still) {
+          const list = card.dataset.images.split("|");
+          const img = card.querySelector("img");
+          let i = Math.max(0, list.indexOf(img.getAttribute("src")));
+          card._flip = window.setInterval(() => { i = (i + 1) % list.length; img.src = list[i]; }, Number(card.dataset.interval));
+        }
+      }
+    };
+    if ("IntersectionObserver" in window) {
+      const watch = new IntersectionObserver((entries) => entries.forEach((e) => live(e.target, e.isIntersecting)), { threshold: 0.3 });
+      [...track.querySelectorAll(".strip-card")].forEach((card) => watch.observe(card));
+    }
 
     const cards = [...track.children];
     const numOf = (el) => el.dataset.num || el.querySelector(".strip-card__num")?.textContent || "";
@@ -78,6 +106,11 @@
 
     if (narrow() || still) cards.forEach((c) => c.classList.add("is-open"));
   }
+
+  // Profile opening: the slogan treatment can be previewed with ?fx=name.
+  const fx = new URLSearchParams(location.search).get("fx");
+  const opening = document.querySelector("[data-me-open]");
+  if (opening && fx) opening.dataset.fx = fx;
 
   // The studio ground leans toward the hovered project's colour, and the
   // preview opens from its centre each time the project changes.

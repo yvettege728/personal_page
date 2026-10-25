@@ -24,10 +24,11 @@
   side.innerHTML = `
     <div class="shell-side__top">
       <a class="shell-side__brand" href="${home}#home" data-view-link="home" aria-label="Yvette Ge, home">
-        <svg viewBox="0 0 240 240" aria-hidden="true"><line x1="58" y1="54" x2="120" y2="140"/><line x1="182" y1="54" x2="120" y2="140"/><line x1="120" y1="140" x2="120" y2="206"/><circle cx="58" cy="54" r="13"/><circle cx="182" cy="54" r="13"/><circle cx="120" cy="140" r="23"/><circle cx="120" cy="206" r="14"/></svg>
+        <svg class="shell-side__mark" viewBox="0 0 300 230" aria-hidden="true"><path d="M44 74 C36 46 74 42 82 74 C90 108 100 126 118 122 C136 118 142 92 140 64 C146 118 150 168 122 190 C96 210 64 190 80 166 C96 144 148 150 180 128 C204 112 214 88 200 74 C186 60 160 72 162 96 C164 120 196 120 210 94 L214 76 C222 126 228 170 206 194 C188 212 168 200 178 182 C188 166 232 168 262 146"/></svg>
         <span>Yvette Ge</span>
       </a>
-      <p class="shell-side__where"><span class="shell-side__city">Cambridge, MA</span> <span data-clock>--:--</span> <span class="shell-side__tz">EST</span><br><span class="shell-side__now" data-now></span></p>
+      <p class="shell-side__where"><span class="shell-side__city">Cambridge, MA</span> <span data-clock>--:--</span> <span class="shell-side__tz">EST</span></p>
+      <dl class="shell-side__day" data-day><div><dt>Earlier</dt><dd data-slot="-1"></dd></div><div><dt>Now</dt><dd data-slot="0"></dd></div><div><dt>Next</dt><dd data-slot="1"></dd></div></dl>
       <button class="shell-side__menu" type="button" aria-expanded="false" data-menu>Menu</button>
     </div>
     <nav class="shell-side__nav" aria-label="Sections">
@@ -41,26 +42,49 @@
       <a href="mailto:yvette_ge@gsd.harvard.edu">Email</a>
     </p>`;
 
-  // The time where she is, to the minute, and a guess at what she is doing.
+  // The time where she is, to the minute, and a guess at her day: what she
+  // was doing, is doing, and will do next. Each part of the day has a few
+  // likely answers, and they take turns.
   const clock = side.querySelector("[data-clock]");
   const tz = side.querySelector(".shell-side__tz");
-  const doing = side.querySelector("[data-now]");
-  const GUESS = [
-    [0, "● asleep, or one more render"], [2, "● asleep (finally)"], [7, "● coffee before words"],
-    [9, "● in studio"], [12, "● lunch, then studio"], [14, "● in studio, building"],
-    [19, "● dinner, probably"], [21, "● still in studio"], [23, "● one more render"],
+  const slots = [...side.querySelectorAll("[data-slot]")];
+  const DAY = [
+    [0, ["one more render", "asleep, almost"]],
+    [2, ["asleep (finally)"]],
+    [7, ["having granola", "having an acai bowl", "having a cinnamon roll"]],
+    [8, ["on the way to get a matcha latte"]],
+    [9, ["riding to MIT", "bouldering", "hot 26 yoga", "hot 84 yoga", "vinyasa class", "pilates class"]],
+    [11, ["having a lesson", "group discussion"]],
+    [12, ["lunch, then studio"]],
+    [13, ["in studio", "TAing", "group discussion"]],
+    [16, ["running along the Charles", "at the gym", "bouldering"]],
+    [18, ["grocery shopping", "dinner, probably"]],
+    [20, ["watching the NBA", "still in studio"]],
+    [22, ["one more render", "reading in bed"]],
   ];
+  let turn = 0;
   const tick = () => {
     const now = new Date();
     const hour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: "America/New_York", hour: "2-digit", hourCycle: "h23" }).format(now));
-    doing.textContent = GUESS.filter(([h]) => hour >= h).pop()[1];
+    let at = 0;
+    DAY.forEach(([h], i) => { if (hour >= h) at = i; });
+    slots.forEach((slot) => {
+      const options = DAY[(at + Number(slot.dataset.slot) + DAY.length) % DAY.length][1];
+      const text = options[turn % options.length];
+      if (slot.textContent !== text) {
+        slot.classList.remove("is-in");
+        void slot.offsetWidth;
+        slot.textContent = text;
+        slot.classList.add("is-in");
+      }
+    });
     clock.textContent = new Intl.DateTimeFormat("en-GB", { timeZone: "America/New_York", hour: "2-digit", minute: "2-digit" }).format(now);
     const name = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", timeZoneName: "short" })
       .formatToParts(now).find((part) => part.type === "timeZoneName");
     if (name) tz.textContent = name.value;
   };
   tick();
-  window.setInterval(tick, 20000);
+  window.setInterval(() => { turn += 1; tick(); }, still ? 60000 : 3200);
 
   // The dot cursor, on desktops with a real pointer only.
   if (!still && window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 1024px)").matches) {
