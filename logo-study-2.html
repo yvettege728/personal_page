@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo study, round 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #fff; color: #111; font: 12px/1.5 "Roboto Mono", monospace; }
+  .sheet { display: grid; grid-template-columns: repeat(2, 1fr); }
+  .opt { display: grid; grid-template-rows: auto 1fr auto; min-height: 50vh; padding: 28px; border: 1px solid #eee; margin: -1px 0 0 -1px; }
+  .opt.cream { background: #f3efe4; }
+  .opt h2 { margin: 0; font: 400 12px/1 "Roboto Mono", monospace; text-transform: uppercase; letter-spacing: .06em; }
+  .mark { display: grid; place-items: center; padding: 20px 0; }
+  .mark svg { width: min(56%, 320px); height: auto; }
+  .small { display: flex; gap: 14px; align-items: center; }
+  .small svg { width: 40px; height: auto; }
+  .small span { font: 400 26px/1 "Instrument Serif", serif; }
+  p { margin: 10px 0 0; color: #777; max-width: 46ch; text-transform: uppercase; font-size: 11px; }
+  @media (max-width: 700px) { .sheet { grid-template-columns: 1fr; } }
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- A slight hand tremor, so lines read as drawn rather than plotted. -->
+    <filter id="hand" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/>
+      <feDisplacementMap in="SourceGraphic" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="ink" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="2" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/>
+    </filter>
+    <!-- D: one looping line, y running into g -->
+    <symbol id="D" viewBox="0 0 300 230">
+      <g filter="url(#hand)" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M44 74 C36 46 74 42 82 74 C90 108 100 126 118 122 C136 118 142 92 140 64
+                 C146 118 150 168 122 190 C96 210 64 190 80 166 C96 144 148 150 180 128
+                 C204 112 214 88 200 74 C186 60 160 72 162 96 C164 120 196 120 210 94 L214 76
+                 C222 126 228 170 206 194 C188 212 168 200 178 182 C188 166 232 168 262 146"/>
+      </g>
+    </symbol>
+    <!-- E: YG stencil plate -->
+    <symbol id="E" viewBox="0 0 360 200">
+      <g filter="url(#ink)">
+        <rect x="12" y="12" width="336" height="176" rx="28" fill="none" stroke="#111" stroke-width="16"/>
+        <g fill="none" stroke="#111" stroke-linejoin="round">
+          <path d="M58 46 L112 112 L166 46" stroke-width="38"/>
+          <path d="M112 104 L112 160" stroke-width="38"/>
+          <path d="M306 66 C290 48 266 42 244 42 C202 42 184 72 184 100 C184 132 206 158 244 158 C274 158 300 142 300 110 L256 110" stroke-width="34"/>
+        </g>
+        <!-- stencil bridges -->
+        <g stroke="#fff" stroke-width="7"><path d="M112 74 L112 98"/><path d="M226 30 L226 64"/><path d="M226 140 L226 172"/></g>
+      </g>
+    </symbol>
+    <!-- F: block and curve -->
+    <symbol id="F" viewBox="0 0 280 240">
+      <rect x="24" y="30" width="114" height="180" fill="#111"/>
+      <path d="M50 26 L81 96 L112 26Z" fill="#fff"/>
+      <rect x="20" y="132" width="44" height="84" fill="#fff"/>
+      <rect x="98" y="132" width="39" height="84" fill="#fff"/>
+      <path d="M136 30 A90 90 0 0 1 226 120 L180 120 L180 160 L226 160 A90 90 0 0 1 136 210Z" fill="#111"/>
+      <path d="M136 72 A48 48 0 0 1 184 120 L136 120Z" fill="#fff"/>
+    </symbol>
+    <!-- G: marker Y with rays, the profile sparkle beside it -->
+    <symbol id="G" viewBox="0 0 240 240">
+      <g filter="url(#hand)" fill="none" stroke="#111" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M70 92 L120 152 L170 92 M120 152 L120 212"/>
+        <path d="M120 22 L120 50 M66 34 L80 58 M174 34 L160 58 M30 70 L52 82 M210 70 L188 82" stroke-width="12"/>
+      </g>
+      <path d="M196 140 C197 154 202 159 216 160 C202 161 197 166 196 180 C195 166 190 161 176 160 C190 159 195 154 196 140Z" fill="#111"/>
+    </symbol>
+  </defs>
+</svg>
+<main class="sheet">
+  <section class="opt"><h2>D · yg, one hand-drawn line</h2>
+    <div class="mark"><svg viewBox="0 0 300 230"><use href="#D"/></svg></div>
+    <div><div class="small"><svg viewBox="0 0 300 230"><use href="#D"/></svg><span>Yvette Ge</span></div><p>After the JB and CA3 monograms: one thin looping line, y flowing into g, with a slight hand tremor.</p></div></section>
+  <section class="opt cream"><h2>E · YG stencil plate</h2>
+    <div class="mark"><svg viewBox="0 0 360 200"><use href="#E"/></svg></div>
+    <div><div class="small"><svg viewBox="0 0 360 200"><use href="#E"/></svg><span>Yvette Ge</span></div><p>After the SG plate: heavy letters in a rounded frame, small stencil gaps, a little ink spread.</p></div></section>
+  <section class="opt"><h2>F · block and curve</h2>
+    <div class="mark"><svg viewBox="0 0 280 240"><use href="#F"/></svg></div>
+    <div><div class="small"><svg viewBox="0 0 280 240"><use href="#F"/></svg><span>Yvette Ge</span></div><p>After the RF mark: a solid block notched into a Y, a half circle turned into a G. The most architectural.</p></div></section>
+  <section class="opt"><h2>G · Y with rays + sparkle</h2>
+    <div class="mark"><svg viewBox="0 0 240 240"><use href="#G"/></svg></div>
+    <div><div class="small"><svg viewBox="0 0 240 240"><use href="#G"/></svg><span>Yvette Ge</span></div><p>After the rayed P and Studio Soma: a marker Y lighting up, with the sparkle the profile page already uses.</p></div></section>
+</main>
+</body></html>
