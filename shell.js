@@ -113,11 +113,15 @@
     let viewNow = null;
     let stickerAt = -1;
     let coverStep = 0;
+    // The cover starts on the running girl; moving the mouse or scrolling
+    // sets the others going.
+    const RUNNER = Math.max(0, STICKERS.findIndex((src) => src.includes("cut-jump")));
+    let travel = 0;
     const pickSticker = () => {
       const on = (viewNow === "profile" || viewNow === "cover") && STICKERS.length > 0;
       document.documentElement.classList.toggle("has-sticker", on);
       if (!on) return;
-      const step = viewNow === "cover" ? coverStep : Math.floor(window.scrollY / (window.innerHeight * 0.85));
+      const step = viewNow === "cover" ? RUNNER + coverStep + Math.floor(travel / 420) : Math.floor(window.scrollY / (window.innerHeight * 0.85));
       const i = ((step % STICKERS.length) + STICKERS.length) % STICKERS.length;
       if (i === stickerAt) return;
       stickerAt = i;
@@ -126,7 +130,16 @@
       void sticker.offsetWidth;
       sticker.classList.add("is-pop");
     };
-    window.addEventListener("view:shown", (e) => { viewNow = e.detail; stickerAt = -1; pickSticker(); });
+    window.addEventListener("view:shown", (e) => { viewNow = e.detail; stickerAt = -1; if (viewNow === "cover") travel = 0; pickSticker(); });
+    let lastX = null, lastY = null;
+    window.addEventListener("mousemove", (e) => {
+      if (lastX !== null && viewNow === "cover") {
+        travel += Math.hypot(e.clientX - lastX, e.clientY - lastY);
+        pickSticker();
+      }
+      lastX = e.clientX;
+      lastY = e.clientY;
+    }, { passive: true });
     window.addEventListener("scroll", pickSticker, { passive: true });
     window.addEventListener("cover:step", (e) => { coverStep = e.detail; if (viewNow === "cover") pickSticker(); });
     const follow = () => {
