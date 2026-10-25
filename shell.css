@@ -653,3 +653,9 @@ html.has-sticker .dot-cursor { opacity: 0 !important; }
   .sw-grid { grid-template-columns: 1fr; row-gap: 48px; margin-top: 88px; }
   .sw-lede { margin-top: 72px; }
 }
+
+/* Over anything clickable the cut-out shrinks away and a small dot marks the
+   exact point, so a link can be aimed at. */
+.sticker-cursor { transition: opacity 200ms ease, transform 260ms cubic-bezier(.22,1,.36,1); }
+html.has-sticker.over-link .sticker-cursor { opacity: 0; transform: translate(-30%, -20%) scale(0.3); }
+html.has-sticker.over-link .dot-cursor { opacity: 1 !important; width: 12px; height: 12px; }

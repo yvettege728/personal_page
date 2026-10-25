@@ -97,7 +97,9 @@
       mx = e.clientX;
       my = e.clientY;
       if (!seen) { x = mx; y = my; seen = true; dot.classList.add("is-on"); }
-      dot.classList.toggle("is-big", clickable(e.target));
+      const over = clickable(e.target);
+      dot.classList.toggle("is-big", over);
+      document.documentElement.classList.toggle("over-link", over);
     }, { passive: true });
     document.addEventListener("mouseleave", () => dot.classList.remove("is-on"));
     document.addEventListener("mouseenter", () => { if (seen) dot.classList.add("is-on"); });
