@@ -103,8 +103,8 @@
     document.addEventListener("mouseenter", () => { if (seen) dot.classList.add("is-on"); });
     window.addEventListener("mousedown", () => dot.classList.add("is-down"));
     window.addEventListener("mouseup", () => dot.classList.remove("is-down"));
-    // On Profile the dot becomes a cut-out of her as a child, and a
-    // different one takes over every screen or so of scrolling.
+    // On the cover and on Profile the dot becomes a cut-out of her as a
+    // child, and a different one takes over with each step of scrolling.
     const STICKERS = window.YG_STICKERS || [];
     const sticker = document.createElement("img");
     sticker.className = "sticker-cursor";
@@ -112,11 +112,13 @@
     document.body.append(sticker);
     let viewNow = null;
     let stickerAt = -1;
+    let coverStep = 0;
     const pickSticker = () => {
-      const on = viewNow === "profile" && STICKERS.length > 0;
+      const on = (viewNow === "profile" || viewNow === "cover") && STICKERS.length > 0;
       document.documentElement.classList.toggle("has-sticker", on);
       if (!on) return;
-      const i = Math.floor(window.scrollY / (window.innerHeight * 0.85)) % STICKERS.length;
+      const step = viewNow === "cover" ? coverStep : Math.floor(window.scrollY / (window.innerHeight * 0.85));
+      const i = ((step % STICKERS.length) + STICKERS.length) % STICKERS.length;
       if (i === stickerAt) return;
       stickerAt = i;
       sticker.src = STICKERS[i];
@@ -126,6 +128,7 @@
     };
     window.addEventListener("view:shown", (e) => { viewNow = e.detail; stickerAt = -1; pickSticker(); });
     window.addEventListener("scroll", pickSticker, { passive: true });
+    window.addEventListener("cover:step", (e) => { coverStep = e.detail; if (viewNow === "cover") pickSticker(); });
     const follow = () => {
       x += (mx - x) * 0.25;
       y += (my - y) * 0.25;
@@ -236,6 +239,7 @@
 
   // Leaving the cover: the button, a click on the set, a scroll or a key.
   let coverSkip = null;
+  let coverScroll = null;
   const goOn = () => {
     if (!document.body.classList.contains("at-cover")) return;
     const to = pending || { view: "profile" };
@@ -253,15 +257,26 @@
   };
 
   document.querySelector("[data-cover-enter]")?.addEventListener("click", enter);
-  cover?.addEventListener("wheel", (e) => { if (e.deltaY > 8) enter(); }, { passive: true });
+  cover?.addEventListener("wheel", (e) => {
+    if (coverScroll && !pending) { e.preventDefault(); coverScroll(e.deltaY); return; }
+    if (e.deltaY > 8) enter();
+  }, { passive: false });
   let touchY = null;
   cover?.addEventListener("touchstart", (e) => { touchY = e.touches[0].clientY; }, { passive: true });
-  cover?.addEventListener("touchmove", (e) => { if (touchY !== null && touchY - e.touches[0].clientY > 40) { touchY = null; enter(); } }, { passive: true });
+  cover?.addEventListener("touchmove", (e) => {
+    if (touchY === null) return;
+    const dy = touchY - e.touches[0].clientY;
+    if (coverScroll && !pending) { coverScroll(dy * 2.2); touchY = e.touches[0].clientY; return; }
+    if (dy > 40) { touchY = null; enter(); }
+  }, { passive: true });
   document.addEventListener("keydown", (e) => {
-    if (["ArrowDown", "PageDown", " ", "Enter"].includes(e.key) && document.body.classList.contains("at-cover")) {
-      e.preventDefault();
-      enter();
-    }
+    if (!document.body.classList.contains("at-cover")) return;
+    const down = ["ArrowDown", "PageDown", " ", "Enter"].includes(e.key);
+    const up = ["ArrowUp", "PageUp"].includes(e.key);
+    if (!down && !up) return;
+    e.preventDefault();
+    if (coverScroll && !pending) coverScroll(down ? 700 : -700);
+    else if (down) enter();
   });
 
   // Home: project heroes arrive one at a time from the four sides, open
@@ -289,9 +304,9 @@
     const kindEl = intro.querySelector("[data-intro-kind]");
     const ease = (t) => 1 - Math.pow(1 - t, 3);
 
-    // The run plays on its own, about a second a project, then rests on the
-    // standfirst and hands over to Profile. Work in the sidebar is the way
-    // back to the projects at your own pace.
+    // The run follows the scroll wheel: each notch brings the next project
+    // in, scrolling up takes it back out, and past the standfirst the cover
+    // hands over to Profile.
     const paint = (pos) => {
       let active = -1;
       cards.forEach((card, i) => {
@@ -322,53 +337,43 @@
       if (!pick) { nameEl.textContent = ""; kindEl.textContent = ""; }
     };
 
-    const PER = 1100;
+    const PER_PX = 650;
     const END = cards.length + 0.45;
+    const OUT = END + 0.9;
     const onCover = () => document.body.classList.contains("at-cover");
-    let run = 0;
-    let handoff = null;
-    let wait = null;
-    const leave = () => { window.clearTimeout(handoff); goOn(); };
-    const finish = () => {
-      paint(END);
-      intro.classList.add("is-end");
-      window.clearTimeout(handoff);
-      handoff = window.setTimeout(() => { if (onCover()) leave(); }, 4200);
+    let target = -0.3;
+    let pos = -0.3;
+    let ticking = false;
+    let lastStep = null;
+    const settle = () => {
+      pos += (target - pos) * (still ? 1 : 0.12);
+      if (Math.abs(target - pos) < 0.002) pos = target;
+      paint(Math.min(pos, END));
+      intro.classList.toggle("is-end", pos >= END - 0.05);
+      const k = Math.max(0, Math.floor(pos + 0.3));
+      if (k !== lastStep) { lastStep = k; window.dispatchEvent(new CustomEvent("cover:step", { detail: k })); }
+      if (pos !== target && onCover()) requestAnimationFrame(settle); else ticking = false;
     };
-    const play = () => {
-      const id = ++run;
-      window.clearTimeout(handoff);
-      intro.classList.remove("is-end");
-      paint(-1);
-      if (still) { finish(); return; }
-      const t0 = performance.now();
-      const step = (now) => {
-        if (id !== run || !onCover()) return;
-        const pos = (now - t0) / PER - 0.3;
-        paint(pos);
-        if (pos < END) requestAnimationFrame(step); else finish();
-      };
-      requestAnimationFrame(step);
+    // The standfirst holds for a moment so a fast flick cannot fly past it.
+    let holdUntil = 0;
+    const move = (to) => {
+      const now = performance.now();
+      if (target < END && to > END) { to = END; holdUntil = now + 1000; }
+      else if (to > target && target >= END && now < holdUntil) return;
+      target = Math.max(-0.3, Math.min(OUT, to));
+      if (target >= OUT - 0.001) { target = END; goOn(); return; }
+      if (!ticking) { ticking = true; requestAnimationFrame(settle); }
     };
-    // Scroll, a key or Skip: first jump to the closing line, then move on.
+    coverScroll = (dy) => move(target + dy / PER_PX);
+    // Skip: first jump to the closing line, then move on.
     coverSkip = () => {
-      if (intro.classList.contains("is-end")) { leave(); return; }
-      window.clearTimeout(wait);
-      run++;
-      finish();
+      if (target >= END) { goOn(); return; }
+      move(END);
     };
     intro.querySelector("[data-intro-skip]")?.addEventListener("click", () => coverSkip());
-    // The run starts a beat after the set has arrived on the cover.
-    const queue = () => {
-      window.clearTimeout(wait);
-      run++;
-      intro.classList.remove("is-end");
-      paint(-1);
-      if (onCover() && window.__gateClear) wait = window.setTimeout(play, 1800);
-    };
-    window.addEventListener("gate:clear", queue);
-    window.addEventListener("view:shown", (e) => { if (e.detail === "cover") queue(); });
-    queue();
+    const reset = () => { target = -0.3; pos = -0.3; lastStep = null; paint(-1); intro.classList.remove("is-end"); window.dispatchEvent(new CustomEvent("cover:step", { detail: 0 })); };
+    window.addEventListener("view:shown", (e) => { if (e.detail === "cover") reset(); });
+    reset();
   }
 
   // Writing: the hovered paper's cover shows in the column beside the list.
