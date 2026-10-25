@@ -572,3 +572,6 @@ body.has-shell .cover .hero { padding-top: 9vh; }
 .intro--cover .intro__cap::before { content: none !important; }
 body.has-shell .cover .hero h1 { font-size: min(calc((100vw - var(--side)) * 0.19), 26vh); }
 body.has-shell .cover .television { width: min(44%, 64vh); }
+.me-drawer__skills ul { margin: 0; }
+.me-drawer__more { display: inline-block; margin-top: 10px; font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.me-drawer__more:hover { opacity: 0.6; }
