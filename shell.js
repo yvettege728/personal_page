@@ -403,6 +403,24 @@
     }
   }
 
+  // Writing: each method entry opens on a click. The first time one comes on
+  // screen it opens for a moment and closes again, to show that it can.
+  document.querySelectorAll(".sw-item").forEach((item, i) => {
+    const head = item.querySelector(".sw-item__head");
+    let touched = false;
+    const set = (open) => { item.classList.toggle("is-open", open); head.setAttribute("aria-expanded", String(open)); };
+    head.addEventListener("click", () => { touched = true; set(!item.classList.contains("is-open")); });
+    if (still || !("IntersectionObserver" in window)) return;
+    const peek = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      peek.disconnect();
+      const delay = 500 + (i % 2) * 220;
+      window.setTimeout(() => { if (!touched) set(true); }, delay);
+      window.setTimeout(() => { if (!touched) set(false); }, delay + 1700);
+    }), { threshold: 0.6 });
+    peek.observe(item);
+  });
+
   // Writing: the hovered paper's cover shows in the column beside the list.
   const list = document.querySelector("[data-paper-list]");
   const coverImg = list?.querySelector("[data-paper-cover]");
