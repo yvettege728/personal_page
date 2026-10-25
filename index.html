@@ -17,11 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><rect width='240' height='240' rx='30' fill='%23f7f7f3'/><g fill='none' stroke='%232f2f2f' stroke-width='15' stroke-linecap='round'><line x1='58' y1='54' x2='120' y2='140'/><line x1='182' y1='54' x2='120' y2='140'/><line x1='120' y1='140' x2='120' y2='206'/></g><circle cx='58' cy='54' r='16' fill='%232f2f2f'/><circle cx='182' cy='54' r='16' fill='%232f2f2f'/><circle cx='120' cy='140' r='26' fill='%232f2f2f'/><circle cx='120' cy='206' r='17' fill='%232f2f2f'/></svg>">
     <link rel="stylesheet" href="styles-v2.css?v=20261024m">
-    <link rel="stylesheet" href="shell.css?v=20261025e">
+    <link rel="stylesheet" href="shell.css?v=20261025f">
   </head>
   <body>
     <div class="opening-gate" data-opening-gate aria-hidden="true">
-      <video src="web-assets/opening-video.mp4" autoplay muted playsinline preload="auto" aria-label="Opening video"></video>
+      <img src="web-assets/opening-phone.webp" alt="" fetchpriority="high">
     </div>
 
 
@@ -51,8 +51,8 @@
               </div>
             </div>
           </div>
+          <figcaption>Where human needs, technology, and business meet.</figcaption>
         </figure>
-        <p class="hero__sub">Where human needs, technology, and business meet.</p>
 
         <p class="hero__dial">
           <img src="web-assets/globe-simple-thin.svg" alt="">
@@ -62,23 +62,22 @@
           <span>+852</span>
         </p>
       </section>
-      <button class="cover__enter" type="button" data-cover-enter>Enter <span aria-hidden="true">↓</span></button>
+        <div class="intro intro--cover" aria-label="Selected projects, arriving" data-intro>
+          <div class="intro__pin">
+            <div class="intro__deck" data-intro-deck></div>
+            <p class="intro__cap"><span data-intro-name></span><span data-intro-kind></span></p>
+            <div class="intro__end" aria-label="Positioning statement">
+              <p>Design research and practice at Harvard. Infrastructure for the agentic web at MIT.</p>
+              <span>&#9632; I translate between what people struggle with, what technology can enable, and what can become a viable product.</span>
+            </div>
+            <button class="intro__skip" type="button" data-intro-skip>Skip <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+
     </div>
 
     <main class="stage" id="top">
       <div class="view" data-view="home">
-      <section class="intro" aria-label="Selected projects, arriving" data-intro>
-        <div class="intro__pin">
-          <p class="intro__mark" aria-hidden="true">Yvette<span>Ge</span></p>
-          <div class="intro__deck" data-intro-deck></div>
-          <p class="intro__cap"><span data-intro-name></span><span data-intro-kind></span></p>
-          <div class="intro__end" aria-label="Positioning statement">
-            <p>Design research and practice at Harvard. Infrastructure for the agentic web at MIT.</p>
-            <span>&#9632; I translate between what people struggle with, what technology can enable, and what can become a viable product.</span>
-          </div>
-          <button class="intro__skip" type="button" data-intro-skip>Skip <span aria-hidden="true">→</span></button>
-        </div>
-      </section>
       <section class="mobile-recruiter" aria-label="Recruiter summary">
         <p class="mobile-recruiter__eyebrow">AI Product · Multi-Agent Systems · Agentic Web Infrastructure</p>
         <h2>Translating between people, technology, and product.</h2>
@@ -294,9 +293,9 @@
     </main>
 
     <script src="contact-stage.js?v=20261025c"></script>
-    <script src="script-v2.js?v=20261025e"></script>
+    <script src="script-v2.js?v=20261025f"></script>
     <script src="marago.js?v=20261025c"></script>
-    <script src="shell.js?v=20261025e"></script>
+    <script src="shell.js?v=20261025f"></script>
     <script>
       // Page two: the heading takes the hovered project's name, and a
       // bar slides down the index edge to the active row.

@@ -542,36 +542,19 @@ a.wip-panel__row:hover strong { font-style: italic; }
 @keyframes day-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 @media (max-width: 860px) { .shell-side .shell-side__day { display: none; } }
 
-/* Landing (2026-10-25, after mariamarago.com): the sidebar is already there;
-   the stage holds a huge wordmark low down, the television standing in front
-   of it like the poster, a caption bottom right and the dial bottom left. */
+/* Landing: the original set, with the sidebar already in place, then the
+   projects fly in over it in the same frame. */
 body.has-shell .cover { left: var(--side); }
-body.has-shell .cover .hero { position: absolute; inset: 0; min-height: 0; padding: 0; display: block; }
-body.has-shell .cover .hero h1 {
-  position: absolute; z-index: 1; left: clamp(20px, 2.4vw, 40px); right: clamp(20px, 2.4vw, 40px); bottom: 10vh;
-  display: block; white-space: nowrap; text-align: left;
-  font-size: min(calc((100vw - var(--side)) * 0.3), 46vh); line-height: 0.74; color: #111;
-}
-body.has-shell .cover .hero h1 .script { display: inline-block; margin: 0 0 0 -0.12em; font-size: 0.44em; transform: rotate(-7deg) translateY(-0.42em); text-transform: none; }
-body.has-shell .cover .television {
-  position: absolute; z-index: 2; left: 52%; top: 48%; margin: 0;
-  width: min(46%, 82vh); opacity: 1; transform: translate(-50%, -50%);
-}
-body.has-shell .cover .hero__sub {
-  position: absolute; z-index: 3; right: clamp(20px, 2.4vw, 40px); bottom: 3.2vh; margin: 0; max-width: 30ch; text-align: right;
-  font: 400 12px/1.35 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: #ff4a1c;
-}
-body.has-shell .cover .hero__dial {
-  position: absolute; z-index: 3; left: clamp(20px, 2.4vw, 40px); bottom: 2.4vh; top: auto;
-  font: 400 clamp(22px, 2vw, 32px)/1 "Instrument Serif", serif; gap: 14px; color: #ff4a1c;
-}
-body.has-shell .cover .hero__dial img { width: 18px; height: 18px; }
-body.has-shell .cover .cover__enter { left: auto; right: clamp(20px, 2.4vw, 40px); top: 28px; bottom: auto; transform: none; font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; }
+body.has-shell .cover .hero { padding-top: 9vh; }
+.intro--cover { position: absolute; inset: 0; z-index: 20; background: transparent !important; pointer-events: none; }
+.intro--cover .intro__pin { position: absolute; inset: 0; height: auto; }
+.intro--cover .intro__card, .intro--cover .intro__skip, .intro--cover.is-end .intro__end { pointer-events: auto; }
+.intro--cover .intro__cap { background: #fff; padding-top: 10px; }
+.intro--cover:not(.has-card) .intro__cap { background: transparent; }
 
 /* Opening: the phone alone, quick, over a blurred glimpse of the page. */
 .opening-gate { background: rgba(255, 255, 255, 0.25); -webkit-backdrop-filter: blur(18px) saturate(1.05); backdrop-filter: blur(18px) saturate(1.05); }
-.opening-gate video { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
-.opening-gate canvas { height: min(92vh, 900px); width: auto; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.22)); }
+.opening-gate img { height: min(92vh, 900px); width: auto; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.22)); }
 
 /* Home runs by itself now: one screen, no scroll. */
 .view[data-view="home"] .intro { height: 100vh !important; }
@@ -586,3 +569,6 @@ body.has-shell .cover .cover__enter { left: auto; right: clamp(20px, 2.4vw, 40px
 .intro.is-end .intro__end p { animation: cap-in 900ms cubic-bezier(.2,.8,.2,1) both; }
 .intro.is-end .intro__end span { animation: cap-in 900ms cubic-bezier(.2,.8,.2,1) 300ms both; }
 .intro__skip { position: absolute; z-index: 70; right: clamp(24px, 3vw, 48px); top: 28px; padding: 0; border: 0; background: none; cursor: pointer; font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); }
+.intro--cover .intro__cap::before { content: none !important; }
+body.has-shell .cover .hero h1 { font-size: min(calc((100vw - var(--side)) * 0.19), 26vh); }
+body.has-shell .cover .television { width: min(44%, 64vh); }

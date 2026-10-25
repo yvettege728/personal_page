@@ -167,6 +167,8 @@
   const parse = () => {
     const raw = decodeURIComponent(location.hash.slice(1));
     if (!raw || raw === "cover") return { view: "cover" };
+    // On a desktop the cover is home: the set, then the projects flying in.
+    if (raw === "home" && !window.matchMedia("(max-width: 860px)").matches) return { view: "cover" };
     const view = ALIAS[raw] || raw;
     if (views.some((v) => v.dataset.view === view)) return { view, anchor: ALIAS[raw] && raw !== "projects" ? raw : null };
     return { view: "home" };
@@ -175,7 +177,7 @@
   const show = ({ view, anchor }) => {
     const atCover = view === "cover";
     document.body.classList.toggle("at-cover", atCover);
-    if (atCover) { mark(null); return; }
+    if (atCover) { mark(null); window.dispatchEvent(new CustomEvent("view:shown", { detail: "cover" })); return; }
     if (view !== current) {
       views.forEach((v) => {
         const on = v.dataset.view === view;
@@ -208,13 +210,23 @@
   else show(asked);
 
   // Leaving the cover: the button, a click on the set, a scroll or a key.
-  const enter = () => {
+  let coverSkip = null;
+  const goOn = () => {
     if (!document.body.classList.contains("at-cover")) return;
-    const to = pending || { view: "home" };
+    const to = pending || { view: "profile" };
     pending = null;
     if (location.hash === `#${to.view}`) show(to);
     else location.hash = to.view;
   };
+  let lastEnter = 0;
+  const enter = () => {
+    if (!document.body.classList.contains("at-cover")) return;
+    const now = performance.now();
+    if (now - lastEnter < 1400) return;
+    lastEnter = now;
+    if (coverSkip && !pending) coverSkip(); else goOn();
+  };
+
   document.querySelector("[data-cover-enter]")?.addEventListener("click", enter);
   cover?.addEventListener("wheel", (e) => { if (e.deltaY > 8) enter(); }, { passive: true });
   let touchY = null;
@@ -287,45 +299,51 @@
 
     const PER = 1100;
     const END = cards.length + 0.45;
+    const onCover = () => document.body.classList.contains("at-cover");
     let run = 0;
     let handoff = null;
+    let wait = null;
+    const leave = () => { window.clearTimeout(handoff); goOn(); };
     const finish = () => {
       paint(END);
       intro.classList.add("is-end");
       window.clearTimeout(handoff);
-      handoff = window.setTimeout(() => { if (current === "home") location.hash = "profile"; }, 4200);
+      handoff = window.setTimeout(() => { if (onCover()) leave(); }, 4200);
     };
     const play = () => {
       const id = ++run;
       window.clearTimeout(handoff);
       intro.classList.remove("is-end");
+      paint(-1);
       if (still) { finish(); return; }
       const t0 = performance.now();
       const step = (now) => {
-        if (id !== run || current !== "home") return;
+        if (id !== run || !onCover()) return;
         const pos = (now - t0) / PER - 0.3;
         paint(pos);
         if (pos < END) requestAnimationFrame(step); else finish();
       };
-      paint(-0.3);
       requestAnimationFrame(step);
     };
-    const skip = () => {
-      if (current !== "home") return;
-      if (intro.classList.contains("is-end")) { window.clearTimeout(handoff); location.hash = "profile"; return; }
+    // Scroll, a key or Skip: first jump to the closing line, then move on.
+    coverSkip = () => {
+      if (intro.classList.contains("is-end")) { leave(); return; }
+      window.clearTimeout(wait);
       run++;
       finish();
     };
-    intro.querySelector("[data-intro-skip]")?.addEventListener("click", skip);
-    let lastWheel = 0;
-    intro.addEventListener("wheel", (e) => {
-      const now = performance.now();
-      if (Math.abs(e.deltaY) < 20 || now - lastWheel < 1400) return;
-      lastWheel = now;
-      skip();
-    }, { passive: true });
-    window.addEventListener("view:shown", (e) => { if (e.detail === "home") play(); });
-    if (current === "home") play();
+    intro.querySelector("[data-intro-skip]")?.addEventListener("click", () => coverSkip());
+    // The run starts a beat after the set has arrived on the cover.
+    const queue = () => {
+      window.clearTimeout(wait);
+      run++;
+      intro.classList.remove("is-end");
+      paint(-1);
+      if (onCover() && window.__gateClear) wait = window.setTimeout(play, 1800);
+    };
+    window.addEventListener("gate:clear", queue);
+    window.addEventListener("view:shown", (e) => { if (e.detail === "cover") queue(); });
+    queue();
   }
 
   // Writing: the hovered paper's cover shows in the column beside the list.
