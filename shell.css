@@ -575,3 +575,48 @@ body.has-shell .cover .television { width: min(44%, 64vh); }
 .me-drawer__skills ul { margin: 0; }
 .me-drawer__more { display: inline-block; margin-top: 10px; font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .me-drawer__more:hover { opacity: 0.6; }
+
+/* Writing opens on the method itself, read in place; papers and the tool follow. */
+.wmethod { max-width: 1040px; margin-bottom: 72px; }
+.wmethod__claim { margin: 18px 0 0; max-width: 18ch; font: 400 clamp(40px, 4.6vw, 76px)/0.98 "Instrument Serif", serif; letter-spacing: -0.01em; }
+.wmethod__lede { margin: 22px 0 36px; max-width: 58ch; font-size: 15px; line-height: 1.6; color: var(--soft); }
+.wmethod__list details { border-top: 1px solid rgba(38, 38, 38, 0.12); }
+.wmethod__list details:last-child { border-bottom: 1px solid rgba(38, 38, 38, 0.12); }
+.wmethod__list summary { display: grid; grid-template-columns: 52px minmax(0, 0.8fr) minmax(0, 1fr) 20px; gap: 18px; align-items: baseline; padding: 16px 0 18px; cursor: pointer; list-style: none; }
+.wmethod__list summary::-webkit-details-marker { display: none; }
+.wmethod__list summary::after { content: "+"; font: 400 14px/1 "Roboto Mono", ui-monospace, monospace; text-align: right; }
+.wmethod__list details[open] summary::after { content: "\2212"; }
+.wmethod__list summary span { font: 400 12px/1 "Roboto Mono", ui-monospace, monospace; color: var(--soft); }
+.wmethod__list summary strong { font: 400 clamp(22px, 2vw, 30px)/1.05 "Instrument Serif", serif; transition: transform 500ms cubic-bezier(.2,.8,.2,1); }
+.wmethod__list summary:hover strong { transform: translateX(8px); font-style: italic; }
+.wmethod__list summary em { font-style: normal; font-size: 13px; line-height: 1.45; color: var(--soft); }
+.wmethod__list details > p, .wmethod__list details > ul { margin: 0 0 14px 70px; max-width: 64ch; font-size: 14px; line-height: 1.6; }
+.wmethod__list details > ul { padding: 0; list-style: none; display: grid; gap: 8px; }
+.wmethod__list details > :last-child { margin-bottom: 22px; }
+.wmethod__list b { font-weight: 500; }
+/* The method plays in when Writing opens: the claim, then each line in turn. */
+.view[data-view="writing"].is-shown .wmethod__claim { animation: cap-in 900ms cubic-bezier(.2,.8,.2,1) both; }
+.view[data-view="writing"].is-shown .wmethod__lede { animation: cap-in 900ms cubic-bezier(.2,.8,.2,1) 200ms both; }
+.view[data-view="writing"].is-shown .wmethod__list details { animation: cap-in 700ms cubic-bezier(.2,.8,.2,1) both; }
+.view[data-view="writing"].is-shown .wmethod__list details:nth-child(1) { animation-delay: 400ms; }
+.view[data-view="writing"].is-shown .wmethod__list details:nth-child(2) { animation-delay: 480ms; }
+.view[data-view="writing"].is-shown .wmethod__list details:nth-child(3) { animation-delay: 560ms; }
+.view[data-view="writing"].is-shown .wmethod__list details:nth-child(4) { animation-delay: 640ms; }
+.view[data-view="writing"].is-shown .wmethod__list details:nth-child(5) { animation-delay: 720ms; }
+.view[data-view="writing"].is-shown .wmethod__list details:nth-child(6) { animation-delay: 800ms; }
+.view[data-view="writing"].is-shown .wmethod__list details:nth-child(7) { animation-delay: 880ms; }
+.shelf-index__wip { display: grid; grid-template-columns: 52px minmax(0, 1fr) minmax(230px, 0.5fr); align-items: baseline; gap: 18px; padding: 16px 0 18px; border-top: 1px solid rgba(38, 38, 38, 0.12); border-bottom: 1px solid rgba(38, 38, 38, 0.12); }
+@media (max-width: 760px) {
+  .wmethod__list summary { grid-template-columns: 40px minmax(0, 1fr) 16px; }
+  .wmethod__list summary em { display: none; }
+  .wmethod__list details > p, .wmethod__list details > ul { margin-left: 0; }
+  .shelf-index__wip { grid-template-columns: 44px minmax(0, 1fr); }
+  .shelf-index__wip .shelf__meta { display: none; }
+}
+
+/* Profile cursor: a small cut-out of her as a child instead of the dot. */
+.sticker-cursor { position: fixed; left: 0; top: 0; z-index: 10001; height: 110px; width: auto; pointer-events: none; opacity: 0; transform: translate(-30%, -20%); transition: opacity 200ms ease; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.18)); }
+html.has-sticker .sticker-cursor { opacity: 1; }
+html.has-sticker .dot-cursor { opacity: 0 !important; }
+.sticker-cursor.is-pop { animation: sticker-pop 420ms cubic-bezier(.34,1.56,.64,1); }
+@keyframes sticker-pop { from { transform: translate(-30%, -20%) scale(0.4) rotate(-12deg); } to { transform: translate(-30%, -20%) scale(1) rotate(0); } }

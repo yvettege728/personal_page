@@ -22,7 +22,9 @@ function initOpeningGate(onClear) {
   const gate = document.querySelector("[data-opening-gate]");
   let returning = false;
   try {
-    returning = sessionStorage.getItem(RETURNING_KEY) === "1";
+    // The phone opens a first visit only; coming back to the index from a
+    // project or a paper goes straight to the page.
+    returning = sessionStorage.getItem(RETURNING_KEY) === "1" || !!sessionStorage.getItem("yg:seen");
     if (returning) sessionStorage.removeItem(RETURNING_KEY);
   } catch (err) {
     returning = false;

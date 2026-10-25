@@ -103,11 +103,36 @@
     document.addEventListener("mouseenter", () => { if (seen) dot.classList.add("is-on"); });
     window.addEventListener("mousedown", () => dot.classList.add("is-down"));
     window.addEventListener("mouseup", () => dot.classList.remove("is-down"));
+    // On Profile the dot becomes a cut-out of her as a child, and a
+    // different one takes over every screen or so of scrolling.
+    const STICKERS = window.YG_STICKERS || [];
+    const sticker = document.createElement("img");
+    sticker.className = "sticker-cursor";
+    sticker.alt = "";
+    document.body.append(sticker);
+    let viewNow = null;
+    let stickerAt = -1;
+    const pickSticker = () => {
+      const on = viewNow === "profile" && STICKERS.length > 0;
+      document.documentElement.classList.toggle("has-sticker", on);
+      if (!on) return;
+      const i = Math.floor(window.scrollY / (window.innerHeight * 0.85)) % STICKERS.length;
+      if (i === stickerAt) return;
+      stickerAt = i;
+      sticker.src = STICKERS[i];
+      sticker.classList.remove("is-pop");
+      void sticker.offsetWidth;
+      sticker.classList.add("is-pop");
+    };
+    window.addEventListener("view:shown", (e) => { viewNow = e.detail; stickerAt = -1; pickSticker(); });
+    window.addEventListener("scroll", pickSticker, { passive: true });
     const follow = () => {
       x += (mx - x) * 0.25;
       y += (my - y) * 0.25;
       dot.style.left = `${x}px`;
       dot.style.top = `${y}px`;
+      sticker.style.left = `${x}px`;
+      sticker.style.top = `${y}px`;
       requestAnimationFrame(follow);
     };
     follow();
