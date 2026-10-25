@@ -11,7 +11,6 @@
     ["work", "Work", "Selected projects"],
     ["profile", "Profile", "Who I am · What I do"],
     ["writing", "Writing", "Essays & method"],
-    ["contact", "Contact", "Say hello"],
   ];
 
   let side = document.querySelector("[data-shell-side]");
@@ -111,7 +110,7 @@
     // A case page ends on the next project, in that project's colour,
     // rather than on a second contact block (the frame already has one).
     const ORDER = [
-      ["referral", "Referral", "-05", "#c9d8c5"], ["sci", "Design Cognition & Behavioral Study", "-04", "#e6d6bf"],
+      ["referral", "Referral", "-05", "#c9d8c5"],
       ["chula", "The Incomplete Archive", "01", "#c7cfe3"], ["echo", "Echo", "02", "#efd2bf"],
       ["tangle-holder", "Tangle to Holder", "03", "#dccbe3"], ["thermal-commons", "Thermal Commons", "04", "#eec0a4"],
       ["make-a-wish", "Make a Wish", "05", "#efdc98"], ["roll-up", "Rollup", "06", "#bfdcd6"],
@@ -137,7 +136,7 @@
   // ---- Home page only from here ----
 
   // Old anchors still land somewhere sensible.
-  const ALIAS = { projects: "work", about: "profile", "mobile-skills": "profile", methodology: "writing", top: "home" };
+  const ALIAS = { projects: "work", about: "profile", "mobile-skills": "profile", contact: "profile", methodology: "writing", top: "home" };
   const views = [...document.querySelectorAll("[data-view]")];
   const cover = document.querySelector("[data-cover]");
   let current = null;

@@ -182,7 +182,6 @@ function initPortfolioInteractions() {
   // numbered archive menu, so project-to-project movement stays in the navbar.
   const PROJECT_INDEX = [
     ["referral", "Referral", "-05"],
-    ["sci", "Design Cognition & Behavioral Study", "-04"],
     ["chula", "The Incomplete Archive", "01"],
     ["echo", "Echo", "02"],
     ["tangle-holder", "Tangle to Holder", "03"],

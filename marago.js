@@ -136,7 +136,7 @@
     const paras = [...profile.querySelectorAll(".who")];
     const count = profile.querySelector("[data-photo-count]");
     const stars = [...profile.querySelectorAll(".sparkle")];
-    let shown = 0;
+    let shown = -1;
     let pairTimer = null;
     const light = (img) => photos.forEach((ph) => ph.classList.toggle("is-on", ph === img));
     const show = (n) => {
@@ -159,7 +159,7 @@
         star.classList.add("is-flash");
       });
     };
-    paras[0]?.classList.add("is-current");
+    show(0);
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver((entries) => {
         entries.forEach((e) => { if (e.isIntersecting) show(Number(e.target.dataset.photo)); });

@@ -375,9 +375,8 @@ body.has-shell::after { display: none; }
   transform-origin: left;
   transition: transform 500ms cubic-bezier(.7,0,.2,1);
 }
-.shell-side .shell-side__nav a:hover strong { transform: none; }
-.shell-side .shell-side__nav a:hover strong { color: #fff; }
-.shell-side .shell-side__nav a:hover strong::before { transform: scaleX(1); }
+/* Only the current section carries the bar; hover just nudges the word. */
+.shell-side .shell-side__nav a:not(.is-current):hover strong { transform: translateX(6px); }
 .shell-side .shell-side__nav a.is-current strong { color: #fff; }
 .shell-side .shell-side__nav a.is-current strong::before { transform: scaleX(1); }
 
@@ -476,3 +475,30 @@ a.wip-panel__row:hover strong { font-style: italic; }
 .wip-panel__media { display: block; padding: 0 0 14px 50px; }
 .wip-panel__media img { display: block; width: 100%; height: auto; max-height: 30vh; object-fit: contain; object-position: left; }
 @media (max-width: 760px) { .wip-panel { width: 82vw; scroll-snap-align: start; } }
+
+/* Round 2026-10-25: profile slogan, skills folded inside their cell, the
+   cut-out photo, and What I do on black running straight into the TV. */
+.me-open__photo { object-position: 50% 45%; }
+.me-open__sub { margin: 18px 0 0; max-width: 34ch; font: 400 clamp(20px, 1.9vw, 30px)/1.2 "Instrument Serif", serif; color: #ff4a1c; }
+.me-drawer__skills { font: inherit !important; }
+.me-drawer__skills details summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.me-drawer__skills details summary::-webkit-details-marker { display: none; }
+.me-drawer__skills details summary::after { content: "+"; font-family: "Roboto Mono", ui-monospace, monospace; }
+.me-drawer__skills details[open] summary::after { content: "\2212"; }
+.me-drawer__skills ul { margin: 8px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 2px 14px; }
+.me-drawer__skills li { font: 400 17px/1.3 "Instrument Serif", serif; }
+.profile__frame img.is-cut { object-fit: contain; background: #fff; }
+
+.view[data-view="profile"] .skill-section {
+  --ink: #f4f2ee; --paper: #080808; --soft: rgba(244, 242, 238, 0.6);
+  background: #080808; color: #f4f2ee;
+}
+.view[data-view="profile"] .skill-section .profile__eyebrow,
+.view[data-view="profile"] .skill-section .skill-lead,
+.view[data-view="profile"] .skill-section .skill-copy { color: #f4f2ee; }
+.view[data-view="profile"] .skill-strips button { color: #f4f2ee; border-color: rgba(244, 242, 238, 0.7); }
+.view[data-view="profile"] .skill-strips button:hover,
+.view[data-view="profile"] .skill-strips button[aria-expanded="true"] { background: #f4f2ee; color: #080808; }
+.view[data-view="profile"] .skill-section { opacity: 1; }
+.view[data-view="profile"] .contact-tv { margin-top: -1px; overflow: hidden; min-height: 100vh; padding: 6vh 0; display: flex; align-items: center; justify-content: center; }
+.view[data-view="profile"] .contact-tv__set { left: 0; bottom: 0; min-width: 0; width: min(94%, 150vh); aspect-ratio: 2048 / 1080; margin: 0 auto; }

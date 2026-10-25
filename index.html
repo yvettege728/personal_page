@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><rect width='240' height='240' rx='30' fill='%23f7f7f3'/><g fill='none' stroke='%232f2f2f' stroke-width='15' stroke-linecap='round'><line x1='58' y1='54' x2='120' y2='140'/><line x1='182' y1='54' x2='120' y2='140'/><line x1='120' y1='140' x2='120' y2='206'/></g><circle cx='58' cy='54' r='16' fill='%232f2f2f'/><circle cx='182' cy='54' r='16' fill='%232f2f2f'/><circle cx='120' cy='140' r='26' fill='%232f2f2f'/><circle cx='120' cy='206' r='17' fill='%232f2f2f'/></svg>">
     <link rel="stylesheet" href="styles-v2.css?v=20261024m">
-    <link rel="stylesheet" href="shell.css?v=20261025">
+    <link rel="stylesheet" href="shell.css?v=20261025b">
   </head>
   <body>
     <div class="opening-gate" data-opening-gate aria-hidden="true">
@@ -70,8 +70,6 @@
       <section class="intro" aria-label="Selected projects, arriving" data-intro>
         <div class="intro__pin">
           <p class="intro__mark" aria-hidden="true">Yvette<span>Ge</span></p>
-          <p class="intro__side intro__side--l">Design research and practice<br>at Harvard</p>
-          <p class="intro__side intro__side--r">Infrastructure for the<br>agentic web at MIT</p>
           <div class="intro__deck" data-intro-deck></div>
           <p class="intro__cap"><span data-intro-name></span><span data-intro-kind></span></p>
         </div>
@@ -107,18 +105,18 @@
       </div>
 
       <div class="view" data-view="work">
-      <section class="work-strip" id="work" aria-label="Selected projects, at a glance" data-work-strip>
+      <section class="work-strip" id="work" aria-label="Selected projects" data-work-strip>
         <div class="work-strip__pin">
-          <p class="work-strip__label"><span>At a glance</span><span class="work-strip__arrow" aria-hidden="true">→</span></p>
+          <p class="work-strip__label"><span>Selected work</span><span class="work-strip__arrow" aria-hidden="true">→</span></p>
           <div class="work-strip__track" data-strip-track>
             <div class="wip-panel" data-num="WIP">
               <p class="wip-panel__head">Work in progress</p>
               <ol class="wip-panel__list">
                 <li class="is-open">
-                  <a class="wip-panel__row" href="referral-case.html"><span>-05</span><strong>Referral</strong><em>Agentic web</em></a>
+                  <a class="wip-panel__row" href="referral-case.html"><span>-05</span><strong>Referral</strong><em>Infrastructure for agentic web</em></a>
                   <a class="wip-panel__media" href="referral-case.html"><img src="web-assets/referral-diagram.jpg" alt="Referral system diagram"></a>
                 </li>
-                <li><a class="wip-panel__row" href="sci-case.html"><span>-04</span><strong>Design Cognition &amp; Behavioral Study</strong><em>HCI</em></a></li>
+                <li><span class="wip-panel__row"><span>-04</span><strong>Design Cognition &amp; Behavioral Study</strong><em>HCI</em></span></li>
                 <li><span class="wip-panel__row"><span>-03</span><strong>Agent Core</strong><em>Cross-channel AI product</em></span></li>
                 <li><span class="wip-panel__row"><span>-02</span><strong>Threshold Design Program</strong><em>Social infrastructure</em></span></li>
                 <li><span class="wip-panel__row"><span>-01</span><strong>A Living Archive of Community Ownership Models</strong><em>Archive</em></span></li>
@@ -139,7 +137,6 @@
           <div class="work-stage">
             <nav class="work-list" aria-label="Selected projects">
               <a class="is-wip" href="referral-case.html" data-fit="contain" data-color="#c9d8c5" data-project data-title="Referral" data-kicker="WIP / Agentic web, MIT Media Lab AI Studio" data-year="Fall 2026" data-src="web-assets/referral-diagram.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="An MCP server for agents that hire other agents. The worker agent locks its forecast before a job, a separate checker verifies the delivery, and the hiring agent gets a trust tier instead of ratings that are easy to fake. I lead the protocol, the tamper-evident log and the insight layer."><span>-05</span><strong>Referral</strong><em>WIP</em></a>
-              <a class="is-wip" href="sci-case.html" data-fit="contain" data-color="#e6d6bf" data-project data-title="Design Cognition &amp; Behavioral Study" data-kicker="WIP / Harvard GSD SCI" data-year="Fall 2026" data-src="web-assets/sci-wip.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A human-computer interaction study that reverse-engineers how people perceive and decide, as groundwork for using AI to model human behavior."><span>-04</span><strong>Design Cognition &amp; Behavioral Study</strong><em>WIP</em></a>
               <span class="axis-zero" aria-hidden="true">0 · now</span>
               <a class="is-active" href="chula-case.html" data-color="#c7cfe3" data-project data-default data-title="The Incomplete Archive" data-kicker="Reveal / AI archive" data-year="2026" data-src="web-assets/theincompletearchive.mp4" data-poster="web-assets/speculative-chula-exhibition-poster.webp" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%202.webp" data-copy="A digital platform that makes land conflict and institutional power relations legible through maps, chatbot, archive, dossier, and game."><span>01</span><strong>The Incomplete Archive</strong><em>Reveal</em></a>
               <a href="echo-case.html" data-color="#efd2bf" data-project data-title="Echo" data-kicker="Translate / civic AI product" data-year="2026" data-src="web-assets/echo-cover.jpg" data-images="web-assets/echo-cover.jpg|web-assets/echo-fig04.jpg|web-assets/echo-fig05.jpg|web-assets/echo-fig06.jpg|web-assets/echo-fig07.jpg" data-interval="1600" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A privacy-first product that helps people affected by a federal rule file evidence-based public comments anonymously and see how the agency responds. Full PRD, including evaluation and launch criteria for its AI features."><span>02</span><strong>Echo</strong><em>Product</em></a>
@@ -180,10 +177,11 @@
       <div class="view" data-view="profile">
       <section class="me-open" id="profile" aria-labelledby="profile-heading" data-me-open>
         <div class="me-open__pin">
-          <img class="me-open__photo" src="web-assets/me/me-tube.jpg" alt="Yvette mid-stride on a London Underground platform, laughing, hair flying">
+          <img class="me-open__photo" src="web-assets/me-wind.jpg" alt="Yvette by the sea, hair in the wind, under a blue sky">
           <div class="me-open__words">
             <p class="me-open__hi">Hi, I&rsquo;m Yvette.</p>
-            <h2 class="me-open__line" id="profile-heading">Mostly mid-stride, somewhere between four cities.</h2>
+            <h2 class="me-open__line" id="profile-heading">Mostly mid-stride.</h2>
+            <p class="me-open__sub">I let ideas grow wild, then trim them, cut by cut, into a frame that can be built.</p>
           </div>
           <p class="me-open__hint" aria-hidden="true">Keep scrolling ↓</p>
           <aside class="me-drawer" aria-label="What I do" data-me-drawer>
@@ -193,7 +191,7 @@
               <div><dt>Now</dt><dd>Master in Design Studies, Harvard GSD (2025&ndash;2027). Cross-registered at MIT Media Lab: AI Studio and Art, Culture + Technology.</dd></div>
               <div><dt>Before</dt><dd>BA Education Studies (social science), UCL, First Class Honours.</dd></div>
               <div><dt>Focus</dt><dd>Product and service design, AI infrastructure, the agentic web, behavioral economics, data visualization.</dd></div>
-              <div><dt>Skills</dt><dd class="me-drawer__skills">Product judgment<br>Multi-agent architecture<br>Agent infrastructure<br>AI evaluation<br>Research to insight<br>Prototype &amp; ship</dd></div>
+              <div><dt>Skills</dt><dd class="me-drawer__skills"><details><summary>Six, from product judgment to shipping</summary><ul><li>Product judgment</li><li>Multi-agent architecture</li><li>Agent infrastructure</li><li>AI evaluation</li><li>Research to insight</li><li>Prototype &amp; ship</li></ul></details></dd></div>
               <div><dt>Languages</dt><dd>Mandarin and Shanghainese (native), English (professional), French (spoken and written)</dd></div>
               <div><dt>Based in</dt><dd>Shanghai &middot; London &middot; Cambridge, MA &middot; Hong Kong</dd></div>
             </dl>
@@ -204,25 +202,29 @@
       <section class="profile" aria-label="How I got here" data-profile>
         <div class="profile__grid">
           <div class="profile__text">
-            <div class="who" data-photo="0">
-              <p>I came to social science because I could not stop asking why people do what they do: why a rule holds, why a room feels open or shut, why the same story lands one way in Shanghai and another in London. I still haven&rsquo;t stopped. Every project since has been another round of the same question.</p>
-              <small>(an ongoing journey)</small>
-              <span class="who__strip" aria-label="Early field notes">
-                <img src="web-assets/me/kid-piano.jpg" alt="" loading="lazy"><img src="web-assets/me/kid-hk.jpg" alt="" loading="lazy"><img src="web-assets/me/kid-face.jpg" alt="" loading="lazy"><img src="web-assets/me/kid-towel.jpg" alt="" loading="lazy"><img src="web-assets/me/kid-jump.jpg" alt="" loading="lazy">
-              </span>
-            </div>
+            <div class="who" data-photo="0"><p>I came to social science because I kept asking why people do what they do. I still haven&rsquo;t stopped.</p><small>(an ongoing journey)</small></div>
             <div class="who" data-photo="1"><p>I believe we learn by building, not by being told. So I trained myself to make things: when I want to understand something, I build a version of it.</p><small>(constructivism, applied to myself)</small></div>
-            <div class="who" data-photo="2"><p>After graduating, I spent a year gathering design skills, one tool and one small project at a time.</p><small>(2024&ndash;2025)</small></div>
-            <div class="who" data-photo="3"><p>Then I stepped into design school, and the models got bigger.</p><small>(Harvard GSD, class of 2027)</small></div>
+            <div class="who" data-photo="2"><p>After graduating, I spent a year gathering design skills.</p><small>(2024&ndash;2025)</small></div>
+            <div class="who" data-photo="3"><p>Then I stepped into design school, and slowly found what I keep coming back to: the systems underneath how people, and now machines, decide and act together.</p><small>(Harvard GSD, class of 2027)</small></div>
             <div class="who" data-photo="4"><p>Give me a field I don&rsquo;t know yet. I read everything, find the people inside it, and come back speaking their language in words everyone else can use.</p><small>(my favourite part of any project)</small></div>
             <div class="who" data-photo="5"><p>Most of my work happens in rooms full of people who want different things. I am the one translating.</p><small>(+86 &middot; +44 &middot; +1 &middot; +852)</small></div>
             <div class="who" data-photo="6"><p>And when it gets loud, I find a window, sit in it, and think.</p><small>(then I go back and build)</small></div>
           </div>
           <figure class="profile__photo" aria-hidden="true">
             <div class="profile__frame">
-              <img class="is-on" src="web-assets/me/kid-ice.jpg" alt="" data-for="0">
-              <img src="web-assets/me/me-p-04.jpg" alt="" loading="lazy" data-for="1">
+              <img class="is-on is-cut" src="web-assets/me/kid-peace-cut.webp" alt="" data-for="0">
+              <img src="web-assets/me/kid-ice.jpg" alt="" loading="lazy" data-for="0">
+              <img src="web-assets/me/kid-piano.jpg" alt="" loading="lazy" data-for="0">
+              <img src="web-assets/me/kid-bed.jpg" alt="" loading="lazy" data-for="0">
+              <img src="web-assets/me/kid-hk.jpg" alt="" loading="lazy" data-for="0">
+              <img src="web-assets/me/kid-face.jpg" alt="" loading="lazy" data-for="0">
+              <img src="web-assets/me/kid-night.jpg" alt="" loading="lazy" data-for="0">
+              <img src="web-assets/me/kid-towel.jpg" alt="" loading="lazy" data-for="0">
+              <img src="web-assets/me/kid-jump.jpg" alt="" loading="lazy" data-for="0">
+              <img src="web-assets/me/me-ioe.jpg" alt="" loading="lazy" data-for="1">
+              <img src="web-assets/me/me-madrid.jpg" alt="" loading="lazy" data-for="1">
               <img src="web-assets/me/me-lake.jpg" alt="" loading="lazy" data-for="2" style="object-position: 50% 70%">
+              <img src="web-assets/me/me-p-04.jpg" alt="" loading="lazy" data-for="2">
               <img src="web-assets/me/me-p-18.jpg" alt="" loading="lazy" data-for="3">
               <img src="web-assets/me/me-gsd-group.jpg" alt="" loading="lazy" data-for="3">
               <img src="web-assets/me/me-hk-night.jpg" alt="" loading="lazy" data-for="4">
@@ -261,6 +263,7 @@
           </div>
         </div>
       </section>
+      <div data-contact-slot></div>
       </div>
 
       <div class="view" data-view="writing">
@@ -288,34 +291,12 @@
       </section>
       </div>
 
-      <div class="view" data-view="contact">
-      <section class="contact-page" id="contact" aria-labelledby="contact-heading">
-        <header class="view-head">
-          <p class="profile__eyebrow">Contact</p>
-          <h2 id="contact-heading">Say hello.</h2>
-          <p class="view-head__note">Happy to talk about AI products, agent infrastructure, or anything you saw here.</p>
-        </header>
-        <div class="contact-page__grid">
-          <dl class="contact-page__list">
-            <div><dt>Email</dt><dd><a href="mailto:yvette_ge@gsd.harvard.edu">yvette_ge@gsd.harvard.edu</a></dd></div>
-            <div><dt>Phone</dt><dd><a href="tel:+16176808178">+1 617 680 8178</a></dd></div>
-            <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener">yvette-ge-a43512228</a></dd></div>
-            <div><dt>CV</dt><dd><a href="web-assets/Yvette_Ge_CV.pdf?v=20261024">English</a> · <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261024" lang="zh">中文简历</a></dd></div>
-            <div><dt>Card</dt><dd><a href="web-assets/yvette-ge-namecard.png" download="Yvette-Ge-Namecard.png">Download name card</a></dd></div>
-          </dl>
-          <figure class="ctv" aria-hidden="true">
-            <div class="ctv__screen"><video src="web-assets/picvideo-web.mp4" poster="web-assets/og-card.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
-            <img class="ctv__frame" src="web-assets/eric-cole-assets/WkbjqM8K5hqKOUzSBrsnPMKBcI.png" alt="">
-          </figure>
-        </div>
-      </section>
-      </div>
     </main>
 
     <script src="contact-stage.js?v=20260823-live"></script>
     <script src="script-v2.js?v=20260905-mobile-polish"></script>
-    <script src="marago.js?v=20261025"></script>
-    <script src="shell.js?v=20261025"></script>
+    <script src="marago.js?v=20261025b"></script>
+    <script src="shell.js?v=20261025b"></script>
     <script>
       // Page two: the heading takes the hovered project's name, and a
       // bar slides down the index edge to the active row.
