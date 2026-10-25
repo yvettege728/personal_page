@@ -44,10 +44,38 @@ function initOpeningGate(onClear) {
   };
 
   const isSmallScreen = window.matchMedia("(max-width: 760px)").matches;
-  video?.play().catch(() => {});
+  // The phone is filmed on a flat blue; that blue is keyed out frame by frame
+  // so the phone floats over a blurred glimpse of the page, and the clip runs
+  // faster than it was shot.
+  if (video) {
+    video.playbackRate = 1.8;
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+    gate.append(canvas);
+    const SCALE = 0.42;
+    const draw = () => {
+      if (cleared || !video.videoWidth) { if (!cleared) requestAnimationFrame(draw); return; }
+      const sx = Math.round(video.videoWidth * 0.32);
+      const sw = Math.round(video.videoWidth * 0.36);
+      const w = Math.round(sw * SCALE);
+      const h = Math.round(video.videoHeight * SCALE);
+      if (canvas.width !== w) { canvas.width = w; canvas.height = h; }
+      ctx.drawImage(video, sx, 0, sw, video.videoHeight, 0, 0, w, h);
+      const frame = ctx.getImageData(0, 0, w, h);
+      const d = frame.data;
+      for (let i = 0; i < d.length; i += 4) {
+        const k = Math.min(d[i + 2] - d[i] - 35, (d[i + 2] - d[i + 1] - 8) * 3);
+        if (k > 0) d[i + 3] = Math.max(0, 255 - k * 10);
+      }
+      ctx.putImageData(frame, 0, 0);
+      requestAnimationFrame(draw);
+    };
+    requestAnimationFrame(draw);
+  }
+  video?.play().then(() => { video.playbackRate = 1.8; }).catch(() => {});
   video?.addEventListener("ended", hide, { once: true });
   gate.addEventListener("click", hide, { once: true });
-  window.setTimeout(hide, isSmallScreen ? 4800 : 9000);
+  window.setTimeout(hide, isSmallScreen ? 4000 : 5000);
 }
 
 // The television, the reel behind its glass, and the two annotations around it

@@ -188,6 +188,7 @@
       // Pieces that measure themselves need a pass once they are visible.
       window.dispatchEvent(new Event("resize"));
       requestAnimationFrame(() => requestAnimationFrame(() => target.classList.add("is-shown")));
+      window.dispatchEvent(new CustomEvent("view:shown", { detail: view }));
     }
     mark(view);
     if (anchor) {
@@ -251,12 +252,10 @@
     const kindEl = intro.querySelector("[data-intro-kind]");
     const ease = (t) => 1 - Math.pow(1 - t, 3);
 
-    const paint = () => {
-      if (intro.offsetParent === null) return;
-      const vh = window.innerHeight;
-      const rect = intro.getBoundingClientRect();
-      // One screen of scroll per project, after a first screen for the wordmark alone.
-      const pos = (-rect.top) / vh - 0.4;
+    // The run plays on its own, about a second a project, then rests on the
+    // standfirst and hands over to Profile. Work in the sidebar is the way
+    // back to the projects at your own pace.
+    const paint = (pos) => {
       let active = -1;
       cards.forEach((card, i) => {
         const t = Math.min(1, Math.max(0, pos - i));
@@ -266,13 +265,10 @@
         card.style.transform = `translate(calc(-50% + ${dx * off * 70}vw), calc(-50% + ${dy * off * 80}vh)) scale(${0.86 + 0.14 * e})`;
         card.style.clipPath = `inset(${off * 30}% ${off * 30}% ${off * 30}% ${off * 30}%)`;
         card.style.opacity = t > 0 ? "1" : "0";
-        // Earlier cards settle back and dim once the next one lands on top.
         const after = Math.min(1, Math.max(0, pos - i - 1));
-        if (after > 0) card.style.filter = `brightness(${1 - after * 0.25})`;
-        else card.style.filter = "";
+        card.style.filter = after > 0 ? `brightness(${1 - after * 0.25})` : "";
         if (t > 0.35) active = i;
       });
-      // Past the last card the deck lifts away so the standfirst can follow.
       const exit = Math.min(1, Math.max(0, (pos - cards.length + 0.1) / 0.3));
       deck.style.opacity = String(1 - exit);
       if (exit >= 1) active = -1;
@@ -288,15 +284,48 @@
       }
       if (!pick) { nameEl.textContent = ""; kindEl.textContent = ""; }
     };
-    const size = () => { intro.style.height = `${(cards.length + 1.7) * 100}vh`; paint(); };
-    let ticking = false;
-    window.addEventListener("scroll", () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => { paint(); ticking = false; });
+
+    const PER = 1100;
+    const END = cards.length + 0.45;
+    let run = 0;
+    let handoff = null;
+    const finish = () => {
+      paint(END);
+      intro.classList.add("is-end");
+      window.clearTimeout(handoff);
+      handoff = window.setTimeout(() => { if (current === "home") location.hash = "profile"; }, 4200);
+    };
+    const play = () => {
+      const id = ++run;
+      window.clearTimeout(handoff);
+      intro.classList.remove("is-end");
+      if (still) { finish(); return; }
+      const t0 = performance.now();
+      const step = (now) => {
+        if (id !== run || current !== "home") return;
+        const pos = (now - t0) / PER - 0.3;
+        paint(pos);
+        if (pos < END) requestAnimationFrame(step); else finish();
+      };
+      paint(-0.3);
+      requestAnimationFrame(step);
+    };
+    const skip = () => {
+      if (current !== "home") return;
+      if (intro.classList.contains("is-end")) { window.clearTimeout(handoff); location.hash = "profile"; return; }
+      run++;
+      finish();
+    };
+    intro.querySelector("[data-intro-skip]")?.addEventListener("click", skip);
+    let lastWheel = 0;
+    intro.addEventListener("wheel", (e) => {
+      const now = performance.now();
+      if (Math.abs(e.deltaY) < 20 || now - lastWheel < 1400) return;
+      lastWheel = now;
+      skip();
     }, { passive: true });
-    window.addEventListener("resize", size);
-    size();
+    window.addEventListener("view:shown", (e) => { if (e.detail === "home") play(); });
+    if (current === "home") play();
   }
 
   // Writing: the hovered paper's cover shows in the column beside the list.
