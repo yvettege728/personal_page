@@ -25,10 +25,9 @@
     <div class="shell-side__top">
       <a class="shell-side__brand" href="${home}#home" data-view-link="home" aria-label="Yvette Ge, home">
         <svg class="shell-side__mark" viewBox="0 0 300 230" aria-hidden="true"><path d="M44 74 C36 46 74 42 82 74 C90 108 100 126 118 122 C136 118 142 92 140 64 C146 118 150 168 122 190 C96 210 64 190 80 166 C96 144 148 150 180 128 C204 112 214 88 200 74 C186 60 160 72 162 96 C164 120 196 120 210 94 L214 76 C222 126 228 170 206 194 C188 212 168 200 178 182 C188 166 232 168 262 146"/></svg>
-        <span>Yvette Ge</span>
       </a>
       <p class="shell-side__where"><span class="shell-side__city">Cambridge, MA</span> <span data-clock>--:--</span> <span class="shell-side__tz">EST</span></p>
-      <dl class="shell-side__day" data-day><div><dt>Earlier</dt><dd data-slot="-1"></dd></div><div><dt>Now</dt><dd data-slot="0"></dd></div><div><dt>Next</dt><dd data-slot="1"></dd></div></dl>
+      <dl class="shell-side__day" data-day><div><dt>Now</dt><dd data-slot="0"></dd></div><div><dt>Next</dt><dd data-slot="1"></dd></div></dl>
       <button class="shell-side__menu" type="button" aria-expanded="false" data-menu>Menu</button>
     </div>
     <nav class="shell-side__nav" aria-label="Sections">
@@ -43,8 +42,8 @@
     </p>`;
 
   // The time where she is, to the minute, and a guess at her day: what she
-  // was doing, is doing, and will do next. Each part of the day has a few
-  // likely answers, and they take turns.
+  // is doing now and what comes next. Each part of the day has a few likely
+  // answers; one is picked when the page opens and kept.
   const clock = side.querySelector("[data-clock]");
   const tz = side.querySelector(".shell-side__tz");
   const slots = [...side.querySelectorAll("[data-slot]")];
@@ -62,7 +61,7 @@
     [20, ["watching the NBA", "still in studio"]],
     [22, ["one more render", "reading in bed"]],
   ];
-  let turn = 0;
+  const pick = Math.floor(Math.random() * 60);
   const tick = () => {
     const now = new Date();
     const hour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: "America/New_York", hour: "2-digit", hourCycle: "h23" }).format(now));
@@ -70,7 +69,7 @@
     DAY.forEach(([h], i) => { if (hour >= h) at = i; });
     slots.forEach((slot) => {
       const options = DAY[(at + Number(slot.dataset.slot) + DAY.length) % DAY.length][1];
-      const text = options[turn % options.length];
+      const text = options[(pick + Number(slot.dataset.slot)) % options.length];
       if (slot.textContent !== text) {
         slot.classList.remove("is-in");
         void slot.offsetWidth;
@@ -84,7 +83,7 @@
     if (name) tz.textContent = name.value;
   };
   tick();
-  window.setInterval(() => { turn += 1; tick(); }, still ? 60000 : 3200);
+  window.setInterval(tick, 20000);
 
   // The dot cursor, on desktops with a real pointer only.
   if (!still && window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 1024px)").matches) {
