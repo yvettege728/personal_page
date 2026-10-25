@@ -403,3 +403,76 @@ html.has-dot input, html.has-dot textarea, html.has-dot select { cursor: text !i
 .dot-cursor.is-on { opacity: 1; }
 .dot-cursor.is-big { width: 46px; height: 46px; }
 .dot-cursor.is-down { transform: translate(-50%, -50%) scale(1.4); transition: width 220ms ease, height 220ms ease, transform 250ms cubic-bezier(.34,1.56,.64,1); }
+
+/* Profile opening (2026-10-25): one landscape photo across the whole stage,
+   the line printed into it with multiply, and "What I do" as a drawer that
+   the scroll pulls out from the right and pushes back. */
+.me-open { position: relative; height: 340vh; --dim: 0; }
+.me-open__pin { position: sticky; top: 0; height: 100vh; overflow: hidden; background: #fff; }
+.me-open__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% 55%; }
+.me-open__pin::after { content: ""; position: absolute; inset: 0; background: #fff; opacity: var(--dim); pointer-events: none; }
+.me-open__words { position: absolute; left: clamp(28px, 4vw, 64px); right: clamp(28px, 4vw, 64px); bottom: clamp(28px, 5vh, 56px); z-index: 1; mix-blend-mode: multiply; color: #ff4a1c; }
+.me-open__hi { margin: 0 0 10px; font: 400 13px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: #ff4a1c; }
+.me-open__line { margin: 0; max-width: 14ch; font: 400 clamp(64px, 8.6vw, 150px)/0.86 "Instrument Serif", serif; letter-spacing: -0.02em; }
+.me-open__hint { position: absolute; top: 28px; right: clamp(28px, 4vw, 64px); z-index: 1; margin: 0; font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; mix-blend-mode: difference; }
+.me-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: min(600px, 52%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+  padding: 40px clamp(28px, 3.4vw, 52px);
+  background: #fff;
+  color: var(--ink);
+  border-left: 1px solid rgba(38, 38, 38, 0.12);
+  transform: translateX(102%);
+  will-change: transform;
+}
+.me-drawer__lede { margin: 0; font: 400 clamp(19px, 1.5vw, 23px)/1.3 "Instrument Serif", serif; }
+.me-drawer__table { margin: 0; border-top: 1px solid rgba(38, 38, 38, 0.18); }
+.me-drawer__table div { display: grid; grid-template-columns: 96px 1fr; gap: 14px; padding: 9px 0; border-bottom: 1px solid rgba(38, 38, 38, 0.18); }
+.me-drawer__table dt { font: 400 10.5px/1.6 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: var(--soft); }
+.me-drawer__table dd { margin: 0; font-size: 13px; line-height: 1.45; }
+.me-drawer__skills { font: 400 18px/1.25 "Instrument Serif", serif !important; }
+.me-drawer__link { align-self: start; font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; background: #111; padding: 7px 10px; text-decoration: none; }
+
+/* The story after it: paragraphs as blocks now, so a paragraph can carry a strip. */
+.view[data-view="profile"] .profile { padding-top: 120px; }
+.who p { margin: 0; }
+.view[data-view="profile"] .who { font-size: clamp(28px, 3vw, 48px); }
+.who__strip { display: flex; gap: 6px; margin-top: 22px; }
+.who__strip img { height: 64px; width: auto; filter: grayscale(0.2); transition: transform 400ms cubic-bezier(.2,.8,.2,1); }
+.who__strip img:hover { transform: translateY(-6px) rotate(-2deg); }
+
+@media (max-width: 860px) {
+  .me-open { height: auto; }
+  .me-open__pin { position: relative; height: auto; overflow: visible; }
+  .me-open__photo { position: relative; height: 70vh; }
+  .me-open__pin::after { display: none; }
+  .me-open__words { bottom: auto; top: calc(70vh - 220px); }
+  .me-open__line { font-size: 54px; }
+  .me-drawer { position: relative; width: auto; transform: none !important; border-left: 0; padding: 40px 18px; }
+}
+.shell-side .shell-side__now { display: inline-block; margin-top: 4px; color: var(--ink); text-transform: none; letter-spacing: 0; }
+@media (max-width: 860px) { .shell-side .shell-side__now { display: none; } }
+
+/* Work in progress (2026-10-25): one panel at the head of the strip, beside
+   project 01. Newest first, -05 down to -01; only -05 is open. */
+.wip-panel { flex: none; align-self: end; width: clamp(320px, 30vw, 440px); display: grid; gap: 14px; }
+.wip-panel__head { margin: 0; font: 400 11px/1 "Roboto Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase; color: var(--soft); }
+.wip-panel__list { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(38, 38, 38, 0.16); }
+.wip-panel__list li { border-bottom: 1px solid rgba(38, 38, 38, 0.16); }
+.wip-panel__row { display: grid; grid-template-columns: 40px 1fr; column-gap: 10px; padding: 10px 0; color: var(--ink); text-decoration: none; }
+.wip-panel__row span { grid-row: span 2; font: 400 12px/1.6 "Roboto Mono", ui-monospace, monospace; color: var(--soft); }
+.wip-panel__row strong { font: 400 20px/1.1 "Instrument Serif", serif; }
+.wip-panel__row em { font: 400 10.5px/1.6 "Roboto Mono", ui-monospace, monospace; font-style: normal; letter-spacing: 0.04em; text-transform: uppercase; color: var(--soft); }
+a.wip-panel__row:hover strong { font-style: italic; }
+.wip-panel__list li:not(.is-open) .wip-panel__row { color: rgba(38, 38, 38, 0.62); }
+.wip-panel__media { display: block; padding: 0 0 14px 50px; }
+.wip-panel__media img { display: block; width: 100%; height: auto; max-height: 30vh; object-fit: contain; object-position: left; }
+@media (max-width: 760px) { .wip-panel { width: 82vw; scroll-snap-align: start; } }

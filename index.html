@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><rect width='240' height='240' rx='30' fill='%23f7f7f3'/><g fill='none' stroke='%232f2f2f' stroke-width='15' stroke-linecap='round'><line x1='58' y1='54' x2='120' y2='140'/><line x1='182' y1='54' x2='120' y2='140'/><line x1='120' y1='140' x2='120' y2='206'/></g><circle cx='58' cy='54' r='16' fill='%232f2f2f'/><circle cx='182' cy='54' r='16' fill='%232f2f2f'/><circle cx='120' cy='140' r='26' fill='%232f2f2f'/><circle cx='120' cy='206' r='17' fill='%232f2f2f'/></svg>">
     <link rel="stylesheet" href="styles-v2.css?v=20261024m">
-    <link rel="stylesheet" href="shell.css?v=20261024m">
+    <link rel="stylesheet" href="shell.css?v=20261025">
   </head>
   <body>
     <div class="opening-gate" data-opening-gate aria-hidden="true">
@@ -110,7 +110,21 @@
       <section class="work-strip" id="work" aria-label="Selected projects, at a glance" data-work-strip>
         <div class="work-strip__pin">
           <p class="work-strip__label"><span>At a glance</span><span class="work-strip__arrow" aria-hidden="true">→</span></p>
-          <div class="work-strip__track" data-strip-track></div>
+          <div class="work-strip__track" data-strip-track>
+            <div class="wip-panel" data-num="WIP">
+              <p class="wip-panel__head">Work in progress</p>
+              <ol class="wip-panel__list">
+                <li class="is-open">
+                  <a class="wip-panel__row" href="referral-case.html"><span>-05</span><strong>Referral</strong><em>Agentic web</em></a>
+                  <a class="wip-panel__media" href="referral-case.html"><img src="web-assets/referral-diagram.jpg" alt="Referral system diagram"></a>
+                </li>
+                <li><a class="wip-panel__row" href="sci-case.html"><span>-04</span><strong>Design Cognition &amp; Behavioral Study</strong><em>HCI</em></a></li>
+                <li><span class="wip-panel__row"><span>-03</span><strong>Agent Core</strong><em>Cross-channel AI product</em></span></li>
+                <li><span class="wip-panel__row"><span>-02</span><strong>Threshold Design Program</strong><em>Social infrastructure</em></span></li>
+                <li><span class="wip-panel__row"><span>-01</span><strong>A Living Archive of Community Ownership Models</strong><em>Archive</em></span></li>
+              </ol>
+            </div>
+</div>
           <p class="work-strip__hint" aria-hidden="true">Scroll · <span data-strip-count>01</span></p>
         </div>
       </section>
@@ -124,8 +138,8 @@
 
           <div class="work-stage">
             <nav class="work-list" aria-label="Selected projects">
-              <a class="is-wip" href="referral-case.html" data-fit="contain" data-color="#c9d8c5" data-project data-title="Referral" data-kicker="WIP / MIT Media Lab AI Studio" data-year="Fall 2026" data-src="web-assets/referral-diagram.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="An MCP server for agents that hire other agents. The worker agent locks its forecast before a job, a separate checker verifies the delivery, and the hiring agent gets a trust tier instead of ratings that are easy to fake. I lead the protocol, the tamper-evident log and the insight layer."><span>-01</span><strong>Referral</strong><em>WIP</em></a>
-              <a class="is-wip" href="sci-case.html" data-fit="contain" data-color="#e6d6bf" data-project data-title="Behavioral Cognition Study" data-kicker="WIP / Harvard GSD SCI" data-year="Fall 2026" data-src="web-assets/sci-wip.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A human-computer interaction study that reverse-engineers how people perceive and decide, as groundwork for using AI to model human behavior."><span>-02</span><strong>Behavioral Cognition Study</strong><em>WIP</em></a>
+              <a class="is-wip" href="referral-case.html" data-fit="contain" data-color="#c9d8c5" data-project data-title="Referral" data-kicker="WIP / Agentic web, MIT Media Lab AI Studio" data-year="Fall 2026" data-src="web-assets/referral-diagram.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="An MCP server for agents that hire other agents. The worker agent locks its forecast before a job, a separate checker verifies the delivery, and the hiring agent gets a trust tier instead of ratings that are easy to fake. I lead the protocol, the tamper-evident log and the insight layer."><span>-05</span><strong>Referral</strong><em>WIP</em></a>
+              <a class="is-wip" href="sci-case.html" data-fit="contain" data-color="#e6d6bf" data-project data-title="Design Cognition &amp; Behavioral Study" data-kicker="WIP / Harvard GSD SCI" data-year="Fall 2026" data-src="web-assets/sci-wip.jpg" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A human-computer interaction study that reverse-engineers how people perceive and decide, as groundwork for using AI to model human behavior."><span>-04</span><strong>Design Cognition &amp; Behavioral Study</strong><em>WIP</em></a>
               <span class="axis-zero" aria-hidden="true">0 · now</span>
               <a class="is-active" href="chula-case.html" data-color="#c7cfe3" data-project data-default data-title="The Incomplete Archive" data-kicker="Reveal / AI archive" data-year="2026" data-src="web-assets/theincompletearchive.mp4" data-poster="web-assets/speculative-chula-exhibition-poster.webp" data-kind="video" data-surface="web-assets/surface/Surface%20Pro%208%20-%202.webp" data-copy="A digital platform that makes land conflict and institutional power relations legible through maps, chatbot, archive, dossier, and game."><span>01</span><strong>The Incomplete Archive</strong><em>Reveal</em></a>
               <a href="echo-case.html" data-color="#efd2bf" data-project data-title="Echo" data-kicker="Translate / civic AI product" data-year="2026" data-src="web-assets/echo-cover.jpg" data-images="web-assets/echo-cover.jpg|web-assets/echo-fig04.jpg|web-assets/echo-fig05.jpg|web-assets/echo-fig06.jpg|web-assets/echo-fig07.jpg" data-interval="1600" data-kind="image" data-surface="web-assets/surface/Surface%20Pro%208%20-%2013.webp" data-copy="A privacy-first product that helps people affected by a federal rule file evidence-based public comments anonymously and see how the agency responds. Full PRD, including evaluation and launch criteria for its AI features."><span>02</span><strong>Echo</strong><em>Product</em></a>
@@ -164,53 +178,62 @@
       </div>
 
       <div class="view" data-view="profile">
-      <section class="profile" id="profile" aria-labelledby="profile-heading" data-profile>
-        <header class="profile__head">
-          <p class="profile__eyebrow">Profile</p>
-          <h2 id="profile-heading">Who I am</h2>
-          <button class="profile__more" type="button" aria-expanded="false" aria-controls="profile-panel" data-profile-open><span aria-hidden="true">+</span> info</button>
-        </header>
+      <section class="me-open" id="profile" aria-labelledby="profile-heading" data-me-open>
+        <div class="me-open__pin">
+          <img class="me-open__photo" src="web-assets/me/me-tube.jpg" alt="Yvette mid-stride on a London Underground platform, laughing, hair flying">
+          <div class="me-open__words">
+            <p class="me-open__hi">Hi, I&rsquo;m Yvette.</p>
+            <h2 class="me-open__line" id="profile-heading">Mostly mid-stride, somewhere between four cities.</h2>
+          </div>
+          <p class="me-open__hint" aria-hidden="true">Keep scrolling ↓</p>
+          <aside class="me-drawer" aria-label="What I do" data-me-drawer>
+            <p class="profile__eyebrow">What I do</p>
+            <p class="me-drawer__lede">AI product and multi-agent systems, grounded in social science. I work out what people struggle with, what the technology can do, and what can become a viable product, then build it myself.</p>
+            <dl class="me-drawer__table">
+              <div><dt>Now</dt><dd>Master in Design Studies, Harvard GSD (2025&ndash;2027). Cross-registered at MIT Media Lab: AI Studio and Art, Culture + Technology.</dd></div>
+              <div><dt>Before</dt><dd>BA Education Studies (social science), UCL, First Class Honours.</dd></div>
+              <div><dt>Focus</dt><dd>Product and service design, AI infrastructure, the agentic web, behavioral economics, data visualization.</dd></div>
+              <div><dt>Skills</dt><dd class="me-drawer__skills">Product judgment<br>Multi-agent architecture<br>Agent infrastructure<br>AI evaluation<br>Research to insight<br>Prototype &amp; ship</dd></div>
+              <div><dt>Languages</dt><dd>Mandarin and Shanghainese (native), English (professional), French (spoken and written)</dd></div>
+              <div><dt>Based in</dt><dd>Shanghai &middot; London &middot; Cambridge, MA &middot; Hong Kong</dd></div>
+            </dl>
+            <a class="me-drawer__link" href="#mobile-skills">See how each skill formed ↓</a>
+          </aside>
+        </div>
+      </section>
+      <section class="profile" aria-label="How I got here" data-profile>
         <div class="profile__grid">
           <div class="profile__text">
-            <p class="who" data-photo="0">Hi, I’m Yvette. Usually laughing, often into the wind. <small>(the hair never cooperates)</small></p>
-            <p class="who" data-photo="1">I started in social science at UCL, taking structures apart to see why they hold together the way they do. <small>(BA Education Studies)</small></p>
-            <p class="who" data-photo="2">Then I walked into an architecture school, and learned to build the thing instead of only writing about it. <small>(Harvard GSD, class of 2027)</small></p>
-            <p class="who" data-photo="3">Give me a field I don’t know yet. I read everything, find the people inside it, and come back speaking their language in words everyone else can use. <small>(my favourite part of any project)</small></p>
-            <p class="who" data-photo="4">Most of my work happens in rooms full of people who want different things. I am the one translating. <small>(+86 · +44 · +1 · +852)</small></p>
-            <p class="who" data-photo="5">And when it gets loud, I find a window, sit in it, and think. <small>(then I go back and build)</small></p>
+            <div class="who" data-photo="0">
+              <p>I came to social science because I could not stop asking why people do what they do: why a rule holds, why a room feels open or shut, why the same story lands one way in Shanghai and another in London. I still haven&rsquo;t stopped. Every project since has been another round of the same question.</p>
+              <small>(an ongoing journey)</small>
+              <span class="who__strip" aria-label="Early field notes">
+                <img src="web-assets/me/kid-piano.jpg" alt="" loading="lazy"><img src="web-assets/me/kid-hk.jpg" alt="" loading="lazy"><img src="web-assets/me/kid-face.jpg" alt="" loading="lazy"><img src="web-assets/me/kid-towel.jpg" alt="" loading="lazy"><img src="web-assets/me/kid-jump.jpg" alt="" loading="lazy">
+              </span>
+            </div>
+            <div class="who" data-photo="1"><p>I believe we learn by building, not by being told. So I trained myself to make things: when I want to understand something, I build a version of it.</p><small>(constructivism, applied to myself)</small></div>
+            <div class="who" data-photo="2"><p>After graduating, I spent a year gathering design skills, one tool and one small project at a time.</p><small>(2024&ndash;2025)</small></div>
+            <div class="who" data-photo="3"><p>Then I stepped into design school, and the models got bigger.</p><small>(Harvard GSD, class of 2027)</small></div>
+            <div class="who" data-photo="4"><p>Give me a field I don&rsquo;t know yet. I read everything, find the people inside it, and come back speaking their language in words everyone else can use.</p><small>(my favourite part of any project)</small></div>
+            <div class="who" data-photo="5"><p>Most of my work happens in rooms full of people who want different things. I am the one translating.</p><small>(+86 &middot; +44 &middot; +1 &middot; +852)</small></div>
+            <div class="who" data-photo="6"><p>And when it gets loud, I find a window, sit in it, and think.</p><small>(then I go back and build)</small></div>
           </div>
           <figure class="profile__photo" aria-hidden="true">
             <div class="profile__frame">
-              <img class="is-on" src="web-assets/me-wind.jpg" alt="" style="object-position: 52% 50%">
-              <img src="web-assets/me/me-l-03.jpg" alt="" loading="lazy" style="object-position: 55% 50%">
-              <img src="web-assets/me/me-p-18.jpg" alt="" loading="lazy">
-              <img src="web-assets/me/me-p-04.jpg" alt="" loading="lazy">
-              <img src="web-assets/me/me-l-09.jpg" alt="" loading="lazy">
-              <img src="web-assets/me-window.jpg" alt="" loading="lazy" style="object-position: 62% 50%">
+              <img class="is-on" src="web-assets/me/kid-ice.jpg" alt="" data-for="0">
+              <img src="web-assets/me/me-p-04.jpg" alt="" loading="lazy" data-for="1">
+              <img src="web-assets/me/me-lake.jpg" alt="" loading="lazy" data-for="2" style="object-position: 50% 70%">
+              <img src="web-assets/me/me-p-18.jpg" alt="" loading="lazy" data-for="3">
+              <img src="web-assets/me/me-gsd-group.jpg" alt="" loading="lazy" data-for="3">
+              <img src="web-assets/me/me-hk-night.jpg" alt="" loading="lazy" data-for="4">
+              <img src="web-assets/me/me-l-09.jpg" alt="" loading="lazy" data-for="5">
+              <img src="web-assets/me-window.jpg" alt="" loading="lazy" data-for="6" style="object-position: 62% 50%">
             </div>
             <svg class="sparkle sparkle--a" viewBox="0 0 40 40"><path d="M20 0 C21 14 26 19 40 20 C26 21 21 26 20 40 C19 26 14 21 0 20 C14 19 19 14 20 0Z"/></svg>
             <svg class="sparkle sparkle--b" viewBox="0 0 40 40"><path d="M20 0 C21 14 26 19 40 20 C26 21 21 26 20 40 C19 26 14 21 0 20 C14 19 19 14 20 0Z"/></svg>
-            <figcaption class="profile__count"><span data-photo-count>01</span> / 06</figcaption>
+            <figcaption class="profile__count"><span data-photo-count>01</span> / 07</figcaption>
           </figure>
         </div>
-        <aside class="profile-panel" id="profile-panel" aria-label="What I do" data-profile-panel aria-hidden="true">
-          <button class="profile-panel__close" type="button" aria-label="Close" data-profile-close>×</button>
-          <p class="profile__eyebrow">+ info</p>
-          <h3>What I do</h3>
-          <p class="profile-panel__lede">AI product and multi-agent systems, grounded in social science. I work out what people struggle with, what the technology can do, and what can become a viable product, then build it myself.</p>
-          <dl>
-            <div><dt>Now</dt><dd>Master in Design Studies, Harvard GSD (2025–2027). Cross-registered at MIT Media Lab: AI Studio and Art, Culture + Technology.</dd></div>
-            <div><dt>Before</dt><dd>BA Education Studies (social science), UCL, First Class Honours.</dd></div>
-            <div><dt>Focus</dt><dd>Product and service design, AI infrastructure, the agentic web, behavioral economics, data visualization.</dd></div>
-            <div><dt>Languages</dt><dd>Mandarin and Shanghainese (native), English (professional), French (spoken and written)</dd></div>
-            <div><dt>Based in</dt><dd>Cambridge, MA</dd></div>
-          </dl>
-          <p class="profile-panel__big">Services · skills</p>
-          <ul class="profile-panel__skills">
-            <li>Product judgment</li><li>Multi-agent architecture</li><li>Agent infrastructure</li><li>AI evaluation</li><li>Research to insight</li><li>Prototype &amp; ship</li>
-          </ul>
-          <a class="profile-panel__link" href="#mobile-skills" data-profile-close>See how each skill formed ↓</a>
-        </aside>
       </section>
       <section class="skill-section" id="mobile-skills" aria-label="How skills form">
         <div class="skill-layout">
@@ -291,8 +314,8 @@
 
     <script src="contact-stage.js?v=20260823-live"></script>
     <script src="script-v2.js?v=20260905-mobile-polish"></script>
-    <script src="marago.js?v=20261024b"></script>
-    <script src="shell.js?v=20261024m"></script>
+    <script src="marago.js?v=20261025"></script>
+    <script src="shell.js?v=20261025"></script>
     <script>
       // Page two: the heading takes the hovered project's name, and a
       // bar slides down the index edge to the active row.

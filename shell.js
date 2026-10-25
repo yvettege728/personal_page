@@ -28,7 +28,7 @@
         <svg viewBox="0 0 240 240" aria-hidden="true"><line x1="58" y1="54" x2="120" y2="140"/><line x1="182" y1="54" x2="120" y2="140"/><line x1="120" y1="140" x2="120" y2="206"/><circle cx="58" cy="54" r="13"/><circle cx="182" cy="54" r="13"/><circle cx="120" cy="140" r="23"/><circle cx="120" cy="206" r="14"/></svg>
         <span>Yvette Ge</span>
       </a>
-      <p class="shell-side__where"><span class="shell-side__city">Cambridge, MA</span><br> <span data-clock>--:--</span> <span class="shell-side__tz">EST</span></p>
+      <p class="shell-side__where"><span class="shell-side__city">Cambridge, MA</span> <span data-clock>--:--</span> <span class="shell-side__tz">EST</span><br><span class="shell-side__now" data-now></span></p>
       <button class="shell-side__menu" type="button" aria-expanded="false" data-menu>Menu</button>
     </div>
     <nav class="shell-side__nav" aria-label="Sections">
@@ -42,11 +42,19 @@
       <a href="mailto:yvette_ge@gsd.harvard.edu">Email</a>
     </p>`;
 
-  // The time where she is, to the minute.
+  // The time where she is, to the minute, and a guess at what she is doing.
   const clock = side.querySelector("[data-clock]");
   const tz = side.querySelector(".shell-side__tz");
+  const doing = side.querySelector("[data-now]");
+  const GUESS = [
+    [0, "● asleep, or one more render"], [2, "● asleep (finally)"], [7, "● coffee before words"],
+    [9, "● in studio"], [12, "● lunch, then studio"], [14, "● in studio, building"],
+    [19, "● dinner, probably"], [21, "● still in studio"], [23, "● one more render"],
+  ];
   const tick = () => {
     const now = new Date();
+    const hour = Number(new Intl.DateTimeFormat("en-GB", { timeZone: "America/New_York", hour: "2-digit", hourCycle: "h23" }).format(now));
+    doing.textContent = GUESS.filter(([h]) => hour >= h).pop()[1];
     clock.textContent = new Intl.DateTimeFormat("en-GB", { timeZone: "America/New_York", hour: "2-digit", minute: "2-digit" }).format(now);
     const name = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", timeZoneName: "short" })
       .formatToParts(now).find((part) => part.type === "timeZoneName");
@@ -103,7 +111,7 @@
     // A case page ends on the next project, in that project's colour,
     // rather than on a second contact block (the frame already has one).
     const ORDER = [
-      ["referral", "Referral", "-01", "#c9d8c5"], ["sci", "Behavioral Cognition Study", "-02", "#e6d6bf"],
+      ["referral", "Referral", "-05", "#c9d8c5"], ["sci", "Design Cognition & Behavioral Study", "-04", "#e6d6bf"],
       ["chula", "The Incomplete Archive", "01", "#c7cfe3"], ["echo", "Echo", "02", "#efd2bf"],
       ["tangle-holder", "Tangle to Holder", "03", "#dccbe3"], ["thermal-commons", "Thermal Commons", "04", "#eec0a4"],
       ["make-a-wish", "Make a Wish", "05", "#efdc98"], ["roll-up", "Rollup", "06", "#bfdcd6"],
@@ -166,14 +174,23 @@
     }
   };
 
+  // A first visit always opens on the television, even from a deep link;
+  // leaving the cover then goes to the section the link asked for.
+  let pending = null;
+  let first = false;
+  try { first = !sessionStorage.getItem("yg:seen"); sessionStorage.setItem("yg:seen", "1"); } catch (e) { first = false; }
   window.addEventListener("hashchange", () => show(parse()));
-  show(parse());
+  const asked = parse();
+  if (first && asked.view !== "cover") { pending = asked; show({ view: "cover" }); }
+  else show(asked);
 
   // Leaving the cover: the button, a click on the set, a scroll or a key.
   const enter = () => {
     if (!document.body.classList.contains("at-cover")) return;
-    if (location.hash === "#home") show({ view: "home" });
-    else location.hash = "home";
+    const to = pending || { view: "home" };
+    pending = null;
+    if (location.hash === `#${to.view}`) show(to);
+    else location.hash = to.view;
   };
   document.querySelector("[data-cover-enter]")?.addEventListener("click", enter);
   cover?.addEventListener("wheel", (e) => { if (e.deltaY > 8) enter(); }, { passive: true });
