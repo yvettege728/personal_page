@@ -667,3 +667,30 @@ html.has-sticker.over-link .sticker-cursor { opacity: 0; transform: translate(-3
 html.has-sticker.over-link .dot-cursor { opacity: 1 !important; width: 12px; height: 12px; }
 .sw-head--plain { display: block; }
 .sw-head--plain .sw-label { display: inline-block; min-width: 180px; margin-top: 0; }
+
+/* Phone cover: a full-height poster rather than a desktop set shrunk to
+   the top half. Name across the width, the television as the centrepiece,
+   the line and the dial set left underneath, Scroll at the foot. */
+@media (max-width: 860px) {
+  body.has-shell .cover { left: 0; }
+  .cover { align-content: stretch; }
+  body.has-shell .cover .hero {
+    display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;
+    height: 100svh; min-height: 0; padding: 76px 22px 84px; box-sizing: border-box;
+  }
+  body.has-shell .cover .hero h1 { font-size: 30vw; line-height: 0.74; justify-items: center; }
+  body.has-shell .cover .hero h1 .script { margin-top: -0.12em; margin-left: 1.1em; font-size: 0.5em; }
+  body.has-shell .cover .television { width: 100%; margin: 0; display: block; }
+  body.has-shell .cover .television figcaption {
+    position: static !important; left: auto !important; right: auto !important; top: auto !important;
+    justify-self: start; width: auto; max-width: 22ch; margin: 22px 0 0 !important; padding: 0; text-align: left;
+    font-size: 19px; line-height: 1.3; color: var(--ink);
+  }
+  body.has-shell .cover .hero__dial {
+    position: static !important; left: auto !important; bottom: auto !important;
+    display: flex !important; justify-content: flex-start; align-items: center; gap: 16px; margin: 18px 0 0 !important;
+    font: 400 12px/1 "Roboto Mono", ui-monospace, monospace !important; letter-spacing: 0.04em; color: var(--ink);
+    padding-top: 14px; border-top: 1px solid rgba(38, 38, 38, 0.14);
+  }
+  body.has-shell .cover .hero__dial img { width: 14px; height: 14px; }
+}
