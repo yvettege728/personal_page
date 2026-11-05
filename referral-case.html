@@ -29,10 +29,10 @@
         <p class="cv3__kicker"><a href="index.html#projects">Selected work</a> · Work in progress</p>
         <h1 class="cv3__title">Referral</h1>
         <p class="cv3__lede">Stability-first infrastructure for agents that hire agents. Fully automated hiring quietly burns tokens, and no one can tell whether a sub-agent actually delivered. Referral makes every hiring decision traceable and auditable, so teams cut wasted spend and remove the risk of trusting an agent blind.</p>
-        <details class="cv3__more"><summary>+ info</summary><p>Hiring agents call Referral as an MCP server. Before a job, the worker agent locks its forecast of success, cost and time. After delivery, a checker verifies every cited fact and slips hidden known-answer checks into real tasks, and the Notary seals the contract, forecast, delivery and verdict into an append-only record. If a subcontractor in the chain fails, the record shows which hop. The hiring agent gets a tier (trial, verified, trusted) and one line of guidance, instead of public ratings that are easy to fake. <a href="web-assets/referral-proposal.pdf" target="_blank" rel="noopener">Read the proposal</a>.</p></details>
+        <details class="cv3__more"><summary>+ info</summary><p>Hiring agents call Referral as an MCP server. Before a job, the worker agent locks its forecast of success, cost and time. After delivery, a checker verifies every cited fact and slips hidden known-answer checks into real tasks, and the Notary seals the contract, forecast, delivery and verdict into an append-only record. If a subcontractor in the chain fails, the record shows which hop. The hiring agent gets a tier (trial, verified, trusted) and one line of guidance, instead of public ratings that are easy to fake. The diagram shows one hire's record split into the four layers the Notary seals; the prototype scores three of six signals: calibration, difficulty-weighted quality and chain attribution. <a href="web-assets/referral-proposal.pdf" target="_blank" rel="noopener">Read the proposal</a>.</p></details>
         <dl class="cv3__meta"><div><dt>Status</dt><dd>In progress</dd></div><div><dt>Year</dt><dd>Fall 2026</dd></div><div><dt>Context</dt><dd>MIT Media Lab AI Studio (IDS.865)</dd></div><div><dt>Team</dt><dd>With Mengxiang (Louis) Liu</dd></div><div><dt>My part</dt><dd>The protocol, the Notary and the insight layer</dd></div></dl>
       </div>
-      <div class="cv3__media"><img src="web-assets/referral-diagram.jpg" alt="One hire through Referral: buyer agent, the Matcher, Checker, Notary and Scorer inside the MCP server, and the worker agent." style="object-fit: contain; background: #fff;"></div>
+      <div class="cv3__media"><img src="web-assets/referral-anatomy.jpg" alt="What Referral scores: the Notary's four sealed layers (contract, forecast, delivery, verdict), six Scorer signals, and the trial, verified and trusted tiers a hiring agent sees." style="object-fit: contain; background: #f5f5f2;"></div>
     </section>
     <main class="echo-case">
       <section class="ref-block">
@@ -43,11 +43,6 @@
         <p class="ref-block__label">02 · One task, two workers</p>
         <p class="ref-block__text">The same task goes to two workers. W-12 promises 0.95, quietly subcontracts, and delivers a fake citation: a hidden check fails, the fault is traced to the second hop, and W-12 stays on trial. W-07 promises less, 0.76, and delivers all five facts: verified. The next hiring agent sees the difference before it spends anything.</p>
         <video class="ref-media" src="web-assets/referral-blueprint.mp4" poster="web-assets/referral-blueprint-poster.jpg" controls muted playsinline preload="metadata"></video>
-      </section>
-      <section class="ref-block">
-        <p class="ref-block__label">03 · What Referral scores</p>
-        <p class="ref-block__text">One hire's record, split into the four layers the Notary seals. Six signals read those layers; the prototype scores three of them: calibration, difficulty-weighted quality and chain attribution.</p>
-        <a href="web-assets/referral-anatomy.jpg" target="_blank" rel="noopener"><img class="ref-media" src="web-assets/referral-anatomy.jpg" alt="What Referral scores: the Notary's four sealed layers (contract, forecast, delivery, verdict), six Scorer signals, and the trial, verified and trusted tiers a hiring agent sees." loading="lazy"></a>
       </section>
     </main>
     <style>
