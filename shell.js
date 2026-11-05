@@ -207,9 +207,14 @@
   const cover = document.querySelector("[data-cover]");
   let current = null;
 
+  // On a phone the cover (the set and the projects flying in) is skipped:
+  // visitors land straight on Profile. Width covers portrait phones, the
+  // coarse-pointer + short-height test covers phones held sideways.
+  const isPhone = () => window.matchMedia("(max-width: 860px), (pointer: coarse) and (max-height: 500px)").matches;
+
   const parse = () => {
     const raw = decodeURIComponent(location.hash.slice(1));
-    if (!raw || raw === "cover") return { view: "cover" };
+    if (!raw || raw === "cover") return isPhone() ? { view: "profile" } : { view: "cover" };
     // On a desktop the cover is home: the set, then the projects flying in.
     if (raw === "home" && !window.matchMedia("(max-width: 860px)").matches) return { view: "cover" };
     const view = ALIAS[raw] || raw;
@@ -249,7 +254,7 @@
   try { first = !sessionStorage.getItem("yg:seen"); sessionStorage.setItem("yg:seen", "1"); } catch (e) { first = false; }
   window.addEventListener("hashchange", () => show(parse()));
   const asked = parse();
-  if (first && asked.view !== "cover") { pending = asked; show({ view: "cover" }); }
+  if (first && asked.view !== "cover" && !isPhone()) { pending = asked; show({ view: "cover" }); }
   else show(asked);
 
   // Leaving the cover: the button, a click on the set, a scroll or a key.
