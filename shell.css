@@ -322,6 +322,7 @@ body.cv3-page .contact-tv { display: none; }
 .next-band span { font: 400 clamp(40px, 5vw, 80px)/1 "Instrument Serif", serif; transition: transform 700ms cubic-bezier(.2,.8,.2,1); }
 .next-band:hover strong { transform: translateX(14px); }
 .next-band:hover span { transform: translateX(20px); }
+.next-band.next-band--dark { color: #fff; }
 
 /* White pass (2026-10-24): one clean white ground everywhere, after
    constanzacoscia.xyz. The paper lines and dot screen are gone, and project

@@ -176,7 +176,7 @@
     // A case page ends on the next project, in that project's colour,
     // rather than on a second contact block (the frame already has one).
     const ORDER = [
-      ["referral", "Referral", "-05", "#c9d8c5"],
+      ["referral", "Referral", "-05", "#2747e0"],
       ["chula", "The Incomplete Archive", "01", "#c7cfe3"], ["echo", "Echo", "02", "#efd2bf"],
       ["tangle-holder", "Tangle to Holder", "03", "#dccbe3"], ["thermal-commons", "Thermal Commons", "04", "#eec0a4"],
       ["make-a-wish", "Make a Wish", "05", "#efdc98"], ["roll-up", "Rollup", "06", "#bfdcd6"],
@@ -191,6 +191,7 @@
       band.className = "next-band";
       band.href = `${id}-case.html`;
       band.style.setProperty("--card", color);
+      if (id === "referral") band.classList.add("next-band--dark");
       band.innerHTML = `<small>Next project · ${num}</small><strong>${title}</strong><span aria-hidden="true">→</span>`;
       const place = () => { const main = document.querySelector("main"); if (main) main.after(band); else document.body.append(band); };
       if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", place);
