@@ -306,7 +306,7 @@
   const intro = document.querySelector("[data-intro]");
   const deck = intro?.querySelector("[data-intro-deck]");
   const rows = [...document.querySelectorAll(".studio .work-list [data-project]")];
-  const FEATURE = ["chula-case.html", "echo-case.html", "tangle-holder-case.html", "make-a-wish-case.html", "thermal-commons-case.html", "roll-up-case.html", "shadow-within-case.html"];
+  const FEATURE = ["chula-case.html", "frontman-case.html", "echo-case.html", "tangle-holder-case.html", "make-a-wish-case.html", "thermal-commons-case.html", "roll-up-case.html", "shadow-within-case.html"];
   const FROM = [[-1, 0], [0, 1], [1, 0], [0, -1]];
   if (intro && isPhone()) intro.querySelector("[data-intro-skip]")?.addEventListener("click", () => goOn());
   if (intro && deck && !isPhone()) {
