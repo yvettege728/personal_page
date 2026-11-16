@@ -30,7 +30,7 @@
         <h1 class="cv3__title">Frontman</h1>
         <p class="cv3__lede">An AI frontman for your business: one consistent character, with its own look and voice, that runs your public presence on social media. Founders get a recognizable public face without having to post every day themselves.</p>
         <details class="cv3__more"><summary>+ info</summary><p>Frontman starts from what your business already is. Onboarding reads your website or a context file your own agent writes, and fills in the business profile for you to check, not type. From that it recommends a personality on four axes (energy, edge, tempo, trust; 16 types) and a look. Every character, human or not, is built from one shape language of circles and capsules, so profession is shown through props rather than stereotyped faces. Founder mode lets the founder bind the brand to their own face and name instead, with a camera-only capture.</p></details>
-        <dl class="cv3__meta"><div><dt>Status</dt><dd>In progress</dd></div><div><dt>Year</dt><dd>Fall 2026</dd></div><div><dt>Context</dt><dd>MIT Media Lab AI Studio</dd></div><div><dt>Team</dt><dd>With Dillon Johnson and Emre</dd></div><div><dt>My part</dt><dd>Character system, personality model, onboarding and Founder mode</dd></div></dl>
+        <dl class="cv3__meta"><div><dt>Status</dt><dd>In progress</dd></div><div><dt>Year</dt><dd>Fall 2026</dd></div><div><dt>Context</dt><dd><a href="https://www.sundai.club/" target="_blank" rel="noopener">Sundai Club</a> hackathon</dd></div><div><dt>Team</dt><dd>With Dillon Johnson and Emre</dd></div><div><dt>My part</dt><dd>Design of the onboarding context page, plus the character system and Founder mode</dd></div></dl>
       </div>
       <div class="cv3__media"><img src="web-assets/frontman-landing.jpg" alt="Frontman landing page: Your brand needs a someone." style="object-fit: cover; object-position: left center; background: #ecebe7;"></div>
     </section>
@@ -47,15 +47,12 @@
       <section class="ref-block">
         <p class="ref-block__label">02 · How it fits together</p>
         <p class="ref-block__text">A Frontman is a look plus a personality. The character system feeds one persona prompt to a team of AI helpers, so every post sounds like the same character.</p>
-        <img class="ref-media" src="web-assets/frontman-architecture.jpg" alt="Frontman system diagram: screens, the character system, the AI team, memory, and outside services.">
+        <img class="ref-media" src="web-assets/frontman-architecture.jpg" alt="Frontman: how the system fits together. Screens, the character system, the agent team, and memory.">
       </section>
       <section class="ref-block">
-        <p class="ref-block__label">03 · Onboarding that reads, not asks</p>
-        <p class="ref-block__text">Onboarding reads the business first, then recommends a personality from that context. The founder checks and tunes it instead of filling in a blank form.</p>
-        <div class="ref-pair">
-          <img class="ref-media" src="web-assets/frontman-landing.jpg" alt="Frontman landing page.">
-          <img class="ref-media" src="web-assets/frontman-personality.jpg" alt="Recommended personality on four axes, chosen from the business context.">
-        </div>
+        <p class="ref-block__label">03 · The context page: reads, not asks</p>
+        <p class="ref-block__text">The context page reads the business first, from its website or a context file the founder's own agent writes, and fills in the profile. The founder only checks it, then gets a personality recommended from that context instead of a blank form.</p>
+        <img class="ref-media" src="web-assets/frontman-personality.jpg" alt="Recommended personality on four axes, chosen from the business context.">
       </section>
       <section class="ref-block">
         <p class="ref-block__label">04 · A face: a character or the founder</p>
@@ -76,6 +73,8 @@
       .ref-links { display: flex; flex-wrap: wrap; gap: 12px; }
       .ref-links a { display: inline-block; padding: 10px 16px; border: 1px solid rgba(31,31,31,.5); color: #1f1f1f; font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
       .ref-links a:hover, .ref-links a:focus-visible { background: #1f1f1f; color: #fff; }
+      .cv3__meta dd a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+      .cv3__meta dd a:hover, .cv3__meta dd a:focus-visible { opacity: .7; }
       .ref-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
       @media (max-width: 760px) { .ref-pair { grid-template-columns: 1fr; } }
     </style>
