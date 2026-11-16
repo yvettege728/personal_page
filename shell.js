@@ -176,6 +176,7 @@
     // A case page ends on the next project, in that project's colour,
     // rather than on a second contact block (the frame already has one).
     const ORDER = [
+      ["frontman", "Frontman", "-06", "#c6e2cf"],
       ["referral", "Referral", "-05", "#2747e0"],
       ["chula", "The Incomplete Archive", "01", "#c7cfe3"], ["echo", "Echo", "02", "#efd2bf"],
       ["tangle-holder", "Tangle to Holder", "03", "#dccbe3"], ["thermal-commons", "Thermal Commons", "04", "#eec0a4"],
