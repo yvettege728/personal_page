@@ -14,7 +14,7 @@
   const CONTACT_PHONE = "+1 617 680 8178";
   const CONTACT_MAIL = "yvette_ge@gsd.harvard.edu";
   const CONTACT_LINKEDIN = "https://www.linkedin.com/in/yvette-ge-a43512228/";
-  const CONTACT_CV = "web-assets/Yvette_Ge_CV.pdf?v=20261024";
+  const CONTACT_CV = "web-assets/Yvette_Ge_CV.pdf?v=20261117";
   const CONTACT_CARD = "web-assets/yvette-ge-namecard.png";
   const CONTACT_INSTAGRAM = "https://www.instagram.com/yvt_to_come/";
 

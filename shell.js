@@ -35,8 +35,8 @@
         `<a href="${home}#${id}" data-view-link="${id}"><strong>${label}</strong><small>${sub.split("|").join("<br>")}</small></a>`).join("")}
     </nav>
     <p class="shell-side__foot">
-      <a href="web-assets/Yvette_Ge_CV.pdf?v=20261024">CV</a>
-      <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261024" lang="zh">中文简历</a>
+      <a href="web-assets/Yvette_Ge_CV.pdf?v=20261117">CV</a>
+      <a href="web-assets/Yvette_Ge_CV_ZH.pdf?v=20261117" lang="zh">中文简历</a>
       <a href="https://www.linkedin.com/in/yvette-ge-a43512228/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:yvette_ge@gsd.harvard.edu">Email</a>
     </p>`;
