@@ -473,8 +473,12 @@ html.has-dot input, html.has-dot textarea, html.has-dot select { cursor: text !i
 .wip-panel__row em { font: 400 10.5px/1.6 "Roboto Mono", ui-monospace, monospace; font-style: normal; letter-spacing: 0.04em; text-transform: uppercase; color: var(--soft); }
 a.wip-panel__row:hover strong { font-style: italic; }
 .wip-panel__list li:not(.is-open) .wip-panel__row { color: rgba(38, 38, 38, 0.62); }
-.wip-panel__media { display: block; padding: 0 0 14px 50px; }
-.wip-panel__media img { display: block; width: 100%; height: auto; max-height: 30vh; object-fit: contain; object-position: left; }
+.wip-panel__list li { display: grid; grid-template-rows: auto 0fr; transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.wip-panel__list li.is-open { grid-template-rows: auto 1fr; }
+.wip-panel__media { display: block; min-height: 0; overflow: hidden; padding: 0 0 0 50px; opacity: 0; transition: opacity 0.3s ease, padding 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.wip-panel__list li.is-open .wip-panel__media { padding-bottom: 14px; opacity: 1; transition-delay: 0s, 0s; }
+.wip-panel__media img, .wip-panel__media video { display: block; width: 100%; height: auto; max-height: 30vh; object-fit: contain; object-position: left; }
+@media (prefers-reduced-motion: reduce) { .wip-panel__list li, .wip-panel__media { transition: none; } }
 @media (max-width: 760px) { .wip-panel { width: 82vw; scroll-snap-align: start; } }
 
 /* Round 2026-10-25: profile slogan, skills folded inside their cell, the

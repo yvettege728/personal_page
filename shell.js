@@ -442,3 +442,29 @@
     list.addEventListener("mouseleave", () => list.classList.remove("is-peeking"));
   }
 })();
+
+/* Work in progress list: hovering a row that has media opens it and folds the others.
+   Leaving the list returns to the default (Frontman). Touch screens keep the default. */
+(() => {
+  const list = document.querySelector(".wip-panel__list");
+  if (!list) return;
+  const items = [...list.querySelectorAll("li")];
+  const fallback = list.querySelector("li[data-default]") || items[0];
+  const open = (target) => {
+    items.forEach((li) => {
+      const on = li === target;
+      li.classList.toggle("is-open", on);
+      const video = li.querySelector("video");
+      if (!video) return;
+      if (on) { video.preload = "auto"; video.play().catch(() => {}); }
+      else video.pause();
+    });
+  };
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  items.forEach((li) => {
+    if (!li.querySelector(".wip-panel__media")) return;
+    li.addEventListener("mouseenter", () => open(li));
+    li.querySelector(".wip-panel__row")?.addEventListener("focus", () => open(li));
+  });
+  list.addEventListener("mouseleave", () => open(fallback));
+})();

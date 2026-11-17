@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Instrument+Serif:ital@0;1&family=Barlow+Condensed:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Roboto+Mono:wght@300;400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="web-assets/favicon-yg.svg">
     <link rel="stylesheet" href="styles-v2.css?v=20261024m">
-    <link rel="stylesheet" href="shell.css?v=20261105">
+    <link rel="stylesheet" href="shell.css?v=20261117">
   </head>
   <body>
     <div class="opening-gate" data-opening-gate aria-hidden="true">
@@ -113,11 +113,14 @@
             <div class="wip-panel" data-num="WIP">
               <p class="wip-panel__head">Work in progress</p>
               <ol class="wip-panel__list">
-                <li class="is-open">
+                <li class="is-open" data-default>
                   <a class="wip-panel__row" href="frontman-case.html"><span>-06</span><strong>Frontman</strong><em>AI character for your business</em></a>
                   <a class="wip-panel__media" href="frontman-case.html"><img src="web-assets/frontman-landing.jpg" alt="Frontman landing page"></a>
                 </li>
-                <li><a class="wip-panel__row" href="referral-case.html"><span>-05</span><strong>Referral</strong><em>Auditable hiring for agents</em></a></li>
+                <li>
+                  <a class="wip-panel__row" href="referral-case.html"><span>-05</span><strong>Referral</strong><em>Auditable hiring for agents</em></a>
+                  <a class="wip-panel__media" href="referral-case.html" tabindex="-1"><video src="web-assets/referral-morph-web.mp4" poster="web-assets/referral-morph-poster.jpg" muted loop playsinline preload="none" aria-label="Referral: the five plates of a hire, morphing"></video></a>
+                </li>
                 <li><span class="wip-panel__row"><span>-04</span><strong>Design Cognition &amp; Behavioral Study</strong><em>HCI</em></span></li>
                 <li><span class="wip-panel__row"><span>-03</span><strong>Agent Core</strong><em>Cross-channel AI product</em></span></li>
                 <li><span class="wip-panel__row"><span>-02</span><strong>Threshold Design Program</strong><em>Social infrastructure</em></span></li>
@@ -310,7 +313,7 @@
       window.YG_STICKERS = ["peace", "face", "hk", "jump", "towel", "night", "piano"].map((n) => `web-assets/me/cut-${n}.webp`);
       window.YG_STICKERS.forEach((src) => { const i = new Image(); i.src = src; });
     </script>
-    <script src="shell.js?v=20261117"></script>
+    <script src="shell.js?v=20261117b"></script>
     <script>
       // Page two: the heading takes the hovered project's name, and a
       // bar slides down the index edge to the active row.
