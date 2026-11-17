@@ -176,6 +176,7 @@
     // A case page ends on the next project, in that project's colour,
     // rather than on a second contact block (the frame already has one).
     const ORDER = [
+      ["frontman", "Frontman", "-06", "#c6e2cf"],
       ["referral", "Referral", "-05", "#2747e0"],
       ["chula", "The Incomplete Archive", "01", "#c7cfe3"], ["echo", "Echo", "02", "#efd2bf"],
       ["tangle-holder", "Tangle to Holder", "03", "#dccbe3"], ["thermal-commons", "Thermal Commons", "04", "#eec0a4"],
@@ -305,7 +306,7 @@
   const intro = document.querySelector("[data-intro]");
   const deck = intro?.querySelector("[data-intro-deck]");
   const rows = [...document.querySelectorAll(".studio .work-list [data-project]")];
-  const FEATURE = ["chula-case.html", "echo-case.html", "tangle-holder-case.html", "make-a-wish-case.html", "thermal-commons-case.html", "roll-up-case.html", "shadow-within-case.html"];
+  const FEATURE = ["frontman-case.html", "chula-case.html", "echo-case.html", "tangle-holder-case.html", "make-a-wish-case.html", "thermal-commons-case.html", "roll-up-case.html", "shadow-within-case.html"];
   const FROM = [[-1, 0], [0, 1], [1, 0], [0, -1]];
   if (intro && isPhone()) intro.querySelector("[data-intro-skip]")?.addEventListener("click", () => goOn());
   if (intro && deck && !isPhone()) {

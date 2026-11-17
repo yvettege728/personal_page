@@ -181,6 +181,7 @@ function initPortfolioInteractions() {
   // Case pages use the same top nav as the index. The Projects item opens a
   // numbered archive menu, so project-to-project movement stays in the navbar.
   const PROJECT_INDEX = [
+    ["frontman", "Frontman", "-06"],
     ["referral", "Referral", "-05"],
     ["chula", "The Incomplete Archive", "01"],
     ["echo", "Echo", "02"],
