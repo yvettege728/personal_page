@@ -24,42 +24,90 @@
       <a class="line-nav__brand" href="index.html" aria-label="Back to portfolio"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 240 240" class="hub-mark"><line class="arm" x1="58" y1="54" x2="120" y2="140"/><line class="arm" x1="182" y1="54" x2="120" y2="140"/><line class="spine" x1="120" y1="140" x2="120" y2="206"/><circle class="node-lilac" cx="58" cy="54" r="13"/><circle class="node-lilac" cx="182" cy="54" r="13"/><circle class="node-coral" cx="120" cy="140" r="23"/><circle class="node-coral" cx="120" cy="206" r="14"/></svg></span><span class="line-nav__name">Yvette Ge</span></a>
       <div class="line-nav__links" data-case-switch></div>
     </nav>
-    <section class="cv3 cv3--dark" style="--cv3: #2747e0; --ink3: #ffffff">
-      <div class="cv3__panel">
-        <p class="cv3__kicker"><a href="index.html#projects">Selected work</a> · Work in progress</p>
-        <h1 class="cv3__title">Referral</h1>
-        <p class="cv3__lede">Stability-first infrastructure for agents that hire agents. Fully automated hiring quietly burns tokens, and no one can tell whether a sub-agent actually delivered. Referral makes every hiring decision traceable and auditable, so teams cut wasted spend and remove the risk of trusting an agent blind.</p>
-        <details class="cv3__more"><summary>+ info</summary><p>Hiring agents call Referral as an MCP server. Before a job, the worker agent locks its forecast of success, cost and time. After delivery, a checker verifies every cited fact and slips hidden known-answer checks into real tasks, and the Notary seals the contract, forecast, delivery and verdict into an append-only record. If a subcontractor in the chain fails, the record shows which hop. The hiring agent gets a tier (trial, verified, trusted) and one line of guidance, instead of public ratings that are easy to fake. The diagram shows one hire's record split into the four layers the Notary seals; the prototype scores three of six signals: calibration, difficulty-weighted quality and chain attribution. <a href="web-assets/referral-proposal.pdf" target="_blank" rel="noopener">Read the proposal</a>.</p></details>
-        <dl class="cv3__meta"><div><dt>Status</dt><dd>In progress</dd></div><div><dt>Year</dt><dd>Fall 2026</dd></div><div><dt>Context</dt><dd>MIT Media Lab AI Studio (IDS.865)</dd></div><div><dt>Team</dt><dd>With Mengxiang (Louis) Liu</dd></div><div><dt>My part</dt><dd>The protocol, the Notary and the insight layer</dd></div></dl>
-      </div>
-      <div class="cv3__media"><img src="web-assets/referral-anatomy.jpg" alt="What Referral scores: the Notary's four sealed layers (contract, forecast, delivery, verdict), six Scorer signals, and the trial, verified and trusted tiers a hiring agent sees." style="object-fit: contain; background: #f5f5f2;"></div>
-    </section>
-    <main class="echo-case">
+    <main>
+      <section class="cv3 cv3--dark" style="--cv3: #2747e0; --ink3: #ffffff">
+        <div class="cv3__panel">
+          <p class="cv3__kicker"><a href="index.html#projects">Selected work</a> · Work in progress</p>
+          <h1 class="cv3__title">Referral</h1>
+          <p class="cv3__lede">Stability-first infrastructure for agents that hire agents. Fully automated hiring quietly burns tokens, and no one can tell whether a sub-agent actually delivered. Referral makes every hiring decision traceable and auditable, so teams cut wasted spend and remove the risk of trusting an agent blind.</p>
+          <details class="cv3__more"><summary>+ info</summary><p>Hiring agents call Referral as an MCP server. Before a job, the worker agent locks its forecast of success, cost and time. After delivery, a checker verifies every cited fact and slips hidden known-answer checks into real tasks, and the Notary seals the contract, forecast, delivery and verdict into an append-only record. If a subcontractor in the chain fails, the record shows which hop. The hiring agent gets a tier (trial, verified, trusted) and one line of guidance, instead of public ratings that are easy to fake. The diagram shows one hire's record split into the four layers the Notary seals; the prototype scores three of six signals: calibration, difficulty-weighted quality and chain attribution. <a href="web-assets/referral-proposal.pdf" target="_blank" rel="noopener">Read the proposal</a>.</p></details>
+          <dl class="cv3__meta"><div><dt>Status</dt><dd>In progress</dd></div><div><dt>Year</dt><dd>Fall 2026</dd></div><div><dt>Context</dt><dd>MIT Media Lab AI Studio (IDS.865)</dd></div><div><dt>Team</dt><dd>With Mengxiang (Louis) Liu</dd></div><div><dt>My part</dt><dd>The protocol, the Notary and the insight layer</dd></div></dl>
+        </div>
+        <div class="cv3__media"><video src="web-assets/referral-hire-runs.mp4" poster="web-assets/referral-hire-runs-poster.jpg" autoplay muted loop playsinline aria-label="How a hire runs: one Referral hire in ten steps, from match to score" style="object-fit: contain; background: #f5f5f2;"></video></div>
+      </section>
+
+      <section class="case-section glance" aria-label="Project at a glance" style="--glance-accent: #2747e0">
+        <div class="section-inner">
+          <div class="glance-grid">
+            <div class="glance-cell"><span class="glance-label">Problem</span><p>When an agent hires another agent, the budget is the only finish line. The worker spends until the money runs out and reports "done", and nobody checks whether the work was right.</p></div>
+            <div class="glance-cell"><span class="glance-label">What I made</span><p>Referral, one MCP server with four parts: a Matcher, a Checker, a Notary and a Scorer. A worker locks its forecast before it starts, every cited fact is checked, and every step is sealed in an append-only record.</p></div>
+            <div class="glance-cell glance-cell--result"><span class="glance-label">Result</span><p>In a 30-task benchmark, Referral and a check-and-redo baseline both ended with zero errors, but the baseline redid 46% of jobs and cost $1.04 per request against Referral's $0.31. In a two-hop chain of real Claude agents, the fault was traced to the right hop in 96 of 96 runs.</p></div>
+          </div>
+          <div class="glance-foot">
+            <div class="glance-role"><span class="glance-label">My part</span><ul>
+              <li>Designed the hiring protocol: request_match, submit_prediction, submit_delivery and get_record, with the forecast locked before any work starts.</li>
+              <li>Designed the Notary record: contract, forecast, delivery and verdict, sealed append-only for every hop of a chain.</li>
+              <li>Designed the insight layer: the Scorer reads many runs across six dimensions and gives the next hiring agent a short description instead of a single score.</li>
+              <li>Made the visual system, the mechanism animation and the two touchpoints below.</li>
+            </ul></div>
+            <div class="glance-meta">
+          <div><strong>Team</strong>With Mengxiang (Louis) Liu</div>
+          <div><strong>Context</strong>MIT Media Lab AI Studio</div>
+          <div class="glance-meta-wide"><strong>AI Angle</strong>Agents hiring agents. Referral is the record and the check that sit between them.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="echo-case">
       <section class="ref-block">
         <p class="ref-block__label">01 · Demo and walkthrough</p>
         <div class="ref-embed"><iframe src="https://www.youtube-nocookie.com/embed/-XRTb4yIyJA" title="Referral demo and walkthrough" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
       </section>
       <section class="ref-block">
-        <p class="ref-block__label">02 · One task, two workers</p>
+        <p class="ref-block__label">02 · The problem: budget is the only finish line</p>
+        <p class="ref-block__text">Today a hiring agent hands a worker a task and a budget. The worker spends until the budget runs out, then reports "done". Nobody measured whether the work was any good.</p>
+        <img class="ref-media" src="web-assets/referral-pain-budget.gif" alt="A hiring agent sends a task with a $200 budget. The budget bar drains to $0, the worker replies done, and the quality bar underneath is empty: not measured." loading="lazy">
+      </section>
+      <section class="ref-block">
+        <p class="ref-block__label">03 · How a hire runs</p>
+        <p class="ref-block__text">A hiring agent needs four competitor facts, each cited. The Matcher finds two workers. Worker A locks its forecast and delivers, the Checker finds quotes that are not in the source, and the 40¢ goes back. Worker B passes all four checks and is paid 90¢. The Notary seals every step, and the Scorer turns many runs into a short description the next hiring agent reads before it hires.</p>
+        <a class="ref-zoom" href="web-assets/referral-system-map.jpg" target="_blank" rel="noopener" aria-label="Open the system map full size in a new tab"><img class="ref-media" src="web-assets/referral-system-map.jpg" alt="System map: the hiring agent calls Referral (Matcher, Checker, Notary, Scorer). Workers A and B, the Checker verdicts, the Notary record, the Scorer's six dimensions, and the descriptive guidance the next hiring agent sees, numbered in ten steps." loading="lazy"></a>
+        <p class="ref-block__note">The full system map. Steps 1 to 10 follow the hire in the video at the top.</p>
+      </section>
+      <section class="ref-block">
+        <p class="ref-block__label">04 · Where a person meets Referral: in the conversation</p>
+        <p class="ref-block__text">The agent's reply carries a one-line receipt. One click opens the record.</p>
+        <div class="ref-pair">
+          <img class="ref-media" src="web-assets/referral-touch-agent.gif" alt="An agent session: the user asks for four cited competitor facts, the agent hires through Referral, and the reply ends with a receipt line: worker B, verified, 4 of 4 facts checked, 90¢, with a link to the record." loading="lazy">
+          <img class="ref-media" src="web-assets/referral-touch-record.gif" alt="The record page: worker A on trial with a locked forecast, four facts failing because the quote is not in the source, 40¢ refunded; rematch to worker B, verified, four facts passing, 90¢ paid." loading="lazy">
+        </div>
+      </section>
+      <section class="ref-block">
+        <p class="ref-block__label">05 · Where a person meets Referral: at install</p>
+        <p class="ref-block__text">One zip, four commands, one config file. The agent can now hire through Referral.</p>
+        <img class="ref-media" src="web-assets/referral-touch-install.gif" alt="A zip appears on the desktop and is unzipped; in the terminal, four commands set up Referral and copy the MCP config, ending with: referral connected, hiring tools request_match, hire, get_record." loading="lazy">
+      </section>
+      <section class="ref-block">
+        <p class="ref-block__label">06 · One task, two workers</p>
         <p class="ref-block__text">The same task goes to two workers. W-12 promises 0.95, quietly subcontracts, and delivers a fake citation: a hidden check fails, the fault is traced to the second hop, and W-12 stays on trial. W-07 promises less, 0.76, and delivers all five facts: verified. The next hiring agent sees the difference before it spends anything.</p>
         <video class="ref-media" src="web-assets/referral-blueprint.mp4" poster="web-assets/referral-blueprint-poster.jpg" controls muted playsinline preload="metadata"></video>
       </section>
+      </div>
+      <div data-contact-slot></div>
     </main>
     <style>
       .echo-case { max-width: 1180px; margin: 0 auto; padding: 64px clamp(18px, 4vw, 48px) 80px; }
-      .echo-case__head { display: grid; gap: 14px; margin-bottom: 36px; }
-      .echo-case__meta { margin: 0; font-size: 13px; text-transform: uppercase; opacity: 0.6; }
-      .echo-case h1 { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: clamp(64px, 9vw, 140px); line-height: 0.85; text-transform: uppercase; }
-      .echo-case__lede { margin: 0; max-width: 820px; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.45; }
-      .echo-case__note { margin: 0; opacity: 0.7; }
-      .echo-case__dl { justify-self: start; color: inherit; font-size: 14px; text-transform: uppercase; }
-      .echo-case__cover { display: block; width: 100%; height: auto; margin-bottom: 36px; border-radius: 6px; }
       .ref-block { display: grid; gap: 16px; margin-bottom: 72px; color: #1f1f1f; }
       .ref-block__label { margin: 0; font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; opacity: .65; }
       .ref-block__text { margin: 0; max-width: 760px; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.55; }
+      .ref-block__note { margin: 0; font-size: 13px; opacity: .6; }
       .ref-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
       .ref-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
       .ref-media { display: block; width: 100%; height: auto; border: 1px solid rgba(48,48,48,.18); background: #f5f5f2; }
+      .ref-zoom { display: block; cursor: zoom-in; }
+      .ref-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+      @media (max-width: 760px) { .ref-pair { grid-template-columns: 1fr; } }
     </style>
     <script src="contact-stage.js?v=20261117"></script>
     <script src="script.js?v=20261116"></script>
